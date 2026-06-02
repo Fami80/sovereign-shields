@@ -226,12 +226,19 @@ export function ExposureCalculator() {
             </span>
           </div>
 
-          <div className="relative mt-3 text-4xl font-extrabold text-action-accent md:text-5xl tabular-nums">
-            {fmt(total)}
+          <div className="relative mt-3 h-12 md:h-14">
+            {processing ? (
+              <div className="h-10 w-3/4 animate-pulse rounded-lg bg-white/10 md:h-12" aria-label="Recalculating exposure" />
+            ) : (
+              <div className="text-4xl font-extrabold text-action-accent md:text-5xl tabular-nums">
+                {fmt(total)}
+              </div>
+            )}
           </div>
           <p className="relative mt-1 text-xs text-text-muted-dark">
             Aggregate gratuity + dispute compensation ceiling.
           </p>
+
 
           <dl className="relative mt-7 space-y-4 border-t border-white/10 pt-5 text-sm">
             <Row

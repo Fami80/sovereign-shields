@@ -117,7 +117,7 @@ export function DirectorVault() {
 
           {/* Glass gate */}
           {!unlocked && (
-            <div className="absolute inset-0 flex items-center justify-center bg-bg-dark/30 backdrop-blur-xl">
+            <div className="absolute inset-0 flex items-center justify-center border-white/10 bg-bg-dark/85 backdrop-blur-xl">
               <div className="rounded-[24px] border border-white/10 bg-white/5 px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">
                   <Lock className="h-5 w-5 text-action-accent" />

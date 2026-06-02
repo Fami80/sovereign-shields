@@ -89,6 +89,7 @@ export function ExposureCalculator() {
   const [salary, setSalary] = useState(25000);
   const [years, setYears] = useState(4);
   const [reason, setReason] = useState<DisputeReason>("arbitrary");
+  const [processing, setProcessing] = useState(false);
 
   const { eosg, dispute, total, tier, penaltyApplied } = useMemo(() => {
     const eosg = computeEOSG(salary, years, company);
@@ -97,6 +98,14 @@ export function ExposureCalculator() {
     const penaltyApplied = reason === "arbitrary" && contract === "limited";
     return { eosg, dispute, total, tier: riskTier(total), penaltyApplied };
   }, [salary, years, company, reason, contract]);
+
+  // 400ms processing skeleton whenever an input changes
+  useEffect(() => {
+    setProcessing(true);
+    const t = setTimeout(() => setProcessing(false), 400);
+    return () => clearTimeout(t);
+  }, [salary, years, company, reason, contract]);
+
 
   useEffect(() => {
     setExposureSnapshot({

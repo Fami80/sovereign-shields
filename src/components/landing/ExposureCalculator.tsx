@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { setExposureSnapshot } from "@/lib/exposure-store";
 
 type ContractType = "limited" | "unlimited";
 type CompanyType = "mohre" | "difc";
@@ -96,6 +97,21 @@ export function ExposureCalculator() {
     const penaltyApplied = reason === "arbitrary" && contract === "limited";
     return { eosg, dispute, total, tier: riskTier(total), penaltyApplied };
   }, [salary, years, company, reason, contract]);
+
+  useEffect(() => {
+    setExposureSnapshot({
+      contract,
+      company,
+      salary,
+      years,
+      reason,
+      eosg,
+      dispute,
+      total,
+      riskLabel: tier.label as "Low Risk" | "Moderate Risk" | "Critical Exposure",
+      penaltyApplied,
+    });
+  }, [contract, company, salary, years, reason, eosg, dispute, total, tier.label, penaltyApplied]);
 
   return (
     <section id="calculator" className="mx-auto max-w-6xl px-6 py-20 md:py-28">

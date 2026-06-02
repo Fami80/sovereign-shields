@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Lock, FileDown, Sparkles, X } from "lucide-react";
+import { generateRoadmapPDF } from "@/lib/generate-roadmap-pdf";
+import { getExposureSnapshot } from "@/lib/exposure-store";
 
 const PROMPTS = [
   "Draft a without-prejudice settlement letter",
@@ -9,6 +11,22 @@ const PROMPTS = [
 
 export function DirectorVault() {
   const [open, setOpen] = useState(false);
+  const [unlocked, setUnlocked] = useState(false);
+
+  const handleDownload = () => {
+    if (!unlocked) {
+      setOpen(true);
+      return;
+    }
+    generateRoadmapPDF(getExposureSnapshot());
+  };
+
+  const handleUnlock = () => {
+    setUnlocked(true);
+    setOpen(false);
+    // Generate immediately after authorization
+    setTimeout(() => generateRoadmapPDF(getExposureSnapshot()), 100);
+  };
 
   return (
     <section id="vault" className="bg-bg-dark py-20 text-text-dark-primary md:py-28">
@@ -19,7 +37,7 @@ export function DirectorVault() {
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
           <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
-            Unlocked at AED 499
+            {unlocked ? "Unlocked" : "Unlocked at AED 499"}
           </span>
         </div>
 
@@ -51,7 +69,7 @@ export function DirectorVault() {
                 {PROMPTS.map((p) => (
                   <button
                     key={p}
-                    onClick={() => setOpen(true)}
+                    onClick={() => !unlocked && setOpen(true)}
                     className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-text-muted-dark transition-colors hover:border-action-accent/40 hover:text-text-dark-primary"
                   >
                     {p}
@@ -60,12 +78,12 @@ export function DirectorVault() {
               </div>
               <div className="mt-4 flex gap-2">
                 <input
-                  onFocus={() => setOpen(true)}
+                  onFocus={() => !unlocked && setOpen(true)}
                   placeholder="Ask the assistant…"
                   className="flex-1 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-text-dark-primary placeholder:text-text-muted-dark/70 focus:outline-none focus:ring-2 focus:ring-action-accent/40"
                 />
                 <button
-                  onClick={() => setOpen(true)}
+                  onClick={() => !unlocked && setOpen(true)}
                   className="rounded-full bg-action-accent px-4 py-2.5 text-sm font-bold text-bg-dark"
                 >
                   Send
@@ -84,12 +102,12 @@ export function DirectorVault() {
                   Automated 6-page playbook with exposure ranges, draft letters and escalation tree.
                 </p>
                 <div className="mt-4 rounded-xl border border-dashed border-white/10 bg-bg-dark/40 p-4 text-xs text-text-muted-dark">
-                  <div className="font-mono">SOVEREIGN_ROADMAP_v3.pdf</div>
-                  <div className="mt-1">412 KB · 6 pages · encrypted</div>
+                  <div className="font-mono">UAE_Compliance_Roadmap_Confidential.pdf</div>
+                  <div className="mt-1">6 pages · client-generated · encrypted in transit</div>
                 </div>
               </div>
               <button
-                onClick={() => setOpen(true)}
+                onClick={handleDownload}
                 className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-action-accent/70 px-4 py-2.5 text-sm font-semibold text-text-dark-primary transition-colors hover:bg-action-accent/10"
               >
                 <FileDown className="h-4 w-4" /> Download PDF
@@ -98,30 +116,32 @@ export function DirectorVault() {
           </div>
 
           {/* Glass gate */}
-          <div className="absolute inset-0 flex items-center justify-center bg-bg-dark/30 backdrop-blur-xl">
-            <div className="rounded-[24px] border border-white/10 bg-white/5 px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">
-                <Lock className="h-5 w-5 text-action-accent" />
-              </span>
-              <p className="mt-4 text-sm font-semibold">Unlock the Director Vault</p>
-              <p className="mt-1 text-xs text-text-muted-dark">Single triage fee · AED 499</p>
-              <button
-                onClick={() => setOpen(true)}
-                className="mt-5 inline-flex items-center justify-center rounded-full bg-action-accent px-5 py-2.5 text-sm font-bold text-bg-dark transition-all duration-300 hover:scale-[1.02]"
-              >
-                Unlock for AED 499
-              </button>
+          {!unlocked && (
+            <div className="absolute inset-0 flex items-center justify-center bg-bg-dark/30 backdrop-blur-xl">
+              <div className="rounded-[24px] border border-white/10 bg-white/5 px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">
+                  <Lock className="h-5 w-5 text-action-accent" />
+                </span>
+                <p className="mt-4 text-sm font-semibold">Unlock the Director Vault</p>
+                <p className="mt-1 text-xs text-text-muted-dark">Single triage fee · AED 499</p>
+                <button
+                  onClick={() => setOpen(true)}
+                  className="mt-5 inline-flex items-center justify-center rounded-full bg-action-accent px-5 py-2.5 text-sm font-bold text-bg-dark transition-all duration-300 hover:scale-[1.02]"
+                >
+                  Unlock for AED 499
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
-      {open && <CheckoutDialog onClose={() => setOpen(false)} />}
+      {open && <CheckoutDialog onClose={() => setOpen(false)} onSuccess={handleUnlock} />}
     </section>
   );
 }
 
-function CheckoutDialog({ onClose }: { onClose: () => void }) {
+function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess: () => void }) {
   return (
     <div
       role="dialog"
@@ -144,14 +164,20 @@ function CheckoutDialog({ onClose }: { onClose: () => void }) {
         <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 499</span>
         <h3 className="mt-4 text-2xl font-extrabold">Secure your triage</h3>
         <p className="mt-2 text-sm text-text-muted-light">
-          One transparent fee. Senior-counsel review of your matter, delivered within 24 hours.
+          One transparent fee. Senior-counsel review of your matter, delivered within 24 hours. Your roadmap PDF unlocks immediately on payment.
         </p>
-        <form className="mt-5 space-y-3">
-          <input className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="Full name" />
-          <input className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="Email" type="email" />
-          <input className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="UAE mobile (+971)" />
+        <form
+          className="mt-5 space-y-3"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSuccess();
+          }}
+        >
+          <input required className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="Full name" />
+          <input required className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="Email" type="email" />
+          <input required className="w-full rounded-xl border border-black/10 bg-bg-light px-4 py-3 text-sm outline-none focus:border-action-accent" placeholder="UAE mobile (+971)" />
           <button
-            type="button"
+            type="submit"
             className="mt-2 w-full rounded-full bg-bg-dark py-3.5 text-sm font-bold text-action-accent transition-all duration-300 hover:scale-[1.01]"
           >
             Proceed to Secure Checkout

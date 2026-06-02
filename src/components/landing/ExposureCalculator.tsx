@@ -317,6 +317,8 @@ function Slider({
   max,
   step = 1,
   onChange,
+  minLabel,
+  maxLabel,
 }: {
   label: string;
   suffix: string;
@@ -325,6 +327,8 @@ function Slider({
   max: number;
   step?: number;
   onChange: (v: number) => void;
+  minLabel?: string;
+  maxLabel?: string;
 }) {
   const pct = ((value - min) / (max - min)) * 100;
   return (
@@ -350,6 +354,13 @@ function Slider({
           background: `linear-gradient(to right, #00E599 0%, #00E599 ${pct}%, #E4ECE8 ${pct}%, #E4ECE8 100%)`,
         }}
       />
+      {(minLabel || maxLabel) && (
+        <div className="mt-1.5 flex justify-between text-[10px] font-medium uppercase tracking-wider text-text-muted-light tabular-nums">
+          <span>{minLabel}</span>
+          <span>{maxLabel}</span>
+        </div>
+      )}
     </div>
   );
 }
+

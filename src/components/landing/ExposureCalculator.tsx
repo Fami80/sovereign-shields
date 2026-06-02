@@ -166,6 +166,8 @@ export function ExposureCalculator() {
               max={150000}
               step={500}
               onChange={setSalary}
+              minLabel={fmt(5000)}
+              maxLabel={fmt(150000)}
             />
 
             <Slider
@@ -176,7 +178,10 @@ export function ExposureCalculator() {
               max={20}
               step={0.5}
               onChange={setYears}
+              minLabel="0 yrs"
+              maxLabel="20+ yrs"
             />
+
 
             <div>
               <label className="mb-2 block text-sm font-medium text-text-light-primary">

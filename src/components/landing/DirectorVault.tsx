@@ -117,20 +117,23 @@ export function DirectorVault() {
 
           {/* Glass gate */}
           {!unlocked && (
-            <div className="absolute inset-0 flex items-center justify-center bg-bg-dark/30 backdrop-blur-xl">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
+            <div className="absolute inset-0 flex items-center justify-center border-white/10 bg-bg-dark/85 backdrop-blur-xl">
+              <div className="max-w-sm rounded-[24px] border border-white/10 bg-[#021F1A] px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.5)]">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">
                   <Lock className="h-5 w-5 text-action-accent" />
                 </span>
-                <p className="mt-4 text-sm font-semibold">Unlock the Director Vault</p>
-                <p className="mt-1 text-xs text-text-muted-dark">Single triage fee · AED 499</p>
+                <p className="mt-4 text-base font-semibold text-text-dark-primary">Director Vault is locked</p>
+                <p className="mt-2 text-xs leading-relaxed text-text-muted-dark">
+                  Unlock the AI Compliance Assistant and your automated 6-page legal roadmap PDF — secured by a single transparent triage fee.
+                </p>
                 <button
                   onClick={() => setOpen(true)}
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-action-accent px-5 py-2.5 text-sm font-bold text-bg-dark transition-all duration-300 hover:scale-[1.02]"
                 >
-                  Unlock for AED 499
+                  Unlock Premium Access — AED 499
                 </button>
               </div>
+
             </div>
           )}
         </div>

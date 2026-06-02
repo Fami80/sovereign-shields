@@ -89,6 +89,7 @@ export function ExposureCalculator() {
   const [salary, setSalary] = useState(25000);
   const [years, setYears] = useState(4);
   const [reason, setReason] = useState<DisputeReason>("arbitrary");
+  const [processing, setProcessing] = useState(false);
 
   const { eosg, dispute, total, tier, penaltyApplied } = useMemo(() => {
     const eosg = computeEOSG(salary, years, company);
@@ -97,6 +98,14 @@ export function ExposureCalculator() {
     const penaltyApplied = reason === "arbitrary" && contract === "limited";
     return { eosg, dispute, total, tier: riskTier(total), penaltyApplied };
   }, [salary, years, company, reason, contract]);
+
+  // 400ms processing skeleton whenever an input changes
+  useEffect(() => {
+    setProcessing(true);
+    const t = setTimeout(() => setProcessing(false), 400);
+    return () => clearTimeout(t);
+  }, [salary, years, company, reason, contract]);
+
 
   useEffect(() => {
     setExposureSnapshot({
@@ -157,6 +166,8 @@ export function ExposureCalculator() {
               max={150000}
               step={500}
               onChange={setSalary}
+              minLabel={fmt(5000)}
+              maxLabel={fmt(150000)}
             />
 
             <Slider
@@ -167,7 +178,10 @@ export function ExposureCalculator() {
               max={20}
               step={0.5}
               onChange={setYears}
+              minLabel="0 yrs"
+              maxLabel="20+ yrs"
             />
+
 
             <div>
               <label className="mb-2 block text-sm font-medium text-text-light-primary">
@@ -212,12 +226,19 @@ export function ExposureCalculator() {
             </span>
           </div>
 
-          <div className="relative mt-3 text-4xl font-extrabold text-action-accent md:text-5xl tabular-nums">
-            {fmt(total)}
+          <div className="relative mt-3 h-12 md:h-14">
+            {processing ? (
+              <div className="h-10 w-3/4 animate-pulse rounded-lg bg-white/10 md:h-12" aria-label="Recalculating exposure" />
+            ) : (
+              <div className="text-4xl font-extrabold text-action-accent md:text-5xl tabular-nums">
+                {fmt(total)}
+              </div>
+            )}
           </div>
           <p className="relative mt-1 text-xs text-text-muted-dark">
             Aggregate gratuity + dispute compensation ceiling.
           </p>
+
 
           <dl className="relative mt-7 space-y-4 border-t border-white/10 pt-5 text-sm">
             <Row
@@ -303,6 +324,8 @@ function Slider({
   max,
   step = 1,
   onChange,
+  minLabel,
+  maxLabel,
 }: {
   label: string;
   suffix: string;
@@ -311,6 +334,8 @@ function Slider({
   max: number;
   step?: number;
   onChange: (v: number) => void;
+  minLabel?: string;
+  maxLabel?: string;
 }) {
   const pct = ((value - min) / (max - min)) * 100;
   return (
@@ -336,6 +361,13 @@ function Slider({
           background: `linear-gradient(to right, #00E599 0%, #00E599 ${pct}%, #E4ECE8 ${pct}%, #E4ECE8 100%)`,
         }}
       />
+      {(minLabel || maxLabel) && (
+        <div className="mt-1.5 flex justify-between text-[10px] font-medium uppercase tracking-wider text-text-muted-light tabular-nums">
+          <span>{minLabel}</span>
+          <span>{maxLabel}</span>
+        </div>
+      )}
     </div>
   );
 }
+

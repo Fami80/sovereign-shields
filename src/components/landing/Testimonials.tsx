@@ -19,19 +19,26 @@ export function Testimonials() {
         {ITEMS.map((t) => (
           <figure
             key={t.name}
-            className="flex flex-col rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-transform duration-300 hover:scale-[1.02]"
+            className="relative flex flex-col overflow-hidden rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-transform duration-300 hover:scale-[1.02]"
           >
-            <div className="flex gap-0.5" aria-label="5 star verified review">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-4 right-4 select-none font-display text-[110px] leading-none text-action-accent/10"
+            >
+              &ldquo;
+            </span>
+            <div className="relative flex gap-0.5" aria-label="5 star verified review">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-[#E5B83C] text-[#E5B83C]" />
               ))}
             </div>
-            <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-text-light-primary">"{t.quote}"</blockquote>
-            <figcaption className="mt-5 border-t border-black/5 pt-4">
+            <blockquote className="relative mt-4 flex-1 text-sm leading-relaxed text-text-light-primary">"{t.quote}"</blockquote>
+            <figcaption className="relative mt-5 border-t border-black/5 pt-4">
               <div className="text-sm font-semibold">{t.name}</div>
               <div className="text-xs text-text-muted-light">{t.region}</div>
             </figcaption>
           </figure>
+
         ))}
       </div>
     </section>

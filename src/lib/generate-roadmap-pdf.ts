@@ -173,10 +173,14 @@ export function generateRoadmapPDF(s: ExposureState) {
       ["Total aggregate exposure", fmt(s.total)],
     ],
     theme: "grid",
-    headStyles: { fillColor: PRIMARY, textColor: 255, fontStyle: "bold" },
-    bodyStyles: { textColor: INK, fontSize: 10 },
+    styles: { font: "helvetica", overflow: "linebreak", cellWidth: "wrap", fontSize: 10, cellPadding: 3 },
+    headStyles: { fillColor: PRIMARY, textColor: 255, fontStyle: "bold", font: "helvetica" },
+    bodyStyles: { textColor: INK, fontSize: 10, font: "helvetica" },
     alternateRowStyles: { fillColor: PAPER },
-    columnStyles: { 1: { halign: "right", fontStyle: "bold" } },
+    columnStyles: {
+      0: { cellWidth: 90 },
+      1: { cellWidth: 80, halign: "right", fontStyle: "bold" },
+    },
   });
 
   footer(doc, 2, TOTAL_PAGES);
@@ -270,10 +274,16 @@ export function generateRoadmapPDF(s: ExposureState) {
     head: [["Component", "Formula", "Quantum", "Value"]],
     body: eosgRows as never,
     theme: "grid",
-    headStyles: { fillColor: PRIMARY, textColor: 255 },
-    bodyStyles: { textColor: INK, fontSize: 10 },
+    styles: { font: "helvetica", overflow: "linebreak", cellWidth: "wrap", fontSize: 10, cellPadding: 3 },
+    headStyles: { fillColor: PRIMARY, textColor: 255, font: "helvetica" },
+    bodyStyles: { textColor: INK, fontSize: 10, font: "helvetica" },
     alternateRowStyles: { fillColor: PAPER },
-    columnStyles: { 3: { halign: "right" } },
+    columnStyles: {
+      0: { cellWidth: 55 },
+      1: { cellWidth: 50 },
+      2: { cellWidth: 25, halign: "right" },
+      3: { cellWidth: 40, halign: "right" },
+    },
   });
 
   doc.setFont("helvetica", "italic");
@@ -362,10 +372,15 @@ export function generateRoadmapPDF(s: ExposureState) {
     head: [["Item", "Formula", "Value"]],
     body: disputeBody as never,
     theme: "grid",
-    headStyles: { fillColor: PRIMARY, textColor: 255 },
-    bodyStyles: { textColor: INK, fontSize: 10 },
+    styles: { font: "helvetica", overflow: "linebreak", cellWidth: "wrap", fontSize: 10, cellPadding: 3 },
+    headStyles: { fillColor: PRIMARY, textColor: 255, font: "helvetica" },
+    bodyStyles: { textColor: INK, fontSize: 10, font: "helvetica" },
     alternateRowStyles: { fillColor: PAPER },
-    columnStyles: { 2: { halign: "right" } },
+    columnStyles: {
+      0: { cellWidth: 70 },
+      1: { cellWidth: 60 },
+      2: { cellWidth: 40, halign: "right" },
+    },
   });
 
   footer(doc, 4, TOTAL_PAGES);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Lock, FileDown, Sparkles, X } from "lucide-react";
+import { Lock, FileDown, Sparkles, X, Loader2 } from "lucide-react";
 import { generateRoadmapPDF } from "@/lib/generate-roadmap-pdf";
 import { getExposureSnapshot } from "@/lib/exposure-store";
 
@@ -11,21 +11,34 @@ const PROMPTS = [
 
 export function DirectorVault() {
   const [open, setOpen] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isAssembling, setIsAssembling] = useState(false);
+
+  const runGeneration = async () => {
+    setIsAssembling(true);
+    try {
+      // Yield to paint the processing state before the heavy jsPDF work.
+      await new Promise((r) => setTimeout(r, 50));
+      generateRoadmapPDF(getExposureSnapshot());
+    } finally {
+      // Small settle delay so the user sees the spinner resolve cleanly.
+      setTimeout(() => setIsAssembling(false), 400);
+    }
+  };
 
   const handleDownload = () => {
-    if (!unlocked) {
+    if (!isUnlocked) {
       setOpen(true);
       return;
     }
-    generateRoadmapPDF(getExposureSnapshot());
+    if (isAssembling) return;
+    void runGeneration();
   };
 
   const handleUnlock = () => {
-    setUnlocked(true);
+    setIsUnlocked(true);
     setOpen(false);
-    // Generate immediately after authorization
-    setTimeout(() => generateRoadmapPDF(getExposureSnapshot()), 100);
+    void runGeneration();
   };
 
   return (

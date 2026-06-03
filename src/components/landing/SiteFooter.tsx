@@ -1,8 +1,44 @@
-const COLS = [
-  { title: "For Employees", links: ["Settlement Review", "Gratuity Calculator", "Arbitrary Dismissal", "MOHRE Guidance"] },
-  { title: "For Employers", links: ["Compliance Audit", "Termination Playbook", "DIFC / ADGM Counsel", "Boardroom Opinions"] },
-  { title: "Company", links: ["About Sovereign", "Our Methodology", "Contact Desk", "Press & Media"] },
-  { title: "Legal", links: ["Privacy Policy", "Terms of Engagement", "Confidentiality Charter", "Regulatory Notices"] },
+import { emitUi, smoothScrollTo } from "@/lib/ui-store";
+
+type Link = { label: string; onClick?: () => void; href?: string };
+
+const COLS: { title: string; links: Link[] }[] = [
+  {
+    title: "For Employees",
+    links: [
+      { label: "Settlement Review", onClick: () => smoothScrollTo("#features") },
+      { label: "Gratuity Calculator", onClick: () => smoothScrollTo("#calculator") },
+      { label: "Arbitrary Dismissal", onClick: () => smoothScrollTo("#calculator") },
+      { label: "MOHRE Guidance", onClick: () => smoothScrollTo("#knowledge") },
+    ],
+  },
+  {
+    title: "For Employers",
+    links: [
+      { label: "Compliance Audit", onClick: () => smoothScrollTo("#features") },
+      { label: "Termination Playbook", onClick: () => smoothScrollTo("#vault") },
+      { label: "DIFC / ADGM Counsel", onClick: () => smoothScrollTo("#knowledge") },
+      { label: "Boardroom Opinions", onClick: () => smoothScrollTo("#vault") },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Sovereign", onClick: () => emitUi("open-about") },
+      { label: "Our Methodology", onClick: () => emitUi("open-about") },
+      { label: "Contact Desk", onClick: () => emitUi("open-contact") },
+      { label: "Knowledge Base", onClick: () => smoothScrollTo("#knowledge") },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Engagement", href: "#" },
+      { label: "Confidentiality Charter", href: "#" },
+      { label: "Regulatory Notices", href: "#" },
+    ],
+  },
 ];
 
 export function SiteFooter() {
@@ -25,8 +61,22 @@ export function SiteFooter() {
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-text-dark-primary">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-text-muted-dark transition-colors hover:text-action-accent">{l}</a>
+                  <li key={l.label}>
+                    {l.onClick ? (
+                      <button
+                        onClick={l.onClick}
+                        className="text-left text-sm text-text-muted-dark transition-colors hover:text-action-accent"
+                      >
+                        {l.label}
+                      </button>
+                    ) : (
+                      <a
+                        href={l.href ?? "#"}
+                        className="text-sm text-text-muted-dark transition-colors hover:text-action-accent"
+                      >
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

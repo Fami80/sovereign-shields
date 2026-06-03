@@ -50,7 +50,7 @@ export function DirectorVault() {
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
           <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
-            {unlocked ? "Unlocked" : "Unlocked at AED 499"}
+            {isUnlocked ? "Unlocked" : "Unlocked at AED 499"}
           </span>
         </div>
 
@@ -82,7 +82,7 @@ export function DirectorVault() {
                 {PROMPTS.map((p) => (
                   <button
                     key={p}
-                    onClick={() => !unlocked && setOpen(true)}
+                    onClick={() => !isUnlocked && setOpen(true)}
                     className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-text-muted-dark transition-colors hover:border-action-accent/40 hover:text-text-dark-primary"
                   >
                     {p}
@@ -91,12 +91,12 @@ export function DirectorVault() {
               </div>
               <div className="mt-4 flex gap-2">
                 <input
-                  onFocus={() => !unlocked && setOpen(true)}
+                  onFocus={() => !isUnlocked && setOpen(true)}
                   placeholder="Ask the assistant…"
                   className="flex-1 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-text-dark-primary placeholder:text-text-muted-dark/70 focus:outline-none focus:ring-2 focus:ring-action-accent/40"
                 />
                 <button
-                  onClick={() => !unlocked && setOpen(true)}
+                  onClick={() => !isUnlocked && setOpen(true)}
                   className="rounded-full bg-action-accent px-4 py-2.5 text-sm font-bold text-bg-dark"
                 >
                   Send
@@ -129,7 +129,7 @@ export function DirectorVault() {
           </div>
 
           {/* Glass gate */}
-          {!unlocked && (
+          {!isUnlocked && (
             <div className="absolute inset-0 flex items-center justify-center border-white/10 bg-bg-dark/85 backdrop-blur-xl">
               <div className="max-w-sm rounded-[24px] border border-white/10 bg-[#021F1A] px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.5)]">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">

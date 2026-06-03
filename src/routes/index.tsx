@@ -8,6 +8,7 @@ import { DirectorVault } from "@/components/landing/DirectorVault";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { StickyCTA } from "@/components/landing/StickyCTA";
+import { Navbar } from "@/components/landing/Navbar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,6 +33,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-bg-light text-text-light-primary">
+      <Navbar />
       <Hero />
       <JurisdictionRibbon />
       <AudienceBento />

@@ -49,7 +49,7 @@ function CheckRing({ dark }: { dark: boolean }) {
 
 export function AudienceBento() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="features" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="mb-10 max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">Two audiences. One desk.</p>
         <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Built for both sides of the contract.</h2>

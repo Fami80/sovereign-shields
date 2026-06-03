@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Lock, FileDown, Sparkles, X } from "lucide-react";
+import { Lock, FileDown, Sparkles, X, Loader2 } from "lucide-react";
 import { generateRoadmapPDF } from "@/lib/generate-roadmap-pdf";
 import { getExposureSnapshot } from "@/lib/exposure-store";
 
@@ -11,21 +11,34 @@ const PROMPTS = [
 
 export function DirectorVault() {
   const [open, setOpen] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isAssembling, setIsAssembling] = useState(false);
+
+  const runGeneration = async () => {
+    setIsAssembling(true);
+    try {
+      // Yield to paint the processing state before the heavy jsPDF work.
+      await new Promise((r) => setTimeout(r, 50));
+      generateRoadmapPDF(getExposureSnapshot());
+    } finally {
+      // Small settle delay so the user sees the spinner resolve cleanly.
+      setTimeout(() => setIsAssembling(false), 400);
+    }
+  };
 
   const handleDownload = () => {
-    if (!unlocked) {
+    if (!isUnlocked) {
       setOpen(true);
       return;
     }
-    generateRoadmapPDF(getExposureSnapshot());
+    if (isAssembling) return;
+    void runGeneration();
   };
 
   const handleUnlock = () => {
-    setUnlocked(true);
+    setIsUnlocked(true);
     setOpen(false);
-    // Generate immediately after authorization
-    setTimeout(() => generateRoadmapPDF(getExposureSnapshot()), 100);
+    void runGeneration();
   };
 
   return (
@@ -37,7 +50,7 @@ export function DirectorVault() {
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
           <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
-            {unlocked ? "Unlocked" : "Unlocked at AED 499"}
+            {isUnlocked ? "Unlocked" : "Unlocked at AED 499"}
           </span>
         </div>
 
@@ -69,7 +82,7 @@ export function DirectorVault() {
                 {PROMPTS.map((p) => (
                   <button
                     key={p}
-                    onClick={() => !unlocked && setOpen(true)}
+                    onClick={() => !isUnlocked && setOpen(true)}
                     className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-text-muted-dark transition-colors hover:border-action-accent/40 hover:text-text-dark-primary"
                   >
                     {p}
@@ -78,12 +91,12 @@ export function DirectorVault() {
               </div>
               <div className="mt-4 flex gap-2">
                 <input
-                  onFocus={() => !unlocked && setOpen(true)}
+                  onFocus={() => !isUnlocked && setOpen(true)}
                   placeholder="Ask the assistant…"
                   className="flex-1 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-text-dark-primary placeholder:text-text-muted-dark/70 focus:outline-none focus:ring-2 focus:ring-action-accent/40"
                 />
                 <button
-                  onClick={() => !unlocked && setOpen(true)}
+                  onClick={() => !isUnlocked && setOpen(true)}
                   className="rounded-full bg-action-accent px-4 py-2.5 text-sm font-bold text-bg-dark"
                 >
                   Send
@@ -108,15 +121,29 @@ export function DirectorVault() {
               </div>
               <button
                 onClick={handleDownload}
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-action-accent/70 px-4 py-2.5 text-sm font-semibold text-text-dark-primary transition-colors hover:bg-action-accent/10"
+                disabled={isAssembling}
+                aria-busy={isAssembling}
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-action-accent/70 px-4 py-2.5 text-sm font-semibold text-text-dark-primary transition-colors hover:bg-action-accent/10 disabled:cursor-not-allowed disabled:opacity-80 disabled:hover:bg-transparent"
               >
-                <FileDown className="h-4 w-4" /> Download PDF
+                {isAssembling ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin text-action-accent" />
+                    <span className="text-left text-xs leading-tight">
+                      Assembling Your Custom Compliance Roadmap…
+                      <span className="block text-[10px] text-text-muted-dark">Please do not close this window.</span>
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <FileDown className="h-4 w-4" /> Download PDF
+                  </>
+                )}
               </button>
             </div>
           </div>
 
           {/* Glass gate */}
-          {!unlocked && (
+          {!isUnlocked && (
             <div className="absolute inset-0 flex items-center justify-center border-white/10 bg-bg-dark/85 backdrop-blur-xl">
               <div className="max-w-sm rounded-[24px] border border-white/10 bg-[#021F1A] px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.5)]">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">

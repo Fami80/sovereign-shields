@@ -107,6 +107,20 @@ export function ExposureCalculator() {
     return () => clearTimeout(t);
   }, [salary, years, company, reason, contract]);
 
+  // Listen for global "reset-home" event to restore baseline defaults.
+  useEffect(
+    () =>
+      onUi("reset-home", () => {
+        setContract("unlimited");
+        setCompany("mohre");
+        setSalary(25000);
+        setYears(4);
+        setReason("arbitrary");
+      }),
+    [],
+  );
+
+
 
   useEffect(() => {
     setExposureSnapshot({

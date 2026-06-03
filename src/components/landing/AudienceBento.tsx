@@ -1,34 +1,42 @@
-import { Check } from "lucide-react";
+import { Check, Zap } from "lucide-react";
 
 type Tile = {
   badge: string;
+  audience: string;
   title: string;
+  price: string;
   body: string;
   items: string[];
   variant: "dark" | "light";
+  pulseBadge?: string;
 };
 
 const TILES: Tile[] = [
   {
-    badge: "MOHRE Private Sector",
-    title: "For the Employee",
+    badge: "MOHRE · Private Sector",
+    audience: "For Employees",
+    title: "Executive Settlement Review",
+    price: "AED 499",
     body: "Recover what you're owed without burning bridges or budgets.",
+    pulseBadge: "48h Fast-Track Guarantee",
     items: [
-      "End-of-service gratuity recalculation",
-      "Arbitrary dismissal exposure mapping",
-      "Notice & repatriation entitlement audit",
-      "Confidential settlement scripting",
+      "End-of-service gratuity calculations",
+      "Notice period & repatriation legality",
+      "Leave encashment recovery",
+      "Unlawful deductions validation",
     ],
     variant: "dark",
   },
   {
-    badge: "Freezone Frameworks",
-    title: "For the Employer",
+    badge: "DIFC · ADGM · Freezones",
+    audience: "For Founders & HR",
+    title: "Corporate Compliance Audit",
+    price: "Custom Rate",
     body: "Stay defensible across DIFC, ADGM and mainland workforces.",
     items: [
-      "Contract clause stress-test",
-      "Termination playbook & risk score",
-      "WPS & visa cancellation choreography",
+      "Exit process audits & risk scoring",
+      "Settlement template stress-test",
+      "Policy alignment with latest UAE Labour Law",
       "Boardroom-ready legal opinion",
     ],
     variant: "light",
@@ -51,8 +59,11 @@ export function AudienceBento() {
   return (
     <section id="features" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="mb-10 max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">Two audiences. One desk.</p>
-        <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Built for both sides of the contract.</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">Services</p>
+        <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Two audiences. One desk.</h2>
+        <p className="mt-3 text-sm text-text-muted-light">
+          Pick the engagement that matches your seat at the table — both run on the same senior-counsel review engine.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -75,8 +86,32 @@ export function AudienceBento() {
                 {t.badge}
               </span>
 
+              <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${dark ? "text-text-muted-dark" : "text-text-muted-light"}`}>
+                {t.audience}
+              </p>
               <h3 className="mt-2 text-2xl font-extrabold md:text-3xl">{t.title}</h3>
-              <p className={`mt-2 max-w-md text-sm ${dark ? "text-text-muted-dark" : "text-text-muted-light"}`}>
+
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <span
+                  className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold ${
+                    dark ? "bg-action-accent text-bg-dark" : "bg-bg-dark text-action-accent"
+                  }`}
+                >
+                  {t.price}
+                </span>
+                {t.pulseBadge && (
+                  <span className="relative inline-flex items-center gap-1.5 rounded-full bg-action-accent/15 px-3 py-1 text-[11px] font-semibold text-action-accent ring-1 ring-action-accent/40">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-action-accent opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-action-accent" />
+                    </span>
+                    <Zap className="h-3 w-3" />
+                    {t.pulseBadge}
+                  </span>
+                )}
+              </div>
+
+              <p className={`mt-3 max-w-md text-sm ${dark ? "text-text-muted-dark" : "text-text-muted-light"}`}>
                 {t.body}
               </p>
 

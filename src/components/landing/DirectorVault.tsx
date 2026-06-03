@@ -121,9 +121,23 @@ export function DirectorVault() {
               </div>
               <button
                 onClick={handleDownload}
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-action-accent/70 px-4 py-2.5 text-sm font-semibold text-text-dark-primary transition-colors hover:bg-action-accent/10"
+                disabled={isAssembling}
+                aria-busy={isAssembling}
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-action-accent/70 px-4 py-2.5 text-sm font-semibold text-text-dark-primary transition-colors hover:bg-action-accent/10 disabled:cursor-not-allowed disabled:opacity-80 disabled:hover:bg-transparent"
               >
-                <FileDown className="h-4 w-4" /> Download PDF
+                {isAssembling ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin text-action-accent" />
+                    <span className="text-left text-xs leading-tight">
+                      Assembling Your Custom Compliance Roadmap…
+                      <span className="block text-[10px] text-text-muted-dark">Please do not close this window.</span>
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <FileDown className="h-4 w-4" /> Download PDF
+                  </>
+                )}
               </button>
             </div>
           </div>

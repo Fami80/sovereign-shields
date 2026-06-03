@@ -42,10 +42,13 @@ function Index() {
       <AudienceBento />
       <ExposureCalculator />
       <EscalationTimeline />
+      <KnowledgeBase />
       <DirectorVault />
       <Testimonials />
       <SiteFooter />
       <StickyCTA />
+      <AboutDrawer />
+      <ContactDrawer />
     </main>
   );
 }

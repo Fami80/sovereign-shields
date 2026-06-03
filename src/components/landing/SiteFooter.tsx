@@ -1,7 +1,7 @@
 const COLS = [
   { title: "For Employees", links: ["Settlement Review", "Gratuity Calculator", "Arbitrary Dismissal", "MOHRE Guidance"] },
   { title: "For Employers", links: ["Compliance Audit", "Termination Playbook", "DIFC / ADGM Counsel", "Boardroom Opinions"] },
-  { title: "Sovereign Desk", links: ["The Director Vault", "Methodology", "Pricing", "Contact"] },
+  { title: "Company", links: ["About Sovereign", "Our Methodology", "Contact Desk", "Press & Media"] },
   { title: "Legal", links: ["Privacy Policy", "Terms of Engagement", "Confidentiality Charter", "Regulatory Notices"] },
 ];
 

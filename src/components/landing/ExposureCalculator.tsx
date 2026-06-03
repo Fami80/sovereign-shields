@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { setExposureSnapshot } from "@/lib/exposure-store";
+import { onUi } from "@/lib/ui-store";
 
 type ContractType = "limited" | "unlimited";
 type CompanyType = "mohre" | "difc";
@@ -105,6 +106,20 @@ export function ExposureCalculator() {
     const t = setTimeout(() => setProcessing(false), 400);
     return () => clearTimeout(t);
   }, [salary, years, company, reason, contract]);
+
+  // Listen for global "reset-home" event to restore baseline defaults.
+  useEffect(
+    () =>
+      onUi("reset-home", () => {
+        setContract("unlimited");
+        setCompany("mohre");
+        setSalary(25000);
+        setYears(4);
+        setReason("arbitrary");
+      }),
+    [],
+  );
+
 
 
   useEffect(() => {

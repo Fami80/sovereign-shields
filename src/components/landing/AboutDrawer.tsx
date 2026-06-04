@@ -53,6 +53,14 @@ export function AboutDrawer() {
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-bg-dark/40 p-5 text-xs text-text-muted-dark">
             Available remotely across all UAE Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah).
+            <a
+              href="https://www.linkedin.com/company/uaeworkrights/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-1 text-action-accent hover:underline"
+            >
+              Follow @uaeworkrights on LinkedIn →
+            </a>
           </div>
         </div>
       </SheetContent>

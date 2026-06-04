@@ -17,9 +17,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "UAE Workrights | Sovereign" },
-      { name: "description", content: "Premium UAE employment law triage. MOHRE, DIFC, ADGM, VARA & SCA compliant. Secure your settlement review for AED 499." },
+      { name: "description", content: "Your UAE settlement letter is probably wrong. Senior-counsel triage on gratuity, end-of-service & arbitrary dismissal across MOHRE, DIFC, ADGM, VARA & SCA — AED 499." },
       { property: "og:title", content: "UAE Workrights | Sovereign" },
-      { property: "og:description", content: "Premium UAE employment law triage. Single AED 499 fee." },
+      { property: "og:description", content: "UAE Labour Law protects both sides. One flat AED 499 triage by senior employment counsel." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

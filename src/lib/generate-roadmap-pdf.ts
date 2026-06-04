@@ -37,7 +37,7 @@ function footer(doc: jsPDF, page: number, total: number) {
   doc.setFontSize(8);
   doc.setTextColor(...MUTED);
   doc.text(
-    `Sovereign Compliance Platform  |  Confidential Report  |  Page ${page} of ${total}`,
+    `UAE Workrights  |  Confidential Report  |  Page ${page} of ${total}`,
     PAGE_W / 2,
     PAGE_H - 10,
     { align: "center" },
@@ -73,7 +73,7 @@ export function generateRoadmapPDF(s: ExposureState) {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
   doc.setTextColor(0, 229, 153);
-  doc.text("SOVEREIGN  ×  UAE WORKRIGHTS", MARGIN, 28, { charSpace: 1.2 });
+  doc.text("UAE WORKRIGHTS  ×  SOVEREIGN", MARGIN, 28, { charSpace: 1.2 });
 
   doc.setFontSize(28);
   doc.setTextColor(255, 255, 255);

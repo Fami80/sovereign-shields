@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "UAE Workrights | Sovereign" },
+      { name: "description", content: "Premium UAE employment law triage. MOHRE, DIFC, ADGM, VARA & SCA compliant." },
+      { name: "author", content: "Sovereign" },
+      { property: "og:title", content: "UAE Workrights | Sovereign" },
+      { property: "og:description", content: "Premium UAE employment law triage." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@SovereignUAE" },
     ],
     links: [
       {

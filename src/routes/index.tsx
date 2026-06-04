@@ -16,9 +16,9 @@ import { ContactDrawer } from "@/components/landing/ContactDrawer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sovereign — UAE Workrights Triage | AED 499" },
+      { title: "UAE Workrights | Sovereign" },
       { name: "description", content: "Premium UAE employment law triage. MOHRE, DIFC, ADGM, VARA & SCA compliant. Secure your settlement review for AED 499." },
-      { property: "og:title", content: "Sovereign — UAE Workrights Triage" },
+      { property: "og:title", content: "UAE Workrights | Sovereign" },
       { property: "og:description", content: "Premium UAE employment law triage. Single AED 499 fee." },
     ],
     links: [

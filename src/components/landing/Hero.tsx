@@ -18,12 +18,12 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-            UAE Employment Compliance &{" "}
-            <span className="text-action-accent">Protection</span> Command Center.
+            Your settlement letter is{" "}
+            <span className="text-action-accent">probably wrong.</span>
           </h1>
 
           <p className="mt-4 max-w-2xl text-base text-text-muted-dark md:text-lg">
-            One flat triage. Senior-grade review of your contract, end-of-service entitlements, and escalation pathway across every UAE jurisdiction.
+            UAE Labour Law exists to protect both sides. Employees deserve to know what they're owed — employers deserve to know what they're required to provide. One flat triage, senior-grade review across every UAE jurisdiction.
           </p>
 
           <div className="mt-7 flex items-center gap-3">

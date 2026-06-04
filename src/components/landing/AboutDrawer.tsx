@@ -27,10 +27,10 @@ export function AboutDrawer() {
               About Sovereign
             </span>
             <SheetTitle className="mt-3 text-3xl font-extrabold text-text-dark-primary">
-              A premium shield for director-level liability.
+              UAE Labour Law protects both sides — most expats never check.
             </SheetTitle>
             <SheetDescription className="text-sm text-text-muted-dark">
-              Sovereign is a UAE-focused workrights triage desk operated by senior employment counsel. Our mandate is to neutralise exposure for both employees and the executives who hire them — before it ever reaches a tribunal.
+              UAE Workrights (powered by Sovereign) is a confidential triage desk operated by senior employment counsel. Most settlement letters are wrong; most gratuity numbers don't match the basic-salary rule. We sit between you and the regulator — quietly correcting exposure before it surfaces in a tribunal or boardroom.
             </SheetDescription>
           </SheetHeader>
 

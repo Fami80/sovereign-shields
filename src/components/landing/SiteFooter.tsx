@@ -48,12 +48,20 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
           <div className="md:col-span-1">
             <div className="text-xl font-extrabold tracking-tight">
-              SOVEREIGN<span className="text-action-accent">.</span>
+              UAE WORKRIGHTS<span className="text-action-accent">.</span>
             </div>
-            <p className="mt-3 text-sm text-text-muted-dark">UAE Workrights triage desk. One fee. One outcome.</p>
+            <p className="mt-3 text-sm text-text-muted-dark">Powered by Sovereign. UAE Labour Law, decoded for both sides.</p>
             <div className="mt-5 inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">
               AED 499
             </div>
+            <a
+              href="https://www.linkedin.com/company/uaeworkrights/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 block text-xs text-text-muted-dark transition-colors hover:text-action-accent"
+            >
+              LinkedIn → @uaeworkrights
+            </a>
           </div>
 
           {COLS.map((c) => (

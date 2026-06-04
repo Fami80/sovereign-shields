@@ -37,7 +37,7 @@ function footer(doc: jsPDF, page: number, total: number) {
   doc.setFontSize(8);
   doc.setTextColor(...MUTED);
   doc.text(
-    `Sovereign Compliance Platform  |  Confidential Report  |  Page ${page} of ${total}`,
+    `UAE Workrights  |  Confidential Report  |  Page ${page} of ${total}`,
     PAGE_W / 2,
     PAGE_H - 10,
     { align: "center" },

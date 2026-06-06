@@ -97,7 +97,7 @@ export function SiteFooter() {
             Available remotely across all UAE Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah). Regulated engagements coordinated through licensed UAE counsel under MOHRE, DIFC, ADGM, VARA and SCA frameworks.
           </p>
           <div className="mt-4 flex flex-col items-start justify-between gap-3 text-xs text-text-muted-dark md:flex-row md:items-center">
-            <div>© {new Date().getFullYear()} UAE Workrights · Powered by Sovereign. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} UAEworkrights · Compliance advisory by Kaoutar Makrache. All rights reserved.</div>
             <div className="flex gap-5">
               <span>MOHRE</span><span>DIFC</span><span>ADGM</span><span>VARA</span><span>SCA</span>
             </div>

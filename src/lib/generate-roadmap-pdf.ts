@@ -442,7 +442,7 @@ export function generateRoadmapPDF(s: ExposureState) {
     "Avoid signing waivers, release letters or settlement agreements without senior counsel review.",
     "Calendar statutory limitation periods — most labour claims lapse one year from termination.",
     "Mirror this exposure report to your finance lead so settlement provisions can be reserved.",
-    "Engage Sovereign for a fast-tracked 24-hour triage to confirm figures and pressure points.",
+    "Engage UAEworkrights for a fast-tracked 24-hour triage to confirm figures and pressure points.",
   ];
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);

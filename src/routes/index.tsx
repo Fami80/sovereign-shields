@@ -16,9 +16,9 @@ import { ContactDrawer } from "@/components/landing/ContactDrawer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UAE Workrights | Sovereign" },
+      { title: "UAEworkrights" },
       { name: "description", content: "Your UAE settlement letter is probably wrong. Senior-counsel triage on gratuity, end-of-service & arbitrary dismissal across MOHRE, DIFC, ADGM, VARA & SCA — AED 499." },
-      { property: "og:title", content: "UAE Workrights | Sovereign" },
+      { property: "og:title", content: "UAEworkrights" },
       { property: "og:description", content: "UAE Labour Law protects both sides. One flat AED 499 triage by senior employment counsel." },
     ],
     links: [

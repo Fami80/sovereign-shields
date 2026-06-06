@@ -73,7 +73,7 @@ export function generateRoadmapPDF(s: ExposureState) {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
   doc.setTextColor(0, 229, 153);
-  doc.text("UAE WORKRIGHTS  ×  SOVEREIGN", MARGIN, 28, { charSpace: 1.2 });
+  doc.text("UAEWORKRIGHTS  ×  KAOUTAR MAKRACHE", MARGIN, 28, { charSpace: 1.2 });
 
   doc.setFontSize(28);
   doc.setTextColor(255, 255, 255);

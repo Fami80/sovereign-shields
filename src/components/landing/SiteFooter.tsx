@@ -24,8 +24,8 @@ const COLS: { title: string; links: Link[] }[] = [
   {
     title: "Company",
     links: [
-      { label: "About Sovereign", onClick: () => emitUi("open-about") },
-      { label: "Our Methodology", onClick: () => emitUi("open-about") },
+      { label: "About Kaoutar", onClick: () => emitUi("open-about") },
+      { label: "How It Works", onClick: () => emitUi("open-about") },
       { label: "Contact Desk", onClick: () => emitUi("open-contact") },
       { label: "Knowledge Base", onClick: () => smoothScrollTo("#knowledge") },
     ],

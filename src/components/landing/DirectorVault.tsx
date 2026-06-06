@@ -60,7 +60,7 @@ export function DirectorVault() {
             <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
-            <span className="ml-3 text-xs text-text-muted-dark">vault.sovereign.ae — Director Workspace</span>
+            <span className="ml-3 text-xs text-text-muted-dark">vault.uaeworkrights.ae — Director Workspace</span>
           </div>
 
           <div className="grid grid-cols-1 gap-5 p-6 md:grid-cols-5 md:p-8">

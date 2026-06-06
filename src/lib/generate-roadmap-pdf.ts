@@ -73,7 +73,7 @@ export function generateRoadmapPDF(s: ExposureState) {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
   doc.setTextColor(0, 229, 153);
-  doc.text("UAE WORKRIGHTS  ×  SOVEREIGN", MARGIN, 28, { charSpace: 1.2 });
+  doc.text("UAEWORKRIGHTS  ×  KAOUTAR MAKRACHE", MARGIN, 28, { charSpace: 1.2 });
 
   doc.setFontSize(28);
   doc.setTextColor(255, 255, 255);
@@ -442,7 +442,7 @@ export function generateRoadmapPDF(s: ExposureState) {
     "Avoid signing waivers, release letters or settlement agreements without senior counsel review.",
     "Calendar statutory limitation periods — most labour claims lapse one year from termination.",
     "Mirror this exposure report to your finance lead so settlement provisions can be reserved.",
-    "Engage Sovereign for a fast-tracked 24-hour triage to confirm figures and pressure points.",
+    "Engage UAEworkrights for a fast-tracked 24-hour triage to confirm figures and pressure points.",
   ];
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
@@ -475,7 +475,7 @@ export function generateRoadmapPDF(s: ExposureState) {
   doc.setFontSize(10);
   doc.setTextColor(...MUTED);
   doc.text(
-    "vault.sovereign.ae  ·  +971 4 000 0000  ·  triage@sovereign.ae",
+    "vault.uaeworkrights.ae  ·  +971 4 000 0000  ·  triage@uaeworkrights.ae",
     MARGIN + 8,
     sy + 42,
   );

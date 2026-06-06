@@ -45,7 +45,7 @@ export function ContactDrawer() {
             <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted-dark">
               Confidential Desk
             </span>
-            <SheetTitle className="mt-3 text-3xl font-extrabold text-text-dark-primary">Contact Sovereign.</SheetTitle>
+            <SheetTitle className="mt-3 text-3xl font-extrabold text-text-dark-primary">Contact UAEworkrights.</SheetTitle>
             <SheetDescription className="text-sm text-text-muted-dark">
               Senior counsel responds within one UAE business day. Every enquiry is encrypted and never shared with third parties.
             </SheetDescription>

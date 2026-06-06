@@ -38,7 +38,7 @@ export function Navbar() {
           onClick={onBrand}
           className="text-lg font-extrabold tracking-tight text-text-dark-primary"
         >
-          SOVEREIGN<span className="text-action-accent">.</span>
+          UAEworkrights<span className="text-action-accent">.</span>
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">

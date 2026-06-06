@@ -24,13 +24,13 @@ export function AboutDrawer() {
         <div className="flex h-full flex-col overflow-y-auto px-7 py-8">
           <SheetHeader className="text-left">
             <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-text-muted-dark">
-              About Sovereign
+              About UAEworkrights
             </span>
             <SheetTitle className="mt-3 text-3xl font-extrabold text-text-dark-primary">
               UAE Labour Law protects both sides — most expats never check.
             </SheetTitle>
             <SheetDescription className="text-sm text-text-muted-dark">
-              UAE Workrights (powered by Sovereign) is a confidential triage desk operated by senior employment counsel. Most settlement letters are wrong; most gratuity numbers don't match the basic-salary rule. We sit between you and the regulator — quietly correcting exposure before it surfaces in a tribunal or boardroom.
+              UAEworkrights is a confidential triage desk operated by senior employment counsel. Most settlement letters are wrong; most gratuity numbers don't match the basic-salary rule. We sit between you and the regulator — quietly correcting exposure before it surfaces in a tribunal or boardroom.
             </SheetDescription>
           </SheetHeader>
 

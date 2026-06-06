@@ -475,7 +475,7 @@ export function generateRoadmapPDF(s: ExposureState) {
   doc.setFontSize(10);
   doc.setTextColor(...MUTED);
   doc.text(
-    "vault.sovereign.ae  ·  +971 4 000 0000  ·  triage@sovereign.ae",
+    "vault.uaeworkrights.ae  ·  +971 4 000 0000  ·  triage@uaeworkrights.ae",
     MARGIN + 8,
     sy + 42,
   );

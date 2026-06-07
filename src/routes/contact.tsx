@@ -185,7 +185,7 @@ function ContactPage() {
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
-                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.message)}
                 />
               </Field>

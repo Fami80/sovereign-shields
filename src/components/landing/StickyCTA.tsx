@@ -52,7 +52,6 @@ export function StickyCTA() {
           className="flex items-center gap-2 text-[13px] md:hidden"
           style={{ fontFamily: "var(--font-sans)", color: "#EDD8B8" }}
         >
-          <span aria-hidden style={{ color: "#D4A882" }}>✦</span>
           <span className="font-medium">Review your settlement</span>
         </div>
         <a

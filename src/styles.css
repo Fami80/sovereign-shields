@@ -5,16 +5,28 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
 
-  --color-bg-dark: #032B24;
-  --color-bg-light: #F4F7F5;
-  --color-text-dark-primary: #EAFDF7;
-  --color-text-light-primary: #0A221C;
-  --color-text-muted-dark: #7DAFA1;
-  --color-text-muted-light: #4A6B62;
-  --color-action-accent: #00E599;
+  --color-burg-deep: #1E0A0E;
+  --color-burg-mid: #2D1018;
+  --color-burg-surf: #3D1820;
+  --color-burg-acc: #8B2D3A;
+  --color-sand-warm: #D4A882;
+  --color-sand-light: #EDD8B8;
+  --color-sand-pale: #FAF3E8;
+  --color-sand-muted: #C4A882;
+  --color-rose-dust: #C4867A;
+  --color-warn: #B83A2A;
+  --color-ink: #1E0A0E;
+
+  --color-bg-dark: #1E0A0E;
+  --color-bg-light: #FAF3E8;
+  --color-text-dark-primary: #EDD8B8;
+  --color-text-light-primary: #1E0A0E;
+  --color-text-muted-dark: #C4A882;
+  --color-text-muted-light: #6B4550;
+  --color-action-accent: #D4A882;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

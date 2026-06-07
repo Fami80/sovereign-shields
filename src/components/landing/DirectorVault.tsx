@@ -176,7 +176,7 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Secure triage booking"
+      aria-label="Secure review booking"
       className="fixed inset-0 z-50 flex items-center justify-center bg-bg-dark/70 p-4 backdrop-blur-md"
       onClick={onClose}
     >
@@ -192,9 +192,9 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
           <X className="h-4 w-4" />
         </button>
         <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 999</span>
-        <h3 className="mt-4 text-2xl font-extrabold">Secure your triage</h3>
+        <h3 className="mt-4 text-2xl font-extrabold">Secure your review</h3>
         <p className="mt-2 text-sm text-text-muted-light">
-          One transparent fee. Senior-counsel review of your matter, delivered within 24 hours. Your roadmap PDF unlocks immediately on payment.
+          One transparent fee. compliance specialist review of your matter, delivered within 48 hours. Your roadmap PDF unlocks immediately on payment.
         </p>
         <form
           className="mt-5 space-y-3"

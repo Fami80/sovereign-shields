@@ -62,9 +62,11 @@ export function Hero() {
               color: "rgba(237,216,184,0.6)",
             }}
           >
-            UAE Labour Law protects both sides. Employees deserve to know what they're owed —
-            employers deserve to know what they're required to provide. One flat review, across
-            every UAE jurisdiction — reviewed personally by a compliance specialist.
+            Most letters we review contain at least one error. The average underpayment is AED 4,200.
+            <br /><br />
+            UAE Labour Law protects both sides. You deserve to know what you're owed. Your employer deserves to know what they're required to pay.
+            <br /><br />
+            One flat review. Every UAE jurisdiction. Reviewed personally — not by a chatbot.
           </p>
 
           <span

@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
-type Errors = Partial<Record<"name" | "email" | "enquiry" | "message", string>>;
+type FieldName = "name" | "email" | "enquiry" | "message";
+type Errors = Partial<Record<FieldName, string>>;
+const ERROR_COLOR = "#E57373";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -29,6 +31,12 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", enquiry: initialEnquiry, message: "" });
   const [errors, setErrors] = useState<Errors>({});
+  const refs = {
+    name: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+    enquiry: useRef<HTMLSelectElement>(null),
+    message: useRef<HTMLTextAreaElement>(null),
+  };
 
   const validate = (): Errors => {
     const e: Errors = {};
@@ -43,8 +51,21 @@ function ContactPage() {
     ev.preventDefault();
     const e = validate();
     setErrors(e);
-    if (Object.keys(e).length === 0) setSubmitted(true);
+    if (Object.keys(e).length === 0) {
+      setSubmitted(true);
+      return;
+    }
+    const order: FieldName[] = ["name", "email", "enquiry", "message"];
+    const first = order.find((k) => e[k]);
+    if (first) refs[first].current?.focus();
   };
+
+  const fieldStyle = (hasError: boolean): React.CSSProperties => ({
+    backgroundColor: "rgba(212,168,130,0.06)",
+    border: "1px solid rgba(212,168,130,0.2)",
+    borderLeft: hasError ? `2px solid ${ERROR_COLOR}` : "1px solid rgba(212,168,130,0.2)",
+    color: "#EDD8B8",
+  });
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#1E0A0E" }}>
@@ -87,11 +108,12 @@ function ContactPage() {
         >
           {submitted ? (
             <div className="flex flex-col items-center py-10 text-center">
-              <CheckCircle2 className="h-10 w-10" style={{ color: "#D4A882" }} />
+              <CheckCircle className="h-10 w-10" style={{ color: "#81C784" }} />
               <p
-                className="mt-4 font-sans text-base font-semibold"
+                className="mt-4 flex items-center gap-2 font-sans text-base font-semibold"
                 style={{ color: "#EDD8B8" }}
               >
+                <CheckCircle size={20} style={{ color: "#81C784" }} aria-hidden />
                 Received.
               </p>
               <p
@@ -102,44 +124,38 @@ function ContactPage() {
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5">
+            <form onSubmit={onSubmit} noValidate className="space-y-5">
               <Field label="Name" error={errors.name}>
                 <input
+                  ref={refs.name}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
                   className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.name)}
                 />
               </Field>
 
               <Field label="Email" error={errors.email}>
                 <input
+                  ref={refs.email}
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
                   className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.email)}
                 />
               </Field>
 
               <Field label="Enquiry type" error={errors.enquiry}>
                 <select
+                  ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
                   className="w-full appearance-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
                   style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
+                    ...fieldStyle(!!errors.enquiry),
                     color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",
                   }}
                 >
@@ -163,19 +179,17 @@ function ContactPage() {
 
               <Field label="Message" error={errors.message}>
                 <textarea
+                  ref={refs.message}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
                   className="w-full resize-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.message)}
                 />
               </Field>
+
 
               <button
                 type="submit"
@@ -224,7 +238,7 @@ function Field({ label, error, children }: { label: string; error?: string; chil
       </span>
       {children}
       {error && (
-        <span className="mt-1.5 block font-sans text-xs" style={{ color: "#C4867A" }}>
+        <span role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>
           {error}
         </span>
       )}

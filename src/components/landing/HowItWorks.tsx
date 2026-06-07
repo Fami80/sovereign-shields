@@ -33,7 +33,7 @@ export function HowItWorks() {
           {STEPS.map((s) => (
             <li
               key={s.id}
-              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium md:p-7"
+              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
               <span
                 className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold"
@@ -57,7 +57,7 @@ export function HowItWorks() {
             href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-transform duration-150 ease-out hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02]"
             style={{
               backgroundColor: "#1E0A0E",
               color: "#EDD8B8",

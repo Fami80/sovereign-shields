@@ -18,7 +18,7 @@ export function EscalationTimeline() {
           {STEPS.map((s) => (
             <li
               key={s.id}
-              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] md:p-7"
+              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-bg-dark text-sm font-extrabold text-action-accent">
@@ -27,7 +27,7 @@ export function EscalationTimeline() {
                 {s.fast && (
                   <span className="inline-flex items-center gap-2 rounded-full bg-action-accent/15 px-3 py-1 text-[13px] font-semibold text-text-light-primary">
                     <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-action-accent" />
+                      <span className="absolute inline-flex h-full w-full motion-safe:animate-pulse-dot rounded-full bg-action-accent" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-action-accent" />
                     </span>
                     Fast-Track Service

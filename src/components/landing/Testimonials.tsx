@@ -48,7 +48,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}
-              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 transition-transform duration-200 ease-out md:w-auto md:p-8 hover:-translate-y-0.5`}
+              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out md:w-auto md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
               style={{
                 borderColor:
                   t.bg === "bg-burg-mid"

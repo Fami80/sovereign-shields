@@ -193,7 +193,7 @@ function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium transition-all duration-300 hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
                 style={{ backgroundColor: "#D4A882", color: "#1E0A0E" }}
               >
                 Send →

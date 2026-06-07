@@ -34,7 +34,7 @@ export function AudienceBento() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* CARD 1 — Employee */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "#FAF3E8",
               border: "1px solid rgba(139,45,58,0.12)",
@@ -115,7 +115,7 @@ export function AudienceBento() {
               href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
               style={{
                 backgroundColor: "#8B2D3A",
                 color: "#FAF3E8",
@@ -129,7 +129,7 @@ export function AudienceBento() {
             <div className="mt-6 flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span
-                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                  className="absolute inline-flex h-full w-full motion-safe:animate-pulse-dot rounded-full opacity-75"
                   style={{ backgroundColor: "#8B2D3A" }}
                 />
                 <span
@@ -148,7 +148,7 @@ export function AudienceBento() {
 
           {/* CARD 2 — Employer */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "#1E0A0E",
               border: "1px solid rgba(212,168,130,0.15)",
@@ -239,7 +239,7 @@ export function AudienceBento() {
 
             <a
               href="/contact?type=audit"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "#D4A882",
@@ -270,7 +270,7 @@ export function AudienceBento() {
           ].map((tile) => (
             <div
               key={tile.title}
-              className="rounded-2xl p-6 md:p-7"
+              className="rounded-2xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
               style={{
                 backgroundColor: "transparent",
                 border: "1px solid rgba(139,45,58,0.1)",

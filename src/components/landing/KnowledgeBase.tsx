@@ -100,7 +100,7 @@ export function KnowledgeBase() {
             <Link
               key={card.title}
               to="/checkout"
-              className="group relative flex flex-col rounded-xl p-6 focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
+              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#2D1018",
                 border: "1px solid rgba(212,168,130,0.12)",
@@ -203,7 +203,7 @@ export function KnowledgeBase() {
           </span>
           <a
             href="/checkout"
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
             style={{
               background: "#D4A882",
               color: "#1E0A0E",

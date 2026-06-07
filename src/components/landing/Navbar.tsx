@@ -76,7 +76,7 @@ export function Navbar() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="rounded-full p-2 lg:hidden"
+            className="rounded-full p-2 focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px] lg:hidden"
             style={{ border: "1px solid rgba(212,168,130,0.25)", color: "#EDD8B8" }}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}

@@ -130,7 +130,7 @@ export function About() {
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               className="mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-[14px] font-medium transition-transform duration-300 hover:scale-[1.02]"
               style={{
                 fontFamily: "var(--font-sans)",

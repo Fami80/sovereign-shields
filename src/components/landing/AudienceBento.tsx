@@ -129,7 +129,7 @@ export function AudienceBento() {
             <div className="mt-6 flex items-center gap-2">
               <span className="relative flex h-2 w-2">
                 <span
-                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                  className="absolute inline-flex h-full w-full motion-safe:animate-pulse-dot rounded-full opacity-75"
                   style={{ backgroundColor: "#8B2D3A" }}
                 />
                 <span

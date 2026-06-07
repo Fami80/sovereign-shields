@@ -100,7 +100,7 @@ export function Navbar() {
                   l.action();
                   setOpen(false);
                 }}
-                className="rounded-lg px-3 py-3 text-left font-sans text-sm"
+                className="rounded-lg px-3 py-3 text-left font-sans text-sm focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
                 style={{ color: "rgba(237,216,184,0.7)" }}
               >
                 {l.label}

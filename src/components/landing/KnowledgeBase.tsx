@@ -94,7 +94,7 @@ export function KnowledgeBase() {
         </div>
 
         {/* 6 Jurisdiction Cards */}
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
           {JURISDICTION_CARDS.map((card) => (
             <div
               key={card.title}
@@ -186,8 +186,9 @@ export function KnowledgeBase() {
           >
             AED 199
           </span>
-          <button
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
+          <a
+            href="/checkout"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-150 ease-out hover:scale-[1.02]"
             style={{
               background: "#D4A882",
               color: "#1E0A0E",
@@ -195,7 +196,7 @@ export function KnowledgeBase() {
             }}
           >
             Get 30-day access →
-          </button>
+          </a>
         </div>
       </div>
     </section>

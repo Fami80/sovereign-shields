@@ -44,12 +44,12 @@ export function Hero() {
           </span>
 
           <h1
-            className="mt-8 max-w-4xl font-display text-4xl leading-[1.08] tracking-tight md:text-6xl"
-            style={{ fontWeight: 400 }}
+            className="mt-8 max-w-4xl font-display tracking-tight text-[40px] md:text-6xl"
+            style={{ fontWeight: 400, lineHeight: 1.05 }}
           >
             <span style={{ color: "#EDD8B8" }}>Your settlement letter is</span>
             <br />
-            <span style={{ color: "#D4A882", fontStyle: "italic" }}>probably wrong.</span>
+            <span style={{ color: "#D4A882", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
           </h1>
 
           <p
@@ -58,13 +58,13 @@ export function Hero() {
               maxWidth: "600px",
               fontSize: "18px",
               fontWeight: 300,
-              lineHeight: 1.6,
+              lineHeight: 1.75,
               color: "rgba(237,216,184,0.6)",
             }}
           >
             UAE Labour Law protects both sides. Employees deserve to know what they're owed —
             employers deserve to know what they're required to provide. One flat review, across
-            every UAE jurisdiction — reviewed personally, not by a chatbot.
+            every UAE jurisdiction — reviewed personally by a compliance specialist.
           </p>
 
           <span
@@ -82,8 +82,10 @@ export function Hero() {
 
           <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:w-auto">
             <a
-              href="#vault"
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans transition-all duration-300 hover:scale-[1.02]"
+              href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02]"
               style={{
                 backgroundColor: "#D4A882",
                 color: "#1E0A0E",
@@ -95,8 +97,8 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href="#vault"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3.5 font-sans transition-all duration-300 hover:scale-[1.02]"
+              href="/contact?type=audit"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02]"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "#EDD8B8",

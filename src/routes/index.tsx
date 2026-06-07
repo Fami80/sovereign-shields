@@ -18,9 +18,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "UAEworkrights" },
-      { name: "description", content: "Your UAE settlement letter is probably wrong. Senior-counsel triage on gratuity, end-of-service & arbitrary dismissal across MOHRE, DIFC, ADGM, VARA & SCA — AED 499." },
+      { name: "description", content: "Your UAE settlement letter is probably wrong. Senior-counsel triage on gratuity, end-of-service & arbitrary dismissal across MOHRE, DIFC, ADGM, VARA & SCA — AED 999." },
       { property: "og:title", content: "UAEworkrights" },
-      { property: "og:description", content: "UAE Labour Law protects both sides. One flat AED 499 triage by senior employment counsel." },
+      { property: "og:description", content: "UAE Labour Law protects both sides. One flat AED 999 triage by senior employment counsel." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

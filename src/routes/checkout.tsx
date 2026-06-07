@@ -1,0 +1,54 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/checkout")({
+  head: () => ({
+    meta: [
+      { title: "Checkout — UAEworkrights" },
+      { name: "description", content: "Secure checkout for UAEworkrights knowledge base access and settlement reviews." },
+    ],
+  }),
+  component: CheckoutPlaceholder,
+});
+
+function CheckoutPlaceholder() {
+  return (
+    <main
+      className="flex min-h-screen flex-col items-center justify-center px-6 py-24"
+      style={{ backgroundColor: "#1E0A0E" }}
+    >
+      <div
+        className="w-full max-w-md rounded-2xl p-10 text-center"
+        style={{
+          backgroundColor: "#2D1018",
+          border: "1px solid rgba(212,168,130,0.2)",
+        }}
+      >
+        <p
+          className="text-[10px] font-medium uppercase"
+          style={{ color: "rgba(212,168,130,0.6)", letterSpacing: "3px" }}
+        >
+          SECURE CHECKOUT
+        </p>
+        <h1
+          className="mt-4 font-display"
+          style={{ fontSize: 32, color: "#EDD8B8", fontWeight: 400, lineHeight: 1.05 }}
+        >
+          Checkout coming soon.
+        </h1>
+        <p
+          className="mt-4 font-sans"
+          style={{ fontSize: 14, color: "rgba(237,216,184,0.55)", fontWeight: 300, lineHeight: 1.75 }}
+        >
+          Payment processing is being set up. In the meantime, contact us directly to arrange access.
+        </p>
+        <Link
+          to="/contact"
+          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02]"
+          style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
+        >
+          Contact us →
+        </Link>
+      </div>
+    </main>
+  );
+}

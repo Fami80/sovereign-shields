@@ -50,7 +50,7 @@ export function DirectorVault() {
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
           <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
-            {isUnlocked ? "Unlocked" : "Unlocked at AED 499"}
+            {isUnlocked ? "Unlocked" : "Unlocked at AED 999"}
           </span>
         </div>
 
@@ -157,7 +157,7 @@ export function DirectorVault() {
                   onClick={() => setOpen(true)}
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-action-accent px-5 py-2.5 text-sm font-bold text-bg-dark transition-all duration-300 hover:scale-[1.02]"
                 >
-                  Unlock Premium Access — AED 499
+                  Unlock Premium Access — AED 999
                 </button>
               </div>
 
@@ -191,7 +191,7 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
         >
           <X className="h-4 w-4" />
         </button>
-        <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 499</span>
+        <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 999</span>
         <h3 className="mt-4 text-2xl font-extrabold">Secure your triage</h3>
         <p className="mt-2 text-sm text-text-muted-light">
           One transparent fee. Senior-counsel review of your matter, delivered within 24 hours. Your roadmap PDF unlocks immediately on payment.

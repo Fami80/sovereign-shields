@@ -270,7 +270,7 @@ export function AudienceBento() {
           ].map((tile) => (
             <div
               key={tile.title}
-              className="rounded-2xl p-6 md:p-7"
+              className="rounded-2xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
               style={{
                 backgroundColor: "transparent",
                 border: "1px solid rgba(139,45,58,0.1)",

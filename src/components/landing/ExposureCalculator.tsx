@@ -85,14 +85,18 @@ export function ExposureCalculator() {
       {/* Slow-parallax verified-status background */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
+        className="pointer-events-none absolute -z-10"
         style={{
+          top: "-10%",
+          left: 0,
+          right: 0,
+          bottom: "-10%",
           y: prefersReducedMotion ? 0 : bgY,
           backgroundImage: `url(${verifiedBg.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          opacity: 0.18,
+          backgroundRepeat: "no-repeat",
+          opacity: 0.55,
         }}
       />
       {/* Dark wash so calculator content stays legible */}
@@ -101,7 +105,7 @@ export function ExposureCalculator() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(30,10,14,0.85) 0%, rgba(30,10,14,0.75) 50%, rgba(30,10,14,0.92) 100%)",
+            "linear-gradient(180deg, rgba(30,10,14,0.55) 0%, rgba(30,10,14,0.45) 50%, rgba(30,10,14,0.7) 100%)",
         }}
       />
       <div

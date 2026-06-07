@@ -14,7 +14,8 @@ const buildLinks = (navigate: (opts: { to: string }) => void): NavItem[] => [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const links = buildLinks();
+  const navigate = useNavigate();
+  const links = buildLinks(navigate);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

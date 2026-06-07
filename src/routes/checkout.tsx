@@ -3,8 +3,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Checkout — UAEworkrights" },
-      { name: "description", content: "Secure checkout for UAEworkrights knowledge base access and settlement reviews." },
+      { title: "Knowledge Base Access — AED 199 | UAEworkrights" },
+      { name: "description", content: "Unlock 30-day access to the UAEworkrights knowledge base. UAE settlement guides by jurisdiction — mainland, DIFC, ADGM, free zones. AED 199." },
+      { property: "og:title", content: "Knowledge Base Access — AED 199 | UAEworkrights" },
+      { property: "og:description", content: "Unlock 30-day access to the UAEworkrights knowledge base. UAE settlement guides by jurisdiction — mainland, DIFC, ADGM, free zones. AED 199." },
+      { property: "og:url", content: "https://uaeworkrights.com/checkout" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://uaeworkrights.com/checkout" },
     ],
   }),
   component: CheckoutPlaceholder,

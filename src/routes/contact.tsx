@@ -9,10 +9,14 @@ type Errors = Partial<Record<"name" | "email" | "enquiry" | "message", string>>;
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — UAEworkrights" },
-      { name: "description", content: "Get in touch with UAEworkrights for settlement reviews, compliance questions, or complex cross-border cases." },
-      { property: "og:title", content: "Contact — UAEworkrights" },
-      { property: "og:description", content: "Get in touch with UAEworkrights for settlement reviews, compliance questions, or complex cross-border cases." },
+      { title: "Book a UAE Settlement Review | UAEworkrights" },
+      { name: "description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      { property: "og:title", content: "Book a UAE Settlement Review | UAEworkrights" },
+      { property: "og:description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      { property: "og:url", content: "https://uaeworkrights.com/contact" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://uaeworkrights.com/contact" },
     ],
   }),
   validateSearch: (s: Record<string, unknown>) => ({ type: typeof s.type === "string" ? s.type : undefined }),

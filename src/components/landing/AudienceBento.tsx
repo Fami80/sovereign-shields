@@ -148,7 +148,7 @@ export function AudienceBento() {
 
           {/* CARD 2 — Employer */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "#1E0A0E",
               border: "1px solid rgba(212,168,130,0.15)",

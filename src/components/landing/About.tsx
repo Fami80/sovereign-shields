@@ -23,7 +23,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden" style={{ backgroundColor: "#1E0A0E" }}>
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <p
-          className="text-[10px] font-medium uppercase tracking-[3px]"
+          className="text-[13px] font-medium uppercase tracking-[2.5px]"
           style={{ fontFamily: "var(--font-sans)", color: "rgba(212,168,130,0.6)" }}
         >
           THE EXPERT BEHIND UAEWORKRIGHTS

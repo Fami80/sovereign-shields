@@ -62,7 +62,7 @@ export function KnowledgeBase() {
       <div className="mx-auto max-w-6xl px-6">
         {/* Eyebrow */}
         <p
-          className="text-center text-[10px] font-normal uppercase tracking-[3px]"
+          className="text-center text-[13px] font-normal uppercase tracking-[2.5px]"
           style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           KNOWLEDGE BASE

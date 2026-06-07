@@ -31,7 +31,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* Header */}
         <p
-          className="text-[10px] font-medium uppercase tracking-[3px]"
+          className="text-[13px] font-medium uppercase tracking-[2.5px]"
           style={{ fontFamily: "var(--font-sans)", color: "#8B2D3A" }}
         >
           CLIENT RESULTS

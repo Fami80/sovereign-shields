@@ -158,12 +158,19 @@ export function KnowledgeBase() {
           >
             How UAE gratuity is calculated — the complete guide
           </h3>
-          <button
+          <p
+            className="mt-2 text-sm font-light"
+            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+          >
+            The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.
+          </p>
+          <a
+            href="/contact"
             className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
             style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
           >
             Read now →
-          </button>
+          </a>
         </div>
 
         {/* Bottom CTA bar */}

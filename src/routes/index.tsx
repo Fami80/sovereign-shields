@@ -3,7 +3,7 @@ import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
 import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
-import { EscalationTimeline } from "@/components/landing/EscalationTimeline";
+import { HowItWorks } from "@/components/landing/HowItWorks";
 import { DirectorVault } from "@/components/landing/DirectorVault";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { About } from "@/components/landing/About";
@@ -44,7 +44,7 @@ function Index() {
       <JurisdictionRibbon />
       <AudienceBento />
       <ExposureCalculator />
-      <EscalationTimeline />
+      <HowItWorks />
       <KnowledgeBase />
       <Testimonials />
       <About />

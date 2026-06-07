@@ -100,7 +100,7 @@ export function Hero() {
             </a>
             <a
               href="/contact?type=audit"
-              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "#EDD8B8",

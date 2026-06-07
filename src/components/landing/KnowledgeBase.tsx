@@ -180,7 +180,7 @@ export function KnowledgeBase() {
           </p>
           <a
             href="/contact"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
             style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Read now →

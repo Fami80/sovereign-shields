@@ -4,7 +4,6 @@ import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
 import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-import { DirectorVault } from "@/components/landing/DirectorVault";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { About } from "@/components/landing/About";
 import { SiteFooter } from "@/components/landing/SiteFooter";
@@ -46,7 +45,6 @@ function Index() {
       <KnowledgeBase />
       <Testimonials />
       <About />
-      <DirectorVault />
       <SiteFooter />
       <StickyCTA />
     </main>

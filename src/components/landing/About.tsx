@@ -29,7 +29,7 @@ export function About() {
           THE EXPERT BEHIND UAEWORKRIGHTS
         </p>
         <h2
-          className="mt-3 max-w-3xl text-[40px] leading-tight"
+          className="mt-5 max-w-3xl text-[40px] leading-tight"
           style={{ fontFamily: "var(--font-display)", color: "#EDD8B8" }}
         >
           I'm not a lawyer. I'm a compliance specialist — and that distinction matters.

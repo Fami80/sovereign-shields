@@ -10,7 +10,7 @@ export function EscalationTimeline() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">Escalation Timeline</p>
-          <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">From signal to settlement in three calibrated nodes.</h2>
+          <h2 className="mt-5 text-3xl font-extrabold md:text-4xl">From signal to settlement in three calibrated nodes.</h2>
         </div>
 
         <ol className="relative grid grid-cols-1 gap-6 md:grid-cols-3">

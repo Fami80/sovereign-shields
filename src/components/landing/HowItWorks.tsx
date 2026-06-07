@@ -24,7 +24,7 @@ export function HowItWorks() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">
             How it works
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
+          <h2 className="mt-5 text-3xl font-extrabold md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
             From settlement letter to written findings in 48 hours
           </h2>
         </div>

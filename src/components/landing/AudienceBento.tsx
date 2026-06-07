@@ -84,7 +84,7 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Got a settlement letter? Before you sign, we check it. Gratuity calculation, leave encashment, deductions, notice period — every line reviewed against UAE Labour Law. Written findings within 48 hours.
+              Got a settlement letter? Before you sign, we check it. Gratuity, leave encashment, deductions, notice period — every line reviewed against UAE Labour Law. Written findings within 48 hours.
             </p>
 
             <ul className="mt-6 space-y-2.5">
@@ -197,14 +197,14 @@ export function AudienceBento() {
                 color: "rgba(237,216,184,0.6)",
               }}
             >
-              Your exit processes may not reflect UAE labour law changes since 2021. We audit your settlement templates, gratuity calculations, and policy documents — and give you a written compliance report you can act on.
+              Most UAE companies haven't updated their exit processes since Federal Decree-Law No. 33 of 2021 — the complete overhaul of UAE private sector employment law. One MOHRE dispute costs AED 75,000+ in penalties and legal fees. An audit costs AED 5,000. We review your settlement templates, gratuity calculations, and policy documents. You receive a written compliance report you can act on.
             </p>
 
             <ul className="mt-6 space-y-2.5">
               {[
-                "Exit process audit",
+                "Exit process audit against current UAE Labour Law",
                 "Settlement template stress-test",
-                "Policy alignment with FDL 33/2021",
+                "Policy alignment with FDL 33/2021 — UAE's 2021 employment law overhaul",
                 "Boardroom-ready written findings",
               ].map((item) => (
                 <li
@@ -220,6 +220,18 @@ export function AudienceBento() {
                 </li>
               ))}
             </ul>
+
+            <p
+              className="mt-4 font-sans"
+              style={{
+                fontSize: "13px",
+                fontWeight: 400,
+                lineHeight: 1.6,
+                color: "rgba(237,216,184,0.6)",
+              }}
+            >
+              Need ongoing support? Monthly compliance retainer available from AED 3,500/month.
+            </p>
 
             <a
               href="/contact?type=audit"
@@ -241,15 +253,15 @@ export function AudienceBento() {
           {[
             {
               title: "UAE Labour Law",
-              body: "Federal Decree-Law No. 33 of 2021 and all current regulations",
+              body: "Federal Decree-Law No. 33 of 2021 — the law that governs all UAE private sector employment since January 2022.",
             },
             {
               title: "Cross-border expertise",
-              body: "Belgian law, UK subsidiaries, multi-jurisdiction cases",
+              body: "Belgian law, UK subsidiaries, multi-jurisdiction cases. Most UAE compliance consultants operate in one jurisdiction. We cover four.",
             },
             {
               title: "Both sides",
-              body: "Employees and employers. Not an advocate. A compliance expert.",
+              body: "Employees and employers. Not an advocate. A compliance expert who understands what both sides are required to do.",
             },
           ].map((tile) => (
             <div

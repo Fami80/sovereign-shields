@@ -1,14 +1,14 @@
-import { Building2, Landmark, Scale, Coins, Briefcase } from "lucide-react";
+import { Building2, Landmark, Scale, Globe, Briefcase } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Authority = { code: string; label: string; Icon: LucideIcon };
 
 const AUTHORITIES: Authority[] = [
   { code: "MOHRE", label: "Ministry of Labour", Icon: Briefcase },
-  { code: "DIFC", label: "Dubai Intl. Financial Centre", Icon: Landmark },
+  { code: "DIFC", label: "Dubai International Financial Centre", Icon: Landmark },
   { code: "ADGM", label: "Abu Dhabi Global Market", Icon: Building2 },
-  { code: "VARA", label: "Virtual Assets Authority", Icon: Coins },
-  { code: "SCA", label: "Securities & Commodities", Icon: Scale },
+  { code: "Free Zones", label: "", Icon: Globe },
+  { code: "Cross-border", label: "Belgian & UK law", Icon: Scale },
 ];
 
 export function JurisdictionRibbon() {
@@ -19,7 +19,7 @@ export function JurisdictionRibbon() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="-mt-8 rounded-[24px] border border-[color:rgba(212,168,130,0.15)] bg-[#2D1018] px-5 py-5 shadow-[0_20px_50px_rgb(0,0,0,0.35)] md:px-8 md:py-6">
           <p className="mb-4 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted-dark">
-            Operating across every UAE regulatory authority
+            We cover every UAE regulatory authority
           </p>
           <div className="grid grid-cols-2 items-center gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-5">
             {AUTHORITIES.map(({ code, label, Icon }) => (

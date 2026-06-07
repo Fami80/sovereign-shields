@@ -194,7 +194,7 @@ function ContactPage() {
             title="WhatsApp"
             body="Prefer WhatsApp? Message us directly."
             buttonText="Open WhatsApp →"
-            buttonHref={`https://wa.me/971501234567?text=${encodeURIComponent(
+            buttonHref={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent(
               "Hi Kaoutar, I'd like to book a settlement review — AED 999."
             )}`}
           />

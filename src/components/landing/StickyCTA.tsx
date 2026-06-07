@@ -56,7 +56,7 @@ export function StickyCTA() {
           <span className="font-medium">Review your settlement</span>
         </div>
         <a
-          href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+          href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium transition-transform duration-150 ease-out hover:scale-[1.02] md:px-5"

@@ -54,7 +54,7 @@ export function HowItWorks() {
 
         <div className="mt-12 flex justify-center">
           <a
-            href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+            href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-transform duration-150 ease-out hover:scale-[1.02]"

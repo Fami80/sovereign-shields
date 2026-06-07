@@ -41,7 +41,7 @@ export function AudienceBento() {
             }}
           >
             <p
-              className="font-sans"
+              className="inline-flex items-center gap-1.5 font-sans"
               style={{
                 fontSize: "10px",
                 letterSpacing: "2px",
@@ -50,6 +50,7 @@ export function AudienceBento() {
                 textTransform: "uppercase",
               }}
             >
+              <User size={12} />
               FOR EMPLOYEES
             </p>
 

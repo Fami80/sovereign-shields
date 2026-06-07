@@ -43,12 +43,12 @@ export function Testimonials() {
           They were about to sign. They didn't.
         </h2>
 
-        {/* Testimonial Cards */}
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+        {/* Testimonial Cards — horizontal scroll on mobile, grid on desktop */}
+        <div className="mt-12 -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}
-              className={`${t.bg} relative flex flex-col overflow-hidden rounded-2xl border p-6`}
+              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 transition-transform duration-200 ease-out md:w-auto md:p-8 hover:-translate-y-0.5`}
               style={{
                 borderColor:
                   t.bg === "bg-burg-mid"
@@ -69,10 +69,12 @@ export function Testimonials() {
               </span>
 
               <blockquote
-                className="relative -mt-4 flex-1 text-lg italic leading-relaxed"
+                className="relative -mt-4 flex-1 text-lg italic"
                 style={{
                   fontFamily: "var(--font-display)",
                   color: "#EDD8B8",
+                  lineHeight: 1.6,
+                  fontWeight: 400,
                 }}
               >
                 {t.quote}
@@ -90,11 +92,12 @@ export function Testimonials() {
                 </div>
 
                 <div
-                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[2px]"
+                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[10px] font-medium uppercase"
                   style={{
                     fontFamily: "var(--font-sans)",
                     borderColor: "rgba(212,168,130,0.2)",
                     color: "rgba(212,168,130,0.5)",
+                    letterSpacing: "3px",
                   }}
                 >
                   {t.tag}

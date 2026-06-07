@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
 
 export function StickyCTA() {
   const [show, setShow] = useState(false);
@@ -9,7 +8,7 @@ export function StickyCTA() {
       const scrollable =
         document.documentElement.scrollHeight - window.innerHeight;
       const depth = scrollable > 0 ? window.scrollY / scrollable : 0;
-      setShow(depth >= 0.4);
+      setShow(depth >= 0.15);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -22,25 +21,38 @@ export function StickyCTA() {
 
   return (
     <div
-      className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 transition-all duration-500 ${
+      className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-500 ${
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
+      style={{
+        backgroundColor: "#1E0A0E",
+        borderTop: "1px solid rgba(212,168,130,0.2)",
+      }}
       aria-hidden={!show}
     >
-      <div className="pointer-events-auto mx-3 mb-3 flex items-center justify-between gap-3 rounded-full border border-white/10 bg-bg-dark/85 px-4 py-3 shadow-[0_20px_50px_rgb(0,0,0,0.3)] backdrop-blur-xl md:mx-auto md:max-w-xl md:px-6">
-        <div className="text-xs md:text-sm">
-          <div className="font-semibold text-text-dark-primary">
-            Secure Your Protection — AED 499
-          </div>
-          <div className="text-[11px] text-text-muted-dark md:text-xs">
-            Single transparent fee · 24h turnaround
-          </div>
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-3 md:flex-row">
+        <div
+          className="text-[13px] font-light"
+          style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.6)" }}
+        >
+          Review your settlement
+        </div>
+        <div
+          className="hidden text-[13px] font-medium md:block"
+          style={{ fontFamily: "var(--font-sans)", color: "#EDD8B8" }}
+        >
+          AED 999 · Single transparent fee · 48h turnaround
         </div>
         <a
-          href="#vault"
-          className="inline-flex items-center gap-1.5 rounded-full bg-action-accent px-4 py-2 text-sm font-bold text-bg-dark transition-transform duration-300 hover:scale-[1.03]"
+          href="#contact"
+          className="inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-medium transition-transform duration-300 hover:scale-[1.03]"
+          style={{
+            fontFamily: "var(--font-sans)",
+            backgroundColor: "#D4A882",
+            color: "#1E0A0E",
+          }}
         >
-          Unlock <ArrowRight className="h-3.5 w-3.5" />
+          Book now →
         </a>
       </div>
     </div>

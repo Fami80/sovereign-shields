@@ -91,7 +91,7 @@ export function ExposureCalculator() {
                 placeholder="e.g. 25,000"
                 value={salaryInput}
                 onChange={(e) => setSalaryInput(e.target.value)}
-                className="h-12 w-full rounded-lg px-4 text-sm outline-none transition focus:ring-1"
+                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus:ring-1 md:text-sm"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
@@ -122,7 +122,7 @@ export function ExposureCalculator() {
                     setYearsInput(val);
                   }
                 }}
-                className="h-12 w-full rounded-lg px-4 text-sm outline-none transition focus:ring-1"
+                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus:ring-1 md:text-sm"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",

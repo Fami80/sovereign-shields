@@ -1,3 +1,5 @@
+import { User, Building2 } from "lucide-react";
+
 export function AudienceBento() {
   return (
     <section id="features" style={{ backgroundColor: "#FAF3E8" }}>

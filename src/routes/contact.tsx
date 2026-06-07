@@ -33,7 +33,7 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", enquiry: initialEnquiry, message: "" });
   const [errors, setErrors] = useState<Errors>({});
-  const refs: Record<FieldName, React.RefObject<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>> = {
+  const refs = {
     name: useRef<HTMLInputElement>(null),
     email: useRef<HTMLInputElement>(null),
     enquiry: useRef<HTMLSelectElement>(null),

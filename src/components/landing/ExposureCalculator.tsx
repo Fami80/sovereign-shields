@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { animate, useMotionValue, useReducedMotion } from "framer-motion";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {
@@ -16,24 +17,59 @@ function computeGratuity(salary: number, years: number) {
   } else {
     gratuity = daily * 21 * 5 + daily * 30 * (years - 5);
   }
-  // Cap at 2 years basic salary
   return Math.min(gratuity, salary * 24);
 }
 
 export function ExposureCalculator() {
   const [salaryInput, setSalaryInput] = useState("");
   const [yearsInput, setYearsInput] = useState("");
+  const [revealed, setRevealed] = useState(false);
 
   const salary = parseFloat(salaryInput.replace(/,/g, "")) || 0;
   const years = parseFloat(yearsInput) || 0;
 
   const gratuity = useMemo(() => computeGratuity(salary, years), [salary, years]);
+  const canCalculate = salary > 0 && years > 0;
 
-  const displayValue = salary > 0 && years > 0 ? fmt(gratuity) : "AED —";
+  const prefersReducedMotion = useReducedMotion();
+  const count = useMotionValue(0);
+  const displayRef = useRef<HTMLDivElement>(null);
+  const [displayText, setDisplayText] = useState("AED —");
+
+  // Reset reveal when inputs change
+  useEffect(() => {
+    if (revealed) {
+      setRevealed(false);
+      setDisplayText("AED —");
+      count.set(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [salaryInput, yearsInput]);
+
+  useEffect(() => {
+    const unsub = count.on("change", (v) => {
+      setDisplayText(fmt(Math.round(v)));
+    });
+    return () => unsub();
+  }, [count]);
+
+  const handleCalculate = () => {
+    if (!canCalculate) return;
+    setRevealed(true);
+    if (prefersReducedMotion) {
+      count.set(gratuity);
+      setDisplayText(fmt(gratuity));
+      return;
+    }
+    count.set(0);
+    animate(count, gratuity, {
+      duration: 1.8,
+      ease: [0.16, 1, 0.3, 1],
+    });
+  };
 
   return (
     <section id="calculator" className="relative overflow-hidden bg-[#1E0A0E] px-6 py-20 md:py-28">
-      {/* Decorative radial glow */}
       <div
         className="pointer-events-none absolute right-0 top-0"
         style={{
@@ -44,7 +80,6 @@ export function ExposureCalculator() {
       />
 
       <div className="relative mx-auto max-w-4xl">
-        {/* Section header */}
         <div className="mb-12 text-center">
           <p
             className="mb-5 text-[13px] font-medium uppercase tracking-[2.5px]"
@@ -66,7 +101,6 @@ export function ExposureCalculator() {
           </p>
         </div>
 
-        {/* Calculator card */}
         <div
           className="mx-auto max-w-2xl rounded-[16px] p-10"
           style={{
@@ -74,9 +108,7 @@ export function ExposureCalculator() {
             border: "1px solid rgba(212,168,130,0.15)",
           }}
         >
-          {/* Inputs row */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {/* Input 1 */}
             <div>
               <label
                 className="mb-2 block text-[12px] font-medium"
@@ -101,7 +133,6 @@ export function ExposureCalculator() {
               />
             </div>
 
-            {/* Input 2 */}
             <div>
               <label
                 className="mb-2 block text-[12px] font-medium"
@@ -133,13 +164,37 @@ export function ExposureCalculator() {
             </div>
           </div>
 
+          {/* Calculate button */}
+          <div className="mt-8 text-center">
+            <button
+              type="button"
+              onClick={handleCalculate}
+              disabled={!canCalculate}
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] motion-safe:hover:scale-[1.02]"
+              style={{
+                background: "#8B2D3A",
+                color: "#EDD8B8",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+              }}
+            >
+              Calculate My Exposure →
+            </button>
+          </div>
+
           {/* Result */}
           <div className="mt-10 text-center">
             <div
-              className="text-[56px] font-semibold leading-none"
-              style={{ color: "#D4A882", fontFamily: "'Playfair Display', serif" }}
+              ref={displayRef}
+              className="text-[56px] font-semibold leading-none tabular-nums transition-opacity duration-500"
+              style={{
+                color: "#D4A882",
+                fontFamily: "'Playfair Display', serif",
+                opacity: revealed ? 1 : 0.35,
+                textShadow: revealed ? "0 0 40px rgba(212,168,130,0.25)" : "none",
+              }}
+              aria-live="polite"
             >
-              {displayValue}
+              {displayText}
             </div>
             <p
               className="mt-2 text-[13px] font-light"
@@ -155,7 +210,6 @@ export function ExposureCalculator() {
             </p>
           </div>
 
-          {/* Warning box */}
           <div
             className="mx-auto mt-8 max-w-lg rounded-lg p-4"
             style={{
@@ -171,7 +225,6 @@ export function ExposureCalculator() {
             </p>
           </div>
 
-          {/* CTA */}
           <div className="mt-8 text-center">
             <a
               href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}

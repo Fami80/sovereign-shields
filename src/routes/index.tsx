@@ -45,7 +45,6 @@ function Index() {
       <KnowledgeBase />
       <Testimonials />
       <About />
-      <DirectorVault />
       <SiteFooter />
       <StickyCTA />
     </main>

@@ -26,7 +26,7 @@ export function StickyCTA() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 bottom-0 z-50 motion-safe:transition-all motion-safe:duration-500 ${
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       style={{

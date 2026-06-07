@@ -43,8 +43,8 @@ function Index() {
       <ExposureCalculator />
       <EscalationTimeline />
       <KnowledgeBase />
-      <DirectorVault />
       <Testimonials />
+      <DirectorVault />
       <SiteFooter />
       <StickyCTA />
       <AboutDrawer />

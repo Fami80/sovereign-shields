@@ -1,45 +1,140 @@
-import { Star } from "lucide-react";
+const TESTIMONIALS = [
+  {
+    bg: "bg-burg-deep",
+    quote: "I signed my settlement without questioning it. A quick review showed I had been underpaid by AED 4,200.",
+    attribution: "Yasser, 3 years in Dubai",
+    tag: "UNUSED LEAVE & SETTLEMENT",
+  },
+  {
+    bg: "bg-burg-mid",
+    quote: "I didn't know I had the right to refuse until someone showed me exactly where it said so.",
+    attribution: "Sarah, 5 years in Dubai",
+    tag: "VISA AND WORK PERMIT",
+  },
+  {
+    bg: "bg-burg-deep",
+    quote: "I expected this to take months. I was guided step by step. I knew exactly what to do and where to go.",
+    attribution: "Randa, 2.5 years in Dubai",
+    tag: "END OF SERVICE",
+  },
+];
 
-const ITEMS = [
-  { name: "Randa", region: "Dubai — Private Sector", quote: "Recovered three months of withheld gratuity in eleven days. The roadmap was surgical." },
-  { name: "Omar K.", region: "Abu Dhabi — ADGM", quote: "The exposure model gave our board the clarity we needed before terminating a regional lead." },
-  { name: "Priya N.", region: "Sharjah — Freezone", quote: "Calm, fast and confidential. AED 499 was the best legal spend I've made." },
-  { name: "Hassan A.", region: "Dubai — DIFC", quote: "The Director Vault assistant flagged a clause our retained firm missed entirely." },
+const STATS = [
+  { value: "AED 4,000+", label: "Average amount recovered per review" },
+  { value: "48hrs", label: "Review turnaround time" },
+  { value: "100%", label: "Written findings included" },
 ];
 
 export function Testimonials() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-      <div className="mb-10 max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">Verified Outcomes</p>
-        <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Trusted across the Emirates.</h2>
-      </div>
+    <section className="bg-sand-pale">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        {/* Header */}
+        <p
+          className="text-[10px] font-medium uppercase tracking-[3px]"
+          style={{ fontFamily: "var(--font-sans)", color: "#8B2D3A" }}
+        >
+          CLIENT RESULTS
+        </p>
+        <h2
+          className="mt-3 text-[40px] leading-tight"
+          style={{ fontFamily: "var(--font-display)", color: "#1E0A0E" }}
+        >
+          They were about to sign. They didn't.
+        </h2>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {ITEMS.map((t) => (
-          <figure
-            key={t.name}
-            className="relative flex flex-col overflow-hidden rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-transform duration-300 hover:scale-[1.02]"
-          >
-            <span
-              aria-hidden
-              className="pointer-events-none absolute -top-4 right-4 select-none font-display text-[110px] leading-none text-action-accent/10"
+        {/* Testimonial Cards */}
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {TESTIMONIALS.map((t, i) => (
+            <figure
+              key={i}
+              className={`${t.bg} relative flex flex-col overflow-hidden rounded-2xl border p-6`}
+              style={{
+                borderColor:
+                  t.bg === "bg-burg-mid"
+                    ? "rgba(212,168,130,0.15)"
+                    : "rgba(212,168,130,0.12)",
+              }}
             >
-              &ldquo;
-            </span>
-            <div className="relative flex gap-0.5" aria-label="5 star verified review">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-[#E5B83C] text-[#E5B83C]" />
-              ))}
-            </div>
-            <blockquote className="relative mt-4 flex-1 text-sm leading-relaxed text-text-light-primary">"{t.quote}"</blockquote>
-            <figcaption className="relative mt-5 border-t border-black/5 pt-4">
-              <div className="text-sm font-semibold">{t.name}</div>
-              <div className="text-xs text-text-muted-light">{t.region}</div>
-            </figcaption>
-          </figure>
+              {/* Decorative quotation mark */}
+              <span
+                aria-hidden
+                className="pointer-events-none select-none text-[80px] leading-none"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "rgba(212,168,130,0.08)",
+                }}
+              >
+                &ldquo;
+              </span>
 
-        ))}
+              <blockquote
+                className="relative -mt-4 flex-1 text-lg italic leading-relaxed"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "#EDD8B8",
+                }}
+              >
+                {t.quote}
+              </blockquote>
+
+              <figcaption className="relative mt-6">
+                <div
+                  className="text-[13px] font-light"
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    color: "rgba(212,168,130,0.6)",
+                  }}
+                >
+                  — {t.attribution}
+                </div>
+
+                <div
+                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[2px]"
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    borderColor: "rgba(212,168,130,0.2)",
+                    color: "rgba(212,168,130,0.5)",
+                  }}
+                >
+                  {t.tag}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        {/* Stats Bar */}
+        <div
+          className="mt-10 grid grid-cols-1 gap-8 rounded-xl border p-8 md:grid-cols-3"
+          style={{
+            backgroundColor: "#2D1018",
+            borderColor: "rgba(212,168,130,0.1)",
+          }}
+        >
+          {STATS.map((s, i) => (
+            <div key={i} className="text-center">
+              <div
+                className="text-[36px] leading-tight"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  color: "#D4A882",
+                }}
+              >
+                {s.value}
+              </div>
+              <div
+                className="mt-1 text-[13px] font-light"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  color: "rgba(237,216,184,0.5)",
+                }}
+              >
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

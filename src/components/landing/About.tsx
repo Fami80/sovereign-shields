@@ -79,8 +79,7 @@ export function About() {
                 padding: "20px 24px",
               }}
             >
-              "Most settlement errors aren't deliberate. Employers make mistakes out of confusion,
-              not bad intent. My job is to find those mistakes — and help both sides fix them."
+              "Most settlement errors aren't deliberate. Employers make mistakes because they haven't updated their processes — not because they're trying to underpay you. My job is to find those mistakes and help both sides fix them."
             </blockquote>
           </div>
 

@@ -6,6 +6,7 @@ import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
 import { EscalationTimeline } from "@/components/landing/EscalationTimeline";
 import { DirectorVault } from "@/components/landing/DirectorVault";
 import { Testimonials } from "@/components/landing/Testimonials";
+import { About } from "@/components/landing/About";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { StickyCTA } from "@/components/landing/StickyCTA";
 import { Navbar } from "@/components/landing/Navbar";
@@ -44,6 +45,7 @@ function Index() {
       <EscalationTimeline />
       <KnowledgeBase />
       <Testimonials />
+      <About />
       <DirectorVault />
       <SiteFooter />
       <StickyCTA />

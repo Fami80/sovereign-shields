@@ -18,7 +18,7 @@ export function JurisdictionRibbon() {
       <div className="absolute inset-x-0 -top-10 h-20 bg-bg-dark" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="-mt-8 rounded-[24px] border border-[color:rgba(212,168,130,0.15)] bg-[#2D1018] px-5 py-5 shadow-[0_20px_50px_rgb(0,0,0,0.35)] md:px-8 md:py-6">
-          <p className="mb-4 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted-dark">
+          <p className="mb-4 text-center text-[13px] font-semibold uppercase tracking-[2.5px] text-text-muted-dark">
             We cover every UAE regulatory authority
           </p>
           <div className="grid grid-cols-2 items-center gap-x-4 gap-y-4 sm:grid-cols-3 md:grid-cols-5">
@@ -32,7 +32,7 @@ export function JurisdictionRibbon() {
                 </span>
                 <div className="min-w-0">
                   <div className="text-xs font-extrabold tracking-wider text-text-dark-primary">{code}</div>
-                  <div className="truncate text-[10px] text-text-muted-dark">{label}</div>
+                  <div className="truncate text-[13px] text-text-muted-dark">{label}</div>
                 </div>
               </div>
             ))}

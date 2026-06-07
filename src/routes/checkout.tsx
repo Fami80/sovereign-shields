@@ -30,7 +30,7 @@ function CheckoutPlaceholder() {
         }}
       >
         <p
-          className="text-[10px] font-medium uppercase"
+          className="text-[13px] font-medium uppercase tracking-[2.5px]"
           style={{ color: "rgba(212,168,130,0.6)", letterSpacing: "3px" }}
         >
           SECURE CHECKOUT

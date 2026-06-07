@@ -25,7 +25,7 @@ export function EscalationTimeline() {
                   {s.id}
                 </span>
                 {s.fast && (
-                  <span className="inline-flex items-center gap-2 rounded-full bg-action-accent/15 px-3 py-1 text-[11px] font-semibold text-text-light-primary">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-action-accent/15 px-3 py-1 text-[13px] font-semibold text-text-light-primary">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-action-accent" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-action-accent" />

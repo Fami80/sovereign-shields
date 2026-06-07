@@ -151,7 +151,7 @@ export function ExposureCalculator() {
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
               style={{ color: "rgba(237,216,184,0.35)", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Based on MOHRE mainland formula: 21 days basic salary per year for first 5 years, 30 days thereafter. Actual entitlement may vary by jurisdiction and contract.
+              MOHRE mainland formula. 21 days basic salary per year for first 5 years, 30 days after that.
             </p>
           </div>
 
@@ -167,14 +167,16 @@ export function ExposureCalculator() {
               className="text-[13px] font-light leading-relaxed"
               style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              ⚠ If your settlement letter shows a different number, there may be an error. Most letters we review contain at least one.
+              ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
             </p>
           </div>
 
           {/* CTA */}
           <div className="mt-8 text-center">
-            <button
-              type="button"
+            <a
+              href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90"
               style={{
                 background: "#D4A882",
@@ -183,7 +185,7 @@ export function ExposureCalculator() {
               }}
             >
               Get your letter reviewed — AED 999 →
-            </button>
+            </a>
           </div>
         </div>
       </div>

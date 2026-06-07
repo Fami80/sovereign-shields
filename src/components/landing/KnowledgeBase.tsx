@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Lock, Unlock } from "lucide-react";
 
 const JURISDICTION_CARDS = [
@@ -96,9 +97,10 @@ export function KnowledgeBase() {
         {/* 6 Jurisdiction Cards */}
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-6">
           {JURISDICTION_CARDS.map((card) => (
-            <div
+            <Link
               key={card.title}
-              className="flex flex-col rounded-xl p-6"
+              to="/checkout"
+              className="group relative flex flex-col rounded-xl p-6"
               style={{
                 background: "#2D1018",
                 border: "1px solid rgba(212,168,130,0.12)",
@@ -121,7 +123,7 @@ export function KnowledgeBase() {
                   <li
                     key={item}
                     className="flex items-start gap-2.5 text-[13px] font-light"
-                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
@@ -131,7 +133,19 @@ export function KnowledgeBase() {
                   </li>
                 ))}
               </ul>
-            </div>
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 z-10 flex items-center justify-center rounded-xl opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                style={{ background: "rgba(30,10,14,0.7)" }}
+              >
+                <span
+                  className="text-[13px] font-medium"
+                  style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                >
+                  Unlock for AED 199 →
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 

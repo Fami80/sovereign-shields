@@ -104,16 +104,16 @@ export function Navbar() {
                 {l.label}
               </button>
             ))}
-            <button
-              onClick={() => {
-                smoothScrollTo("#vault");
-                setOpen(false);
-              }}
+            <a
+              href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm sm:hidden"
               style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
             >
               Book a review
-            </button>
+            </a>
           </nav>
         </div>
       )}

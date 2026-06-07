@@ -240,7 +240,7 @@ function Field({ label, error, children }: { label: string; error?: string; chil
       </span>
       {children}
       {error && (
-        <span className="mt-1.5 block font-sans text-xs" style={{ color: "#C4867A" }}>
+        <span role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>
           {error}
         </span>
       )}

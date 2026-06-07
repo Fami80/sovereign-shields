@@ -75,7 +75,7 @@ export function ExposureCalculator() {
           }}
         >
           {/* Inputs row */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {/* Input 1 */}
             <div>
               <label
@@ -85,15 +85,13 @@ export function ExposureCalculator() {
                 Monthly basic salary (AED)
               </label>
               <input
-                type="text"
+                type="number"
                 inputMode="numeric"
+                min="0"
                 placeholder="e.g. 25,000"
                 value={salaryInput}
-                onChange={(e) => {
-                  const raw = e.target.value.replace(/[^0-9]/g, "");
-                  setSalaryInput(raw ? Number(raw).toLocaleString("en-AE") : "");
-                }}
-                className="w-full rounded-lg px-4 py-3 text-sm outline-none transition focus:ring-1"
+                onChange={(e) => setSalaryInput(e.target.value)}
+                className="h-12 w-full rounded-lg px-4 text-sm outline-none transition focus:ring-1"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
@@ -112,8 +110,10 @@ export function ExposureCalculator() {
                 Years of service
               </label>
               <input
-                type="text"
-                inputMode="decimal"
+                type="number"
+                inputMode="numeric"
+                min="0"
+                step="0.1"
                 placeholder="e.g. 3"
                 value={yearsInput}
                 onChange={(e) => {
@@ -122,7 +122,7 @@ export function ExposureCalculator() {
                     setYearsInput(val);
                   }
                 }}
-                className="w-full rounded-lg px-4 py-3 text-sm outline-none transition focus:ring-1"
+                className="h-12 w-full rounded-lg px-4 text-sm outline-none transition focus:ring-1"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",

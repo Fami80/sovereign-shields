@@ -115,7 +115,7 @@ export function AudienceBento() {
               href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
               style={{
                 backgroundColor: "#8B2D3A",
                 color: "#FAF3E8",
@@ -239,7 +239,7 @@ export function AudienceBento() {
 
             <a
               href="/contact?type=audit"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "#D4A882",

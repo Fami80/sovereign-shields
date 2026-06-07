@@ -131,7 +131,7 @@ function ContactPage() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.name)}
                 />
               </Field>
@@ -143,7 +143,7 @@ function ContactPage() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
-                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.email)}
                 />
               </Field>
@@ -153,7 +153,7 @@ function ContactPage() {
                   ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
-                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={{
                     ...fieldStyle(!!errors.enquiry),
                     color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",
@@ -185,7 +185,7 @@ function ContactPage() {
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
-                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.message)}
                 />
               </Field>
@@ -193,7 +193,7 @@ function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium transition-all duration-300 hover:scale-[1.01]"
+                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium transition-all duration-300 hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
                 style={{ backgroundColor: "#D4A882", color: "#1E0A0E" }}
               >
                 Send →
@@ -287,7 +287,7 @@ function ContactCard({
         href={buttonHref}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80"
+        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
         style={{ color: "#D4A882" }}
       >
         {buttonText}

@@ -100,7 +100,7 @@ export function KnowledgeBase() {
             <Link
               key={card.title}
               to="/checkout"
-              className="group relative flex flex-col rounded-xl p-6"
+              className="group relative flex flex-col rounded-xl p-6 focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#2D1018",
                 border: "1px solid rgba(212,168,130,0.12)",
@@ -180,7 +180,7 @@ export function KnowledgeBase() {
           </p>
           <a
             href="/contact"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
             style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Read now →
@@ -203,7 +203,7 @@ export function KnowledgeBase() {
           </span>
           <a
             href="/checkout"
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-150 ease-out hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
             style={{
               background: "#D4A882",
               color: "#1E0A0E",

@@ -42,7 +42,7 @@ export function Navbar() {
         <a
           href="#"
           onClick={onBrand}
-          className="font-display text-xl tracking-tight"
+          className="font-display text-xl tracking-tight focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882] focus-visible:underline-offset-4"
           style={{ color: "#EDD8B8", fontWeight: 600 }}
         >
           UAEwork<span style={{ color: "#D4A882", fontStyle: "italic" }}>rights</span>
@@ -53,7 +53,7 @@ export function Navbar() {
             <button
               key={l.label}
               onClick={l.action}
-              className="font-sans text-sm transition-colors"
+              className="font-sans text-sm transition-colors focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882] focus-visible:underline-offset-4"
               style={{ color: "rgba(237,216,184,0.7)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#EDD8B8")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(237,216,184,0.7)")}
@@ -68,7 +68,7 @@ export function Navbar() {
             href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full px-5 py-2 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] sm:inline-flex"
+            className="hidden rounded-full px-5 py-2 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:inline-flex"
             style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
           >
             Book a review
@@ -76,7 +76,7 @@ export function Navbar() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="rounded-full p-2 lg:hidden"
+            className="rounded-full p-2 focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px] lg:hidden"
             style={{ border: "1px solid rgba(212,168,130,0.25)", color: "#EDD8B8" }}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -100,7 +100,7 @@ export function Navbar() {
                   l.action();
                   setOpen(false);
                 }}
-                className="rounded-lg px-3 py-3 text-left font-sans text-sm"
+                className="rounded-lg px-3 py-3 text-left font-sans text-sm focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
                 style={{ color: "rgba(237,216,184,0.7)" }}
               >
                 {l.label}
@@ -111,7 +111,7 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm sm:hidden"
+              className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:hidden"
               style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
             >
               Book a review

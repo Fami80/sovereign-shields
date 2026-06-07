@@ -110,7 +110,7 @@ export function About() {
               <div>
                 <h3
                   className="text-[14px] font-medium uppercase tracking-[2px]"
-                  style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.5)" }}
+                  style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.6)" }}
                 >
                   What I don't do
                 </h3>

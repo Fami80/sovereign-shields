@@ -79,7 +79,7 @@ export function KnowledgeBase() {
         {/* Subheading */}
         <p
           className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
-          style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
         </p>

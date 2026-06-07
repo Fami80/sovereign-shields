@@ -143,13 +143,13 @@ export function ExposureCalculator() {
             </div>
             <p
               className="mt-2 text-[13px] font-light"
-              style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Estimated gratuity entitlement
             </p>
             <p
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
-              style={{ color: "rgba(237,216,184,0.35)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.45)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               MOHRE mainland formula. 21 days basic salary per year for first 5 years, 30 days after that.
             </p>

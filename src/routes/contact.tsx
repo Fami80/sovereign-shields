@@ -1,10 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
-type Errors = Partial<Record<"name" | "email" | "enquiry" | "message", string>>;
+type FieldName = "name" | "email" | "enquiry" | "message";
+type Errors = Partial<Record<FieldName, string>>;
+const ERROR_COLOR = "#E57373";
+const errorBorder = (hasError: boolean) =>
+  hasError ? "1px solid rgba(212,168,130,0.2)" : "1px solid rgba(212,168,130,0.2)";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

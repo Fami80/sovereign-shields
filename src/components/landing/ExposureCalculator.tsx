@@ -50,19 +50,19 @@ export function ExposureCalculator() {
             className="mb-4 text-[10px] font-medium uppercase tracking-[3px]"
             style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'DM Sans', sans-serif" }}
           >
-            FIND OUT WHAT&apos;S AT STAKE
+            UAE GRATUITY CALCULATOR
           </p>
           <h2
             className="text-[40px] font-semibold leading-tight"
             style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
           >
-            What could your settlement be worth?
+            What is your UAE settlement actually worth?
           </h2>
           <p
             className="mx-auto mt-4 max-w-lg text-[16px] font-light leading-relaxed"
             style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
           >
-            Enter your details and see your estimated end of service entitlement. Most people are surprised.
+            Enter your basic salary and years of service. See what UAE labour law says you&apos;re owed.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export function ExposureCalculator() {
                 className="mb-2 block text-[12px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
               >
-                Monthly basic salary
+                Monthly basic salary (AED)
               </label>
               <input
                 type="text"
@@ -151,7 +151,7 @@ export function ExposureCalculator() {
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
               style={{ color: "rgba(237,216,184,0.35)", fontFamily: "'DM Sans', sans-serif" }}
             >
-              Based on MOHRE mainland formula: 21 days basic salary per year for first 5 years, 30 days thereafter. Actual entitlement may vary by jurisdiction and contract.
+              MOHRE mainland formula. 21 days basic salary per year for first 5 years, 30 days after that.
             </p>
           </div>
 
@@ -167,14 +167,16 @@ export function ExposureCalculator() {
               className="text-[13px] font-light leading-relaxed"
               style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
             >
-              ⚠ If your settlement letter shows a different number, there may be an error. Most letters we review contain at least one.
+              ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
             </p>
           </div>
 
           {/* CTA */}
           <div className="mt-8 text-center">
-            <button
-              type="button"
+            <a
+              href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90"
               style={{
                 background: "#D4A882",
@@ -183,7 +185,7 @@ export function ExposureCalculator() {
               }}
             >
               Get your letter reviewed — AED 999 →
-            </button>
+            </a>
           </div>
         </div>
       </div>

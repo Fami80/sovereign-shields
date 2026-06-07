@@ -153,7 +153,7 @@ function ContactPage() {
                   ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
-                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={{
                     ...fieldStyle(!!errors.enquiry),
                     color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",

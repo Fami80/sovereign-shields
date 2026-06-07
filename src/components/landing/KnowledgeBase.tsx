@@ -1,53 +1,201 @@
-import { ArrowRight, BookOpen } from "lucide-react";
-import { smoothScrollTo } from "@/lib/ui-store";
+import { Lock, Unlock } from "lucide-react";
 
-const CHIPS = [
-  { label: "Mainland Labor Law Decrees", tag: "MOHRE" },
-  { label: "DIFC DEWS Parameters", tag: "DIFC" },
-  { label: "ADGM Framework Core", tag: "ADGM" },
-  { label: "UAE Free Zone Guidelines", tag: "Free Zones" },
-  { label: "VARA Digital Conduct", tag: "VARA" },
-  { label: "SCA Listed Entity Rules", tag: "SCA" },
+const JURISDICTION_CARDS = [
+  {
+    title: "Mainland UAE",
+    items: [
+      "Gratuity calculation",
+      "Notice periods",
+      "Leave encashment",
+      "Deductions",
+      "Visa cancellation",
+    ],
+    locked: true,
+  },
+  {
+    title: "DIFC",
+    items: [
+      "DEWS explained",
+      "How it differs from mainland",
+      "Zurich portal guide",
+    ],
+    locked: true,
+  },
+  {
+    title: "ADGM",
+    items: [
+      "Employment framework",
+      "Key differences from mainland & DIFC",
+    ],
+    locked: true,
+  },
+  {
+    title: "Free Zones",
+    items: [
+      "Which zones have their own frameworks",
+      "Where mainland law applies",
+    ],
+    locked: true,
+  },
+  {
+    title: "Cross-border cases",
+    items: [
+      "Belgian law and UAE",
+      "UK subsidiaries",
+    ],
+    locked: true,
+  },
+  {
+    title: "Practical tools",
+    items: [
+      "Settlement checklist",
+      "Leave encashment calculator",
+      "Deductions checker",
+    ],
+    locked: true,
+  },
 ];
 
 export function KnowledgeBase() {
-  const goVault = () => smoothScrollTo("#vault");
-
   return (
-    <section id="knowledge" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-      <div className="rounded-[28px] border border-black/5 bg-white p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] md:p-10">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="max-w-xl">
-            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">
-              <BookOpen className="h-3.5 w-3.5" /> Knowledge Base
-            </p>
-            <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">Jurisdictional intelligence, on tap.</h2>
-            <p className="mt-2 text-sm text-text-muted-light">
-              Curated decrees, freezone playbooks and tribunal precedents. Full library unlocks inside the Director Vault.
-            </p>
+    <section id="knowledge" className="bg-[#1E0A0E] py-20 md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Eyebrow */}
+        <p
+          className="text-center text-[10px] font-normal uppercase tracking-[3px]"
+          style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'DM Sans', sans-serif" }}
+        >
+          KNOWLEDGE BASE
+        </p>
+
+        {/* Heading */}
+        <h2
+          className="mt-4 text-center text-[40px] font-semibold leading-tight"
+          style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
+        >
+          UAE Employment Rights — Knowledge Base
+        </h2>
+
+        {/* Subheading */}
+        <p
+          className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
+          style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'DM Sans', sans-serif" }}
+        >
+          The complete reference for UAE final settlements, by jurisdiction. One free article included.
+        </p>
+
+        {/* Preview label */}
+        <div
+          className="mx-auto mt-6 flex items-center justify-center gap-2 text-center text-[13px] font-light"
+          style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'DM Sans', sans-serif" }}
+        >
+          <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
+          Preview — purchase access to unlock the full library · AED 199 for 30-day access
+        </div>
+
+        {/* 6 Jurisdiction Cards */}
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {JURISDICTION_CARDS.map((card) => (
+            <div
+              key={card.title}
+              className="flex flex-col rounded-xl p-6"
+              style={{
+                background: "#2D1018",
+                border: "1px solid rgba(212,168,130,0.12)",
+              }}
+            >
+              <div className="mb-4 flex items-center justify-between">
+                <h3
+                  className="text-base font-medium"
+                  style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {card.title}
+                </h3>
+                <Lock
+                  className="h-4 w-4"
+                  style={{ color: "rgba(212,168,130,0.5)" }}
+                />
+              </div>
+              <ul className="flex flex-col gap-2">
+                {card.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-[13px] font-light"
+                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    <span
+                      className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                      style={{ background: "#8B2D3A" }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Free Article Card */}
+        <div
+          className="mx-auto mt-5 max-w-xl rounded-xl p-6"
+          style={{
+            background: "rgba(212,168,130,0.06)",
+            border: "1px solid rgba(212,168,130,0.25)",
+          }}
+        >
+          <div className="flex items-center gap-2">
+            <Unlock className="h-4 w-4" style={{ color: "#D4A882" }} />
+            <span
+              className="text-xs font-medium uppercase tracking-wide"
+              style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+            >
+              FREE
+            </span>
           </div>
-          <button
-            onClick={goVault}
-            className="group inline-flex items-center gap-2 rounded-full border border-bg-dark/15 px-5 py-2.5 text-sm font-semibold text-text-light-primary transition-all hover:border-action-accent hover:bg-action-accent/10"
+          <h3
+            className="mt-3 text-lg font-medium"
+            style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
           >
-            Open the Vault
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            How UAE gratuity is calculated — the complete guide
+          </h3>
+          <button
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
+            style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Read now →
           </button>
         </div>
 
-        <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CHIPS.map((c) => (
-            <button
-              key={c.label}
-              onClick={goVault}
-              className="group flex items-center justify-between rounded-2xl border border-black/5 bg-bg-light/60 px-4 py-3.5 text-left text-sm font-medium text-text-light-primary transition-all hover:-translate-y-0.5 hover:border-action-accent/40 hover:bg-white hover:shadow-md"
-            >
-              <span>{c.label}</span>
-              <span className="ml-3 inline-flex items-center rounded-full bg-bg-dark/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-text-muted-light group-hover:bg-action-accent/15 group-hover:text-text-light-primary">
-                {c.tag}
-              </span>
-            </button>
-          ))}
+        {/* Bottom CTA bar */}
+        <div
+          className="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl px-6 py-5 sm:flex-row sm:gap-6"
+          style={{
+            background: "#2D1018",
+            borderTop: "1px solid rgba(212,168,130,0.1)",
+          }}
+        >
+          <span
+            className="text-sm font-medium"
+            style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Unlock the full knowledge base
+          </span>
+          <span
+            className="text-sm font-light"
+            style={{ color: "rgba(237,216,184,0.45)", fontFamily: "'DM Sans', sans-serif" }}
+          >
+            AED 199
+          </span>
+          <button
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
+            style={{
+              background: "#D4A882",
+              color: "#1E0A0E",
+              fontFamily: "'DM Sans', sans-serif",
+            }}
+          >
+            Get 30-day access →
+          </button>
         </div>
       </div>
     </section>

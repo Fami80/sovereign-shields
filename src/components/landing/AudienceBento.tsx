@@ -1,3 +1,5 @@
+import { User, Building2 } from "lucide-react";
+
 export function AudienceBento() {
   return (
     <section id="features" style={{ backgroundColor: "#FAF3E8" }}>
@@ -39,7 +41,7 @@ export function AudienceBento() {
             }}
           >
             <p
-              className="font-sans"
+              className="inline-flex items-center gap-1.5 font-sans"
               style={{
                 fontSize: "10px",
                 letterSpacing: "2px",
@@ -48,6 +50,7 @@ export function AudienceBento() {
                 textTransform: "uppercase",
               }}
             >
+              <User size={12} />
               FOR EMPLOYEES
             </p>
 
@@ -152,7 +155,7 @@ export function AudienceBento() {
             }}
           >
             <p
-              className="font-sans"
+              className="inline-flex items-center gap-1.5 font-sans"
               style={{
                 fontSize: "10px",
                 letterSpacing: "2px",
@@ -161,6 +164,7 @@ export function AudienceBento() {
                 textTransform: "uppercase",
               }}
             >
+              <Building2 size={12} />
               FOR EMPLOYERS
             </p>
 

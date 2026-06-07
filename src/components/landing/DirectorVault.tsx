@@ -68,7 +68,7 @@ export function DirectorVault() {
             <div className="rounded-2xl border border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] p-5 md:col-span-3">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <Sparkles className="h-4 w-4 text-action-accent" />
-                AI Compliance Assistant
+                Knowledge Base
               </div>
               <div className="mt-4 space-y-3 text-sm">
                 <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-white/5 p-3 text-text-muted-dark">

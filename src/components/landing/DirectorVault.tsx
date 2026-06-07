@@ -59,7 +59,7 @@ export function DirectorVault() {
           <div className="flex items-center gap-2 border-b border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] px-5 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#2D1018]" />
             <span className="ml-3 text-xs text-text-muted-dark">vault.uaeworkrights.ae — Director Workspace</span>
           </div>
 

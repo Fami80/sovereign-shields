@@ -34,7 +34,7 @@ export function AudienceBento() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* CARD 1 — Employee */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "#FAF3E8",
               border: "1px solid rgba(139,45,58,0.12)",

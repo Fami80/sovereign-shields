@@ -33,6 +33,12 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", enquiry: initialEnquiry, message: "" });
   const [errors, setErrors] = useState<Errors>({});
+  const refs: Record<FieldName, React.RefObject<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>> = {
+    name: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+    enquiry: useRef<HTMLSelectElement>(null),
+    message: useRef<HTMLTextAreaElement>(null),
+  };
 
   const validate = (): Errors => {
     const e: Errors = {};
@@ -47,8 +53,21 @@ function ContactPage() {
     ev.preventDefault();
     const e = validate();
     setErrors(e);
-    if (Object.keys(e).length === 0) setSubmitted(true);
+    if (Object.keys(e).length === 0) {
+      setSubmitted(true);
+      return;
+    }
+    const order: FieldName[] = ["name", "email", "enquiry", "message"];
+    const first = order.find((k) => e[k]);
+    if (first) refs[first].current?.focus();
   };
+
+  const fieldStyle = (hasError: boolean): React.CSSProperties => ({
+    backgroundColor: "rgba(212,168,130,0.06)",
+    border: "1px solid rgba(212,168,130,0.2)",
+    borderLeft: hasError ? `2px solid ${ERROR_COLOR}` : "1px solid rgba(212,168,130,0.2)",
+    color: "#EDD8B8",
+  });
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#1E0A0E" }}>

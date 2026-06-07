@@ -94,7 +94,7 @@ export function KnowledgeBase() {
         </div>
 
         {/* 6 Jurisdiction Cards */}
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
           {JURISDICTION_CARDS.map((card) => (
             <div
               key={card.title}

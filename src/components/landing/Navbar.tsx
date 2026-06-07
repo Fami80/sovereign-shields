@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { emitUi, smoothScrollTo } from "@/lib/ui-store";
 
 type NavItem = { label: string; action: () => void };
 
-const buildLinks = (): NavItem[] => [
+const buildLinks = (navigate: (opts: { to: string }) => void): NavItem[] => [
   { label: "Services", action: () => smoothScrollTo("#features") },
   { label: "Knowledge Base", action: () => smoothScrollTo("#knowledge") },
-  { label: "About", action: () => emitUi("open-about") },
-  { label: "Contact", action: () => emitUi("open-contact") },
+  { label: "About", action: () => smoothScrollTo("#about") },
+  { label: "Contact", action: () => navigate({ to: "/contact" }) },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const links = buildLinks();
+  const navigate = useNavigate();
+  const links = buildLinks(navigate);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

@@ -46,8 +46,8 @@ export function DirectorVault() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-dark">Gated Workspace</p>
-            <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-dark">KNOWLEDGE BASE ACCESS</p>
+            <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The full UAE employment law reference</h2>
           </div>
           <span className="hidden rounded-full border border-[color:rgba(212,168,130,0.15)] bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
             {isUnlocked ? "Unlocked" : "Unlocked at AED 999"}
@@ -68,7 +68,7 @@ export function DirectorVault() {
             <div className="rounded-2xl border border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] p-5 md:col-span-3">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <Sparkles className="h-4 w-4 text-action-accent" />
-                AI Compliance Assistant
+                Knowledge Base
               </div>
               <div className="mt-4 space-y-3 text-sm">
                 <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-white/5 p-3 text-text-muted-dark">
@@ -151,7 +151,7 @@ export function DirectorVault() {
                 </span>
                 <p className="mt-4 text-base font-semibold text-text-dark-primary">Director Vault is locked</p>
                 <p className="mt-2 text-xs leading-relaxed text-text-muted-dark">
-                  Unlock the AI Compliance Assistant and your automated 6-page legal roadmap PDF — secured by a single transparent triage fee.
+                  Unlock the Knowledge Base and your automated 6-page legal roadmap PDF — secured by a single transparent review fee.
                 </p>
                 <button
                   onClick={() => setOpen(true)}
@@ -176,7 +176,7 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Secure triage booking"
+      aria-label="Secure review booking"
       className="fixed inset-0 z-50 flex items-center justify-center bg-bg-dark/70 p-4 backdrop-blur-md"
       onClick={onClose}
     >
@@ -192,9 +192,9 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
           <X className="h-4 w-4" />
         </button>
         <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 999</span>
-        <h3 className="mt-4 text-2xl font-extrabold">Secure your triage</h3>
+        <h3 className="mt-4 text-2xl font-extrabold">Secure your review</h3>
         <p className="mt-2 text-sm text-text-muted-light">
-          One transparent fee. Senior-counsel review of your matter, delivered within 24 hours. Your roadmap PDF unlocks immediately on payment.
+          One transparent fee. compliance specialist review of your matter, delivered within 48 hours. Your roadmap PDF unlocks immediately on payment.
         </p>
         <form
           className="mt-5 space-y-3"

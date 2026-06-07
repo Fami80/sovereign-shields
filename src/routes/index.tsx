@@ -11,8 +11,6 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { StickyCTA } from "@/components/landing/StickyCTA";
 import { Navbar } from "@/components/landing/Navbar";
 import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
-import { AboutDrawer } from "@/components/landing/AboutDrawer";
-import { ContactDrawer } from "@/components/landing/ContactDrawer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,8 +49,6 @@ function Index() {
       <DirectorVault />
       <SiteFooter />
       <StickyCTA />
-      <AboutDrawer />
-      <ContactDrawer />
     </main>
   );
 }

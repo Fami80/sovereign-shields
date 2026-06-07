@@ -157,7 +157,7 @@ export function DirectorVault() {
                   onClick={() => setOpen(true)}
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-action-accent px-5 py-2.5 text-sm font-bold text-bg-dark transition-all duration-300 hover:scale-[1.02]"
                 >
-                  Unlock Premium Access — AED 499
+                  Unlock Premium Access — AED 999
                 </button>
               </div>
 

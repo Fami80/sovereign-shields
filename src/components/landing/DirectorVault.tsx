@@ -49,14 +49,14 @@ export function DirectorVault() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-dark">Gated Workspace</p>
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
-          <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
+          <span className="hidden rounded-full border border-[color:rgba(212,168,130,0.15)] bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
             {isUnlocked ? "Unlocked" : "Unlocked at AED 999"}
           </span>
         </div>
 
-        <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#021F1A] shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
+        <div className="relative overflow-hidden rounded-[24px] border border-[color:rgba(212,168,130,0.15)] bg-[#2D1018] shadow-[0_30px_80px_rgb(0,0,0,0.35)]">
           {/* Terminal chrome */}
-          <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.02] px-5 py-3">
+          <div className="flex items-center gap-2 border-b border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] px-5 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
@@ -65,7 +65,7 @@ export function DirectorVault() {
 
           <div className="grid grid-cols-1 gap-5 p-6 md:grid-cols-5 md:p-8">
             {/* AI Assistant */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:col-span-3">
+            <div className="rounded-2xl border border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] p-5 md:col-span-3">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <Sparkles className="h-4 w-4 text-action-accent" />
                 AI Compliance Assistant
@@ -83,7 +83,7 @@ export function DirectorVault() {
                   <button
                     key={p}
                     onClick={() => !isUnlocked && setOpen(true)}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-text-muted-dark transition-colors hover:border-action-accent/40 hover:text-text-dark-primary"
+                    className="rounded-full border border-[color:rgba(212,168,130,0.15)] bg-white/[0.03] px-3 py-1.5 text-xs text-text-muted-dark transition-colors hover:border-action-accent/40 hover:text-text-dark-primary"
                   >
                     {p}
                   </button>
@@ -93,7 +93,7 @@ export function DirectorVault() {
                 <input
                   onFocus={() => !isUnlocked && setOpen(true)}
                   placeholder="Ask the assistant…"
-                  className="flex-1 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-text-dark-primary placeholder:text-text-muted-dark/70 focus:outline-none focus:ring-2 focus:ring-action-accent/40"
+                  className="flex-1 rounded-full border border-[color:rgba(212,168,130,0.15)] bg-white/[0.03] px-4 py-2.5 text-sm text-text-dark-primary placeholder:text-text-muted-dark/70 focus:outline-none focus:ring-2 focus:ring-action-accent/40"
                 />
                 <button
                   onClick={() => !isUnlocked && setOpen(true)}
@@ -105,7 +105,7 @@ export function DirectorVault() {
             </div>
 
             {/* PDF Download */}
-            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:col-span-2">
+            <div className="flex flex-col justify-between rounded-2xl border border-[color:rgba(212,168,130,0.15)] bg-white/[0.02] p-5 md:col-span-2">
               <div>
                 <div className="flex items-center gap-2 text-sm font-semibold">
                   <FileDown className="h-4 w-4 text-action-accent" />
@@ -114,7 +114,7 @@ export function DirectorVault() {
                 <p className="mt-2 text-xs text-text-muted-dark">
                   Automated 6-page playbook with exposure ranges, draft letters and escalation tree.
                 </p>
-                <div className="mt-4 rounded-xl border border-dashed border-white/10 bg-bg-dark/40 p-4 text-xs text-text-muted-dark">
+                <div className="mt-4 rounded-xl border border-dashed border-[color:rgba(212,168,130,0.15)] bg-bg-dark/40 p-4 text-xs text-text-muted-dark">
                   <div className="font-mono">UAE_Compliance_Roadmap_Confidential.pdf</div>
                   <div className="mt-1">6 pages · client-generated · encrypted in transit</div>
                 </div>
@@ -144,8 +144,8 @@ export function DirectorVault() {
 
           {/* Glass gate */}
           {!isUnlocked && (
-            <div className="absolute inset-0 flex items-center justify-center border-white/10 bg-bg-dark/85 backdrop-blur-xl">
-              <div className="max-w-sm rounded-[24px] border border-white/10 bg-[#021F1A] px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.5)]">
+            <div className="absolute inset-0 flex items-center justify-center border-[color:rgba(212,168,130,0.15)] bg-bg-dark/85 backdrop-blur-xl">
+              <div className="max-w-sm rounded-[24px] border border-[color:rgba(212,168,130,0.15)] bg-[#2D1018] px-8 py-7 text-center shadow-[0_30px_80px_rgb(0,0,0,0.5)]">
                 <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-action-accent/15 ring-1 ring-action-accent/30">
                   <Lock className="h-5 w-5 text-action-accent" />
                 </span>

@@ -4,53 +4,53 @@ const JURISDICTION_CARDS = [
   {
     title: "Mainland UAE",
     items: [
-      "Gratuity calculation",
-      "Notice periods",
-      "Leave encashment",
-      "Deductions",
-      "Visa cancellation",
+      "UAE labour law gratuity calculation — how it's done",
+      "Notice periods and gardening leave rules",
+      "Leave encashment — basic salary only, not gross",
+      "Can your employer deduct visa costs in UAE?",
+      "Visa cancellation — what you must sign and when",
     ],
     locked: true,
   },
   {
-    title: "DIFC",
+    title: "DIFC end of service gratuity",
     items: [
-      "DEWS explained",
-      "How it differs from mainland",
-      "Zurich portal guide",
+      "DEWS scheme — how it replaces traditional gratuity",
+      "How DIFC employment differs from mainland UAE",
+      "Zurich portal — checking your DEWS balance",
     ],
     locked: true,
   },
   {
     title: "ADGM",
     items: [
-      "Employment framework",
-      "Key differences from mainland & DIFC",
+      "Employment framework and key rights",
+      "How ADGM differs from DIFC and mainland",
     ],
     locked: true,
   },
   {
     title: "Free Zones",
     items: [
-      "Which zones have their own frameworks",
-      "Where mainland law applies",
+      "Which free zones have their own employment frameworks",
+      "Where mainland UAE labour law applies instead",
     ],
     locked: true,
   },
   {
     title: "Cross-border cases",
     items: [
-      "Belgian law and UAE",
-      "UK subsidiaries",
+      "Belgian law and UAE — what applies when",
+      "UK subsidiaries operating in UAE",
     ],
     locked: true,
   },
   {
     title: "Practical tools",
     items: [
-      "Settlement checklist",
+      "UAE settlement checklist — before you sign",
       "Leave encashment calculator",
-      "Deductions checker",
+      "Illegal deductions — what employers cannot charge you",
     ],
     locked: true,
   },
@@ -81,7 +81,7 @@ export function KnowledgeBase() {
           className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'DM Sans', sans-serif" }}
         >
-          The complete reference for UAE final settlements, by jurisdiction. One free article included.
+          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
         </p>
 
         {/* Preview label */}
@@ -90,7 +90,7 @@ export function KnowledgeBase() {
           style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'DM Sans', sans-serif" }}
         >
           <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
-          Preview — purchase access to unlock the full library · AED 199 for 30-day access
+          Preview — purchase 30-day access to unlock the full library · AED 199
         </div>
 
         {/* 6 Jurisdiction Cards */}
@@ -158,12 +158,19 @@ export function KnowledgeBase() {
           >
             How UAE gratuity is calculated — the complete guide
           </h3>
-          <button
+          <p
+            className="mt-2 text-sm font-light"
+            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+          >
+            The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.
+          </p>
+          <a
+            href="/contact"
             className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
             style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
           >
             Read now →
-          </button>
+          </a>
         </div>
 
         {/* Bottom CTA bar */}
@@ -178,13 +185,7 @@ export function KnowledgeBase() {
             className="text-sm font-medium"
             style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'DM Sans', sans-serif" }}
           >
-            Unlock the full knowledge base
-          </span>
-          <span
-            className="text-sm font-light"
-            style={{ color: "rgba(237,216,184,0.45)", fontFamily: "'DM Sans', sans-serif" }}
-          >
-            AED 199
+            Unlock the full knowledge base · AED 199 for 30-day access
           </span>
           <a
             href="/checkout"

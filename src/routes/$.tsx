@@ -12,19 +12,19 @@ export const Route = createFileRoute("/$")({
 
 function NotFoundPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center px-4" style={{ backgroundColor: "#1E0A0E" }}>
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h1 className="font-display text-7xl font-bold" style={{ color: "#EDD8B8", fontWeight: 700 }}>Page not found</h1>
+        <p className="mt-4 font-sans" style={{ fontSize: 16, fontWeight: 300, color: "rgba(237,216,184,0.6)" }}>
+          This page doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium transition-colors hover:opacity-90"
+            style={{ backgroundColor: "#D4A882", color: "#1E0A0E" }}
           >
-            Go home
+            Back to UAEworkrights →
           </Link>
         </div>
       </div>

@@ -70,7 +70,7 @@ export function SiteFooter() {
               style={{
                 fontSize: 12,
                 fontWeight: 300,
-                color: "rgba(237,216,184,0.35)",
+                color: "rgba(237,216,184,0.55)",
               }}
             >
               Dubai · Abu Dhabi · Sharjah · Ajman · RAK · Fujairah · UAQ
@@ -81,7 +81,7 @@ export function SiteFooter() {
             <div key={col.title}>
               <div
                 className="font-sans text-xs font-medium uppercase tracking-[0.16em]"
-                style={{ color: "rgba(237,216,184,0.5)" }}
+                style={{ color: "rgba(237,216,184,0.55)" }}
               >
                 {col.title}
               </div>

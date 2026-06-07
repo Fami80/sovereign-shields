@@ -107,6 +107,19 @@ export function Testimonials() {
           ))}
         </div>
 
+        {/* Mobile scroll indicator */}
+        <p
+          className="mt-3 text-center md:hidden"
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: "12px",
+            fontWeight: 300,
+            color: "rgba(30,10,14,0.45)",
+          }}
+        >
+          Scroll to see more →
+        </p>
+
         {/* Stats Bar */}
         <div
           className="mt-10 grid grid-cols-1 gap-8 rounded-xl border p-8 md:grid-cols-3"

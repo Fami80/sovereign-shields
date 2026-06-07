@@ -87,7 +87,7 @@ export function Hero() {
               href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02]"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02] sm:w-auto"
               style={{
                 backgroundColor: "#D4A882",
                 color: "#1E0A0E",
@@ -100,7 +100,7 @@ export function Hero() {
             </a>
             <a
               href="/contact?type=audit"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02]"
+              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans transition-transform duration-150 ease-out hover:scale-[1.02] sm:w-auto"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "#EDD8B8",

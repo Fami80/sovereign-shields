@@ -185,13 +185,7 @@ export function KnowledgeBase() {
             className="text-sm font-medium"
             style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'DM Sans', sans-serif" }}
           >
-            Unlock the full knowledge base
-          </span>
-          <span
-            className="text-sm font-light"
-            style={{ color: "rgba(237,216,184,0.45)", fontFamily: "'DM Sans', sans-serif" }}
-          >
-            AED 199
+            Unlock the full knowledge base · AED 199 for 30-day access
           </span>
           <a
             href="/checkout"

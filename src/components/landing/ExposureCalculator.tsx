@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { animate, motion, useMotionValue, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import verifiedBg from "@/assets/verified-bg.jpg.asset.json";
+import { AnimatePresence, animate, motion, useMotionValue, useReducedMotion } from "framer-motion";
+import { usePersona } from "@/lib/persona-context";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {
@@ -22,6 +22,9 @@ function computeGratuity(salary: number, years: number) {
 }
 
 export function ExposureCalculator() {
+  const { persona } = usePersona();
+  const isEmployer = persona === "employer";
+
   const [salaryInput, setSalaryInput] = useState("");
   const [yearsInput, setYearsInput] = useState("");
   const [revealed, setRevealed] = useState(false);
@@ -34,10 +37,8 @@ export function ExposureCalculator() {
 
   const prefersReducedMotion = useReducedMotion();
   const count = useMotionValue(0);
-  const displayRef = useRef<HTMLDivElement>(null);
   const [displayText, setDisplayText] = useState("AED —");
 
-  // Reset reveal when inputs change
   useEffect(() => {
     if (revealed) {
       setRevealed(false);
@@ -48,9 +49,7 @@ export function ExposureCalculator() {
   }, [salaryInput, yearsInput]);
 
   useEffect(() => {
-    const unsub = count.on("change", (v) => {
-      setDisplayText(fmt(Math.round(v)));
-    });
+    const unsub = count.on("change", (v) => setDisplayText(fmt(Math.round(v))));
     return () => unsub();
   }, [count]);
 
@@ -63,87 +62,123 @@ export function ExposureCalculator() {
       return;
     }
     count.set(0);
-    animate(count, gratuity, {
-      duration: 1.8,
-      ease: [0.16, 1, 0.3, 1],
-    });
+    animate(count, gratuity, { duration: 1.8, ease: [0.16, 1, 0.3, 1] });
   };
 
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  // Copy maps for persona
+  const copy = isEmployer
+    ? {
+        eyebrow: "UAE LIABILITY ENGINE",
+        title: "What does one exit actually cost you?",
+        sub: "Enter the employee's basic salary and years of service. See your statutory liability under UAE labour law.",
+        salaryLabel: "Employee monthly basic (AED)",
+        yearsLabel: "Years of service",
+        cta: "Calculate Company Liability →",
+        resultLabel: "Statutory gratuity owed",
+        warning: "⚠ Your settlement template likely understates this. One dispute averages AED 75,000 in penalties.",
+        bookCta: "Book a compliance audit — from AED 5,000 →",
+        bookHref: "/contact?type=audit",
+      }
+    : {
+        eyebrow: "UAE GRATUITY CALCULATOR",
+        title: "What is your UAE settlement actually worth?",
+        sub: "Enter your basic salary and years of service. See what UAE labour law says you're owed.",
+        salaryLabel: "Monthly basic salary (AED)",
+        yearsLabel: "Years of service",
+        cta: "Calculate My Exposure →",
+        resultLabel: "Estimated gratuity entitlement",
+        warning: "⚠ If your settlement letter shows a different number, there's likely an error. Most letters we review have at least one.",
+        bookCta: "Get your letter reviewed — AED 999 →",
+        bookHref: `https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`,
+      };
 
   return (
     <section
-      ref={sectionRef}
       id="calculator"
-      className="relative isolate overflow-hidden bg-[#1E0A0E] px-6 py-20 md:py-28"
+      className="relative isolate overflow-hidden px-6 pb-20 pt-12 md:pb-28 md:pt-16"
+      style={{ background: "#1E0A0E" }}
     >
-      {/* Slow-parallax verified-status background */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -z-10"
-        style={{
-          top: "-10%",
-          left: 0,
-          right: 0,
-          bottom: "-10%",
-          y: prefersReducedMotion ? 0 : bgY,
-          backgroundImage: `url(${verifiedBg.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.55,
-        }}
-      />
-      {/* Dark wash so calculator content stays legible */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(30,10,14,0.55) 0%, rgba(30,10,14,0.45) 50%, rgba(30,10,14,0.7) 100%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute right-0 top-0"
-        style={{
-          width: "600px",
-          height: "600px",
-          background: "radial-gradient(circle at top right, rgba(139,45,58,0.15), transparent 70%)",
-        }}
-      />
+      {/* Motion background — animated gradient orbs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <motion.div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            width: 620,
+            height: 620,
+            top: "-15%",
+            left: "-10%",
+            background: "radial-gradient(circle, rgba(139,45,58,0.35), transparent 65%)",
+          }}
+          animate={prefersReducedMotion ? undefined : { x: [0, 80, 0], y: [0, 40, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute rounded-full blur-3xl"
+          style={{
+            width: 520,
+            height: 520,
+            bottom: "-20%",
+            right: "-10%",
+            background: "radial-gradient(circle, rgba(212,168,130,0.18), transparent 65%)",
+          }}
+          animate={prefersReducedMotion ? undefined : { x: [0, -60, 0], y: [0, -30, 0] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(237,216,184,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(237,216,184,0.5) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage: "radial-gradient(circle at center, black 30%, transparent 75%)",
+          }}
+        />
+      </div>
 
       <div className="relative mx-auto max-w-4xl">
-        <div className="mb-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-10 text-center"
+        >
           <p
             className="mb-5 text-[13px] font-medium uppercase tracking-[2.5px]"
-            style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{ color: "rgba(212,168,130,0.7)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            UAE GRATUITY CALCULATOR
+            {copy.eyebrow}
           </p>
-          <h2
-            className="text-[40px] font-semibold leading-tight"
-            style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
-          >
-            What is your UAE settlement actually worth?
-          </h2>
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={copy.title}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.45 }}
+              className="text-[40px] font-semibold leading-tight md:text-[56px]"
+              style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
+            >
+              {copy.title}
+            </motion.h1>
+          </AnimatePresence>
           <p
             className="mx-auto mt-5 max-w-lg text-[16px] font-light leading-relaxed"
-            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Enter your basic salary and years of service. See what UAE labour law says you&apos;re owed.
+            {copy.sub}
           </p>
-        </div>
+        </motion.div>
 
-        <div
-          className="mx-auto max-w-2xl rounded-[16px] p-10"
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="mx-auto max-w-2xl rounded-[20px] p-8 backdrop-blur-2xl md:p-10"
           style={{
-            background: "#2D1018",
-            border: "1px solid rgba(212,168,130,0.15)",
+            background: "linear-gradient(180deg, rgba(45,16,24,0.85) 0%, rgba(30,10,14,0.85) 100%)",
+            border: "1px solid rgba(212,168,130,0.2)",
+            boxShadow: "0 30px 80px -20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(237,216,184,0.06)",
           }}
         >
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -152,7 +187,7 @@ export function ExposureCalculator() {
                 className="mb-2 block text-[12px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
-                Monthly basic salary (AED)
+                {copy.salaryLabel}
               </label>
               <input
                 type="number"
@@ -170,13 +205,12 @@ export function ExposureCalculator() {
                 }}
               />
             </div>
-
             <div>
               <label
                 className="mb-2 block text-[12px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
-                Years of service
+                {copy.yearsLabel}
               </label>
               <input
                 type="number"
@@ -187,9 +221,7 @@ export function ExposureCalculator() {
                 value={yearsInput}
                 onChange={(e) => {
                   const val = e.target.value;
-                  if (val === "" || /^\d*\.?\d{0,1}$/.test(val)) {
-                    setYearsInput(val);
-                  }
+                  if (val === "" || /^\d*\.?\d{0,1}$/.test(val)) setYearsInput(val);
                 }}
                 className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                 style={{
@@ -202,7 +234,6 @@ export function ExposureCalculator() {
             </div>
           </div>
 
-          {/* Calculate button */}
           <div className="mt-8 text-center">
             <button
               type="button"
@@ -215,30 +246,54 @@ export function ExposureCalculator() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Calculate My Exposure →
+              {copy.cta}
             </button>
           </div>
 
-          {/* Result */}
+          {/* Result with cinematic reveal */}
           <div className="mt-10 text-center">
-            <div
-              ref={displayRef}
-              className="text-[56px] font-semibold leading-none tabular-nums transition-opacity duration-500"
-              style={{
-                color: "#D4A882",
-                fontFamily: "'Playfair Display', serif",
-                opacity: revealed ? 1 : 0.35,
-                textShadow: revealed ? "0 0 40px rgba(212,168,130,0.25)" : "none",
-              }}
-              aria-live="polite"
-            >
-              {displayText}
-            </div>
+            <AnimatePresence mode="wait">
+              {revealed ? (
+                <motion.div
+                  key="revealed"
+                  initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div
+                    className="text-[56px] font-semibold leading-none tabular-nums md:text-[72px]"
+                    style={{
+                      color: "#D4A882",
+                      fontFamily: "'Playfair Display', serif",
+                      textShadow: "0 0 60px rgba(212,168,130,0.35)",
+                    }}
+                    aria-live="polite"
+                  >
+                    {displayText}
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="idle"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.35 }}
+                  exit={{ opacity: 0 }}
+                  className="text-[56px] font-semibold leading-none tabular-nums md:text-[72px]"
+                  style={{
+                    color: "#D4A882",
+                    fontFamily: "'Playfair Display', serif",
+                  }}
+                >
+                  AED —
+                </motion.div>
+              )}
+            </AnimatePresence>
             <p
               className="mt-2 text-[13px] font-light"
               style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
-              Estimated gratuity entitlement
+              {copy.resultLabel}
             </p>
             <p
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
@@ -248,25 +303,33 @@ export function ExposureCalculator() {
             </p>
           </div>
 
-          <div
-            className="mx-auto mt-8 max-w-lg rounded-lg p-4"
-            style={{
-              background: "rgba(184,58,42,0.1)",
-              border: "1px solid rgba(184,58,42,0.3)",
-            }}
-          >
-            <p
-              className="text-[13px] font-light leading-relaxed"
-              style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            >
-              ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
-            </p>
-          </div>
+          <AnimatePresence>
+            {revealed && (
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mx-auto mt-8 max-w-lg rounded-lg p-4"
+                style={{
+                  background: "rgba(184,58,42,0.1)",
+                  border: "1px solid rgba(184,58,42,0.3)",
+                }}
+              >
+                <p
+                  className="text-[13px] font-light leading-relaxed"
+                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                >
+                  {copy.warning}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <div className="mt-8 text-center">
             <a
-              href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
-              target="_blank"
+              href={copy.bookHref}
+              target={copy.bookHref.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
               style={{
@@ -275,10 +338,10 @@ export function ExposureCalculator() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Get your letter reviewed — AED 999 →
+              {copy.bookCta}
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

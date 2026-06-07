@@ -79,8 +79,7 @@ export function About() {
                 padding: "20px 24px",
               }}
             >
-              "Most settlement errors aren't deliberate. Employers make mistakes out of confusion,
-              not bad intent. My job is to find those mistakes — and help both sides fix them."
+              "Most settlement errors aren't deliberate. Employers make mistakes because they haven't updated their processes — not because they're trying to underpay you. My job is to find those mistakes and help both sides fix them."
             </blockquote>
           </div>
 
@@ -131,7 +130,7 @@ export function About() {
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               className="mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-[14px] font-medium transition-transform duration-300 hover:scale-[1.02]"
               style={{
                 fontFamily: "var(--font-sans)",

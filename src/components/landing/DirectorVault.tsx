@@ -50,7 +50,7 @@ export function DirectorVault() {
             <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
           </div>
           <span className="hidden rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
-            {isUnlocked ? "Unlocked" : "Unlocked at AED 499"}
+            {isUnlocked ? "Unlocked" : "Unlocked at AED 999"}
           </span>
         </div>
 

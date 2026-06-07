@@ -7,8 +7,6 @@ import { CheckCircle } from "lucide-react";
 type FieldName = "name" | "email" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
-const errorBorder = (hasError: boolean) =>
-  hasError ? "1px solid rgba(212,168,130,0.2)" : "1px solid rgba(212,168,130,0.2)";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

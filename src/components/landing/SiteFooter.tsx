@@ -4,15 +4,15 @@ const FOOTER_COLS = [
   {
     title: "SERVICES",
     links: [
-      { label: "Settlement reviews", href: "/" },
-      { label: "Employer compliance", href: "/" },
-      { label: "Knowledge base", href: "/" },
+      { label: "Settlement reviews", href: "/#features" },
+      { label: "Employer compliance", href: "/contact?type=audit" },
+      { label: "Knowledge base", href: "/#knowledge" },
     ],
   },
   {
     title: "COMPANY",
     links: [
-      { label: "About", href: "/" },
+      { label: "About", href: "/#about" },
       { label: "Contact", href: "/contact" },
     ],
   },

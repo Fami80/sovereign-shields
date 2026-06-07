@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "@tanstack/react-router";
 
 export function StickyCTA() {
   const [show, setShow] = useState(false);
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
 
   useEffect(() => {
     const onScroll = () => {
@@ -18,6 +21,8 @@ export function StickyCTA() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
+  if (isContactPage) return null;
 
   return (
     <div

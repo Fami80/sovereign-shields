@@ -1,107 +1,135 @@
-import { emitUi, smoothScrollTo } from "@/lib/ui-store";
+import { Link } from "@tanstack/react-router";
 
-type Link = { label: string; onClick?: () => void; href?: string };
-
-const COLS: { title: string; links: Link[] }[] = [
+const FOOTER_COLS = [
   {
-    title: "For Employees",
+    title: "SERVICES",
     links: [
-      { label: "Settlement Review", onClick: () => smoothScrollTo("#features") },
-      { label: "Gratuity Calculator", onClick: () => smoothScrollTo("#calculator") },
-      { label: "Arbitrary Dismissal", onClick: () => smoothScrollTo("#calculator") },
-      { label: "MOHRE Guidance", onClick: () => smoothScrollTo("#knowledge") },
+      { label: "Settlement reviews", href: "/" },
+      { label: "Employer compliance", href: "/" },
+      { label: "Knowledge base", href: "/" },
     ],
   },
   {
-    title: "For Employers",
+    title: "COMPANY",
     links: [
-      { label: "Compliance Audit", onClick: () => smoothScrollTo("#features") },
-      { label: "Termination Playbook", onClick: () => smoothScrollTo("#vault") },
-      { label: "DIFC / ADGM Counsel", onClick: () => smoothScrollTo("#knowledge") },
-      { label: "Boardroom Opinions", onClick: () => smoothScrollTo("#vault") },
+      { label: "About", href: "/" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Company",
-    links: [
-      { label: "About Kaoutar", onClick: () => emitUi("open-about") },
-      { label: "How It Works", onClick: () => emitUi("open-about") },
-      { label: "Contact Desk", onClick: () => emitUi("open-contact") },
-      { label: "Knowledge Base", onClick: () => smoothScrollTo("#knowledge") },
-    ],
-  },
-  {
-    title: "Legal",
+    title: "LEGAL",
     links: [
       { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Engagement", href: "#" },
-      { label: "Confidentiality Charter", href: "#" },
-      { label: "Regulatory Notices", href: "#" },
+      { label: "Terms of Service", href: "#" },
+    ],
+  },
+  {
+    title: "SOCIAL",
+    links: [
+      { label: "Instagram", href: "https://instagram.com/uaeworkrights" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/uaeworkrights/" },
     ],
   },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="bg-bg-dark pt-20 pb-32 text-text-dark-primary md:pb-16">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
-          <div className="md:col-span-1">
-            <div className="text-xl font-extrabold tracking-tight">
-              UAEworkrights<span className="text-action-accent">.</span>
-            </div>
-            <p className="mt-3 text-sm text-text-muted-dark">UAEworkrights · Compliance advisory by Kaoutar Makrache. UAE Labour Law, decoded for both sides.</p>
-            <div className="mt-5 inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">
-              AED 499
-            </div>
-            <a
-              href="https://www.linkedin.com/company/uaeworkrights/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 block text-xs text-text-muted-dark transition-colors hover:text-action-accent"
+    <footer style={{ backgroundColor: "#2D1018" }}>
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-10">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-6">
+          <div className="md:col-span-2">
+            <div
+              className="font-display text-xl tracking-tight"
+              style={{ color: "#D4A882", fontWeight: 600 }}
             >
-              LinkedIn → @uaeworkrights
-            </a>
+              UAEwork<span style={{ fontStyle: "italic" }}>rights</span>
+            </div>
+            <p
+              className="mt-3 max-w-xs font-sans"
+              style={{
+                fontSize: 13,
+                fontWeight: 300,
+                color: "rgba(237,216,184,0.45)",
+                lineHeight: 1.6,
+              }}
+            >
+              UAE employment compliance — settlement reviews, rights guidance, and cross-border expertise for employees and employers.
+            </p>
+            <div
+              className="mt-5 inline-flex items-center rounded-full px-3 py-1.5 font-sans text-xs font-medium"
+              style={{
+                backgroundColor: "rgba(212,168,130,0.1)",
+                color: "rgba(237,216,184,0.6)",
+                border: "1px solid rgba(212,168,130,0.15)",
+              }}
+            >
+              Available remotely across all UAE Emirates
+            </div>
+            <p
+              className="mt-3 font-sans"
+              style={{
+                fontSize: 12,
+                fontWeight: 300,
+                color: "rgba(237,216,184,0.35)",
+              }}
+            >
+              Dubai · Abu Dhabi · Sharjah · Ajman · RAK · Fujairah · UAQ
+            </p>
           </div>
 
-          {COLS.map((c) => (
-            <div key={c.title}>
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-text-dark-primary">{c.title}</div>
+          {FOOTER_COLS.map((col) => (
+            <div key={col.title}>
+              <div
+                className="font-sans text-xs font-medium uppercase tracking-[0.16em]"
+                style={{ color: "rgba(237,216,184,0.5)" }}
+              >
+                {col.title}
+              </div>
               <ul className="mt-4 space-y-2.5">
-                {c.links.map((l) => (
-                  <li key={l.label}>
-                    {l.onClick ? (
-                      <button
-                        onClick={l.onClick}
-                        className="text-left text-sm text-text-muted-dark transition-colors hover:text-action-accent"
-                      >
-                        {l.label}
-                      </button>
-                    ) : (
+                {col.links.map((link) =>
+                  link.href.startsWith("http") ? (
+                    <li key={link.label}>
                       <a
-                        href={l.href ?? "#"}
-                        className="text-sm text-text-muted-dark transition-colors hover:text-action-accent"
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-sans text-xs transition-colors hover:opacity-80"
+                        style={{ color: "rgba(237,216,184,0.5)" }}
                       >
-                        {l.label}
+                        {link.label}
                       </a>
-                    )}
-                  </li>
-                ))}
+                    </li>
+                  ) : (
+                    <li key={link.label}>
+                      <Link
+                        to={link.href}
+                        className="font-sans text-xs transition-colors hover:opacity-80"
+                        style={{ color: "rgba(237,216,184,0.5)" }}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ))}
         </div>
 
-        <div className="mt-14 border-t border-white/10 pt-6">
-          <p className="text-xs text-text-muted-dark">
-            Available remotely across all UAE Emirates (Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah). Regulated engagements coordinated through licensed UAE counsel under MOHRE, DIFC, ADGM, VARA and SCA frameworks.
+        <div
+          className="mt-14 pt-6"
+          style={{ borderTop: "1px solid rgba(212,168,130,0.08)" }}
+        >
+          <p
+            className="font-sans"
+            style={{
+              fontSize: 11,
+              fontWeight: 300,
+              color: "rgba(237,216,184,0.3)",
+            }}
+          >
+            © 2026 UAEworkrights. UAE employment compliance.
           </p>
-          <div className="mt-4 flex flex-col items-start justify-between gap-3 text-xs text-text-muted-dark md:flex-row md:items-center">
-            <div>© {new Date().getFullYear()} UAEworkrights · Compliance advisory by Kaoutar Makrache. All rights reserved.</div>
-            <div className="flex gap-5">
-              <span>MOHRE</span><span>DIFC</span><span>ADGM</span><span>VARA</span><span>SCA</span>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

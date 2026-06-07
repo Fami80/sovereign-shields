@@ -101,14 +101,35 @@
     background-color: var(--color-bg-light);
     color: var(--color-text-light-primary);
     font-family: var(--font-sans);
+    font-size: 1rem;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  h1 { line-height: 1.05; font-weight: 400; }
+  h1 { line-height: 1.0; font-weight: 400; }
   h2 { line-height: 1.1; font-weight: 700; }
-  h3 { font-weight: 400; font-style: italic; }
+  h3 { line-height: 1.2; font-weight: 400; font-style: italic; }
   h4 { font-weight: 400; }
   h1 em, h2 em { font-weight: 400; font-style: italic; }
   blockquote { font-weight: 400; font-style: italic; font-size: 1.25rem; }
+}
+
+@layer utilities {
+  .text-lead {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(237, 216, 184, 0.7);
+  }
+  .text-lead-light {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(30, 10, 14, 0.65);
+  }
+  @media (min-width: 768px) {
+    .text-lead, .text-lead-light { font-size: 20px; }
+  }
 }

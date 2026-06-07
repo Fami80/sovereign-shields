@@ -47,7 +47,7 @@ export function ExposureCalculator() {
         {/* Section header */}
         <div className="mb-12 text-center">
           <p
-            className="mb-4 text-[10px] font-medium uppercase tracking-[3px]"
+            className="mb-4 text-[13px] font-medium uppercase tracking-[2.5px]"
             style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             UAE GRATUITY CALCULATOR

@@ -31,7 +31,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* Header */}
         <p
-          className="text-[10px] font-medium uppercase tracking-[3px]"
+          className="text-[13px] font-medium uppercase tracking-[2.5px]"
           style={{ fontFamily: "var(--font-sans)", color: "#8B2D3A" }}
         >
           CLIENT RESULTS
@@ -92,7 +92,7 @@ export function Testimonials() {
                 </div>
 
                 <div
-                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[10px] font-medium uppercase"
+                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[13px] font-medium uppercase tracking-[2.5px]"
                   style={{
                     fontFamily: "var(--font-sans)",
                     borderColor: "rgba(212,168,130,0.2)",

@@ -38,12 +38,12 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* LEFT — Credentials */}
           <div>
-            <div
-              className="text-[28px] leading-tight"
+            <h3
+              className="text-[28px] leading-tight font-normal"
               style={{ fontFamily: "var(--font-display)", color: "#D4A882" }}
             >
               Kaoutar Makrache
-            </div>
+            </h3>
             <div
               className="mt-1 text-[14px] font-light"
               style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.55)" }}

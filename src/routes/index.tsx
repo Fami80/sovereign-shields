@@ -17,12 +17,14 @@ import { ContactDrawer } from "@/components/landing/ContactDrawer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UAEworkrights" },
-      { name: "description", content: "Your UAE settlement letter is probably wrong. Senior-counsel triage on gratuity, end-of-service & arbitrary dismissal across MOHRE, DIFC, ADGM, VARA & SCA — AED 999." },
-      { property: "og:title", content: "UAEworkrights" },
-      { property: "og:description", content: "UAE Labour Law protects both sides. One flat AED 999 triage by senior employment counsel." },
+      { title: "UAE Settlement Letter Review | UAEworkrights" },
+      { name: "description", content: "Got a UAE settlement letter? Most have errors. We review it against UAE labour law — written findings in 48 hours. AED 999 flat fee." },
+      { property: "og:title", content: "UAE Settlement Letter Review | UAEworkrights" },
+      { property: "og:description", content: "Got a UAE settlement letter? Most have errors. We review it against UAE labour law — written findings in 48 hours. AED 999 flat fee." },
+      { property: "og:url", content: "https://uaeworkrights.com/" },
     ],
     links: [
+      { rel: "canonical", href: "https://uaeworkrights.com/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {

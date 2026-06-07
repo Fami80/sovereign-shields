@@ -92,6 +92,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "UAEworkrights",
+          "url": "https://uaeworkrights.com",
+          "description": "UAE employment compliance — settlement reviews, employer compliance audits, and cross-border expertise across MOHRE, DIFC, ADGM, and free zones.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "French"],
+          },
+          "sameAs": [
+            "https://instagram.com/uaeworkrights",
+            "https://linkedin.com/company/uaeworkrights",
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

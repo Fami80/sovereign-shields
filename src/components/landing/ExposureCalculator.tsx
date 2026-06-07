@@ -122,7 +122,7 @@ export function ExposureCalculator() {
                     setYearsInput(val);
                   }
                 }}
-                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus:ring-1 md:text-sm"
+                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",

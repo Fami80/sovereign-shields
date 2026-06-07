@@ -177,7 +177,7 @@ export function ExposureCalculator() {
               href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#D4A882",
                 color: "#1E0A0E",

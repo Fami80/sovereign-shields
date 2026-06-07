@@ -15,12 +15,15 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: "Get in touch with UAEworkrights for settlement reviews, compliance questions, or complex cross-border cases." },
     ],
   }),
+  validateSearch: (s: Record<string, unknown>) => ({ type: typeof s.type === "string" ? s.type : undefined }),
   component: ContactPage,
 });
 
 function ContactPage() {
+  const { type } = Route.useSearch();
+  const initialEnquiry = type === "audit" ? "audit" : type === "settlement" ? "settlement" : type === "cross-border" ? "cross-border" : "";
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", enquiry: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", enquiry: initialEnquiry, message: "" });
   const [errors, setErrors] = useState<Errors>({});
 
   const validate = (): Errors => {

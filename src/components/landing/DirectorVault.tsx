@@ -151,7 +151,7 @@ export function DirectorVault() {
                 </span>
                 <p className="mt-4 text-base font-semibold text-text-dark-primary">Director Vault is locked</p>
                 <p className="mt-2 text-xs leading-relaxed text-text-muted-dark">
-                  Unlock the AI Compliance Assistant and your automated 6-page legal roadmap PDF — secured by a single transparent triage fee.
+                  Unlock the Knowledge Base and your automated 6-page legal roadmap PDF — secured by a single transparent review fee.
                 </p>
                 <button
                   onClick={() => setOpen(true)}

@@ -49,8 +49,6 @@ function Index() {
       <DirectorVault />
       <SiteFooter />
       <StickyCTA />
-      <AboutDrawer />
-      <ContactDrawer />
     </main>
   );
 }

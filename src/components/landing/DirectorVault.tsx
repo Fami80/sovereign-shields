@@ -46,8 +46,8 @@ export function DirectorVault() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-dark">Gated Workspace</p>
-            <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The Director Vault</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-dark">KNOWLEDGE BASE ACCESS</p>
+            <h2 className="mt-3 text-3xl font-extrabold md:text-4xl">The full UAE employment law reference</h2>
           </div>
           <span className="hidden rounded-full border border-[color:rgba(212,168,130,0.15)] bg-white/5 px-3 py-1 text-xs text-text-muted-dark md:inline">
             {isUnlocked ? "Unlocked" : "Unlocked at AED 999"}

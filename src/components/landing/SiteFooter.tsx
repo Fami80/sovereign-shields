@@ -103,7 +103,7 @@ export function SiteFooter() {
                     <li key={link.label}>
                       <Link
                         to={link.href}
-                        className="font-sans text-xs transition-colors hover:opacity-80"
+                        className="font-sans text-xs transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
                         style={{ color: "rgba(237,216,184,0.55)" }}
                       >
                         {link.label}

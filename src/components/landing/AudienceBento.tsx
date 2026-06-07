@@ -109,8 +109,10 @@ export function AudienceBento() {
             </ul>
 
             <a
-              href="#vault"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-all duration-300 hover:scale-[1.02]"
+              href={`https://wa.me/971501234567?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02]"
               style={{
                 backgroundColor: "#8B2D3A",
                 color: "#FAF3E8",

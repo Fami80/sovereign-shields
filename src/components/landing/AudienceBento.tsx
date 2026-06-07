@@ -276,7 +276,7 @@ export function AudienceBento() {
                 border: "1px solid rgba(139,45,58,0.1)",
               }}
             >
-              <h4
+              <h3
                 className="font-display"
                 style={{
                   fontSize: "18px",
@@ -286,7 +286,7 @@ export function AudienceBento() {
                 }}
               >
                 {tile.title}
-              </h4>
+              </h3>
               <p
                 className="mt-2 font-sans"
                 style={{

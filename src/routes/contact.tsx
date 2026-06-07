@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";

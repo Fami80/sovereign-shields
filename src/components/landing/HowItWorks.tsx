@@ -57,7 +57,7 @@ export function HowItWorks() {
             href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-transform duration-150 ease-out hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02]"
             style={{
               backgroundColor: "#1E0A0E",
               color: "#EDD8B8",

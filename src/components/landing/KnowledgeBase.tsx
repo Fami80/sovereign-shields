@@ -100,7 +100,7 @@ export function KnowledgeBase() {
             <Link
               key={card.title}
               to="/checkout"
-              className="group relative flex flex-col rounded-xl p-6 focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
+              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#2D1018",
                 border: "1px solid rgba(212,168,130,0.12)",

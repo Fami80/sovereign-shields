@@ -191,7 +191,7 @@ function CheckoutDialog({ onClose, onSuccess }: { onClose: () => void; onSuccess
         >
           <X className="h-4 w-4" />
         </button>
-        <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 499</span>
+        <span className="inline-flex items-center rounded-full bg-action-accent px-3 py-1 text-xs font-bold text-bg-dark">AED 999</span>
         <h3 className="mt-4 text-2xl font-extrabold">Secure your triage</h3>
         <p className="mt-2 text-sm text-text-muted-light">
           One transparent fee. Senior-counsel review of your matter, delivered within 24 hours. Your roadmap PDF unlocks immediately on payment.

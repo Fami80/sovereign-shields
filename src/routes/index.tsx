@@ -44,7 +44,7 @@ function Index() {
       <JurisdictionRibbon />
       <AudienceBento />
       <ExposureCalculator />
-      <EscalationTimeline />
+      <HowItWorks />
       <KnowledgeBase />
       <Testimonials />
       <About />

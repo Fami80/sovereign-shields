@@ -53,7 +53,7 @@ export function Navbar() {
             <button
               key={l.label}
               onClick={l.action}
-              className="font-sans text-sm transition-colors"
+              className="font-sans text-sm transition-colors focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882] focus-visible:underline-offset-4"
               style={{ color: "rgba(237,216,184,0.7)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#EDD8B8")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(237,216,184,0.7)")}

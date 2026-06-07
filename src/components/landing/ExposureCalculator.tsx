@@ -48,7 +48,7 @@ export function ExposureCalculator() {
         <div className="mb-12 text-center">
           <p
             className="mb-4 text-[10px] font-medium uppercase tracking-[3px]"
-            style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             UAE GRATUITY CALCULATOR
           </p>
@@ -60,7 +60,7 @@ export function ExposureCalculator() {
           </h2>
           <p
             className="mx-auto mt-4 max-w-lg text-[16px] font-light leading-relaxed"
-            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Enter your basic salary and years of service. See what UAE labour law says you&apos;re owed.
           </p>
@@ -80,7 +80,7 @@ export function ExposureCalculator() {
             <div>
               <label
                 className="mb-2 block text-[12px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Monthly basic salary (AED)
               </label>
@@ -98,7 +98,7 @@ export function ExposureCalculator() {
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
                   color: "#EDD8B8",
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               />
             </div>
@@ -107,7 +107,7 @@ export function ExposureCalculator() {
             <div>
               <label
                 className="mb-2 block text-[12px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Years of service
               </label>
@@ -127,7 +127,7 @@ export function ExposureCalculator() {
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
                   color: "#EDD8B8",
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               />
             </div>
@@ -143,13 +143,13 @@ export function ExposureCalculator() {
             </div>
             <p
               className="mt-2 text-[13px] font-light"
-              style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'DM Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Estimated gratuity entitlement
             </p>
             <p
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
-              style={{ color: "rgba(237,216,184,0.35)", fontFamily: "'DM Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.35)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               MOHRE mainland formula. 21 days basic salary per year for first 5 years, 30 days after that.
             </p>
@@ -165,7 +165,7 @@ export function ExposureCalculator() {
           >
             <p
               className="text-[13px] font-light leading-relaxed"
-              style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
+              style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
             </p>
@@ -181,7 +181,7 @@ export function ExposureCalculator() {
               style={{
                 background: "#D4A882",
                 color: "#1E0A0E",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
               Get your letter reviewed — AED 999 →

@@ -31,7 +31,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#032B24]/75 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#1E0A0E]/75 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a
           href="#"
@@ -71,7 +71,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-[#032B24]/95 backdrop-blur-md lg:hidden">
+        <div className="border-t border-white/10 bg-[#1E0A0E]/95 backdrop-blur-md lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
             {links.map((l) => (
               <button

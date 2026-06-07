@@ -38,7 +38,7 @@ export function ContactDrawer() {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent
         side="right"
-        className="w-full border-l border-white/10 bg-[#032B24]/95 p-0 text-text-dark-primary shadow-2xl backdrop-blur-xl sm:max-w-lg"
+        className="w-full border-l border-white/10 bg-[#1E0A0E]/95 p-0 text-text-dark-primary shadow-2xl backdrop-blur-xl sm:max-w-lg"
       >
         <div className="flex h-full flex-col overflow-y-auto px-7 py-8">
           <SheetHeader className="text-left">

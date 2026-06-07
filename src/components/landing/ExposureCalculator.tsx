@@ -373,7 +373,7 @@ function Slider({
         aria-label={label}
         className="h-2 w-full cursor-pointer appearance-none rounded-full outline-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-action-accent [&::-webkit-slider-thumb]:shadow-[0_2px_8px_rgba(0,229,153,0.5)] [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-action-accent"
         style={{
-          background: `linear-gradient(to right, #00E599 0%, #00E599 ${pct}%, #E4ECE8 ${pct}%, #E4ECE8 100%)`,
+          background: `linear-gradient(to right, #D4A882 0%, #D4A882 ${pct}%, rgba(30,10,14,0.12) ${pct}%, rgba(30,10,14,0.12) 100%)`,
         }}
       />
       {(minLabel || maxLabel) && (

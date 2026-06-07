@@ -63,7 +63,7 @@ export function KnowledgeBase() {
         {/* Eyebrow */}
         <p
           className="text-center text-[10px] font-normal uppercase tracking-[3px]"
-          style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'DM Sans', sans-serif" }}
+          style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           KNOWLEDGE BASE
         </p>
@@ -79,7 +79,7 @@ export function KnowledgeBase() {
         {/* Subheading */}
         <p
           className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
-          style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'DM Sans', sans-serif" }}
+          style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
         </p>
@@ -87,7 +87,7 @@ export function KnowledgeBase() {
         {/* Preview label */}
         <div
           className="mx-auto mt-6 flex items-center justify-center gap-2 text-center text-[13px] font-light"
-          style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'DM Sans', sans-serif" }}
+          style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
           Preview — purchase 30-day access to unlock the full library · AED 199
@@ -107,7 +107,7 @@ export function KnowledgeBase() {
               <div className="mb-4 flex items-center justify-between">
                 <h3
                   className="text-base font-medium"
-                  style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {card.title}
                 </h3>
@@ -121,7 +121,7 @@ export function KnowledgeBase() {
                   <li
                     key={item}
                     className="flex items-start gap-2.5 text-[13px] font-light"
-                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
@@ -147,27 +147,27 @@ export function KnowledgeBase() {
             <Unlock className="h-4 w-4" style={{ color: "#D4A882" }} />
             <span
               className="text-xs font-medium uppercase tracking-wide"
-              style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+              style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               FREE
             </span>
           </div>
           <h3
             className="mt-3 text-lg font-medium"
-            style={{ color: "#EDD8B8", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             How UAE gratuity is calculated — the complete guide
           </h3>
           <p
             className="mt-2 text-sm font-light"
-            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.
           </p>
           <a
             href="/contact"
             className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium"
-            style={{ color: "#D4A882", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Read now →
           </a>
@@ -183,7 +183,7 @@ export function KnowledgeBase() {
         >
           <span
             className="text-sm font-medium"
-            style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Unlock the full knowledge base · AED 199 for 30-day access
           </span>
@@ -193,7 +193,7 @@ export function KnowledgeBase() {
             style={{
               background: "#D4A882",
               color: "#1E0A0E",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
             Get 30-day access →

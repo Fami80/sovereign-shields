@@ -81,7 +81,7 @@ export function KnowledgeBase() {
           className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'DM Sans', sans-serif" }}
         >
-          The complete reference for UAE final settlements, by jurisdiction. One free article included.
+          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
         </p>
 
         {/* Preview label */}
@@ -90,7 +90,7 @@ export function KnowledgeBase() {
           style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'DM Sans', sans-serif" }}
         >
           <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
-          Preview — purchase access to unlock the full library · AED 199 for 30-day access
+          Preview — purchase 30-day access to unlock the full library · AED 199
         </div>
 
         {/* 6 Jurisdiction Cards */}

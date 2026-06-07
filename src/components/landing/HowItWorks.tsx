@@ -33,7 +33,7 @@ export function HowItWorks() {
           {STEPS.map((s) => (
             <li
               key={s.id}
-              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium md:p-7"
+              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
               <span
                 className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold"

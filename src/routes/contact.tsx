@@ -131,7 +131,7 @@ function ContactPage() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.name)}
                 />
               </Field>

@@ -143,7 +143,7 @@ export function ExposureCalculator() {
             </div>
             <p
               className="mt-2 text-[13px] font-light"
-              style={{ color: "rgba(237,216,184,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               Estimated gratuity entitlement
             </p>

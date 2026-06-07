@@ -131,7 +131,7 @@ export function Hero() {
               style={{
                 fontSize: "13px",
                 fontWeight: 300,
-                color: "rgba(237,216,184,0.5)",
+                color: "rgba(237,216,184,0.6)",
               }}
             >
               <span style={{ color: "#D4A882", marginRight: "8px" }}>✓</span>

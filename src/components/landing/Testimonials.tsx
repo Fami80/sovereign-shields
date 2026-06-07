@@ -130,7 +130,7 @@ export function Testimonials() {
                 className="mt-1 text-[13px] font-light"
                 style={{
                   fontFamily: "var(--font-sans)",
-                  color: "rgba(237,216,184,0.5)",
+                  color: "rgba(237,216,184,0.6)",
                 }}
               >
                 {s.label}

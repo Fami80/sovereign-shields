@@ -110,11 +110,12 @@ function ContactPage() {
         >
           {submitted ? (
             <div className="flex flex-col items-center py-10 text-center">
-              <CheckCircle2 className="h-10 w-10" style={{ color: "#D4A882" }} />
+              <CheckCircle className="h-10 w-10" style={{ color: "#81C784" }} />
               <p
-                className="mt-4 font-sans text-base font-semibold"
+                className="mt-4 flex items-center gap-2 font-sans text-base font-semibold"
                 style={{ color: "#EDD8B8" }}
               >
+                <CheckCircle size={20} style={{ color: "#81C784" }} aria-hidden />
                 Received.
               </p>
               <p
@@ -125,44 +126,38 @@ function ContactPage() {
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5">
+            <form onSubmit={onSubmit} noValidate className="space-y-5">
               <Field label="Name" error={errors.name}>
                 <input
+                  ref={refs.name}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
                   className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.name)}
                 />
               </Field>
 
               <Field label="Email" error={errors.email}>
                 <input
+                  ref={refs.email}
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
                   className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.email)}
                 />
               </Field>
 
               <Field label="Enquiry type" error={errors.enquiry}>
                 <select
+                  ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
                   className="w-full appearance-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
                   style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
+                    ...fieldStyle(!!errors.enquiry),
                     color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",
                   }}
                 >
@@ -186,19 +181,17 @@ function ContactPage() {
 
               <Field label="Message" error={errors.message}>
                 <textarea
+                  ref={refs.message}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
                   className="w-full resize-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                  style={{
-                    backgroundColor: "rgba(212,168,130,0.06)",
-                    border: "1px solid rgba(212,168,130,0.2)",
-                    color: "#EDD8B8",
-                  }}
+                  style={fieldStyle(!!errors.message)}
                 />
               </Field>
+
 
               <button
                 type="submit"

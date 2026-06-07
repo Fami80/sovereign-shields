@@ -42,7 +42,7 @@ export function Navbar() {
         <a
           href="#"
           onClick={onBrand}
-          className="font-display text-xl tracking-tight"
+          className="font-display text-xl tracking-tight focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882] focus-visible:underline-offset-4"
           style={{ color: "#EDD8B8", fontWeight: 600 }}
         >
           UAEwork<span style={{ color: "#D4A882", fontStyle: "italic" }}>rights</span>

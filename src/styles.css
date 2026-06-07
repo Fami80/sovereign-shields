@@ -4,6 +4,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@custom-variant motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+
 @theme inline {
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;

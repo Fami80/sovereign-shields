@@ -111,7 +111,7 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm sm:hidden"
+              className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:hidden"
               style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
             >
               Book a review

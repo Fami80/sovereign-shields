@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { animate, useMotionValue, useReducedMotion } from "framer-motion";
+import { animate, motion, useMotionValue, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import verifiedBg from "@/assets/verified-bg.jpg.asset.json";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {

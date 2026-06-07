@@ -49,7 +49,7 @@ function CheckoutPlaceholder() {
         </p>
         <Link
           to="/contact"
-          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02]"
+          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
           style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
         >
           Contact us →

@@ -68,7 +68,7 @@ export function Navbar() {
             href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full px-5 py-2 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] sm:inline-flex"
+            className="hidden rounded-full px-5 py-2 font-sans text-sm transition-transform duration-150 ease-out hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:inline-flex"
             style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
           >
             Book a review

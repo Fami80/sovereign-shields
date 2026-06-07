@@ -17,7 +17,7 @@ export function JurisdictionRibbon() {
       {/* Dark fade behind to lift the ribbon above the section seam */}
       <div className="absolute inset-x-0 -top-10 h-20 bg-bg-dark" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="-mt-8 rounded-[24px] border border-white/10 bg-[#021F1A] px-5 py-5 shadow-[0_20px_50px_rgb(0,0,0,0.35)] md:px-8 md:py-6">
+        <div className="-mt-8 rounded-[24px] border border-[color:rgba(212,168,130,0.15)] bg-[#2D1018] px-5 py-5 shadow-[0_20px_50px_rgb(0,0,0,0.35)] md:px-8 md:py-6">
           <p className="mb-4 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted-dark">
             Operating across every UAE regulatory authority
           </p>

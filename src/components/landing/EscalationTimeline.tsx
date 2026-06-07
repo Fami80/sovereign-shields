@@ -18,7 +18,7 @@ export function EscalationTimeline() {
           {STEPS.map((s) => (
             <li
               key={s.id}
-              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] md:p-7"
+              className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-bg-dark text-sm font-extrabold text-action-accent">

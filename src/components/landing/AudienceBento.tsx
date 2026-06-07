@@ -16,7 +16,7 @@ export function AudienceBento() {
           WHAT WE DO
         </p>
         <h2
-          className="mt-3 font-display"
+          className="mt-5 font-display"
           style={{
             fontSize: "40px",
             color: "#1E0A0E",
@@ -29,7 +29,7 @@ export function AudienceBento() {
         </h2>
 
         {/* Two service cards */}
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* CARD 1 — Employee */}
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 md:p-9"
@@ -249,7 +249,7 @@ export function AudienceBento() {
         </div>
 
         {/* 3 differentiator tiles */}
-        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
             {
               title: "UAE Labour Law",

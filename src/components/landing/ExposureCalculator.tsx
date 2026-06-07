@@ -47,7 +47,7 @@ export function ExposureCalculator() {
         {/* Section header */}
         <div className="mb-12 text-center">
           <p
-            className="mb-4 text-[13px] font-medium uppercase tracking-[2.5px]"
+            className="mb-5 text-[13px] font-medium uppercase tracking-[2.5px]"
             style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             UAE GRATUITY CALCULATOR
@@ -59,7 +59,7 @@ export function ExposureCalculator() {
             What is your UAE settlement actually worth?
           </h2>
           <p
-            className="mx-auto mt-4 max-w-lg text-[16px] font-light leading-relaxed"
+            className="mx-auto mt-5 max-w-lg text-[16px] font-light leading-relaxed"
             style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Enter your basic salary and years of service. See what UAE labour law says you&apos;re owed.

@@ -70,7 +70,7 @@ export function KnowledgeBase() {
 
         {/* Heading */}
         <h2
-          className="mt-4 text-center text-[40px] font-semibold leading-tight"
+          className="mt-5 text-center text-[40px] font-semibold leading-tight"
           style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
         >
           UAE Employment Rights — Knowledge Base
@@ -78,7 +78,7 @@ export function KnowledgeBase() {
 
         {/* Subheading */}
         <p
-          className="mx-auto mt-4 max-w-2xl text-center text-base font-light"
+          className="mx-auto mt-5 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
@@ -94,7 +94,7 @@ export function KnowledgeBase() {
         </div>
 
         {/* 6 Jurisdiction Cards */}
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-6">
           {JURISDICTION_CARDS.map((card) => (
             <div
               key={card.title}

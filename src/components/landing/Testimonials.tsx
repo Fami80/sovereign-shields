@@ -37,14 +37,14 @@ export function Testimonials() {
           CLIENT RESULTS
         </p>
         <h2
-          className="mt-3 text-[40px] leading-tight"
+          className="mt-5 text-[40px] leading-tight"
           style={{ fontFamily: "var(--font-display)", color: "#1E0A0E" }}
         >
           They were about to sign. They didn't.
         </h2>
 
         {/* Testimonial Cards — horizontal scroll on mobile, grid on desktop */}
-        <div className="mt-12 -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+        <div className="mt-12 -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}

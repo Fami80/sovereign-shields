@@ -287,7 +287,7 @@ function ContactCard({
         href={buttonHref}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80"
+        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
         style={{ color: "#D4A882" }}
       >
         {buttonText}

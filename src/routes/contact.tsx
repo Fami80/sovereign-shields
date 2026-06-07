@@ -131,7 +131,7 @@ function ContactPage() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
                   style={fieldStyle(!!errors.name)}
                 />
               </Field>
@@ -143,7 +143,7 @@ function ContactPage() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
-                  className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
                   style={fieldStyle(!!errors.email)}
                 />
               </Field>
@@ -153,7 +153,7 @@ function ContactPage() {
                   ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
-                  className="w-full appearance-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
                   style={{
                     ...fieldStyle(!!errors.enquiry),
                     color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",
@@ -185,7 +185,7 @@ function ContactPage() {
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
-                  className="w-full resize-none rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors md:text-sm"
                   style={fieldStyle(!!errors.message)}
                 />
               </Field>

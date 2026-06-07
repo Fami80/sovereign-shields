@@ -104,8 +104,11 @@
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; font-weight: 400; }
-  h1 { line-height: 1.05; }
-  h2 { line-height: 1.1; }
-  h1 em, h2 em, h3 em { font-weight: 400; font-style: italic; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1 { line-height: 1.05; font-weight: 400; }
+  h2 { line-height: 1.1; font-weight: 700; }
+  h3 { font-weight: 400; font-style: italic; }
+  h4 { font-weight: 400; }
+  h1 em, h2 em { font-weight: 400; font-style: italic; }
+  blockquote { font-weight: 400; font-style: italic; font-size: 1.25rem; }
 }

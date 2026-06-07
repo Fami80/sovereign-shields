@@ -1,14 +1,14 @@
-import { Building2, Landmark, Scale, Coins, Briefcase } from "lucide-react";
+import { Building2, Landmark, Scale, Globe, Briefcase } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Authority = { code: string; label: string; Icon: LucideIcon };
 
 const AUTHORITIES: Authority[] = [
   { code: "MOHRE", label: "Ministry of Labour", Icon: Briefcase },
-  { code: "DIFC", label: "Dubai Intl. Financial Centre", Icon: Landmark },
+  { code: "DIFC", label: "Dubai International Financial Centre", Icon: Landmark },
   { code: "ADGM", label: "Abu Dhabi Global Market", Icon: Building2 },
-  { code: "VARA", label: "Virtual Assets Authority", Icon: Coins },
-  { code: "SCA", label: "Securities & Commodities", Icon: Scale },
+  { code: "Free Zones", label: "", Icon: Globe },
+  { code: "Cross-border", label: "Belgian & UK law", Icon: Scale },
 ];
 
 export function JurisdictionRibbon() {

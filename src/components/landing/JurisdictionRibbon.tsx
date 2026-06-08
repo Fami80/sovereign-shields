@@ -1,32 +1,56 @@
-type Authority = { code: string; label: string };
-
-const AUTHORITIES: Authority[] = [
-  { code: "MOHRE", label: "Mainland" },
-  { code: "DIFC", label: "Dubai Int'l Financial Centre" },
-  { code: "ADGM", label: "Abu Dhabi Global Market" },
-  { code: "Free Zones", label: "All UAE" },
-  { code: "Cross-border", label: "Belgian & UK law" },
-];
+const JURISDICTIONS = ["MOHRE", "DIFC", "ADGM", "Free Zones", "Cross-border"];
 
 export function JurisdictionRibbon() {
   return (
-    <div className="border-y border-black/5 bg-bg-light">
-      <div className="mx-auto max-w-6xl px-6 py-3">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted-light/80">
-            Jurisdictions covered
-          </span>
-          {AUTHORITIES.map(({ code, label }) => (
+    <div className="bg-bg-dark">
+      <div className="mx-auto max-w-6xl px-6 py-6">
+        <div
+          className="text-center"
+          style={{
+            fontFamily: '"DM Sans", system-ui, sans-serif',
+            fontSize: "10px",
+            letterSpacing: "3px",
+            color: "rgba(237,216,184,0.5)",
+          }}
+        >
+          JURISDICTION STATUS
+        </div>
+        <div
+          className="mt-3 flex flex-wrap items-center justify-center"
+          style={{ gap: "8px" }}
+        >
+          {JURISDICTIONS.map((name) => (
             <span
-              key={code}
-              className="inline-flex items-center gap-2 text-[12px] text-text-muted-light"
+              key={name}
+              className="inline-flex items-center"
+              style={{
+                background: "rgba(212,168,130,0.08)",
+                border: "1px solid rgba(212,168,130,0.2)",
+                borderRadius: "100px",
+                padding: "6px 14px",
+              }}
             >
               <span
                 aria-hidden
-                className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/80 ring-2 ring-emerald-500/15"
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "100px",
+                  background: "#4CAF50",
+                  marginRight: "6px",
+                  display: "inline-block",
+                }}
               />
-              <span className="font-semibold tracking-wide text-text-light-primary/80">{code}</span>
-              {label && <span className="text-text-muted-light/70">· {label}</span>}
+              <span
+                style={{
+                  fontFamily: '"DM Sans", system-ui, sans-serif',
+                  fontWeight: 500,
+                  fontSize: "12px",
+                  color: "#EDD8B8",
+                }}
+              >
+                {name}
+              </span>
             </span>
           ))}
         </div>

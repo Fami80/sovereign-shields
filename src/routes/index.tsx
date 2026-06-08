@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
 import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
@@ -10,14 +11,6 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { StickyCTA } from "@/components/landing/StickyCTA";
 import { Navbar } from "@/components/landing/Navbar";
 import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
-import { PersonaProvider } from "@/lib/persona-context";
-import { PersonaToggle } from "@/components/landing/PersonaToggle";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,84 +36,19 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <PersonaProvider>
-      <main className="min-h-screen bg-[#1E0A0E] text-text-light-primary">
-        <Navbar />
-        <JurisdictionRibbon />
-
-        {/* Persona toggle — above the calculator */}
-        <div className="mx-auto max-w-6xl px-6 pt-8">
-          <PersonaToggle />
-        </div>
-
-        {/* Calculator is the hero */}
-        <ExposureCalculator />
-
-        <DirectorVault />
-        <Testimonials />
-
-        {/* Brochure content tucked into drawers */}
-        <section className="bg-[#1E0A0E] py-16 md:py-20">
-          <div className="mx-auto max-w-4xl px-6">
-            <p
-              className="mb-6 text-center text-[13px] font-medium uppercase tracking-[2.5px]"
-              style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            >
-              Background · Process · Coverage
-            </p>
-            <Accordion type="single" collapsible className="space-y-3">
-              <AccordionItem
-                value="how"
-                className="overflow-hidden rounded-2xl border border-[rgba(212,168,130,0.18)] bg-[#2D1018]/60 backdrop-blur"
-              >
-                <AccordionTrigger
-                  className="px-6 py-5 text-left text-[15px] font-medium hover:no-underline"
-                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                >
-                  How the review process works
-                </AccordionTrigger>
-                <AccordionContent>
-                  <HowItWorks />
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="services"
-                className="overflow-hidden rounded-2xl border border-[rgba(212,168,130,0.18)] bg-[#2D1018]/60 backdrop-blur"
-              >
-                <AccordionTrigger
-                  className="px-6 py-5 text-left text-[15px] font-medium hover:no-underline"
-                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                >
-                  Services — for both sides of the table
-                </AccordionTrigger>
-                <AccordionContent>
-                  <AudienceBento />
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="about"
-                className="overflow-hidden rounded-2xl border border-[rgba(212,168,130,0.18)] bg-[#2D1018]/60 backdrop-blur"
-              >
-                <AccordionTrigger
-                  className="px-6 py-5 text-left text-[15px] font-medium hover:no-underline"
-                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                >
-                  About the expert behind UAEworkrights
-                </AccordionTrigger>
-                <AccordionContent>
-                  <About />
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </section>
-
-        <KnowledgeBase />
-        <SiteFooter />
-        <StickyCTA />
-      </main>
-    </PersonaProvider>
+    <main className="min-h-screen bg-bg-light text-text-light-primary">
+      <Navbar />
+      <Hero />
+      <JurisdictionRibbon />
+      <AudienceBento />
+      <ExposureCalculator />
+      <DirectorVault />
+      <HowItWorks />
+      <KnowledgeBase />
+      <Testimonials />
+      <About />
+      <SiteFooter />
+      <StickyCTA />
+    </main>
   );
 }

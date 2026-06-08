@@ -1,19 +1,12 @@
-const STEPS = [
-  {
-    id: "01",
-    title: "Send your documents",
-    body: "Upload your settlement letter and employment contract. Secure, confidential. Takes two minutes.",
-  },
-  {
-    id: "02",
-    title: "We review every line",
-    body: "Gratuity calculation, leave encashment, deductions, notice period — all checked against UAE Labour Law for your specific jurisdiction.",
-  },
-  {
-    id: "03",
-    title: "You receive written findings",
-    body: "A clear written summary of what's correct, what's wrong, and what you can do about it. Delivered within 48 hours.",
-  },
+import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+type Step = { id: string; title: string; Icon: LucideIcon };
+
+const STEPS: Step[] = [
+  { id: "01", title: "Send your documents", Icon: FileText },
+  { id: "02", title: "We review every line", Icon: ScanSearch },
+  { id: "03", title: "You receive written findings", Icon: FileCheck2 },
 ];
 
 export function HowItWorks() {
@@ -30,24 +23,20 @@ export function HowItWorks() {
         </div>
 
         <ol className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {STEPS.map((s) => (
+          {STEPS.map(({ id, title, Icon }) => (
             <li
-              key={s.id}
+              key={id}
               className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
               <span
-                className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold"
-                style={{
-                  backgroundColor: "#1E0A0E",
-                  color: "#D4A882",
-                }}
+                className="flex h-10 w-10 items-center justify-center rounded-full"
+                style={{ backgroundColor: "#1E0A0E", color: "#D4A882" }}
               >
-                {s.id}
+                <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
               </span>
               <h3 className="mt-5 text-xl font-extrabold" style={{ fontFamily: "var(--font-sans)" }}>
-                {s.title}
+                {title}
               </h3>
-              <p className="mt-2 text-sm text-text-muted-light">{s.body}</p>
             </li>
           ))}
         </ol>

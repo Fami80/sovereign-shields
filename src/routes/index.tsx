@@ -3,7 +3,6 @@ import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
 import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
-import { DirectorVault } from "@/components/landing/DirectorVault";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { About } from "@/components/landing/About";
@@ -40,10 +39,9 @@ function Index() {
       <Navbar />
       <Hero />
       <JurisdictionRibbon />
-      <AudienceBento />
       <ExposureCalculator />
-      <DirectorVault />
       <HowItWorks />
+      <AudienceBento />
       <KnowledgeBase />
       <Testimonials />
       <About />

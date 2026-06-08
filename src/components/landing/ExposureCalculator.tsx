@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { animate, motion, useMotionValue, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import verifiedBg from "@/assets/verified-bg.jpg.asset.json";
+import verifiedBg from "@/assets/calculator-bg-green.jpg.asset.json";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {
@@ -105,7 +105,7 @@ export function ExposureCalculator() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(30,10,14,0.55) 0%, rgba(30,10,14,0.45) 50%, rgba(30,10,14,0.7) 100%)",
+            "linear-gradient(180deg, rgba(8,18,14,0.55) 0%, rgba(8,18,14,0.45) 50%, rgba(8,18,14,0.75) 100%)",
         }}
       />
       <div

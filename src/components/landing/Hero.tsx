@@ -138,7 +138,7 @@ export function Hero() {
         </div>
 
         <div
-          className="flex items-start justify-center overflow-hidden pt-10 md:items-center md:pt-10"
+          className="hidden md:flex md:items-start md:justify-center md:overflow-hidden md:pt-10"
           style={{
             maskImage: "linear-gradient(to right, transparent 0%, black 15%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%)",
@@ -147,14 +147,15 @@ export function Hero() {
           <img
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
-            className="w-full object-cover aspect-[4/3] md:aspect-auto md:h-[85%] md:rotate-[-2deg]"
+            className="w-full object-cover md:h-[85%] md:rotate-[-2deg]"
             style={{
-              objectPosition: "center right",
+              objectPosition: "top center",
               borderRadius: "16px",
               boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
             }}
           />
         </div>
+
         </div>
 
         {/* Trust bar */}

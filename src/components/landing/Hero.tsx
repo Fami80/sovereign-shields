@@ -27,7 +27,28 @@ export function Hero() {
         ))}
       </svg>
 
+      {/* Mobile-only: hero image as bleeding background in lower 50% */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 md:hidden"
+        aria-hidden="true"
+      >
+        <img
+          src={heroImage.url}
+          alt=""
+          className="h-full w-full object-cover"
+          style={{ objectPosition: "top center" }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, #1e0a0e 45%, rgba(30,10,14,0.5) 100%)",
+          }}
+        />
+      </div>
+
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
+
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[3fr_2fr] md:items-stretch md:gap-10">
         <div className="flex flex-col items-start">
           <span

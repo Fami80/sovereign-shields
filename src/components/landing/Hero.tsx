@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import heroImage from "@/assets/hero-settlement-agreement.jpg.asset.json";
 
 export function Hero() {
   return (
@@ -27,6 +28,7 @@ export function Hero() {
       </svg>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[3fr_2fr] md:items-stretch md:gap-10">
         <div className="flex flex-col items-start">
           <span
             className="inline-flex items-center font-sans"
@@ -112,6 +114,19 @@ export function Hero() {
               Ensure Corporate Compliance
             </a>
           </div>
+        </div>
+
+        <div className="flex md:items-stretch">
+          <img
+            src={heroImage.url}
+            alt="UAE employment settlement agreement document"
+            className="w-full object-cover aspect-[4/3] md:aspect-auto md:h-full md:rotate-[-2deg]"
+            style={{
+              borderRadius: "16px",
+              boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
+            }}
+          />
+        </div>
         </div>
 
         {/* Trust bar */}

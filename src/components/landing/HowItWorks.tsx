@@ -1,5 +1,6 @@
 import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import heroImage from "@/assets/hero-settlement-agreement.jpg.asset.json";
 
 type Step = { id: string; title: string; Icon: LucideIcon };
 

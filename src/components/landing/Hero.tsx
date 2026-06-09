@@ -116,12 +116,19 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex md:items-stretch">
+        <div
+          className="flex items-start justify-center overflow-hidden pt-10 md:items-center md:pt-10"
+          style={{
+            maskImage: "linear-gradient(to right, transparent 0%, black 15%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%)",
+          }}
+        >
           <img
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
-            className="w-full object-cover aspect-[4/3] md:aspect-auto md:h-full md:rotate-[-2deg]"
+            className="w-full object-cover aspect-[4/3] md:aspect-auto md:h-[85%] md:rotate-[-2deg]"
             style={{
+              objectPosition: "center right",
               borderRadius: "16px",
               boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
             }}

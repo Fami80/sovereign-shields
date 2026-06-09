@@ -28,6 +28,7 @@ export function Hero() {
       </svg>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[3fr_2fr] md:items-stretch md:gap-10">
         <div className="flex flex-col items-start">
           <span
             className="inline-flex items-center font-sans"

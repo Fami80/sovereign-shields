@@ -1,5 +1,6 @@
 import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import heroImage from "@/assets/hero-settlement-agreement.jpg.asset.json";
 
 type Step = { id: string; title: string; Icon: LucideIcon };
 
@@ -40,6 +41,15 @@ export function HowItWorks() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-8 md:hidden">
+          <img
+            src={heroImage.url}
+            alt="UAE employment settlement agreement document"
+            className="w-full rounded-2xl object-cover"
+            style={{ aspectRatio: "4/3", objectPosition: "center 60%" }}
+          />
+        </div>
 
         <div className="mt-12 flex justify-center">
           <a

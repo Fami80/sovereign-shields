@@ -116,6 +116,19 @@ export function Hero() {
           </div>
         </div>
 
+        <div className="flex md:items-stretch">
+          <img
+            src={heroImage.url}
+            alt="UAE employment settlement agreement document"
+            className="w-full object-cover aspect-[4/3] md:aspect-auto md:h-full md:rotate-[-2deg]"
+            style={{
+              borderRadius: "16px",
+              boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
+            }}
+          />
+        </div>
+        </div>
+
         {/* Trust bar */}
         <div
           className="mt-20 grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 md:grid-cols-4"

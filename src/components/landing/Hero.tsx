@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import heroImage from "@/assets/hero-settlement-agreement.jpg.asset.json";
 
 export function Hero() {
   return (

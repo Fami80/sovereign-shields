@@ -42,6 +42,15 @@ export function HowItWorks() {
           ))}
         </ol>
 
+        <div className="mt-8 md:hidden">
+          <img
+            src={heroImage.url}
+            alt="UAE employment settlement agreement document"
+            className="w-full rounded-2xl object-cover"
+            style={{ aspectRatio: "4/3", objectPosition: "center 60%" }}
+          />
+        </div>
+
         <div className="mt-12 flex justify-center">
           <a
             href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}

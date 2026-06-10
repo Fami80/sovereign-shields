@@ -1,12 +1,13 @@
 import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import step1Image from "@/assets/step1-send-documents.jpg.asset.json";
+import step2Image from "@/assets/step2-pencil-review.jpg.asset.json";
 
-type Step = { id: string; title: string; Icon: LucideIcon; image?: string };
+type Step = { id: string; title: string; Icon: LucideIcon; image?: string; imagePosition?: string };
 
 const STEPS: Step[] = [
-  { id: "01", title: "Send your documents", Icon: FileText, image: step1Image.url },
-  { id: "02", title: "We review every line", Icon: ScanSearch },
+  { id: "01", title: "Send your documents", Icon: FileText, image: step1Image.url, imagePosition: "center" },
+  { id: "02", title: "We review every line", Icon: ScanSearch, image: step2Image.url, imagePosition: "center top" },
   { id: "03", title: "You receive written findings", Icon: FileCheck2 },
 ];
 
@@ -24,7 +25,7 @@ export function HowItWorks() {
         </div>
 
         <ol className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {STEPS.map(({ id, title, Icon, image }) => (
+          {STEPS.map(({ id, title, Icon, image, imagePosition }) => (
             <li
               key={id}
               className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
@@ -36,7 +37,7 @@ export function HowItWorks() {
                     alt={title}
                     className="h-14 w-14 rounded-full object-cover md:h-[72px] md:w-[72px]"
                     style={{
-                      objectPosition: "center",
+                      objectPosition: imagePosition ?? "center",
                       border: "2px solid rgba(212,168,130,0.25)",
                       boxShadow: "0 8px 24px rgba(30,10,14,0.3)",
                     }}

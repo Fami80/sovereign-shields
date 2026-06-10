@@ -2,13 +2,14 @@ import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import step1Image from "@/assets/step1-send-documents.jpg.asset.json";
 import step2Image from "@/assets/step2-pencil-review.jpg.asset.json";
+import step3Image from "@/assets/step3-written-findings.jpg.asset.json";
 
 type Step = { id: string; title: string; Icon: LucideIcon; image?: string; imagePosition?: string };
 
 const STEPS: Step[] = [
   { id: "01", title: "Send your documents", Icon: FileText, image: step1Image.url, imagePosition: "center" },
   { id: "02", title: "We review every line", Icon: ScanSearch, image: step2Image.url, imagePosition: "center top" },
-  { id: "03", title: "You receive written findings", Icon: FileCheck2 },
+  { id: "03", title: "You receive written findings", Icon: FileCheck2, image: step3Image.url, imagePosition: "center" },
 ];
 
 export function HowItWorks() {

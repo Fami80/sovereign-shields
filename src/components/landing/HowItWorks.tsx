@@ -24,18 +24,33 @@ export function HowItWorks() {
         </div>
 
         <ol className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {STEPS.map(({ id, title, Icon }) => (
+          {STEPS.map(({ id, title, Icon, image }) => (
             <li
               key={id}
               className="relative rounded-[24px] border border-black/5 bg-white p-6 shadow-premium motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
             >
-              <span
-                className="flex h-10 w-10 items-center justify-center rounded-full"
-                style={{ backgroundColor: "#1E0A0E", color: "#D4A882" }}
-              >
-                <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
-              </span>
-              <h3 className="mt-5 text-xl font-extrabold" style={{ fontFamily: "var(--font-sans)" }}>
+              {image ? (
+                <div className="flex justify-center">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="h-14 w-14 rounded-full object-cover md:h-[72px] md:w-[72px]"
+                    style={{
+                      objectPosition: "center",
+                      border: "2px solid rgba(212,168,130,0.25)",
+                      boxShadow: "0 8px 24px rgba(30,10,14,0.3)",
+                    }}
+                  />
+                </div>
+              ) : (
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-full"
+                  style={{ backgroundColor: "#1E0A0E", color: "#D4A882" }}
+                >
+                  <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                </span>
+              )}
+              <h3 className={`mt-5 text-xl font-extrabold ${image ? "text-center" : ""}`} style={{ fontFamily: "var(--font-sans)" }}>
                 {title}
               </h3>
             </li>

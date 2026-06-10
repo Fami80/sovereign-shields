@@ -1,10 +1,11 @@
 import { FileText, ScanSearch, FileCheck2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import step1Image from "@/assets/step1-send-documents.jpg.asset.json";
 
-type Step = { id: string; title: string; Icon: LucideIcon };
+type Step = { id: string; title: string; Icon: LucideIcon; image?: string };
 
 const STEPS: Step[] = [
-  { id: "01", title: "Send your documents", Icon: FileText },
+  { id: "01", title: "Send your documents", Icon: FileText, image: step1Image.url },
   { id: "02", title: "We review every line", Icon: ScanSearch },
   { id: "03", title: "You receive written findings", Icon: FileCheck2 },
 ];

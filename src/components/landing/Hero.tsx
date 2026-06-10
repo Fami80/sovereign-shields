@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-settlement-agreement.jpg.asset.json";
+import heroImage from "@/assets/new-hero-document.jpg.asset.json";
 
 export function Hero() {
   return (
@@ -27,25 +27,6 @@ export function Hero() {
         ))}
       </svg>
 
-      {/* Mobile-only: hero image as bleeding background in lower 50% */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 md:hidden"
-        aria-hidden="true"
-      >
-        <img
-          src={heroImage.url}
-          alt=""
-          className="h-full w-full object-cover"
-          style={{ objectPosition: "top center" }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, #1e0a0e 45%, rgba(30,10,14,0.5) 100%)",
-          }}
-        />
-      </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
 
@@ -138,18 +119,22 @@ export function Hero() {
         </div>
 
         <div
-          className="hidden md:flex md:items-start md:justify-center md:overflow-hidden md:pt-10"
+          className="hidden md:flex md:items-center md:justify-end md:overflow-hidden"
           style={{
-            maskImage: "linear-gradient(to right, transparent 0%, black 15%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 20%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%)",
           }}
         >
           <img
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
-            className="w-full object-cover md:h-[85%] md:rotate-[-2deg]"
+            loading="eager"
+            className="object-cover"
             style={{
-              objectPosition: "top center",
+              width: "42vw",
+              maxWidth: "100%",
+              objectPosition: "center center",
+              transform: "none",
               borderRadius: "16px",
               boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
             }}

@@ -141,12 +141,26 @@ export function ExposureCalculator() {
         </div>
 
         <div
-          className="mx-auto max-w-2xl rounded-[16px] p-10"
+          className="relative isolate mx-auto max-w-2xl overflow-hidden rounded-[16px] p-10"
           style={{
             background: "#2D1018",
             border: "1px solid rgba(212,168,130,0.15)",
           }}
         >
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              zIndex: 0,
+              backgroundImage: `url(${cardBg.url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              opacity: 0.07,
+              filter: "blur(3px)",
+            }}
+          />
+          <div className="relative" style={{ zIndex: 1 }}>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
               <label

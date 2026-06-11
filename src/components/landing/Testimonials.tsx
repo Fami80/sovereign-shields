@@ -1,3 +1,5 @@
+import docDetail from "@/assets/testimonials-document-detail.jpg.asset.json";
+
 const TESTIMONIALS = [
   {
     bg: "bg-burg-deep",
@@ -103,6 +105,24 @@ export function Testimonials() {
                   {t.tag}
                 </div>
               </figcaption>
+
+              <img
+                src={docDetail.url}
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute hidden md:block"
+                style={{
+                  bottom: "16px",
+                  right: "16px",
+                  width: "96px",
+                  aspectRatio: "1 / 1",
+                  borderRadius: "8px",
+                  objectFit: "cover",
+                  opacity: 0.75,
+                  boxShadow: "0 8px 20px rgba(30,10,14,0.4)",
+                  zIndex: 1,
+                }}
+              />
             </figure>
           ))}
         </div>

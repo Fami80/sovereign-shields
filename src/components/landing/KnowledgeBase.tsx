@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Lock, Unlock } from "lucide-react";
+import kbWatermark from "@/assets/knowledge-base-watermark.jpg.asset.json";
 
 const JURISDICTION_CARDS = [
   {
@@ -106,7 +107,19 @@ export function KnowledgeBase() {
                 border: "1px solid rgba(212,168,130,0.12)",
               }}
             >
-              <div className="mb-4 flex items-center justify-between">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl"
+                style={{
+                  backgroundImage: `url(${kbWatermark.url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  opacity: 0.05,
+                  filter: "blur(4px)",
+                  zIndex: 0,
+                }}
+              />
+              <div className="relative z-[1] mb-4 flex items-center justify-between">
                 <h3
                   className="text-base font-medium"
                   style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -118,7 +131,7 @@ export function KnowledgeBase() {
                   style={{ color: "rgba(212,168,130,0.5)" }}
                 />
               </div>
-              <ul className="flex flex-col gap-2">
+              <ul className="relative z-[1] flex flex-col gap-2">
                 {card.items.map((item) => (
                   <li
                     key={item}

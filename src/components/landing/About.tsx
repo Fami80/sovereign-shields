@@ -1,3 +1,5 @@
+import kaoutarPhoto from "@/assets/kaoutar-photo.png.asset.json";
+
 const CREDENTIALS = [
   "ADP Payroll Partner of the Year — externally validated, not self-declared",
   "14 years MENA payroll & compliance · 16,000+ employees · 400+ multinational clients",
@@ -38,6 +40,21 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* LEFT — Credentials */}
           <div>
+            <img
+              src={kaoutarPhoto.url}
+              alt="Kaoutar Makrache"
+              width={280}
+              height={280}
+              loading="lazy"
+              className="mx-auto mb-8 block h-[180px] w-[180px] md:mx-0 md:h-[280px] md:w-[280px]"
+              style={{
+                borderRadius: "50%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                border: "2px solid rgba(212,168,130,0.3)",
+                boxShadow: "0 16px 40px rgba(30,10,14,0.4)",
+              }}
+            />
             <h3
               className="text-[28px] leading-tight font-normal"
               style={{ fontFamily: "var(--font-display)", color: "#D4A882" }}

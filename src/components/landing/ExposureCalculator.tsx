@@ -70,11 +70,6 @@ export function ExposureCalculator() {
   };
 
   const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
     <section
@@ -82,32 +77,6 @@ export function ExposureCalculator() {
       id="calculator"
       className="relative isolate overflow-hidden bg-[#1E0A0E] px-6 py-20 md:py-28"
     >
-      {/* Slow-parallax verified-status background */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -z-10"
-        style={{
-          top: "-10%",
-          left: 0,
-          right: 0,
-          bottom: "-10%",
-          y: prefersReducedMotion ? 0 : bgY,
-          backgroundImage: `url(${verifiedBg.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.55,
-        }}
-      />
-      {/* Dark wash so calculator content stays legible */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(8,18,14,0.55) 0%, rgba(8,18,14,0.45) 50%, rgba(8,18,14,0.75) 100%)",
-        }}
-      />
       <div
         className="pointer-events-none absolute right-0 top-0"
         style={{

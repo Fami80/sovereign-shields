@@ -65,7 +65,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+            href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-full px-5 py-2 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:inline-flex"
@@ -107,7 +107,7 @@ export function Navbar() {
               </button>
             ))}
             <a
-              href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}

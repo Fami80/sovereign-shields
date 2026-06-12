@@ -88,7 +88,7 @@ export function Hero() {
 
           <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:w-auto">
             <a
-              href={`https://wa.me/[REAL NUMBER]?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:w-auto"

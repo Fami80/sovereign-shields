@@ -36,7 +36,7 @@ export function JurisdictionRibbon() {
                   width: "6px",
                   height: "6px",
                   borderRadius: "100px",
-                  background: "#4CAF50",
+                  background: "#D4A882",
                   marginRight: "6px",
                   display: "inline-block",
                 }}

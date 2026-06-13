@@ -68,7 +68,7 @@ export function HowItWorks() {
             <li key={id} className="flex flex-col items-center text-center">
               <div className="relative">
                 <div
-                  className="relative h-28 w-28 overflow-hidden rounded-full ring-4 ring-white ring-offset-4 ring-offset-[#FAF3E8] md:h-36 md:w-36"
+                  className="relative h-28 w-28 overflow-hidden rounded-full ring-4 ring-[#FAF3E8] ring-offset-4 ring-offset-[#FAF3E8] md:h-36 md:w-36"
                   style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.12)" }}
                 >
                   <img

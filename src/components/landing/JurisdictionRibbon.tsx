@@ -8,9 +8,9 @@ export function JurisdictionRibbon() {
           className="text-center"
           style={{
             fontFamily: '"DM Sans", system-ui, sans-serif',
-            fontSize: "10px",
+            fontSize: "13px",
             letterSpacing: "3px",
-            color: "rgba(237,216,184,0.5)",
+            color: "rgba(237,216,184,0.55)",
           }}
         >
           JURISDICTION STATUS

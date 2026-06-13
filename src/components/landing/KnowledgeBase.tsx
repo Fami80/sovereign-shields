@@ -89,9 +89,9 @@ export function KnowledgeBase() {
         {/* Preview label */}
         <div
           className="mx-auto mt-6 flex items-center justify-center gap-2 text-center text-[13px] font-light"
-          style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
+          <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.55)" }} />
           Preview — purchase 30-day access to unlock the full library · AED 199
         </div>
 
@@ -136,7 +136,7 @@ export function KnowledgeBase() {
                   <li
                     key={item}
                     className="flex items-start gap-2.5 text-[13px] font-light"
-                    style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"

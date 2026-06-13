@@ -49,7 +49,7 @@ export function SiteFooter() {
               style={{
                 fontSize: 13,
                 fontWeight: 300,
-                color: "rgba(237,216,184,0.45)",
+                color: "rgba(237,216,184,0.55)",
                 lineHeight: 1.6,
               }}
             >

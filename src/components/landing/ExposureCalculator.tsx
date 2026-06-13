@@ -132,7 +132,7 @@ export function ExposureCalculator() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
               <label
-                className="mb-2 block text-[12px] font-medium"
+                className="mb-2 block text-[13px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Monthly basic salary (AED)
@@ -156,7 +156,7 @@ export function ExposureCalculator() {
 
             <div>
               <label
-                className="mb-2 block text-[12px] font-medium"
+                className="mb-2 block text-[13px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Years of service

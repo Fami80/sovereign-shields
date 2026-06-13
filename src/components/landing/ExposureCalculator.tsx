@@ -198,7 +198,7 @@ export function ExposureCalculator() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Calculate My Exposure →
+              Calculate my gratuity →
             </button>
           </div>
 

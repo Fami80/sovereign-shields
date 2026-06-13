@@ -1,7 +1,7 @@
 import kaoutarPhoto from "@/assets/kaoutar-photo.png.asset.json";
 
 const CREDENTIALS = [
-  "ADP Payroll Partner of the Year — externally validated, not self-declared",
+  "ADP Payroll Partner of the Year (2017)",
   "14 years MENA payroll & compliance · 16,000+ employees · 400+ multinational clients",
   "Belgian · UK · UAE · DIFC · ADGM · Free Zones · KSA · Egypt",
   "Featured: Dubai Eye 103.8 · University of Sharjah · Dubai Municipality · Advisory Board HR MENA",

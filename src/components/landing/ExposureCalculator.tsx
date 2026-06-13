@@ -231,20 +231,22 @@ export function ExposureCalculator() {
             </p>
           </div>
 
-          <div
-            className="mx-auto mt-8 max-w-lg rounded-lg p-4"
-            style={{
-              background: "rgba(184,58,42,0.1)",
-              border: "1px solid rgba(184,58,42,0.3)",
-            }}
-          >
-            <p
-              className="text-[13px] font-light leading-relaxed"
-              style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          {revealed && (
+            <div
+              className="mx-auto mt-8 max-w-lg rounded-lg p-4"
+              style={{
+                background: "rgba(184,58,42,0.1)",
+                border: "1px solid rgba(184,58,42,0.3)",
+              }}
             >
-              ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
-            </p>
-          </div>
+              <p
+                className="text-[13px] font-light leading-relaxed"
+                style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
+                ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
+              </p>
+            </div>
+          )}
 
           <div className="mt-8 text-center">
             <a

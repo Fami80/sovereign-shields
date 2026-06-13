@@ -35,7 +35,7 @@ export function Hero() {
           <span
             className="inline-flex items-center font-sans"
             style={{
-              fontSize: "10px",
+              fontSize: "13px",
               letterSpacing: "3px",
               border: "1px solid rgba(212,168,130,0.25)",
               color: "rgba(212,168,130,0.7)",
@@ -91,7 +91,7 @@ export function Hero() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
                 backgroundColor: "#D4A882",
                 color: "#1E0A0E",

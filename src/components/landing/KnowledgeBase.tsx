@@ -216,7 +216,7 @@ export function KnowledgeBase() {
           </span>
           <a
             href="/checkout"
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
             style={{
               background: "#D4A882",
               color: "#1E0A0E",

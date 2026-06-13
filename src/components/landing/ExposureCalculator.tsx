@@ -132,7 +132,7 @@ export function ExposureCalculator() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
               <label
-                className="mb-2 block text-[12px] font-medium"
+                className="mb-2 block text-[13px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Monthly basic salary (AED)
@@ -156,7 +156,7 @@ export function ExposureCalculator() {
 
             <div>
               <label
-                className="mb-2 block text-[12px] font-medium"
+                className="mb-2 block text-[13px] font-medium"
                 style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 Years of service
@@ -225,7 +225,7 @@ export function ExposureCalculator() {
             </p>
             <p
               className="mx-auto mt-3 max-w-md text-[12px] font-light leading-relaxed"
-              style={{ color: "rgba(237,216,184,0.45)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               MOHRE mainland formula. 21 days basic salary per year for first 5 years, 30 days after that.
             </p>
@@ -251,7 +251,7 @@ export function ExposureCalculator() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#D4A882",
                 color: "#1E0A0E",

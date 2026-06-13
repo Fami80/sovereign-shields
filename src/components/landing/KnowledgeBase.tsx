@@ -89,9 +89,9 @@ export function KnowledgeBase() {
         {/* Preview label */}
         <div
           className="mx-auto mt-6 flex items-center justify-center gap-2 text-center text-[13px] font-light"
-          style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.4)" }} />
+          <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.55)" }} />
           Preview — purchase 30-day access to unlock the full library · AED 199
         </div>
 
@@ -136,7 +136,7 @@ export function KnowledgeBase() {
                   <li
                     key={item}
                     className="flex items-start gap-2.5 text-[13px] font-light"
-                    style={{ color: "rgba(237,216,184,0.4)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
@@ -216,7 +216,7 @@ export function KnowledgeBase() {
           </span>
           <a
             href="/checkout"
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
             style={{
               background: "#D4A882",
               color: "#1E0A0E",

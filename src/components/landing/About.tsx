@@ -136,7 +136,7 @@ export function About() {
                     <li
                       key={item}
                       className="flex gap-2 text-[14px] font-light leading-relaxed"
-                      style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.45)" }}
+                      style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.55)" }}
                     >
                       <span>✗</span>
                       <span>{item}</span>

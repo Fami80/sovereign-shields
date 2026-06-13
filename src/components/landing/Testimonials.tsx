@@ -24,7 +24,7 @@ const TESTIMONIALS = [
 const STATS = [
   { value: "AED 4,000+", label: "Average amount recovered per review" },
   { value: "48hrs", label: "Review turnaround time" },
-  { value: "100%", label: "Written findings included" },
+  { value: "100%", label: "Written findings on every case" },
 ];
 
 export function Testimonials() {

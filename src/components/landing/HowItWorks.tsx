@@ -21,7 +21,6 @@ const STEPS: Step[] = [
       "Upload your settlement letter and employment contract. Secure, confidential. Takes two minutes.",
     image: step1Image.url,
     imagePosition: "center",
-    badge: "48h Fast-Track",
   },
   {
     id: "02",

@@ -7,7 +7,7 @@ export function JurisdictionRibbon() {
         <div
           className="text-center"
           style={{
-            fontFamily: '"DM Sans", system-ui, sans-serif',
+            fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
             fontSize: "13px",
             letterSpacing: "3px",
             color: "rgba(237,216,184,0.55)",

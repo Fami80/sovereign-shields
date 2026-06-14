@@ -19,8 +19,8 @@ const FOOTER_COLS = [
   {
     title: "LEGAL",
     links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
   {
@@ -63,7 +63,7 @@ export function SiteFooter() {
                 border: "1px solid rgba(212,168,130,0.15)",
               }}
             >
-              Available remotely across all UAE Emirates
+              Available remotely across all UAE
             </div>
             <p
               className="mt-3 font-sans"

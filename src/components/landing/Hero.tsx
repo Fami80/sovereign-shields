@@ -118,8 +118,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div
-          className="hidden md:flex md:items-center md:justify-end md:overflow-hidden"
+        <div className="hidden md:flex md:items-center md:justify-end md:overflow-hidden"
           style={{
             maskImage: "linear-gradient(to right, transparent 0%, black 20%)",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%)",
@@ -137,6 +136,20 @@ export function Hero() {
               transform: "none",
               borderRadius: "16px",
               boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
+            }}
+          />
+        </div>
+
+        <div className="md:hidden">
+          <img
+            src={heroImage.url}
+            alt="UAE employment settlement agreement document"
+            loading="lazy"
+            className="w-full object-cover"
+            style={{
+              aspectRatio: "4/3",
+              borderRadius: "12px",
+              boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
             }}
           />
         </div>

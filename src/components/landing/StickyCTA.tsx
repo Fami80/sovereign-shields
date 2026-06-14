@@ -4,7 +4,7 @@ import { useLocation } from "@tanstack/react-router";
 export function StickyCTA() {
   const [show, setShow] = useState(false);
   const location = useLocation();
-  const isContactPage = location.pathname === "/contact";
+  const isContactPage = location.pathname === "/contact" || location.pathname === "/privacy" || location.pathname === "/terms";
 
   useEffect(() => {
     const onScroll = () => {

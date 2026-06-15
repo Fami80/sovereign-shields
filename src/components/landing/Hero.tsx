@@ -142,9 +142,8 @@ export function Hero() {
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
             loading="lazy"
-            className="mx-auto w-full max-w-[400px] md:max-w-[500px]"
+            className="mx-auto w-full max-w-[400px] aspect-[4/3] md:max-w-[500px] md:aspect-[16/9]"
             style={{
-              aspectRatio: "4/3",
               objectFit: "cover",
               objectPosition: "center",
               borderRadius: "12px",

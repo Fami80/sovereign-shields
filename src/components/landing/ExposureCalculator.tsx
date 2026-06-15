@@ -117,8 +117,9 @@ export function ExposureCalculator() {
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10"
+            className="pointer-events-none absolute inset-0"
             style={{
+              zIndex: 0,
               backgroundImage: `url(${cardBg.url})`,
               backgroundSize: "cover",
               backgroundPosition: "center",

@@ -30,7 +30,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[3fr_2fr] md:items-stretch md:gap-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-8">
         <div className="flex flex-col items-start">
           <span
             className="inline-flex items-center font-sans"
@@ -118,36 +118,35 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hidden md:flex md:items-center md:justify-end md:overflow-hidden"
-          style={{
-            maskImage: "linear-gradient(to right, transparent 0%, black 20%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%)",
-          }}
-        >
+        {/* Desktop image (>=1024px): right column, max 300px */}
+        <div className="hidden lg:flex lg:justify-end">
           <img
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
             loading="eager"
-            className="object-cover"
+            className="w-full"
             style={{
-              width: "42vw",
-              maxWidth: "100%",
-              objectPosition: "center center",
-              transform: "none",
-              borderRadius: "16px",
-              boxShadow: "0 32px 64px rgba(30,10,14,0.5)",
+              maxWidth: "300px",
+              aspectRatio: "4/3",
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "12px",
+              boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
             }}
           />
         </div>
 
-        <div className="md:hidden">
+        {/* Tablet + Mobile image (<1024px): below buttons, centered */}
+        <div className="lg:hidden">
           <img
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
             loading="lazy"
-            className="w-full object-cover"
+            className="mx-auto w-full max-w-[400px] md:max-w-[500px]"
             style={{
               aspectRatio: "4/3",
+              objectFit: "cover",
+              objectPosition: "center",
               borderRadius: "12px",
               boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
             }}

@@ -102,8 +102,8 @@ export function Navbar() {
               <button
                 key={l.label}
                 onClick={() => {
+                  closeMenu();
                   l.action();
-                  setOpen(false);
                 }}
                 className="rounded-lg px-3 py-3 text-left font-sans text-sm focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
                 style={{ color: "rgba(237,216,184,0.7)" }}
@@ -115,7 +115,7 @@ export function Navbar() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
               className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] sm:hidden"
               style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
             >

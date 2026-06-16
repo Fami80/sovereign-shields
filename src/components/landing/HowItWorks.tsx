@@ -44,7 +44,7 @@ const STEPS: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section className="bg-bg-light py-14 md:py-20">
+    <section className="bg-bg-light py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col gap-4 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">

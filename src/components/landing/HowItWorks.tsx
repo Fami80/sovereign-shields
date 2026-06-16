@@ -44,7 +44,7 @@ const STEPS: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section className="bg-bg-light py-14 md:py-20">
+    <section className="bg-bg-light py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col gap-4 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">
@@ -62,7 +62,7 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <ol className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6">
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {STEPS.map(({ id, number, title, description, image, imagePosition, badge }) => (
             <li key={id} className="flex flex-col items-center text-center">
               <div className="relative">

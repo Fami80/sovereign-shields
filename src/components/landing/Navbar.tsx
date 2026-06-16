@@ -17,6 +17,11 @@ export function Navbar() {
   const navigate = useNavigate();
   const links = buildLinks(navigate);
 
+  const closeMenu = () => {
+    setOpen(false);
+    document.body.style.overflow = "";
+  };
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {

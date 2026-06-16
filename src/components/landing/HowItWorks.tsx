@@ -62,7 +62,7 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <ol className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6">
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {STEPS.map(({ id, number, title, description, image, imagePosition, badge }) => (
             <li key={id} className="flex flex-col items-center text-center">
               <div className="relative">

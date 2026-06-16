@@ -50,7 +50,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}
-              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out md:w-auto md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
+              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out md:w-auto md:flex-row md:gap-4 md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
               style={{
                 borderColor:
                   t.bg === "bg-burg-mid"
@@ -58,69 +58,65 @@ export function Testimonials() {
                     : "rgba(212,168,130,0.12)",
               }}
             >
-              {/* Decorative quotation mark */}
-              <span
-                aria-hidden
-                className="pointer-events-none select-none text-[80px] leading-none"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  color: "rgba(212,168,130,0.08)",
-                }}
-              >
-                &ldquo;
-              </span>
-
-              <blockquote
-                className="relative -mt-4 flex-1 text-lg italic"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  color: "#EDD8B8",
-                  lineHeight: 1.6,
-                  fontWeight: 400,
-                }}
-              >
-                {t.quote}
-              </blockquote>
-
-              <figcaption className="relative mt-6">
-                <div
-                  className="text-[13px] font-light"
+              <div className="flex min-w-0 flex-1 flex-col">
+                {/* Decorative quotation mark */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none select-none text-[80px] leading-none"
                   style={{
-                    fontFamily: "var(--font-sans)",
-                    color: "rgba(212,168,130,0.6)",
+                    fontFamily: "var(--font-display)",
+                    color: "rgba(212,168,130,0.08)",
                   }}
                 >
-                  — {t.attribution}
-                </div>
+                  &ldquo;
+                </span>
 
-                <div
-                  className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[13px] font-medium uppercase tracking-[2.5px]"
+                <blockquote
+                  className="relative -mt-4 flex-1 text-lg italic"
                   style={{
-                    fontFamily: "var(--font-sans)",
-                    borderColor: "rgba(212,168,130,0.2)",
-                    color: "rgba(212,168,130,0.5)",
-                    letterSpacing: "3px",
+                    fontFamily: "var(--font-display)",
+                    color: "#EDD8B8",
+                    lineHeight: 1.6,
+                    fontWeight: 400,
                   }}
                 >
-                  {t.tag}
-                </div>
-              </figcaption>
+                  {t.quote}
+                </blockquote>
+
+                <figcaption className="relative mt-6">
+                  <div
+                    className="text-[13px] font-light"
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      color: "rgba(212,168,130,0.6)",
+                    }}
+                  >
+                    — {t.attribution}
+                  </div>
+
+                  <div
+                    className="mt-3 inline-block rounded-sm border px-2.5 py-1 text-[13px] font-medium uppercase tracking-[2.5px]"
+                    style={{
+                      fontFamily: "var(--font-sans)",
+                      borderColor: "rgba(212,168,130,0.2)",
+                      color: "rgba(212,168,130,0.5)",
+                      letterSpacing: "3px",
+                    }}
+                  >
+                    {t.tag}
+                  </div>
+                </figcaption>
+              </div>
 
               <img
                 src={docDetail.url}
                 alt=""
                 aria-hidden
-                className="pointer-events-none absolute hidden md:block"
+                className="pointer-events-none mt-4 w-full flex-shrink-0 rounded-lg object-cover md:mt-0 md:w-[120px] md:h-[120px]"
                 style={{
-                  bottom: "16px",
-                  right: "16px",
-                  width: "96px",
-                  aspectRatio: "1 / 1",
-                  borderRadius: "8px",
-                  objectFit: "cover",
-                  opacity: 0.75,
+                  aspectRatio: "3 / 2",
+                  opacity: 0.85,
                   boxShadow: "0 8px 20px rgba(30,10,14,0.4)",
-                  zIndex: 1,
                 }}
               />
             </figure>

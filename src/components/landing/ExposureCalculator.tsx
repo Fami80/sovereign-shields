@@ -124,7 +124,7 @@ export function ExposureCalculator() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              opacity: 0.25,
+              opacity: 0.15,
               filter: "blur(2px)",
             }}
           />

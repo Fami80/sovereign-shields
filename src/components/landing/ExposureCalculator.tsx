@@ -156,8 +156,8 @@ export function ExposureCalculator() {
 
             <div>
               <label
-                className="mb-2 inline-block rounded px-1.5 py-0.5 text-[13px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.9)" }}
+                className="mb-2 inline-block rounded px-2 py-1 text-[13px] font-medium"
+                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
               >
                 Years of service
               </label>

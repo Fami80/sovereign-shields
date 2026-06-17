@@ -112,7 +112,7 @@ export function Testimonials() {
                 src={docDetail.url}
                 alt=""
                 aria-hidden
-                className="pointer-events-none mt-4 w-full flex-shrink-0 rounded-lg object-cover md:mt-0 md:w-[120px] md:h-[120px]"
+                className="pointer-events-none mt-4 w-full flex-shrink-0 rounded-lg object-cover md:mt-0 md:h-full md:w-[120px]"
                 style={{
                   aspectRatio: "3 / 2",
                   opacity: 0.85,

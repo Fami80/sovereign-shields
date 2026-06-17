@@ -211,7 +211,9 @@ export function ExposureCalculator() {
                 color: "#D4A882",
                 fontFamily: "'Playfair Display', serif",
                 opacity: revealed ? 1 : 0.35,
-                textShadow: revealed ? "0 0 40px rgba(212,168,130,0.25)" : "none",
+                textShadow: revealed
+                  ? "0 1px 3px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,130,0.25)"
+                  : "0 1px 3px rgba(0,0,0,0.6)",
               }}
               aria-live="polite"
             >

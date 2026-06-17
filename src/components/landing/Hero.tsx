@@ -30,7 +30,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-8">
+        <div className="grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-12">
         <div className="flex flex-col items-start">
           <span
             className="inline-flex items-center font-sans"
@@ -126,7 +126,7 @@ export function Hero() {
             loading="eager"
             className="w-full"
             style={{
-              maxWidth: "300px",
+              maxWidth: "280px",
               aspectRatio: "4/3",
               objectFit: "cover",
               objectPosition: "center",
@@ -142,7 +142,7 @@ export function Hero() {
             src={heroImage.url}
             alt="UAE employment settlement agreement document"
             loading="lazy"
-            className="mx-auto w-full max-w-[400px] aspect-[4/3] md:max-w-[500px] md:aspect-[16/9]"
+            className="mx-auto w-full max-w-[380px] aspect-[4/3] md:max-w-[450px] md:aspect-[16/9]"
             style={{
               objectFit: "cover",
               objectPosition: "center",

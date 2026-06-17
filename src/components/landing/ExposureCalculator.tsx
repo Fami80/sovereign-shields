@@ -124,7 +124,7 @@ export function ExposureCalculator() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              opacity: 0.25,
+              opacity: 0.15,
               filter: "blur(2px)",
             }}
           />
@@ -132,8 +132,8 @@ export function ExposureCalculator() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <div>
               <label
-                className="mb-2 inline-block rounded px-1.5 py-0.5 text-[13px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.9)" }}
+                className="mb-2 inline-block rounded px-2 py-1 text-[13px] font-medium"
+                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
               >
                 Monthly basic salary (AED)
               </label>
@@ -156,8 +156,8 @@ export function ExposureCalculator() {
 
             <div>
               <label
-                className="mb-2 inline-block rounded px-1.5 py-0.5 text-[13px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.9)" }}
+                className="mb-2 inline-block rounded px-2 py-1 text-[13px] font-medium"
+                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
               >
                 Years of service
               </label>
@@ -211,7 +211,9 @@ export function ExposureCalculator() {
                 color: "#D4A882",
                 fontFamily: "'Playfair Display', serif",
                 opacity: revealed ? 1 : 0.35,
-                textShadow: revealed ? "0 0 40px rgba(212,168,130,0.25)" : "none",
+                textShadow: revealed
+                  ? "0 1px 3px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,130,0.25)"
+                  : "0 1px 3px rgba(0,0,0,0.6)",
               }}
               aria-live="polite"
             >

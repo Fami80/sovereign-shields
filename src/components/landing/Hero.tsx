@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/new-hero-document.jpg.asset.json";
+import heroImage from "@/assets/settlement-agreement-hero.png.asset.json";
 
 export function Hero() {
   return (
@@ -132,6 +132,7 @@ export function Hero() {
               objectPosition: "center",
               borderRadius: "12px",
               boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
+              transform: "rotate(-3deg)",
             }}
           />
         </div>

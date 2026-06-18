@@ -48,7 +48,7 @@ export function Hero() {
             style={{ fontWeight: 400, lineHeight: 1.05 }}
           >
             <span style={{ color: "#EDD8B8" }}>Your settlement letter is</span>
-            <br  br />
+            <br />
             <span style={{ color: "#D4A882", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
           </h1>
 

@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/settlement-agreement-hero.png.asset.json";
 
 export function Hero() {
   return (
@@ -27,11 +26,8 @@ export function Hero() {
         ))}
       </svg>
 
-
-      <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-
-        <div className="grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-[3fr_2fr] lg:items-start lg:gap-12">
-        <div className="flex flex-col items-start">
+      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="flex flex-col items-start" style={{ maxWidth: "720px" }}>
           <span
             className="inline-flex items-center font-sans"
             style={{
@@ -52,7 +48,7 @@ export function Hero() {
             style={{ fontWeight: 400, lineHeight: 1.05 }}
           >
             <span style={{ color: "#EDD8B8" }}>Your settlement letter is</span>
-            <br />
+            <br  br />
             <span style={{ color: "#D4A882", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
           </h1>
 
@@ -116,43 +112,6 @@ export function Hero() {
               Ensure Corporate Compliance
             </a>
           </div>
-        </div>
-
-        {/* Desktop image (>=1024px): right column, max 300px */}
-        <div className="hidden lg:flex lg:justify-end">
-          <img
-            src={heroImage.url}
-            alt="UAE employment settlement agreement document"
-            loading="eager"
-            className="w-full"
-            style={{
-              maxWidth: "280px",
-              aspectRatio: "4/3",
-              objectFit: "cover",
-              objectPosition: "center",
-              borderRadius: "12px",
-              boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
-              transform: "rotate(-3deg)",
-            }}
-          />
-        </div>
-
-        {/* Tablet + Mobile image (<1024px): below buttons, centered */}
-        <div className="lg:hidden">
-          <img
-            src={heroImage.url}
-            alt="UAE employment settlement agreement document"
-            loading="lazy"
-            className="mx-auto w-full max-w-[380px] aspect-[4/3] md:max-w-[450px] md:aspect-[16/9]"
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-              borderRadius: "12px",
-              boxShadow: "0 24px 48px rgba(30,10,14,0.4)",
-            }}
-          />
-        </div>
-
         </div>
 
         {/* Trust bar */}

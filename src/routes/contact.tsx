@@ -7,6 +7,11 @@ import { CheckCircle } from "lucide-react";
 type FieldName = "name" | "email" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
+const WEBHOOK_URL =
+  "https://script.google.com/macros/s/AKfycbxpOgliOx5x5YfEUWp6-YXP7FN_jSIwzZtKmJmD91lAaVJNKqrLYc-LRkY7p4R6T1wD/exec";
+const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
+  "Hi Kaoutar, I'd like to book a settlement review — AED 999."
+)}`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -21,15 +26,37 @@ export const Route = createFileRoute("/contact")({
       { rel: "canonical", href: "https://uaeworkrights.com/contact" },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>) => ({ type: typeof s.type === "string" ? s.type : undefined }),
+  validateSearch: (s: Record<string, unknown>) => ({
+    type: typeof s.type === "string" ? s.type : undefined,
+    card: typeof s.card === "string" ? s.card : undefined,
+    message: typeof s.message === "string" ? s.message : undefined,
+  }),
   component: ContactPage,
 });
 
 function ContactPage() {
-  const { type } = Route.useSearch();
-  const initialEnquiry = type === "audit" ? "audit" : type === "settlement" ? "settlement" : type === "cross-border" ? "cross-border" : "";
+  const { type, card, message } = Route.useSearch();
+  const initialEnquiry =
+    type === "audit"
+      ? "audit"
+      : type === "settlement"
+      ? "settlement"
+      : type === "cross-border"
+      ? "cross-border"
+      : type === "kb"
+      ? "kb"
+      : "";
+  const kbCardClicked = card ?? "";
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", enquiry: initialEnquiry, message: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    enquiry: initialEnquiry,
+    willingness: "",
+    message: message ?? "",
+  });
   const [errors, setErrors] = useState<Errors>({});
   const refs = {
     name: useRef<HTMLInputElement>(null),
@@ -47,17 +74,38 @@ function ContactPage() {
     return e;
   };
 
-  const onSubmit = (ev: React.FormEvent) => {
-    ev.preventDefault();
+  const handleSubmit = async () => {
+    setSubmitError(false);
     const e = validate();
     setErrors(e);
-    if (Object.keys(e).length === 0) {
-      setSubmitted(true);
+    if (Object.keys(e).length > 0) {
+      const order: FieldName[] = ["name", "email", "enquiry", "message"];
+      const first = order.find((k) => e[k]);
+      if (first) refs[first].current?.focus();
       return;
     }
-    const order: FieldName[] = ["name", "email", "enquiry", "message"];
-    const first = order.find((k) => e[k]);
-    if (first) refs[first].current?.focus();
+    setSubmitting(true);
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          enquiryType: form.enquiry,
+          kbCardClicked,
+          willingnessToPay: form.willingness,
+          message: form.message,
+        }),
+      });
+      setSubmitted(true);
+      setForm({ name: "", email: "", enquiry: "", willingness: "", message: "" });
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const fieldStyle = (hasError: boolean): React.CSSProperties => ({
@@ -124,7 +172,7 @@ function ContactPage() {
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-5">
+            <div className="space-y-5">
               <Field label="Name" error={errors.name}>
                 <input
                   ref={refs.name}
@@ -174,6 +222,37 @@ function ContactPage() {
                   <option value="cross-border" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
                     Complex cross-border case
                   </option>
+                  <option value="kb" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                    Knowledge Base interest
+                  </option>
+                </select>
+              </Field>
+
+              <Field
+                label="Would you pay for Knowledge Base access?"
+                helper="The Knowledge Base will be AED 199 for 30-day access."
+              >
+                <select
+                  value={form.willingness}
+                  onChange={(e) => setForm({ ...form, willingness: e.target.value })}
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  style={{
+                    ...fieldStyle(false),
+                    color: form.willingness ? "#EDD8B8" : "rgba(237,216,184,0.3)",
+                  }}
+                >
+                  <option value="" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                    Select… (optional)
+                  </option>
+                  <option value="yes" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                    Yes — ready when it launches
+                  </option>
+                  <option value="maybe" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                    Maybe — depends what's inside
+                  </option>
+                  <option value="browsing" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                    Just browsing for now
+                  </option>
                 </select>
               </Field>
 
@@ -192,13 +271,33 @@ function ContactPage() {
 
 
               <button
-                type="submit"
-                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
+                type="button"
+                onClick={handleSubmit}
+                disabled={submitting}
+                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] disabled:opacity-60"
                 style={{ backgroundColor: "#D4A882", color: "#1E0A0E" }}
               >
-                Send →
+                {submitting ? "Sending…" : "Send →"}
               </button>
-            </form>
+
+              {submitError && (
+                <p
+                  role="alert"
+                  className="text-center font-sans text-sm"
+                  style={{ color: ERROR_COLOR }}
+                >
+                  Something went wrong.{" "}
+                  <a
+                    href={WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "#D4A882", textDecoration: "underline" }}
+                  >
+                    Please WhatsApp us instead.
+                  </a>
+                </p>
+              )}
+            </div>
           )}
         </div>
 
@@ -208,9 +307,7 @@ function ContactPage() {
             title="WhatsApp"
             body="Prefer WhatsApp? Message us directly."
             buttonText="Open WhatsApp →"
-            buttonHref={`https://wa.me/971547736565?text=${encodeURIComponent(
-              "Hi Kaoutar, I'd like to book a settlement review — AED 999."
-            )}`}
+            buttonHref={WHATSAPP_HREF}
           />
           <ContactCard
             icon={<InstagramIcon />}
@@ -227,7 +324,17 @@ function ContactPage() {
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({
+  label,
+  helper,
+  error,
+  children,
+}: {
+  label: string;
+  helper?: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
   return (
     <label className="block">
       <span
@@ -236,6 +343,14 @@ function Field({ label, error, children }: { label: string; error?: string; chil
       >
         {label}
       </span>
+      {helper && (
+        <span
+          className="-mt-1 mb-2 block font-sans text-xs"
+          style={{ color: "rgba(237,216,184,0.45)" }}
+        >
+          {helper}
+        </span>
+      )}
       {children}
       {error && (
         <span role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>

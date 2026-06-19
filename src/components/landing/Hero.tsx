@@ -29,13 +29,12 @@ export function Hero() {
       {/* Decorative watermark: large quotation mark (desktop only) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 hidden lg:block"
+        className="pointer-events-none absolute inset-y-0 hidden lg:flex"
         style={{
           right: "-30px",
           width: "46%",
           zIndex: 0,
           overflow: "hidden",
-          display: "flex",
         }}
       >
         <div

@@ -105,18 +105,6 @@ export function Testimonials() {
                   </div>
                 </figcaption>
               </div>
-
-              <img
-                src={docDetail.url}
-                alt=""
-                aria-hidden
-                className="pointer-events-none mt-4 w-full flex-shrink-0 rounded-lg object-cover md:mt-0 md:h-full md:w-[120px]"
-                style={{
-                  aspectRatio: "3 / 2",
-                  opacity: 0.85,
-                  boxShadow: "0 8px 20px rgba(30,10,14,0.4)",
-                }}
-              />
             </figure>
           ))}
         </div>

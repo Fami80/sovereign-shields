@@ -26,7 +26,87 @@ export function Hero() {
         ))}
       </svg>
 
+      {/* Decorative watermark: large quotation mark (desktop only) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 hidden lg:block"
+        style={{
+          right: "-30px",
+          width: "46%",
+          zIndex: 0,
+          overflow: "hidden",
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            margin: "auto 0",
+            fontFamily: '"Playfair Display", Georgia, serif',
+            fontSize: "560px",
+            fontWeight: 700,
+            lineHeight: 0.7,
+            color: "rgba(212,168,130,0.13)",
+            userSelect: "none",
+          }}
+        >
+          ‟
+        </div>
+      </div>
+
+      {/* Decorative watermark: 33/2021 jurisdiction block (desktop only) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 hidden lg:flex"
+        style={{
+          right: 0,
+          width: "40%",
+          zIndex: 1,
+          paddingRight: "56px",
+          alignItems: "center",
+          justifyContent: "flex-start",
+        }}
+      >
+        <div style={{ textAlign: "left" }}>
+          <div
+            style={{
+              fontFamily: '"Playfair Display", Georgia, serif',
+              fontWeight: 700,
+              lineHeight: 1,
+            }}
+          >
+            <span style={{ fontSize: "96px", color: "rgba(212,168,130,0.32)" }}>33</span>
+            <span style={{ fontSize: "44px", color: "rgba(212,168,130,0.24)" }}>/2021</span>
+          </div>
+          <div
+            style={{
+              width: "72px",
+              height: "1px",
+              backgroundColor: "rgba(212,168,130,0.45)",
+              margin: "16px 0",
+            }}
+          />
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {["MOHRE", "DIFC", "ADGM", "Free Zones", "Cross-border"].map((j) => (
+              <li
+                key={j}
+                style={{
+                  fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
+                  fontSize: "11px",
+                  letterSpacing: "2.5px",
+                  textTransform: "uppercase",
+                  color: "rgba(237,216,184,0.5)",
+                  lineHeight: 2.5,
+                }}
+              >
+                {j}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
       <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+
         <div className="flex flex-col items-start" style={{ maxWidth: "720px" }}>
           <span
             className="inline-flex items-center font-sans"

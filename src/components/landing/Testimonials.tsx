@@ -1,5 +1,3 @@
-import docDetail from "@/assets/testimonials-document-detail.jpg.asset.json";
-
 const TESTIMONIALS = [
   {
     bg: "bg-burg-deep",
@@ -50,7 +48,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}
-              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out md:grid md:w-auto md:grid-cols-[1fr_120px] md:gap-4 md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
+              className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out md:w-auto md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
               style={{
                 borderColor:
                   t.bg === "bg-burg-mid"
@@ -107,18 +105,6 @@ export function Testimonials() {
                   </div>
                 </figcaption>
               </div>
-
-              <img
-                src={docDetail.url}
-                alt=""
-                aria-hidden
-                className="pointer-events-none mt-4 w-full flex-shrink-0 rounded-lg object-cover md:mt-0 md:h-full md:w-[120px]"
-                style={{
-                  aspectRatio: "3 / 2",
-                  opacity: 0.85,
-                  boxShadow: "0 8px 20px rgba(30,10,14,0.4)",
-                }}
-              />
             </figure>
           ))}
         </div>

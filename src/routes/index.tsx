@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
@@ -34,8 +35,20 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash || hash === "#") return;
+    // Wait a tick for sections to mount
+    const id = window.setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+    return () => window.clearTimeout(id);
+  }, []);
+
   return (
     <main className="min-h-screen bg-bg-light text-text-light-primary">
+
       <Navbar />
       <Hero />
       <JurisdictionRibbon />

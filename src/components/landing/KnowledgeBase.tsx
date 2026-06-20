@@ -13,6 +13,7 @@ const JURISDICTION_CARDS = [
       "Visa cancellation — what you must sign and when",
     ],
     locked: true,
+    search: { type: "kb", card: "Mainland UAE", message: "I'm interested in the Mainland UAE Knowledge Base" },
   },
   {
     title: "DIFC end of service gratuity",
@@ -22,6 +23,7 @@ const JURISDICTION_CARDS = [
       "Zurich portal — checking your DEWS balance",
     ],
     locked: true,
+    search: { type: "kb", card: "DIFC", message: "I'm interested in the DIFC Knowledge Base" },
   },
   {
     title: "ADGM",
@@ -30,6 +32,7 @@ const JURISDICTION_CARDS = [
       "How ADGM differs from DIFC and mainland",
     ],
     locked: true,
+    search: { type: "kb", card: "ADGM", message: "I'm interested in the ADGM Knowledge Base" },
   },
   {
     title: "Free Zones",
@@ -38,6 +41,7 @@ const JURISDICTION_CARDS = [
       "Where mainland UAE labour law applies instead",
     ],
     locked: true,
+    search: { type: "kb", card: "Free Zones", message: "I'm interested in the Free Zones Knowledge Base" },
   },
   {
     title: "Cross-border cases",
@@ -46,6 +50,7 @@ const JURISDICTION_CARDS = [
       "UK subsidiaries operating in UAE",
     ],
     locked: true,
+    search: { type: "kb", card: "Cross-border", message: "I'm interested in cross-border Knowledge Base cases" },
   },
   {
     title: "Practical tools",
@@ -55,6 +60,7 @@ const JURISDICTION_CARDS = [
       "Illegal deductions — what employers cannot charge you",
     ],
     locked: true,
+    search: { type: "kb", card: "Practical Tools", message: "I'm interested in the Practical Tools Knowledge Base" },
   },
 ];
 
@@ -100,7 +106,8 @@ export function KnowledgeBase() {
           {JURISDICTION_CARDS.map((card) => (
             <Link
               key={card.title}
-              to="/checkout"
+              to="/contact"
+              search={card.search}
               className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
               style={{
                 background: "#2D1018",
@@ -214,8 +221,9 @@ export function KnowledgeBase() {
           >
             Unlock the full knowledge base · AED 199 for 30-day access
           </span>
-          <a
-            href="/checkout"
+          <Link
+            to="/contact"
+            search={{ type: "kb", message: "I'm interested in full Knowledge Base access" }}
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
             style={{
               background: "#D4A882",
@@ -224,7 +232,7 @@ export function KnowledgeBase() {
             }}
           >
             Get 30-day access →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

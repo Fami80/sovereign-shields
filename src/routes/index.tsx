@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";

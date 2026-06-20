@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { emitUi, smoothScrollTo } from "@/lib/ui-store";
 
-type NavItem = { label: string; action: () => void };
+type NavItem = { label: string; hash?: string; to?: string };
 
-const buildLinks = (navigate: (opts: { to: string }) => void): NavItem[] => [
-  { label: "Services", action: () => smoothScrollTo("#features") },
-  { label: "Knowledge Base", action: () => smoothScrollTo("#knowledge") },
-  { label: "About", action: () => smoothScrollTo("#about") },
-  { label: "Contact", action: () => navigate({ to: "/contact" }) },
+const NAV_ITEMS: NavItem[] = [
+  { label: "Services", hash: "#features" },
+  { label: "Knowledge Base", hash: "#knowledge" },
+  { label: "About", hash: "#about" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const links = buildLinks(navigate);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
+
+  const runAction = (item: NavItem) => {
+    if (item.to) {
+      navigate({ to: item.to });
+      return;
+    }
+    if (!item.hash) return;
+    if (isHome) {
+      smoothScrollTo(item.hash);
+    } else {
+      navigate({ to: "/", hash: item.hash.replace(/^#/, "") });
+    }
+  };
 
   const closeMenu = () => {
     setOpen(false);
@@ -31,9 +45,14 @@ export function Navbar() {
 
   const onBrand = (e: React.MouseEvent) => {
     e.preventDefault();
-    smoothScrollTo("#");
-    emitUi("reset-home");
+    if (isHome) {
+      smoothScrollTo("#");
+      emitUi("reset-home");
+    } else {
+      navigate({ to: "/" });
+    }
   };
+
 
   return (
     <header

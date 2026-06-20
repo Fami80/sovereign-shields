@@ -73,10 +73,10 @@ export function Navbar() {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {links.map((l) => (
+          {NAV_ITEMS.map((l: NavItem) => (
             <button
               key={l.label}
-              onClick={l.action}
+              onClick={() => runAction(l)}
               className="font-sans text-sm transition-colors focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882] focus-visible:underline-offset-4"
               style={{ color: "rgba(237,216,184,0.7)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#EDD8B8")}
@@ -117,12 +117,12 @@ export function Navbar() {
           }}
         >
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
-            {links.map((l) => (
+            {NAV_ITEMS.map((l: NavItem) => (
               <button
                 key={l.label}
                 onClick={() => {
                   closeMenu();
-                  l.action();
+                  runAction(l);
                 }}
                 className="rounded-lg px-3 py-3 text-left font-sans text-sm focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
                 style={{ color: "rgba(237,216,184,0.7)" }}

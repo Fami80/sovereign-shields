@@ -8,7 +8,7 @@ type FieldName = "name" | "email" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
 const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbxpOgliOx5x5YfEUWp6-YXP7FN_jSIwzZtKmJmD91lAaVJNKqrLYc-LRkY7p4R6T1wD/exec";
+  "https://script.google.com/macros/s/AKfycbyYH3NPvWxVylQeWv09x59TrHUiZPNtUgHhUaoHe-8vYMfXlLFnObwhbN1Rb-B2Piip/exec";
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;

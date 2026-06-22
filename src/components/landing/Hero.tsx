@@ -29,19 +29,17 @@ export function Hero() {
       {/* Decorative watermark: large quotation mark (desktop only) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 hidden items-center lg:flex"
+        className="pointer-events-none absolute top-[80px] hidden lg:flex"
         style={{
           right: "-40px",
           width: "45%",
           zIndex: 0,
-          overflow: "hidden",
-          justifyContent: "center",
         }}
       >
         <div
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: "720px",
+            fontSize: "820px",
             fontWeight: 700,
             lineHeight: 0.7,
             color: "rgba(212,168,130,0.13)",

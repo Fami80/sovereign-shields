@@ -31,7 +31,7 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute top-[80px] hidden lg:flex"
         style={{
-          right: "-40px",
+          right: "-120px",
           width: "45%",
           zIndex: 0,
         }}
@@ -39,10 +39,10 @@ export function Hero() {
         <div
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: "820px",
+            fontSize: "680px",
             fontWeight: 700,
             lineHeight: 0.7,
-            color: "rgba(212,168,130,0.13)",
+            color: "rgba(212,168,130,0.07)",
             userSelect: "none",
           }}
         >

@@ -29,19 +29,17 @@ export function Hero() {
       {/* Decorative watermark: large quotation mark (desktop only) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 hidden items-center lg:flex"
+        className="pointer-events-none absolute top-[80px] hidden lg:flex"
         style={{
           right: "-40px",
           width: "45%",
           zIndex: 0,
-          overflow: "hidden",
-          justifyContent: "center",
         }}
       >
         <div
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-            fontSize: "720px",
+            fontSize: "820px",
             fontWeight: 700,
             lineHeight: 0.7,
             color: "rgba(212,168,130,0.13)",
@@ -55,13 +53,11 @@ export function Hero() {
       {/* Decorative watermark: 33/2021 jurisdiction block (desktop only) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 hidden items-center lg:flex"
+        className="pointer-events-none absolute top-[80px] hidden lg:flex"
         style={{
           right: 0,
           width: "45%",
           zIndex: 1,
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
         <div style={{ textAlign: "left" }}>
@@ -72,12 +68,12 @@ export function Hero() {
               lineHeight: 1,
             }}
           >
-            <span style={{ fontSize: "160px", color: "rgba(212,168,130,0.32)" }}>33</span>
-            <span style={{ fontSize: "72px", color: "rgba(212,168,130,0.24)" }}>/2021</span>
+            <span style={{ fontSize: "200px", color: "rgba(212,168,130,0.32)" }}>33</span>
+            <span style={{ fontSize: "90px", color: "rgba(212,168,130,0.24)" }}>/2021</span>
           </div>
           <div
             style={{
-              width: "100px",
+              width: "120px",
               height: "1px",
               backgroundColor: "rgba(212,168,130,0.45)",
               margin: "16px 0",
@@ -89,11 +85,11 @@ export function Hero() {
                 key={j}
                 style={{
                   fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
-                  fontSize: "14px",
+                  fontSize: "15px",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
                   color: "rgba(237,216,184,0.5)",
-                  lineHeight: 2.6,
+                  lineHeight: 2.8,
                 }}
               >
                 {j}

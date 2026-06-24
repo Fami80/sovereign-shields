@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "UAEworkrights" },
       { property: "og:description", content: "Premium UAE employment law triage." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@uaeworkrights" },
     ],
     links: [
@@ -97,18 +97,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "UAEworkrights",
-          "url": "https://uaeworkrights.com",
-          "description": "UAE employment compliance — settlement reviews, employer compliance audits, and cross-border expertise across MOHRE, DIFC, ADGM, and free zones.",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "availableLanguage": ["English", "French"],
-          },
-          "sameAs": [
-            "https://instagram.com/uaeworkrights",
-            "https://linkedin.com/company/uaeworkrights",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://uaeworkrights.com/#organization",
+              "name": "UAEworkrights",
+              "url": "https://uaeworkrights.com",
+              "description": "UAE employment compliance: settlement reviews, employer compliance audits, and cross-border expertise across MOHRE, DIFC, ADGM, and free zones.",
+              "areaServed": "AE",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "French"],
+              },
+              "sameAs": [
+                "https://instagram.com/uaeworkrights",
+                "https://linkedin.com/company/uaeworkrights",
+              ],
+            },
+            {
+              "@type": "Service",
+              "@id": "https://uaeworkrights.com/#settlement-review",
+              "name": "UAE Settlement Letter Review",
+              "serviceType": "Employment settlement review",
+              "provider": { "@id": "https://uaeworkrights.com/#organization" },
+              "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
+              "description": "Independent review of a UAE settlement or end-of-service letter against UAE Labour Law (Federal Decree-Law 33/2021), with written findings within 48 hours.",
+              "offers": {
+                "@type": "Offer",
+                "price": "999",
+                "priceCurrency": "AED",
+                "url": "https://uaeworkrights.com/",
+              },
+            },
           ],
         }),
       },

@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}
+      style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}
     >
       {/* Atmospheric concentric circles top-left */}
       <svg
@@ -108,7 +108,7 @@ export function Hero() {
               fontSize: "13px",
               letterSpacing: "3px",
               border: "1px solid rgba(212,168,130,0.25)",
-              color: "rgba(212,168,130,0.7)",
+              color: "var(--color-sand-muted)",
               padding: "6px 14px",
               borderRadius: "999px",
               fontWeight: 500,
@@ -121,9 +121,9 @@ export function Hero() {
             className="mt-8 max-w-4xl font-display tracking-tight text-[40px] md:text-6xl"
             style={{ fontWeight: 400, lineHeight: 1.05 }}
           >
-            <span style={{ color: "#EDD8B8" }}>Your settlement letter is</span>
+            <span style={{ color: "var(--color-sand-light)" }}>Your settlement letter is</span>
             <br />
-            <span style={{ color: "#D4A882", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
+            <span style={{ color: "var(--color-sand-warm)", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
           </h1>
 
           <p
@@ -161,10 +161,10 @@ export function Hero() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
-                backgroundColor: "#D4A882",
-                color: "#1E0A0E",
+                backgroundColor: "var(--color-sand-warm)",
+                color: "var(--color-burg-deep)",
                 fontWeight: 500,
                 fontSize: "14px",
               }}
@@ -174,10 +174,10 @@ export function Hero() {
             </a>
             <a
               href="/contact?type=audit"
-              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
-                color: "#EDD8B8",
+                color: "var(--color-sand-light)",
                 fontWeight: 500,
                 fontSize: "14px",
                 backgroundColor: "transparent",
@@ -208,7 +208,7 @@ export function Hero() {
                 color: "rgba(237,216,184,0.6)",
               }}
             >
-              <span style={{ color: "#D4A882", marginRight: "8px" }}>✓</span>
+              <span style={{ color: "var(--color-sand-warm)", marginRight: "8px" }}>✓</span>
               {t}
             </div>
           ))}

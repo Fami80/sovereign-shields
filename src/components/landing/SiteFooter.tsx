@@ -34,13 +34,13 @@ const FOOTER_COLS = [
 
 export function SiteFooter() {
   return (
-    <footer style={{ backgroundColor: "#2D1018" }}>
+    <footer style={{ backgroundColor: "var(--color-burg-mid)" }}>
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-6">
           <div className="md:col-span-2">
             <div
               className="font-display text-xl tracking-tight"
-              style={{ color: "#D4A882", fontWeight: 600 }}
+              style={{ color: "var(--color-sand-warm)", fontWeight: 600 }}
             >
               UAEwork<span style={{ fontStyle: "italic" }}>rights</span>
             </div>
@@ -93,7 +93,7 @@ export function SiteFooter() {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-sans text-xs transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
+                        className="font-sans text-xs transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
                         style={{ color: "rgba(237,216,184,0.55)" }}
                       >
                         {link.label}
@@ -103,7 +103,7 @@ export function SiteFooter() {
                     <li key={link.label}>
                       <Link
                         to={link.href}
-                        className="font-sans text-xs transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
+                        className="font-sans text-xs transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
                         style={{ color: "rgba(237,216,184,0.55)" }}
                       >
                         {link.label}

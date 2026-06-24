@@ -20,7 +20,7 @@ export const Route = createFileRoute("/terms")({
 
 function TermsPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF3E8", color: "#1E0A0E" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}>
       <Navbar />
       <main className="mx-auto max-w-[720px] px-6 pb-24 pt-24">
         <h1
@@ -30,7 +30,7 @@ function TermsPage() {
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
-            color: "#1E0A0E",
+            color: "var(--color-burg-deep)",
           }}
         >
           Terms of Service
@@ -45,7 +45,7 @@ function TermsPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -65,7 +65,7 @@ function TermsPage() {
                   className="flex gap-3 font-sans"
                   style={{ fontSize: "16px", lineHeight: 1.6, color: "rgba(30,10,14,0.75)" }}
                 >
-                  <span style={{ color: "#D4A882" }}>✗</span>
+                  <span style={{ color: "var(--color-sand-warm)" }}>✗</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -83,7 +83,7 @@ function TermsPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -107,7 +107,7 @@ function TermsPage() {
                   }}
                 >
                   <span>{item.service}</span>
-                  <span style={{ fontWeight: 600, color: "#1E0A0E" }}>{item.price}</span>
+                  <span style={{ fontWeight: 600, color: "var(--color-burg-deep)" }}>{item.price}</span>
                 </li>
               ))}
             </ul>
@@ -124,7 +124,7 @@ function TermsPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -143,7 +143,7 @@ function TermsPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -162,7 +162,7 @@ function TermsPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >

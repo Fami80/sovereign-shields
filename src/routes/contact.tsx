@@ -112,11 +112,11 @@ function ContactPage() {
     backgroundColor: "rgba(212,168,130,0.06)",
     border: "1px solid rgba(212,168,130,0.2)",
     borderLeft: hasError ? `2px solid ${ERROR_COLOR}` : "1px solid rgba(212,168,130,0.2)",
-    color: "#EDD8B8",
+    color: "var(--color-sand-light)",
   });
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#1E0A0E" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "var(--color-burg-deep)" }}>
       <Navbar />
 
       <main className="mx-auto max-w-3xl px-6 pb-24 pt-24">
@@ -125,7 +125,7 @@ function ContactPage() {
             className="font-display"
             style={{
               fontSize: 48,
-              color: "#EDD8B8",
+              color: "var(--color-sand-light)",
               fontWeight: 600,
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
@@ -148,7 +148,7 @@ function ContactPage() {
         <div
           className="mt-12"
           style={{
-            backgroundColor: "#2D1018",
+            backgroundColor: "var(--color-burg-mid)",
             border: "1px solid rgba(212,168,130,0.15)",
             borderRadius: 16,
             padding: 40,
@@ -159,7 +159,7 @@ function ContactPage() {
               <CheckCircle className="h-10 w-10" style={{ color: "#81C784" }} />
               <p
                 className="mt-4 flex items-center gap-2 font-sans text-base font-semibold"
-                style={{ color: "#EDD8B8" }}
+                style={{ color: "var(--color-sand-light)" }}
               >
                 <CheckCircle size={20} style={{ color: "#81C784" }} aria-hidden />
                 Received.
@@ -179,7 +179,7 @@ function ContactPage() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.name)}
                 />
               </Field>
@@ -191,7 +191,7 @@ function ContactPage() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
-                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.email)}
                 />
               </Field>
@@ -201,28 +201,28 @@ function ContactPage() {
                   ref={refs.enquiry}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
-                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={{
                     ...fieldStyle(!!errors.enquiry),
-                    color: form.enquiry ? "#EDD8B8" : "rgba(237,216,184,0.3)",
+                    color: form.enquiry ? "var(--color-sand-light)" : "rgba(237,216,184,0.55)",
                   }}
                 >
-                  <option value="" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Select…
                   </option>
-                  <option value="settlement" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="settlement" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Settlement Review
                   </option>
-                  <option value="audit" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="audit" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Employer Compliance Audit
                   </option>
-                  <option value="general" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="general" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     General Question
                   </option>
-                  <option value="cross-border" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="cross-border" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Complex cross-border case
                   </option>
-                  <option value="kb" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="kb" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Knowledge Base interest
                   </option>
                 </select>
@@ -235,22 +235,22 @@ function ContactPage() {
                 <select
                   value={form.willingness}
                   onChange={(e) => setForm({ ...form, willingness: e.target.value })}
-                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={{
                     ...fieldStyle(false),
-                    color: form.willingness ? "#EDD8B8" : "rgba(237,216,184,0.3)",
+                    color: form.willingness ? "var(--color-sand-light)" : "rgba(237,216,184,0.3)",
                   }}
                 >
-                  <option value="" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Select… (optional)
                   </option>
-                  <option value="yes" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="yes" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Yes — ready when it launches
                   </option>
-                  <option value="maybe" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="maybe" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Maybe — depends what's inside
                   </option>
-                  <option value="browsing" style={{ backgroundColor: "#1E0A0E", color: "#EDD8B8" }}>
+                  <option value="browsing" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Just browsing for now
                   </option>
                 </select>
@@ -264,7 +264,7 @@ function ContactPage() {
                   rows={5}
                   maxLength={1000}
                   placeholder="Briefly describe your matter…"
-                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                  className="w-full resize-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={fieldStyle(!!errors.message)}
                 />
               </Field>
@@ -274,8 +274,8 @@ function ContactPage() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px] disabled:opacity-60"
-                style={{ backgroundColor: "#D4A882", color: "#1E0A0E" }}
+                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px] disabled:opacity-60"
+                style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
               >
                 {submitting ? "Sending…" : "Send →"}
               </button>
@@ -291,7 +291,7 @@ function ContactPage() {
                     href={WHATSAPP_HREF}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ color: "#D4A882", textDecoration: "underline" }}
+                    style={{ color: "var(--color-sand-warm)", textDecoration: "underline" }}
                   >
                     Please WhatsApp us instead.
                   </a>
@@ -346,7 +346,7 @@ function Field({
       {helper && (
         <span
           className="-mt-1 mb-2 block font-sans text-xs"
-          style={{ color: "rgba(237,216,184,0.45)" }}
+          style={{ color: "rgba(237,216,184,0.7)" }}
         >
           {helper}
         </span>
@@ -377,17 +377,17 @@ function ContactCard({
   return (
     <div
       style={{
-        backgroundColor: "#2D1018",
+        backgroundColor: "var(--color-burg-mid)",
         border: "1px solid rgba(212,168,130,0.15)",
         borderRadius: 16,
         padding: 32,
       }}
     >
       <div className="flex items-center gap-3">
-        <div style={{ color: "#D4A882" }}>{icon}</div>
+        <div style={{ color: "var(--color-sand-warm)" }}>{icon}</div>
         <span
           className="font-sans text-base font-medium"
-          style={{ color: "#EDD8B8" }}
+          style={{ color: "var(--color-sand-light)" }}
         >
           {title}
         </span>
@@ -402,8 +402,8 @@ function ContactCard({
         href={buttonHref}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
-        style={{ color: "#D4A882" }}
+        className="mt-5 inline-block font-sans text-sm font-medium transition-colors hover:opacity-80 focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
+        style={{ color: "var(--color-sand-warm)" }}
       >
         {buttonText}
       </a>

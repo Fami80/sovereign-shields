@@ -20,7 +20,7 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FAF3E8", color: "#1E0A0E" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}>
       <Navbar />
       <main className="mx-auto max-w-[720px] px-6 pb-24 pt-24">
         <h1
@@ -30,7 +30,7 @@ function PrivacyPage() {
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
-            color: "#1E0A0E",
+            color: "var(--color-burg-deep)",
           }}
         >
           Privacy Policy
@@ -45,7 +45,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -64,7 +64,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -83,7 +83,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -102,7 +102,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -121,7 +121,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >
@@ -140,7 +140,7 @@ function PrivacyPage() {
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 marginBottom: "16px",
               }}
             >

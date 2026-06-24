@@ -20,24 +20,24 @@ function CheckoutPlaceholder() {
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-center px-6 py-24"
-      style={{ backgroundColor: "#1E0A0E" }}
+      style={{ backgroundColor: "var(--color-burg-deep)" }}
     >
       <div
         className="w-full max-w-md rounded-2xl p-10 text-center"
         style={{
-          backgroundColor: "#2D1018",
+          backgroundColor: "var(--color-burg-mid)",
           border: "1px solid rgba(212,168,130,0.2)",
         }}
       >
         <p
           className="text-[13px] font-medium uppercase tracking-[2.5px]"
-          style={{ color: "rgba(212,168,130,0.6)", letterSpacing: "3px" }}
+          style={{ color: "var(--color-sand-muted)", letterSpacing: "3px" }}
         >
           SECURE CHECKOUT
         </p>
         <h1
           className="mt-4 font-display"
-          style={{ fontSize: 32, color: "#EDD8B8", fontWeight: 400, lineHeight: 1.05 }}
+          style={{ fontSize: 32, color: "var(--color-sand-light)", fontWeight: 400, lineHeight: 1.05 }}
         >
           Checkout coming soon.
         </h1>
@@ -50,8 +50,8 @@ function CheckoutPlaceholder() {
         <Link
           to="/contact"
           search={{ type: "kb", message: "I'm interested in Knowledge Base access" }}
-          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#1E0A0E] focus-visible:[outline-offset:2px]"
-          style={{ backgroundColor: "#D4A882", color: "#1E0A0E", fontWeight: 500 }}
+          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px]"
+          style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
         >
           Contact us →
         </Link>

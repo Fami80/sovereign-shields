@@ -22,17 +22,17 @@ const DONT_ITEMS = [
 
 export function About() {
   return (
-    <section id="about" className="relative overflow-hidden" style={{ backgroundColor: "#1E0A0E" }}>
+    <section id="about" className="relative overflow-hidden" style={{ backgroundColor: "var(--color-burg-deep)" }}>
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <p
           className="text-[13px] font-medium uppercase tracking-[2.5px]"
-          style={{ fontFamily: "var(--font-sans)", color: "rgba(212,168,130,0.6)" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--color-sand-muted)" }}
         >
           THE EXPERT BEHIND UAEWORKRIGHTS
         </p>
         <h2
           className="mt-5 max-w-3xl text-[40px] leading-tight"
-          style={{ fontFamily: "var(--font-display)", color: "#EDD8B8" }}
+          style={{ fontFamily: "var(--font-display)", color: "var(--color-sand-light)" }}
         >
           I'm not a lawyer. I'm a compliance specialist — and that distinction matters.
         </h2>
@@ -57,7 +57,7 @@ export function About() {
             />
             <h3
               className="text-[28px] leading-tight font-normal"
-              style={{ fontFamily: "var(--font-display)", color: "#D4A882" }}
+              style={{ fontFamily: "var(--font-display)", color: "var(--color-sand-warm)" }}
             >
               Kaoutar Makrache
             </h3>
@@ -74,7 +74,7 @@ export function About() {
                   <span
                     aria-hidden
                     className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                    style={{ backgroundColor: "#D4A882" }}
+                    style={{ backgroundColor: "var(--color-sand-warm)" }}
                   />
                   <span
                     className="text-[14px] font-light leading-relaxed"
@@ -90,9 +90,9 @@ export function About() {
               className="mt-8 text-[18px] italic leading-relaxed"
               style={{
                 fontFamily: "var(--font-display)",
-                color: "#EDD8B8",
+                color: "var(--color-sand-light)",
                 backgroundColor: "rgba(212,168,130,0.06)",
-                borderLeft: "3px solid #D4A882",
+                borderLeft: "3px solid var(--color-sand-warm)",
                 padding: "20px 24px",
               }}
             >
@@ -106,7 +106,7 @@ export function About() {
               <div>
                 <h3
                   className="text-[14px] font-medium uppercase tracking-[2px]"
-                  style={{ fontFamily: "var(--font-sans)", color: "#D4A882" }}
+                  style={{ fontFamily: "var(--font-sans)", color: "var(--color-sand-warm)" }}
                 >
                   What I do
                 </h3>
@@ -117,7 +117,7 @@ export function About() {
                       className="flex gap-2 text-[14px] font-light leading-relaxed"
                       style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.65)" }}
                     >
-                      <span style={{ color: "#D4A882" }}>✓</span>
+                      <span style={{ color: "var(--color-sand-warm)" }}>✓</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -151,8 +151,8 @@ export function About() {
               className="mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-[14px] font-medium motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-[1.02]"
               style={{
                 fontFamily: "var(--font-sans)",
-                backgroundColor: "#D4A882",
-                color: "#1E0A0E",
+                backgroundColor: "var(--color-sand-warm)",
+                color: "var(--color-burg-deep)",
               }}
             >
               Book a review — AED 999 →

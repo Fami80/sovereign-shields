@@ -89,7 +89,7 @@ export function Testimonials() {
                       color: "var(--color-sand-muted)",
                     }}
                   >
-                    — {t.attribution}
+                    {t.attribution}
                   </div>
 
                   <div

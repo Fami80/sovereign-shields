@@ -24,17 +24,11 @@ export function About() {
   return (
     <section id="about" className="relative overflow-hidden" style={{ backgroundColor: "var(--color-burg-deep)" }}>
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <p
-          className="text-[13px] font-medium uppercase tracking-[2.5px]"
-          style={{ fontFamily: "var(--font-sans)", color: "var(--color-sand-muted)" }}
-        >
-          THE EXPERT BEHIND UAEWORKRIGHTS
-        </p>
         <h2
-          className="mt-5 max-w-3xl text-[40px] leading-tight"
+          className="max-w-3xl text-[40px] leading-tight"
           style={{ fontFamily: "var(--font-display)", color: "var(--color-sand-light)" }}
         >
-          I'm not a lawyer. I'm a compliance specialist — and that distinction matters.
+          I'm not a lawyer. I'm a compliance specialist, and that distinction matters.
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
@@ -96,7 +90,7 @@ export function About() {
                 padding: "20px 24px",
               }}
             >
-              "Most settlement errors aren't deliberate. Employers make mistakes because they haven't updated their processes — not because they're trying to underpay you. My job is to find those mistakes and help both sides fix them."
+              "Most settlement errors aren't deliberate. Employers make mistakes because they haven't updated their processes, not because they're trying to underpay you. My job is to find those mistakes and help both sides fix them."
             </blockquote>
           </div>
 
@@ -155,7 +149,7 @@ export function About() {
                 color: "var(--color-burg-deep)",
               }}
             >
-              Book a review — AED 999 →
+              Review my settlement →
             </a>
           </div>
         </div>

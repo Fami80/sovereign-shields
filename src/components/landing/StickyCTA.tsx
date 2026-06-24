@@ -65,8 +65,8 @@ export function StickyCTA() {
             color: "var(--color-burg-deep)",
           }}
         >
-          <span className="md:hidden">Book — AED 999</span>
-          <span className="hidden md:inline">Book now →</span>
+          <span className="md:hidden">Review my settlement</span>
+          <span className="hidden md:inline">Review my settlement →</span>
         </a>
       </div>
     </div>

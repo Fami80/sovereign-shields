@@ -26,7 +26,9 @@ export const Route = createFileRoute("/contact")({
       { rel: "canonical", href: "https://uaeworkrights.com/contact" },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>) => ({
+  validateSearch: (
+    s: Record<string, unknown>,
+  ): { type?: string; card?: string; message?: string } => ({
     type: typeof s.type === "string" ? s.type : undefined,
     card: typeof s.card === "string" ? s.card : undefined,
     message: typeof s.message === "string" ? s.message : undefined,
@@ -274,7 +276,7 @@ function ContactPage() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-[1.01] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px] disabled:opacity-60"
+                className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px] disabled:opacity-60"
                 style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
               >
                 {submitting ? "Sending…" : "Send →"}

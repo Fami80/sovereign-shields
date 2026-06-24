@@ -108,7 +108,7 @@ export function KnowledgeBase() {
               key={card.title}
               to="/contact"
               search={card.search}
-              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
+              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
               style={{
                 background: "var(--color-burg-mid)",
                 border: "1px solid rgba(212,168,130,0.12)",
@@ -224,7 +224,7 @@ export function KnowledgeBase() {
           <Link
             to="/contact"
             search={{ type: "kb", message: "I'm interested in full Knowledge Base access" }}
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
             style={{
               background: "var(--color-sand-warm)",
               color: "var(--color-burg-deep)",

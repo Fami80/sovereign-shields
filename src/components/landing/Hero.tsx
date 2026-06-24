@@ -161,7 +161,7 @@ export function Hero() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
                 backgroundColor: "var(--color-sand-warm)",
                 color: "var(--color-burg-deep)",
@@ -174,7 +174,7 @@ export function Hero() {
             </a>
             <a
               href="/contact?type=audit"
-              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px] sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "var(--color-sand-light)",

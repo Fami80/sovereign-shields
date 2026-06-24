@@ -26,7 +26,7 @@ export function StickyCTA() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 motion-safe:transition-all motion-safe:duration-500 ${
+      className={`fixed inset-x-0 bottom-0 z-50 motion-safe:transition-[translate,opacity] motion-safe:duration-300 ${
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       style={{
@@ -58,7 +58,7 @@ export function StickyCTA() {
           href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] md:px-5"
+          className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] md:px-5"
           style={{
             fontFamily: "var(--font-sans)",
             backgroundColor: "var(--color-sand-warm)",

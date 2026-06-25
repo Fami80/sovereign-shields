@@ -232,6 +232,39 @@ function ContactPage() {
                 />
               </Field>
 
+              <Field label="WhatsApp number" helper="We'll reply on WhatsApp." error={errors.phone}>
+                <div className="flex gap-2">
+                  <select
+                    value={form.countryCode}
+                    onChange={(e) => setForm({ ...form, countryCode: e.target.value })}
+                    aria-label="Country code"
+                    className="appearance-none rounded-xl px-3 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                    style={{ ...fieldStyle(false), maxWidth: 150 }}
+                  >
+                    {COUNTRY_CODES.map((c) => (
+                      <option
+                        key={c.code}
+                        value={c.code}
+                        style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}
+                      >
+                        {c.label}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    ref={refs.phone}
+                    type="tel"
+                    inputMode="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="50 123 4567"
+                    className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                    style={fieldStyle(!!errors.phone)}
+                  />
+                </div>
+              </Field>
+
+
               <Field label="Enquiry type" error={errors.enquiry}>
                 <select
                   ref={refs.enquiry}

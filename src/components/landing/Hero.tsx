@@ -136,27 +136,10 @@ export function Hero() {
               color: "rgba(237,216,184,0.6)",
             }}
           >
-            Most letters we review contain at least one error. The average underpayment is AED 4,200.
-            <br /><br />
-            UAE Labour Law protects both sides. You deserve to know what you're owed. Your employer deserves to know what they're required to pay.
-            <br /><br />
-            One flat review. Every UAE jurisdiction. Reviewed personally — not by a chatbot.
+            Most settlement letters we review contain an error. The average underpayment is AED 4,200. Know exactly what you're owed.
           </p>
 
-          <span
-            className="mt-8 inline-flex items-center font-sans"
-            style={{
-              fontSize: "13px",
-              border: "1px solid rgba(212,168,130,0.3)",
-              color: "rgba(212,168,130,0.8)",
-              padding: "8px 16px",
-              borderRadius: "999px",
-            }}
-          >
-            AED 999 · Single transparent fee · 48h turnaround
-          </span>
-
-          <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:w-auto">
+          <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:w-auto">
             <a
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
@@ -169,7 +152,7 @@ export function Hero() {
                 fontSize: "14px",
               }}
             >
-              Review My Settlement
+              Review my settlement
               <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5" />
             </a>
             <a
@@ -183,7 +166,7 @@ export function Hero() {
                 backgroundColor: "transparent",
               }}
             >
-              Ensure Corporate Compliance
+              Book a compliance audit
             </a>
           </div>
         </div>
@@ -194,8 +177,8 @@ export function Hero() {
           style={{ borderTop: "1px solid rgba(212,168,130,0.1)" }}
         >
           {[
-            "Federal Decree-Law 33/2021",
-            "DIFC + ADGM + Mainland",
+            "AED 999 flat fee",
+            "Every UAE jurisdiction",
             "48-hour turnaround",
             "Written summary included",
           ].map((t) => (

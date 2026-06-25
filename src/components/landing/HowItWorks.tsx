@@ -27,7 +27,7 @@ const STEPS: Step[] = [
     number: 2,
     title: "We review every line",
     description:
-      "Gratuity, leave encashment, deductions, notice period — all checked against UAE Labour Law for your jurisdiction.",
+      "Gratuity, leave encashment, deductions, notice period, all checked against UAE Labour Law for your jurisdiction.",
     image: step2Image.url,
     imagePosition: "center top",
   },
@@ -47,11 +47,8 @@ export function HowItWorks() {
     <section className="bg-bg-light py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col gap-4 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted-light">
-            How it works
-          </p>
           <h2
-            className="mt-2 text-3xl md:text-4xl"
+            className="text-3xl md:text-4xl"
             style={{
               fontFamily: "'Playfair Display', serif",
               fontWeight: 700,
@@ -164,7 +161,7 @@ export function HowItWorks() {
               padding: "14px 32px",
             }}
           >
-            Start your review — AED 999 →
+            Review my settlement →
           </a>
         </div>
       </div>

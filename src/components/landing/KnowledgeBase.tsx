@@ -6,11 +6,11 @@ const JURISDICTION_CARDS = [
   {
     title: "Mainland UAE",
     items: [
-      "UAE labour law gratuity calculation — how it's done",
+      "UAE labour law gratuity calculation: how it's done",
       "Notice periods and gardening leave rules",
-      "Leave encashment — basic salary only, not gross",
+      "Leave encashment: basic salary only, not gross",
       "Can your employer deduct visa costs in UAE?",
-      "Visa cancellation — what you must sign and when",
+      "Visa cancellation: what you must sign and when",
     ],
     locked: true,
     search: { type: "kb", card: "Mainland UAE", message: "I'm interested in the Mainland UAE Knowledge Base" },
@@ -18,9 +18,9 @@ const JURISDICTION_CARDS = [
   {
     title: "DIFC end of service gratuity",
     items: [
-      "DEWS scheme — how it replaces traditional gratuity",
+      "DEWS scheme: how it replaces traditional gratuity",
       "How DIFC employment differs from mainland UAE",
-      "Zurich portal — checking your DEWS balance",
+      "Zurich portal: checking your DEWS balance",
     ],
     locked: true,
     search: { type: "kb", card: "DIFC", message: "I'm interested in the DIFC Knowledge Base" },
@@ -46,7 +46,7 @@ const JURISDICTION_CARDS = [
   {
     title: "Cross-border cases",
     items: [
-      "Belgian law and UAE — what applies when",
+      "Belgian law and UAE: what applies when",
       "UK subsidiaries operating in UAE",
     ],
     locked: true,
@@ -55,9 +55,9 @@ const JURISDICTION_CARDS = [
   {
     title: "Practical tools",
     items: [
-      "UAE settlement checklist — before you sign",
+      "UAE settlement checklist: before you sign",
       "Leave encashment calculator",
-      "Illegal deductions — what employers cannot charge you",
+      "Illegal deductions: what employers cannot charge you",
     ],
     locked: true,
     search: { type: "kb", card: "Practical Tools", message: "I'm interested in the Practical Tools Knowledge Base" },
@@ -68,20 +68,12 @@ export function KnowledgeBase() {
   return (
     <section id="knowledge" className="bg-[var(--color-burg-deep)] py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Eyebrow */}
-        <p
-          className="text-center text-[13px] font-normal uppercase tracking-[2.5px]"
-          style={{ color: "var(--color-sand-muted)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-        >
-          KNOWLEDGE BASE
-        </p>
-
         {/* Heading */}
         <h2
           className="mt-5 text-center text-[40px] font-semibold leading-tight"
           style={{ color: "var(--color-sand-light)", fontFamily: "'Playfair Display', serif" }}
         >
-          UAE Employment Rights — Knowledge Base
+          UAE Employment Rights: Knowledge Base
         </h2>
 
         {/* Subheading */}
@@ -98,7 +90,7 @@ export function KnowledgeBase() {
           style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.55)" }} />
-          Preview — purchase 30-day access to unlock the full library · AED 199
+          Preview: purchase 30-day access to unlock the full library · AED 199
         </div>
 
         {/* 6 Jurisdiction Cards */}
@@ -190,7 +182,7 @@ export function KnowledgeBase() {
             className="mt-3 text-lg font-medium"
             style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            How UAE gratuity is calculated — the complete guide
+            How UAE gratuity is calculated: the complete guide
           </h3>
           <p
             className="mt-2 text-sm font-light"

@@ -53,7 +53,7 @@ export function SiteFooter() {
                 lineHeight: 1.6,
               }}
             >
-              UAE employment compliance — settlement reviews, rights guidance, and cross-border expertise for employees and employers.
+              UAE employment compliance. Settlement reviews, rights guidance, and cross-border expertise for employees and employers.
             </p>
             <div
               className="mt-5 inline-flex items-center rounded-full px-3 py-1.5 font-sans text-xs font-medium"

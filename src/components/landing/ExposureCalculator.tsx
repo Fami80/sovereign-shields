@@ -262,7 +262,7 @@ export function ExposureCalculator() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Get your letter reviewed — AED 999 →
+              Review my settlement →
             </a>
           </div>
           </div>

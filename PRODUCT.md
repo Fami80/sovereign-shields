@@ -10,7 +10,7 @@ UAE-based employees who have just received a settlement, end-of-service, or fina
 
 ## Product Purpose
 
-Sovereign Shields is a confidential, flat-fee (AED 999, 48-hour turnaround) settlement-letter review service. A real expert — Kaoutar — personally reviews each letter against UAE Labour Law (Federal Decree-Law 33/2021) and reports what's wrong and what the person is owed. Most letters reviewed contain at least one error; the average underpayment is AED 4,200. Success looks like: a worried employee gets clarity and confidence within 48 hours, recovers money they were owed, and trusts that a human — not a chatbot — looked at their specific situation. The product exists to make fair-pay expertise accessible to ordinary employees, not just those who can afford a law firm.
+UAE WorkRights is a confidential, flat-fee (AED 999, 48-hour turnaround) settlement-letter review service. A real expert — Kaoutar — personally reviews each letter against UAE Labour Law (Federal Decree-Law 33/2021) and reports what's wrong and what the person is owed. Most letters reviewed contain at least one error; the average underpayment is AED 4,200. Success looks like: a worried employee gets clarity and confidence within 48 hours, recovers money they were owed, and trusts that a human — not a chatbot — looked at their specific situation. The product exists to make fair-pay expertise accessible to ordinary employees, not just those who can afford a law firm.
 
 ## Brand Personality
 

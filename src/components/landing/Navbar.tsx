@@ -95,7 +95,7 @@ export function Navbar() {
             className="hidden rounded-full px-5 py-2 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:inline-flex"
             style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
           >
-            Book a review
+            Review my settlement
           </a>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -138,7 +138,7 @@ export function Navbar() {
               className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:hidden"
               style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
             >
-              Book a review
+              Review my settlement
             </a>
           </nav>
         </div>

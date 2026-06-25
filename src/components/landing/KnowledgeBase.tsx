@@ -118,7 +118,7 @@ export function KnowledgeBase() {
                   zIndex: 0,
                 }}
               />
-              <div className="relative z-[1] mb-4 flex items-center justify-between">
+              <div className="relative z-[1] mb-4 flex items-start justify-between gap-3">
                 <h3
                   className="text-base font-medium"
                   style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
@@ -126,7 +126,7 @@ export function KnowledgeBase() {
                   {card.title}
                 </h3>
                 <Lock
-                  className="h-4 w-4"
+                  className="mt-1 h-4 w-4 flex-shrink-0"
                   style={{ color: "rgba(212,168,130,0.75)" }}
                 />
               </div>

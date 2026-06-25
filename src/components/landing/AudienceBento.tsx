@@ -98,38 +98,48 @@ export function AudienceBento() {
               ))}
             </ul>
 
-            <a
-              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
+            <p
+              className="mt-4 font-sans italic"
               style={{
-                backgroundColor: "var(--color-burg-acc)",
-                color: "var(--color-sand-pale)",
-                fontWeight: 500,
+                fontSize: "14px",
+                fontWeight: 300,
+                lineHeight: 1.6,
+                color: "rgba(30,10,14,0.65)",
               }}
             >
-              Review my settlement →
-            </a>
+              Prefer to check it yourself? We send you the settlement self-audit checklist and you review your own letter, step by step, in your own time.
+            </p>
 
-            {/* Pulse badge bottom */}
-            <div className="mt-6 flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span
-                  className="absolute inline-flex h-full w-full motion-safe:animate-pulse-dot rounded-full opacity-75"
-                  style={{ backgroundColor: "var(--color-burg-acc)" }}
-                />
-                <span
-                  className="relative inline-flex h-2 w-2 rounded-full"
-                  style={{ backgroundColor: "var(--color-burg-acc)" }}
-                />
-              </span>
-              <span
-                className="font-sans text-xs"
-                style={{ color: "var(--color-burg-acc)", fontWeight: 500 }}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
+                style={{
+                  backgroundColor: "var(--color-burg-acc)",
+                  color: "var(--color-sand-pale)",
+                  fontWeight: 500,
+                  minHeight: "48px",
+                }}
               >
-                48h Fast-Track
-              </span>
+                Review my settlement →
+              </a>
+              <a
+                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'm interested in the Self-Review Checklist — AED 199.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-acc)] focus-visible:[outline-offset:2px] sm:w-auto"
+                style={{
+                  border: "1px solid var(--color-burg-acc)",
+                  color: "var(--color-burg-acc)",
+                  backgroundColor: "transparent",
+                  fontWeight: 500,
+                  minHeight: "48px",
+                }}
+              >
+                Self-Review Checklist - AED 199 →
+              </a>
             </div>
           </article>
 

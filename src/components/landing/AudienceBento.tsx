@@ -34,7 +34,7 @@ export function AudienceBento() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* CARD 1 — Employee */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "var(--color-sand-pale)",
               border: "1px solid rgba(139,45,58,0.12)",
@@ -115,7 +115,7 @@ export function AudienceBento() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
               style={{
                 backgroundColor: "var(--color-burg-acc)",
                 color: "var(--color-sand-pale)",
@@ -148,7 +148,7 @@ export function AudienceBento() {
 
           {/* CARD 2 — Employer */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
               backgroundColor: "var(--color-burg-deep)",
               border: "1px solid rgba(212,168,130,0.15)",
@@ -239,7 +239,7 @@ export function AudienceBento() {
 
             <a
               href="/contact?type=audit"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
                 color: "var(--color-sand-warm)",
@@ -270,7 +270,7 @@ export function AudienceBento() {
           ].map((tile) => (
             <div
               key={tile.title}
-              className="rounded-2xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
+              className="rounded-2xl p-6 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-7"
               style={{
                 backgroundColor: "transparent",
                 border: "1px solid rgba(139,45,58,0.1)",

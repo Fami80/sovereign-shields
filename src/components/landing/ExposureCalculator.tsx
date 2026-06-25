@@ -191,7 +191,7 @@ export function ExposureCalculator() {
               type="button"
               onClick={handleCalculate}
               disabled={!canCalculate}
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] motion-safe:hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97]"
               style={{
                 background: "var(--color-burg-acc)",
                 color: "var(--color-sand-light)",

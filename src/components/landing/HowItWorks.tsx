@@ -154,7 +154,7 @@ export function HowItWorks() {
             href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 motion-safe:transition-all motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:hover:bg-[var(--color-sand-muted)]"
+            className="inline-flex items-center gap-2 motion-safe:transition-[scale,background-color] motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] motion-safe:hover:bg-[var(--color-sand-muted)]"
             style={{
               backgroundColor: "var(--color-sand-warm)",
               color: "var(--color-burg-deep)",

@@ -50,7 +50,7 @@ function CheckoutPlaceholder() {
         <Link
           to="/contact"
           search={{ type: "kb", message: "I'm interested in Knowledge Base access" }}
-          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px]"
+          className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px]"
           style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
         >
           Contact us →

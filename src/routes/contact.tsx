@@ -114,7 +114,7 @@ function ContactPage() {
     const e = validate();
     setErrors(e);
     if (Object.keys(e).length > 0) {
-      const order: FieldName[] = ["name", "email", "enquiry", "message"];
+      const order: FieldName[] = ["name", "email", "phone", "enquiry", "message"];
       const first = order.find((k) => e[k]);
       if (first) refs[first].current?.focus();
       return;
@@ -128,6 +128,7 @@ function ContactPage() {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
+          phone: `${form.countryCode} ${form.phone}`.trim(),
           enquiryType: form.enquiry,
           kbCardClicked,
           willingnessToPay: form.willingness,
@@ -135,7 +136,7 @@ function ContactPage() {
         }),
       });
       setSubmitted(true);
-      setForm({ name: "", email: "", enquiry: "", willingness: "", message: "" });
+      setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
     } catch {
       setSubmitError(true);
     } finally {

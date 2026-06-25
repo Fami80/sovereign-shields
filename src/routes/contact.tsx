@@ -84,6 +84,8 @@ function ContactPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    countryCode: "+971",
+    phone: "",
     enquiry: initialEnquiry,
     willingness: "",
     message: message ?? "",
@@ -92,6 +94,7 @@ function ContactPage() {
   const refs = {
     name: useRef<HTMLInputElement>(null),
     email: useRef<HTMLInputElement>(null),
+    phone: useRef<HTMLInputElement>(null),
     enquiry: useRef<HTMLSelectElement>(null),
     message: useRef<HTMLTextAreaElement>(null),
   };
@@ -100,6 +103,7 @@ function ContactPage() {
     const e: Errors = {};
     if (!form.name.trim() || form.name.length > 80) e.name = "Please enter your full name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email address.";
+    if (!/^[0-9]{6,15}$/.test(form.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid WhatsApp number.";
     if (!form.enquiry) e.enquiry = "Select an enquiry type.";
     if (!form.message.trim() || form.message.length > 1000) e.message = "Message is required (max 1000 chars).";
     return e;

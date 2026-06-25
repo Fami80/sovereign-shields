@@ -23,7 +23,7 @@ This should explicitly NOT look or feel like:
 - **A generic AI/SaaS template** — no purple gradients, no stock "modern startup" hero, no nested cards or default component-library sameness.
 - **A cheap legal ad / ambulance-chaser** — no loud "GET WHAT YOU'RE OWED!!!" billboard energy, no fake urgency, no aggressive personal-injury vibe. It must feel trustworthy, not predatory.
 - **A cold corporate law firm** — no stiff, faceless big-firm gravitas or intimidating formality. It should feel personal and approachable.
-- **Crypto / fintech hype** — despite the name "Sovereign," nothing neon, dark-mode-bro, or libertarian-finance. No hype aesthetic.
+- **Crypto / fintech hype** — nothing neon, dark-mode-bro, or libertarian-finance. No hype aesthetic.
 
 ## Design Principles
 

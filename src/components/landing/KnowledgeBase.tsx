@@ -81,7 +81,7 @@ export function KnowledgeBase() {
           className="mx-auto mt-5 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 199.
+          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 299.
         </p>
 
         {/* Preview label */}
@@ -90,7 +90,7 @@ export function KnowledgeBase() {
           style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           <Lock className="h-3.5 w-3.5" style={{ color: "rgba(237,216,184,0.55)" }} />
-          Preview: purchase 30-day access to unlock the full library · AED 199
+          Preview: purchase 30-day access to unlock the full library · AED 299
         </div>
 
         {/* 6 Jurisdiction Cards */}
@@ -154,7 +154,7 @@ export function KnowledgeBase() {
                   className="text-[13px] font-medium"
                   style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
-                  Unlock for AED 199 →
+                  Unlock for AED 299 →
                 </span>
               </div>
             </Link>
@@ -211,7 +211,7 @@ export function KnowledgeBase() {
             className="text-sm font-medium"
             style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Unlock the full knowledge base · AED 199 for 30-day access
+            Unlock the full knowledge base · AED 299 for 30-day access
           </span>
           <Link
             to="/contact"

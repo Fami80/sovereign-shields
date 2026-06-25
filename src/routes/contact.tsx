@@ -232,7 +232,7 @@ function ContactPage() {
 
               <Field
                 label="Would you pay for Knowledge Base access?"
-                helper="The Knowledge Base will be AED 199 for 30-day access."
+                helper="The Knowledge Base will be AED 299 for 30-day access."
               >
                 <select
                   value={form.willingness}

@@ -4,7 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { CheckCircle } from "lucide-react";
 
-type FieldName = "name" | "email" | "enquiry" | "message";
+type FieldName = "name" | "email" | "phone" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
 const WEBHOOK_URL =
@@ -12,6 +12,35 @@ const WEBHOOK_URL =
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
+
+const COUNTRY_CODES: { code: string; label: string }[] = [
+  { code: "+971", label: "🇦🇪 UAE +971" },
+  { code: "+966", label: "🇸🇦 KSA +966" },
+  { code: "+974", label: "🇶🇦 Qatar +974" },
+  { code: "+973", label: "🇧🇭 Bahrain +973" },
+  { code: "+965", label: "🇰🇼 Kuwait +965" },
+  { code: "+968", label: "🇴🇲 Oman +968" },
+  { code: "+44", label: "🇬🇧 UK +44" },
+  { code: "+1", label: "🇺🇸 US/CA +1" },
+  { code: "+91", label: "🇮🇳 India +91" },
+  { code: "+92", label: "🇵🇰 Pakistan +92" },
+  { code: "+20", label: "🇪🇬 Egypt +20" },
+  { code: "+961", label: "🇱🇧 Lebanon +961" },
+  { code: "+962", label: "🇯🇴 Jordan +962" },
+  { code: "+212", label: "🇲🇦 Morocco +212" },
+  { code: "+216", label: "🇹🇳 Tunisia +216" },
+  { code: "+33", label: "🇫🇷 France +33" },
+  { code: "+49", label: "🇩🇪 Germany +49" },
+  { code: "+34", label: "🇪🇸 Spain +34" },
+  { code: "+39", label: "🇮🇹 Italy +39" },
+  { code: "+31", label: "🇳🇱 Netherlands +31" },
+  { code: "+41", label: "🇨🇭 Switzerland +41" },
+  { code: "+61", label: "🇦🇺 Australia +61" },
+  { code: "+63", label: "🇵🇭 Philippines +63" },
+  { code: "+90", label: "🇹🇷 Turkey +90" },
+  { code: "+27", label: "🇿🇦 South Africa +27" },
+  { code: "+234", label: "🇳🇬 Nigeria +234" },
+];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -55,6 +84,8 @@ function ContactPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    countryCode: "+971",
+    phone: "",
     enquiry: initialEnquiry,
     willingness: "",
     message: message ?? "",
@@ -63,6 +94,7 @@ function ContactPage() {
   const refs = {
     name: useRef<HTMLInputElement>(null),
     email: useRef<HTMLInputElement>(null),
+    phone: useRef<HTMLInputElement>(null),
     enquiry: useRef<HTMLSelectElement>(null),
     message: useRef<HTMLTextAreaElement>(null),
   };
@@ -71,6 +103,7 @@ function ContactPage() {
     const e: Errors = {};
     if (!form.name.trim() || form.name.length > 80) e.name = "Please enter your full name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email address.";
+    if (!/^[0-9]{6,15}$/.test(form.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid WhatsApp number.";
     if (!form.enquiry) e.enquiry = "Select an enquiry type.";
     if (!form.message.trim() || form.message.length > 1000) e.message = "Message is required (max 1000 chars).";
     return e;
@@ -81,7 +114,7 @@ function ContactPage() {
     const e = validate();
     setErrors(e);
     if (Object.keys(e).length > 0) {
-      const order: FieldName[] = ["name", "email", "enquiry", "message"];
+      const order: FieldName[] = ["name", "email", "phone", "enquiry", "message"];
       const first = order.find((k) => e[k]);
       if (first) refs[first].current?.focus();
       return;
@@ -95,6 +128,7 @@ function ContactPage() {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
+          phone: `${form.countryCode} ${form.phone}`.trim(),
           enquiryType: form.enquiry,
           kbCardClicked,
           willingnessToPay: form.willingness,
@@ -102,7 +136,7 @@ function ContactPage() {
         }),
       });
       setSubmitted(true);
-      setForm({ name: "", email: "", enquiry: "", willingness: "", message: "" });
+      setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
     } catch {
       setSubmitError(true);
     } finally {
@@ -197,6 +231,39 @@ function ContactPage() {
                   style={fieldStyle(!!errors.email)}
                 />
               </Field>
+
+              <Field label="WhatsApp number" helper="We'll reply on WhatsApp." error={errors.phone}>
+                <div className="flex gap-2">
+                  <select
+                    value={form.countryCode}
+                    onChange={(e) => setForm({ ...form, countryCode: e.target.value })}
+                    aria-label="Country code"
+                    className="appearance-none rounded-xl px-3 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                    style={{ ...fieldStyle(false), maxWidth: 150 }}
+                  >
+                    {COUNTRY_CODES.map((c) => (
+                      <option
+                        key={c.code}
+                        value={c.code}
+                        style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}
+                      >
+                        {c.label}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    ref={refs.phone}
+                    type="tel"
+                    inputMode="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="50 123 4567"
+                    className="w-full rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                    style={fieldStyle(!!errors.phone)}
+                  />
+                </div>
+              </Field>
+
 
               <Field label="Enquiry type" error={errors.enquiry}>
                 <select

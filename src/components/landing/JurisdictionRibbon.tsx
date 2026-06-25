@@ -36,7 +36,7 @@ export function JurisdictionRibbon() {
                   width: "6px",
                   height: "6px",
                   borderRadius: "100px",
-                  background: "#D4A882",
+                  background: "var(--color-sand-warm)",
                   marginRight: "6px",
                   display: "inline-block",
                 }}
@@ -46,7 +46,7 @@ export function JurisdictionRibbon() {
                   fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
                   fontWeight: 500,
                   fontSize: "12px",
-                  color: "#EDD8B8",
+                  color: "var(--color-sand-light)",
                 }}
               >
                 {name}

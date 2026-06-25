@@ -66,12 +66,12 @@ const JURISDICTION_CARDS = [
 
 export function KnowledgeBase() {
   return (
-    <section id="knowledge" className="bg-[#1E0A0E] py-20 md:py-24">
+    <section id="knowledge" className="bg-[var(--color-burg-deep)] py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         {/* Eyebrow */}
         <p
           className="text-center text-[13px] font-normal uppercase tracking-[2.5px]"
-          style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          style={{ color: "var(--color-sand-muted)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           KNOWLEDGE BASE
         </p>
@@ -79,7 +79,7 @@ export function KnowledgeBase() {
         {/* Heading */}
         <h2
           className="mt-5 text-center text-[40px] font-semibold leading-tight"
-          style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
+          style={{ color: "var(--color-sand-light)", fontFamily: "'Playfair Display', serif" }}
         >
           UAE Employment Rights — Knowledge Base
         </h2>
@@ -108,9 +108,9 @@ export function KnowledgeBase() {
               key={card.title}
               to="/contact"
               search={card.search}
-              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
+              className="group relative flex flex-col rounded-xl p-6 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
               style={{
-                background: "#2D1018",
+                background: "var(--color-burg-mid)",
                 border: "1px solid rgba(212,168,130,0.12)",
               }}
             >
@@ -129,13 +129,13 @@ export function KnowledgeBase() {
               <div className="relative z-[1] mb-4 flex items-center justify-between">
                 <h3
                   className="text-base font-medium"
-                  style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {card.title}
                 </h3>
                 <Lock
                   className="h-4 w-4"
-                  style={{ color: "rgba(212,168,130,0.5)" }}
+                  style={{ color: "rgba(212,168,130,0.75)" }}
                 />
               </div>
               <ul className="relative z-[1] flex flex-col gap-2">
@@ -147,7 +147,7 @@ export function KnowledgeBase() {
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                      style={{ background: "#8B2D3A" }}
+                      style={{ background: "var(--color-burg-acc)" }}
                     />
                     {item}
                   </li>
@@ -160,7 +160,7 @@ export function KnowledgeBase() {
               >
                 <span
                   className="text-[13px] font-medium"
-                  style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   Unlock for AED 199 →
                 </span>
@@ -178,17 +178,17 @@ export function KnowledgeBase() {
           }}
         >
           <div className="flex items-center gap-2">
-            <Unlock className="h-4 w-4" style={{ color: "#D4A882" }} />
+            <Unlock className="h-4 w-4" style={{ color: "var(--color-sand-warm)" }} />
             <span
               className="text-xs font-medium uppercase tracking-wide"
-              style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               FREE
             </span>
           </div>
           <h3
             className="mt-3 text-lg font-medium"
-            style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             How UAE gratuity is calculated — the complete guide
           </h3>
@@ -200,8 +200,8 @@ export function KnowledgeBase() {
           </p>
           <a
             href="/contact"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[#D4A882]"
-            style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
+            style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Read now →
           </a>
@@ -211,7 +211,7 @@ export function KnowledgeBase() {
         <div
           className="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl px-6 py-5 sm:flex-row sm:gap-6"
           style={{
-            background: "#2D1018",
+            background: "var(--color-burg-mid)",
             borderTop: "1px solid rgba(212,168,130,0.1)",
           }}
         >
@@ -224,10 +224,10 @@ export function KnowledgeBase() {
           <Link
             to="/contact"
             search={{ type: "kb", message: "I'm interested in full Knowledge Base access" }}
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
             style={{
-              background: "#D4A882",
-              color: "#1E0A0E",
+              background: "var(--color-sand-warm)",
+              color: "var(--color-burg-deep)",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >

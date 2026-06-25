@@ -2,7 +2,7 @@ import { User, Building2 } from "lucide-react";
 
 export function AudienceBento() {
   return (
-    <section id="features" style={{ backgroundColor: "#FAF3E8" }}>
+    <section id="features" style={{ backgroundColor: "var(--color-sand-pale)" }}>
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         {/* Section header */}
         <p
@@ -10,7 +10,7 @@ export function AudienceBento() {
           style={{
             fontSize: "10px",
             letterSpacing: "3px",
-            color: "#8B2D3A",
+            color: "var(--color-burg-acc)",
             fontWeight: 500,
             textTransform: "uppercase",
           }}
@@ -21,7 +21,7 @@ export function AudienceBento() {
           className="mt-5 font-display"
           style={{
             fontSize: "40px",
-            color: "#1E0A0E",
+            color: "var(--color-burg-deep)",
             fontWeight: 700,
             lineHeight: 1.15,
             letterSpacing: "-0.02em",
@@ -36,7 +36,7 @@ export function AudienceBento() {
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
-              backgroundColor: "#FAF3E8",
+              backgroundColor: "var(--color-sand-pale)",
               border: "1px solid rgba(139,45,58,0.12)",
             }}
           >
@@ -45,7 +45,7 @@ export function AudienceBento() {
               style={{
                 fontSize: "10px",
                 letterSpacing: "2px",
-                color: "#8B2D3A",
+                color: "var(--color-burg-acc)",
                 fontWeight: 600,
                 textTransform: "uppercase",
               }}
@@ -58,7 +58,7 @@ export function AudienceBento() {
               className="mt-3 font-display"
               style={{
                 fontSize: "28px",
-                color: "#1E0A0E",
+                color: "var(--color-burg-deep)",
                 fontStyle: "italic",
                 fontWeight: 600,
                 lineHeight: 1.2,
@@ -71,7 +71,7 @@ export function AudienceBento() {
               className="mt-3 inline-flex items-center self-start rounded-full px-3 py-1 font-sans text-xs"
               style={{
                 backgroundColor: "rgba(139,45,58,0.08)",
-                color: "#8B2D3A",
+                color: "var(--color-burg-acc)",
                 fontWeight: 500,
               }}
             >
@@ -102,7 +102,7 @@ export function AudienceBento() {
                   className="font-sans"
                   style={{
                     fontSize: "13px",
-                    color: "#8B2D3A",
+                    color: "var(--color-burg-acc)",
                     fontWeight: 400,
                   }}
                 >
@@ -115,10 +115,10 @@ export function AudienceBento() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
               style={{
-                backgroundColor: "#8B2D3A",
-                color: "#FAF3E8",
+                backgroundColor: "var(--color-burg-acc)",
+                color: "var(--color-sand-pale)",
                 fontWeight: 500,
               }}
             >
@@ -130,16 +130,16 @@ export function AudienceBento() {
               <span className="relative flex h-2 w-2">
                 <span
                   className="absolute inline-flex h-full w-full motion-safe:animate-pulse-dot rounded-full opacity-75"
-                  style={{ backgroundColor: "#8B2D3A" }}
+                  style={{ backgroundColor: "var(--color-burg-acc)" }}
                 />
                 <span
                   className="relative inline-flex h-2 w-2 rounded-full"
-                  style={{ backgroundColor: "#8B2D3A" }}
+                  style={{ backgroundColor: "var(--color-burg-acc)" }}
                 />
               </span>
               <span
                 className="font-sans text-xs"
-                style={{ color: "#8B2D3A", fontWeight: 500 }}
+                style={{ color: "var(--color-burg-acc)", fontWeight: 500 }}
               >
                 48h Fast-Track
               </span>
@@ -150,7 +150,7 @@ export function AudienceBento() {
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-all motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
-              backgroundColor: "#1E0A0E",
+              backgroundColor: "var(--color-burg-deep)",
               border: "1px solid rgba(212,168,130,0.15)",
             }}
           >
@@ -159,7 +159,7 @@ export function AudienceBento() {
               style={{
                 fontSize: "10px",
                 letterSpacing: "2px",
-                color: "#D4A882",
+                color: "var(--color-sand-warm)",
                 fontWeight: 600,
                 textTransform: "uppercase",
               }}
@@ -172,7 +172,7 @@ export function AudienceBento() {
               className="mt-3 font-display"
               style={{
                 fontSize: "28px",
-                color: "#EDD8B8",
+                color: "var(--color-sand-light)",
                 fontStyle: "italic",
                 fontWeight: 600,
                 lineHeight: 1.2,
@@ -185,7 +185,7 @@ export function AudienceBento() {
               className="mt-3 inline-flex items-center self-start rounded-full px-3 py-1 font-sans text-xs"
               style={{
                 backgroundColor: "rgba(212,168,130,0.1)",
-                color: "#D4A882",
+                color: "var(--color-sand-warm)",
                 fontWeight: 500,
               }}
             >
@@ -216,7 +216,7 @@ export function AudienceBento() {
                   className="font-sans"
                   style={{
                     fontSize: "13px",
-                    color: "#D4A882",
+                    color: "var(--color-sand-warm)",
                     fontWeight: 400,
                   }}
                 >
@@ -239,10 +239,10 @@ export function AudienceBento() {
 
             <a
               href="/contact?type=audit"
-              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#D4A882] focus-visible:[outline-offset:2px]"
+              className="mt-8 inline-flex items-center justify-center self-start rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px]"
               style={{
                 border: "1px solid rgba(212,168,130,0.4)",
-                color: "#D4A882",
+                color: "var(--color-sand-warm)",
                 backgroundColor: "transparent",
                 fontWeight: 500,
               }}
@@ -280,7 +280,7 @@ export function AudienceBento() {
                 className="font-display"
                 style={{
                   fontSize: "18px",
-                  color: "#1E0A0E",
+                  color: "var(--color-burg-deep)",
                   fontWeight: 700,
                   lineHeight: 1.3,
                 }}

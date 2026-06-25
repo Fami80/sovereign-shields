@@ -55,7 +55,7 @@ export function HowItWorks() {
             style={{
               fontFamily: "'Playfair Display', serif",
               fontWeight: 700,
-              color: "#1E0A0E",
+              color: "var(--color-burg-deep)",
             }}
           >
             From settlement letter to written findings in 48 hours
@@ -67,12 +67,14 @@ export function HowItWorks() {
             <li key={id} className="flex flex-col items-center text-center">
               <div className="relative">
                 <div
-                  className="relative h-28 w-28 overflow-hidden rounded-full ring-4 ring-[#FAF3E8] ring-offset-4 ring-offset-[#FAF3E8] md:h-36 md:w-36"
+                  className="relative h-28 w-28 overflow-hidden rounded-full ring-4 ring-[var(--color-sand-pale)] ring-offset-4 ring-offset-[var(--color-sand-pale)] md:h-36 md:w-36"
                   style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.12)" }}
                 >
                   <img
                     src={image}
                     alt={title}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                     style={{ objectPosition: imagePosition ?? "center" }}
                   />
@@ -80,8 +82,8 @@ export function HowItWorks() {
                 <span
                   className="absolute -bottom-2 -right-2 z-10 flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold"
                   style={{
-                    backgroundColor: "#1E0A0E",
-                    color: "#D4A882",
+                    backgroundColor: "var(--color-burg-deep)",
+                    color: "var(--color-sand-warm)",
                     fontFamily: "'Playfair Display', serif",
                   }}
                 >
@@ -94,7 +96,7 @@ export function HowItWorks() {
                   className="mt-5 mb-3 inline-flex items-center"
                   style={{
                     backgroundColor: "rgba(139,45,58,0.08)",
-                    color: "#8B2D3A",
+                    color: "var(--color-burg-acc)",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 500,
                     fontSize: "11px",
@@ -110,7 +112,7 @@ export function HowItWorks() {
                       width: "6px",
                       height: "6px",
                       borderRadius: "50%",
-                      backgroundColor: "#8B2D3A",
+                      backgroundColor: "var(--color-burg-acc)",
                       marginRight: "6px",
                     }}
                   />
@@ -124,7 +126,7 @@ export function HowItWorks() {
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 400,
                   fontStyle: "italic",
-                  color: "#1E0A0E",
+                  color: "var(--color-burg-deep)",
                 }}
               >
                 {title}
@@ -152,10 +154,10 @@ export function HowItWorks() {
             href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 motion-safe:transition-all motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:hover:bg-[#C4A882]"
+            className="inline-flex items-center gap-2 motion-safe:transition-all motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:hover:bg-[var(--color-sand-muted)]"
             style={{
-              backgroundColor: "#D4A882",
-              color: "#1E0A0E",
+              backgroundColor: "var(--color-sand-warm)",
+              color: "var(--color-burg-deep)",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 500,
               borderRadius: "100px",

@@ -32,13 +32,13 @@ export function Testimonials() {
         {/* Header */}
         <p
           className="text-[13px] font-medium uppercase tracking-[2.5px]"
-          style={{ fontFamily: "var(--font-sans)", color: "#8B2D3A" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--color-burg-acc)" }}
         >
           CLIENT RESULTS
         </p>
         <h2
           className="mt-5 text-[40px] leading-tight"
-          style={{ fontFamily: "var(--font-display)", color: "#1E0A0E" }}
+          style={{ fontFamily: "var(--font-display)", color: "var(--color-burg-deep)" }}
         >
           They were about to sign. They didn't.
         </h2>
@@ -73,7 +73,7 @@ export function Testimonials() {
                   className="relative -mt-4 flex-1 text-lg italic"
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: "#EDD8B8",
+                    color: "var(--color-sand-light)",
                     lineHeight: 1.6,
                     fontWeight: 400,
                   }}
@@ -86,7 +86,7 @@ export function Testimonials() {
                     className="text-[13px] font-light"
                     style={{
                       fontFamily: "var(--font-sans)",
-                      color: "rgba(212,168,130,0.6)",
+                      color: "var(--color-sand-muted)",
                     }}
                   >
                     — {t.attribution}
@@ -97,7 +97,7 @@ export function Testimonials() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       borderColor: "rgba(212,168,130,0.2)",
-                      color: "rgba(212,168,130,0.5)",
+                      color: "var(--color-sand-muted)",
                       letterSpacing: "3px",
                     }}
                   >
@@ -126,7 +126,7 @@ export function Testimonials() {
         <div
           className="mt-10 grid grid-cols-1 gap-8 rounded-xl border p-8 md:grid-cols-3"
           style={{
-            backgroundColor: "#2D1018",
+            backgroundColor: "var(--color-burg-mid)",
             borderColor: "rgba(212,168,130,0.1)",
           }}
         >
@@ -136,7 +136,7 @@ export function Testimonials() {
                 className="text-[36px] leading-tight"
                 style={{
                   fontFamily: "var(--font-display)",
-                  color: "#D4A882",
+                  color: "var(--color-sand-warm)",
                 }}
               >
                 {s.value}

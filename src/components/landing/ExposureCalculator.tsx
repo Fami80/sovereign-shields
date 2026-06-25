@@ -75,7 +75,7 @@ export function ExposureCalculator() {
     <section
       ref={sectionRef}
       id="calculator"
-      className="relative isolate overflow-hidden bg-[#1E0A0E] px-6 py-20 md:py-28"
+      className="relative isolate overflow-hidden bg-[var(--color-burg-deep)] px-6 py-20 md:py-28"
     >
       <div
         className="pointer-events-none absolute right-0 top-0"
@@ -90,13 +90,13 @@ export function ExposureCalculator() {
         <div className="mb-12 text-center">
           <p
             className="mb-5 text-[13px] font-medium uppercase tracking-[2.5px]"
-            style={{ color: "rgba(212,168,130,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{ color: "var(--color-sand-muted)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             UAE GRATUITY CALCULATOR
           </p>
           <h2
             className="text-[40px] font-semibold leading-tight"
-            style={{ color: "#EDD8B8", fontFamily: "'Playfair Display', serif" }}
+            style={{ color: "var(--color-sand-light)", fontFamily: "'Playfair Display', serif" }}
           >
             What is your UAE settlement actually worth?
           </h2>
@@ -111,7 +111,7 @@ export function ExposureCalculator() {
         <div
           className="relative isolate mx-auto max-w-2xl overflow-hidden rounded-[16px] p-10"
           style={{
-            background: "#2D1018",
+            background: "var(--color-burg-mid)",
             border: "1px solid rgba(212,168,130,0.15)",
           }}
         >
@@ -133,7 +133,7 @@ export function ExposureCalculator() {
             <div>
               <label
                 className="mb-2 inline-block rounded px-2 py-1 text-[13px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
+                style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
               >
                 Monthly basic salary (AED)
               </label>
@@ -144,11 +144,11 @@ export function ExposureCalculator() {
                 placeholder="e.g. 25,000"
                 value={salaryInput}
                 onChange={(e) => setSalaryInput(e.target.value)}
-                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
-                  color: "#EDD8B8",
+                  color: "var(--color-sand-light)",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               />
@@ -157,7 +157,7 @@ export function ExposureCalculator() {
             <div>
               <label
                 className="mb-2 inline-block rounded px-2 py-1 text-[13px] font-medium"
-                style={{ color: "#D4A882", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
+                style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif", background: "rgba(45,16,24,0.85)" }}
               >
                 Years of service
               </label>
@@ -174,11 +174,11 @@ export function ExposureCalculator() {
                     setYearsInput(val);
                   }
                 }}
-                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[#D4A882] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
+                className="h-12 w-full rounded-lg px-4 text-base outline-none transition focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                 style={{
                   background: "rgba(212,168,130,0.06)",
                   border: "1px solid rgba(212,168,130,0.2)",
-                  color: "#EDD8B8",
+                  color: "var(--color-sand-light)",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               />
@@ -191,10 +191,10 @@ export function ExposureCalculator() {
               type="button"
               onClick={handleCalculate}
               disabled={!canCalculate}
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] motion-safe:hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] motion-safe:hover:scale-[1.02]"
               style={{
-                background: "#8B2D3A",
-                color: "#EDD8B8",
+                background: "var(--color-burg-acc)",
+                color: "var(--color-sand-light)",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
@@ -208,7 +208,7 @@ export function ExposureCalculator() {
               ref={displayRef}
               className="text-[56px] font-semibold leading-none tabular-nums transition-opacity duration-500"
               style={{
-                color: "#D4A882",
+                color: "var(--color-sand-warm)",
                 fontFamily: "'Playfair Display', serif",
                 opacity: revealed ? 1 : 0.35,
                 textShadow: revealed
@@ -243,7 +243,7 @@ export function ExposureCalculator() {
             >
               <p
                 className="text-[13px] font-light leading-relaxed"
-                style={{ color: "#EDD8B8", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
               </p>
@@ -255,10 +255,10 @@ export function ExposureCalculator() {
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px]"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium transition hover:opacity-90 focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
               style={{
-                background: "#D4A882",
-                color: "#1E0A0E",
+                background: "var(--color-sand-warm)",
+                color: "var(--color-burg-deep)",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >

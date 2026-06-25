@@ -30,7 +30,7 @@ export function StickyCTA() {
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       style={{
-        backgroundColor: "#1E0A0E",
+        backgroundColor: "var(--color-burg-deep)",
         borderTop: "1px solid rgba(212,168,130,0.2)",
       }}
       aria-hidden={!show}
@@ -44,13 +44,13 @@ export function StickyCTA() {
         </div>
         <div
           className="hidden text-[13px] font-medium md:block"
-          style={{ fontFamily: "var(--font-sans)", color: "#EDD8B8" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--color-sand-light)" }}
         >
           AED 999 · Single transparent fee · 48h turnaround
         </div>
         <div
           className="flex items-center gap-2 text-[13px] md:hidden"
-          style={{ fontFamily: "var(--font-sans)", color: "#EDD8B8" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--color-sand-light)" }}
         >
           <span className="font-medium">Review your settlement</span>
         </div>
@@ -58,11 +58,11 @@ export function StickyCTA() {
           href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_#EDD8B8] focus-visible:[outline-offset:2px] md:px-5"
+          className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] md:px-5"
           style={{
             fontFamily: "var(--font-sans)",
-            backgroundColor: "#D4A882",
-            color: "#1E0A0E",
+            backgroundColor: "var(--color-sand-warm)",
+            color: "var(--color-burg-deep)",
           }}
         >
           <span className="md:hidden">Book — AED 999</span>

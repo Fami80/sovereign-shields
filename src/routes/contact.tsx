@@ -4,7 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { CheckCircle } from "lucide-react";
 
-type FieldName = "name" | "email" | "enquiry" | "message";
+type FieldName = "name" | "email" | "phone" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
 const WEBHOOK_URL =
@@ -12,6 +12,35 @@ const WEBHOOK_URL =
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
+
+const COUNTRY_CODES: { code: string; label: string }[] = [
+  { code: "+971", label: "🇦🇪 UAE +971" },
+  { code: "+966", label: "🇸🇦 KSA +966" },
+  { code: "+974", label: "🇶🇦 Qatar +974" },
+  { code: "+973", label: "🇧🇭 Bahrain +973" },
+  { code: "+965", label: "🇰🇼 Kuwait +965" },
+  { code: "+968", label: "🇴🇲 Oman +968" },
+  { code: "+44", label: "🇬🇧 UK +44" },
+  { code: "+1", label: "🇺🇸 US/CA +1" },
+  { code: "+91", label: "🇮🇳 India +91" },
+  { code: "+92", label: "🇵🇰 Pakistan +92" },
+  { code: "+20", label: "🇪🇬 Egypt +20" },
+  { code: "+961", label: "🇱🇧 Lebanon +961" },
+  { code: "+962", label: "🇯🇴 Jordan +962" },
+  { code: "+212", label: "🇲🇦 Morocco +212" },
+  { code: "+216", label: "🇹🇳 Tunisia +216" },
+  { code: "+33", label: "🇫🇷 France +33" },
+  { code: "+49", label: "🇩🇪 Germany +49" },
+  { code: "+34", label: "🇪🇸 Spain +34" },
+  { code: "+39", label: "🇮🇹 Italy +39" },
+  { code: "+31", label: "🇳🇱 Netherlands +31" },
+  { code: "+41", label: "🇨🇭 Switzerland +41" },
+  { code: "+61", label: "🇦🇺 Australia +61" },
+  { code: "+63", label: "🇵🇭 Philippines +63" },
+  { code: "+90", label: "🇹🇷 Turkey +90" },
+  { code: "+27", label: "🇿🇦 South Africa +27" },
+  { code: "+234", label: "🇳🇬 Nigeria +234" },
+];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

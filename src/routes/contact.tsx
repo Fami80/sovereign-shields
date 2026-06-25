@@ -14,32 +14,32 @@ const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
 )}`;
 
 const COUNTRY_CODES: { code: string; label: string }[] = [
-  { code: "+971", label: "🇦🇪 UAE +971" },
-  { code: "+966", label: "🇸🇦 KSA +966" },
-  { code: "+974", label: "🇶🇦 Qatar +974" },
-  { code: "+973", label: "🇧🇭 Bahrain +973" },
-  { code: "+965", label: "🇰🇼 Kuwait +965" },
-  { code: "+968", label: "🇴🇲 Oman +968" },
-  { code: "+44", label: "🇬🇧 UK +44" },
-  { code: "+1", label: "🇺🇸 US/CA +1" },
-  { code: "+91", label: "🇮🇳 India +91" },
-  { code: "+92", label: "🇵🇰 Pakistan +92" },
-  { code: "+20", label: "🇪🇬 Egypt +20" },
-  { code: "+961", label: "🇱🇧 Lebanon +961" },
-  { code: "+962", label: "🇯🇴 Jordan +962" },
-  { code: "+212", label: "🇲🇦 Morocco +212" },
-  { code: "+216", label: "🇹🇳 Tunisia +216" },
-  { code: "+33", label: "🇫🇷 France +33" },
-  { code: "+49", label: "🇩🇪 Germany +49" },
-  { code: "+34", label: "🇪🇸 Spain +34" },
-  { code: "+39", label: "🇮🇹 Italy +39" },
-  { code: "+31", label: "🇳🇱 Netherlands +31" },
-  { code: "+41", label: "🇨🇭 Switzerland +41" },
-  { code: "+61", label: "🇦🇺 Australia +61" },
-  { code: "+63", label: "🇵🇭 Philippines +63" },
-  { code: "+90", label: "🇹🇷 Turkey +90" },
-  { code: "+27", label: "🇿🇦 South Africa +27" },
-  { code: "+234", label: "🇳🇬 Nigeria +234" },
+  { code: "+971", label: "UAE +971" },
+  { code: "+966", label: "KSA +966" },
+  { code: "+974", label: "Qatar +974" },
+  { code: "+973", label: "Bahrain +973" },
+  { code: "+965", label: "Kuwait +965" },
+  { code: "+968", label: "Oman +968" },
+  { code: "+44", label: "UK +44" },
+  { code: "+1", label: "US/CA +1" },
+  { code: "+91", label: "India +91" },
+  { code: "+92", label: "Pakistan +92" },
+  { code: "+20", label: "Egypt +20" },
+  { code: "+961", label: "Lebanon +961" },
+  { code: "+962", label: "Jordan +962" },
+  { code: "+212", label: "Morocco +212" },
+  { code: "+216", label: "Tunisia +216" },
+  { code: "+33", label: "France +33" },
+  { code: "+49", label: "Germany +49" },
+  { code: "+34", label: "Spain +34" },
+  { code: "+39", label: "Italy +39" },
+  { code: "+31", label: "Netherlands +31" },
+  { code: "+41", label: "Switzerland +41" },
+  { code: "+61", label: "Australia +61" },
+  { code: "+63", label: "Philippines +63" },
+  { code: "+90", label: "Turkey +90" },
+  { code: "+27", label: "South Africa +27" },
+  { code: "+234", label: "Nigeria +234" },
 ];
 
 export const Route = createFileRoute("/contact")({
@@ -238,6 +238,7 @@ function ContactPage() {
                     value={form.countryCode}
                     onChange={(e) => setForm({ ...form, countryCode: e.target.value })}
                     aria-label="Country code"
+                    autoComplete="tel-country-code"
                     className="appearance-none rounded-xl px-3 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                     style={{ ...fieldStyle(false), maxWidth: 150 }}
                   >
@@ -255,6 +256,7 @@ function ContactPage() {
                     ref={refs.phone}
                     type="tel"
                     inputMode="tel"
+                    autoComplete="tel-national"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="50 123 4567"

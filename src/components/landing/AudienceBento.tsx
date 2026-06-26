@@ -110,12 +110,12 @@ export function AudienceBento() {
               Prefer to check it yourself? We send you the settlement self-audit checklist and you review your own letter, step by step, in your own time.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3">
               <a
                 href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
+                className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full px-6 py-[14px] font-sans text-[15px] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
                 style={{
                   backgroundColor: "var(--color-burg-acc)",
                   color: "var(--color-sand-pale)",
@@ -129,7 +129,7 @@ export function AudienceBento() {
                 href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'm interested in the Self-Review Checklist — AED 199.")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-acc)] focus-visible:[outline-offset:2px] sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full px-6 py-[14px] font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-acc)] focus-visible:[outline-offset:2px]"
                 style={{
                   border: "1px solid var(--color-burg-acc)",
                   color: "var(--color-burg-acc)",

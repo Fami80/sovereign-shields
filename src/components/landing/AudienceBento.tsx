@@ -99,7 +99,7 @@ export function AudienceBento() {
             </ul>
 
             <p
-              className="mt-4 font-sans italic"
+              className="mt-8 font-sans italic"
               style={{
                 fontSize: "14px",
                 fontWeight: 300,
@@ -123,7 +123,7 @@ export function AudienceBento() {
                   minHeight: "48px",
                 }}
               >
-                Review my settlement →
+                Full Review - AED 999 →
               </a>
               <a
                 href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'm interested in the Self-Review Checklist — AED 199.")}`}

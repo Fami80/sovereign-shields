@@ -40,7 +40,7 @@ export function StickyCTA() {
           className="hidden text-[13px] font-light md:block"
           style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.6)" }}
         >
-          Review your settlement
+          Settlement review
         </div>
         <div
           className="hidden text-[13px] font-medium md:block"
@@ -65,8 +65,8 @@ export function StickyCTA() {
             color: "var(--color-burg-deep)",
           }}
         >
-          <span className="md:hidden">Review my settlement</span>
-          <span className="hidden md:inline">Review my settlement →</span>
+          <span className="md:hidden">Book now →</span>
+          <span className="hidden md:inline">Book now →</span>
         </a>
       </div>
     </div>

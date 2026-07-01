@@ -51,7 +51,7 @@ function Index() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-bg-light text-text-light-primary">
+    <main className="min-h-dvh bg-bg-light text-text-light-primary">
 
       <Navbar />
       <Hero />

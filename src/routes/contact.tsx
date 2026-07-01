@@ -152,7 +152,7 @@ function ContactPage() {
   });
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "var(--color-burg-deep)" }}>
+    <div className="min-h-dvh" style={{ backgroundColor: "var(--color-burg-deep)" }}>
       <Navbar />
 
       <main className="mx-auto max-w-3xl px-6 pb-24 pt-24">

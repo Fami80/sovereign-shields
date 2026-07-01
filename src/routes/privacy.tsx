@@ -20,7 +20,7 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}>
+    <div className="min-h-dvh" style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}>
       <Navbar />
       <main className="mx-auto max-w-[720px] px-6 pb-24 pt-24">
         <h1

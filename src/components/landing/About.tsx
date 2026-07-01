@@ -86,7 +86,8 @@ export function About() {
                 fontFamily: "var(--font-display)",
                 color: "var(--color-sand-light)",
                 backgroundColor: "rgba(212,168,130,0.06)",
-                borderLeft: "3px solid var(--color-sand-warm)",
+                border: "1px solid rgba(212,168,130,0.2)",
+                borderRadius: "12px",
                 padding: "20px 24px",
               }}
             >

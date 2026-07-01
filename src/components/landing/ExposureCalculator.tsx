@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { animate, useMotionValue, useReducedMotion } from "framer-motion";
-import cardBg from "@/assets/calculator-settlement-form.jpg.asset.json";
+import cardBg from "@/assets/calculator-settlement-form.jpg";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {
@@ -120,7 +120,7 @@ export function ExposureCalculator() {
             className="pointer-events-none absolute inset-0"
             style={{
               zIndex: 0,
-              backgroundImage: `url(${cardBg.url})`,
+              backgroundImage: `url(${cardBg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

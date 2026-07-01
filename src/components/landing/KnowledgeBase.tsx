@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Lock, Unlock } from "lucide-react";
-import kbWatermark from "@/assets/knowledge-base-watermark.jpg.asset.json";
+import kbWatermark from "@/assets/knowledge-base-watermark.jpg";
 
 const JURISDICTION_CARDS = [
   {
@@ -110,7 +110,7 @@ export function KnowledgeBase() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 rounded-xl"
                 style={{
-                  backgroundImage: `url(${kbWatermark.url})`,
+                  backgroundImage: `url(${kbWatermark})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   opacity: 0.05,

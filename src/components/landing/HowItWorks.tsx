@@ -1,6 +1,6 @@
-import step1Image from "@/assets/step1-send-documents.jpg.asset.json";
-import step2Image from "@/assets/step2-pencil-review.jpg.asset.json";
-import step3Image from "@/assets/step3-written-findings.jpg.asset.json";
+import step1Image from "@/assets/step1-send-documents.jpg";
+import step2Image from "@/assets/step2-pencil-review.jpg";
+import step3Image from "@/assets/step3-written-findings.jpg";
 
 type Step = {
   id: string;
@@ -19,7 +19,7 @@ const STEPS: Step[] = [
     title: "Send your documents",
     description:
       "Upload your settlement letter and employment contract. Secure, confidential. Takes two minutes.",
-    image: step1Image.url,
+    image: step1Image,
     imagePosition: "center",
   },
   {
@@ -28,7 +28,7 @@ const STEPS: Step[] = [
     title: "We review every line",
     description:
       "Gratuity, leave encashment, deductions, notice period, all checked against UAE Labour Law for your jurisdiction.",
-    image: step2Image.url,
+    image: step2Image,
     imagePosition: "center top",
   },
   {
@@ -37,7 +37,7 @@ const STEPS: Step[] = [
     title: "You receive written findings",
     description:
       "A clear written summary of what's correct, what's wrong, and what you can do about it. Delivered within 48 hours.",
-    image: step3Image.url,
+    image: step3Image,
     imagePosition: "center",
   },
 ];

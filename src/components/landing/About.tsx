@@ -1,4 +1,4 @@
-import kaoutarPhoto from "@/assets/kaoutar-photo.png.asset.json";
+import kaoutarPhoto from "@/assets/kaoutar-photo.png";
 
 const CREDENTIALS = [
   "ADP Payroll Partner of the Year (2017)",
@@ -35,7 +35,7 @@ export function About() {
           {/* LEFT — Credentials */}
           <div>
             <img
-              src={kaoutarPhoto.url}
+              src={kaoutarPhoto}
               alt="Kaoutar Makrache"
               width={280}
               height={280}

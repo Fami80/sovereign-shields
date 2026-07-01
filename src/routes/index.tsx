@@ -11,7 +11,7 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { StickyCTA } from "@/components/landing/StickyCTA";
 import { Navbar } from "@/components/landing/Navbar";
 import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
-import ogImage from "@/assets/settlement-agreement-hero.png.asset.json";
+import ogImage from "@/assets/og-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "UAE Settlement Letter Review in 48 Hours | UAEworkrights" },
       { property: "og:description", content: "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999." },
       { property: "og:url", content: "https://uaeworkrights.com/" },
-      { property: "og:image", content: `https://uaeworkrights.com${ogImage.url}` },
+      { property: "og:image", content: `https://uaeworkrights.com${ogImage}` },
       { property: "og:image:alt", content: "UAE settlement letter review by UAEworkrights" },
-      { name: "twitter:image", content: `https://uaeworkrights.com${ogImage.url}` },
+      { name: "twitter:image", content: `https://uaeworkrights.com${ogImage}` },
     ],
     links: [
       { rel: "canonical", href: "https://uaeworkrights.com/" },

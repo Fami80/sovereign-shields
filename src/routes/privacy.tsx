@@ -6,9 +6,9 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy | UAEworkrights" },
-      { name: "description", content: "UAEworkrights privacy policy — how we collect, store, and protect your data." },
+      { name: "description", content: "UAEworkrights privacy policy: how we collect, store, and protect your data." },
       { property: "og:title", content: "Privacy Policy | UAEworkrights" },
-      { property: "og:description", content: "UAEworkrights privacy policy — how we collect, store, and protect your data." },
+      { property: "og:description", content: "UAEworkrights privacy policy: how we collect, store, and protect your data." },
       { property: "og:url", content: "https://uaeworkrights.com/privacy" },
     ],
     links: [

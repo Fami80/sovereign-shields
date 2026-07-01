@@ -316,10 +316,10 @@ function ContactPage() {
                     Select… (optional)
                   </option>
                   <option value="yes" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
-                    Yes — ready when it launches
+                    Yes, ready when it launches
                   </option>
                   <option value="maybe" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
-                    Maybe — depends what's inside
+                    Maybe, depends what's inside
                   </option>
                   <option value="browsing" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Just browsing for now

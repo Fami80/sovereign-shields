@@ -6,9 +6,9 @@ export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
       { title: "Terms of Service | UAEworkrights" },
-      { name: "description", content: "UAEworkrights terms of service — scope, pricing, turnaround, and liability." },
+      { name: "description", content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability." },
       { property: "og:title", content: "Terms of Service | UAEworkrights" },
-      { property: "og:description", content: "UAEworkrights terms of service — scope, pricing, turnaround, and liability." },
+      { property: "og:description", content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability." },
       { property: "og:url", content: "https://uaeworkrights.com/terms" },
     ],
     links: [
@@ -92,7 +92,7 @@ function TermsPage() {
             <ul className="space-y-3">
               {[
                 { service: "Settlement review", price: "AED 999" },
-                { service: "Knowledge base — 30-day access", price: "AED 299" },
+                { service: "Knowledge base, 30-day access", price: "AED 299" },
                 { service: "Employer compliance audit", price: "From AED 5,000" },
               ].map((item) => (
                 <li

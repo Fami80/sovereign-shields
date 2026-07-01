@@ -123,7 +123,7 @@ export function AudienceBento() {
                   minHeight: "48px",
                 }}
               >
-                Full Review - AED 999 →
+                Full review - AED 999 →
               </a>
               <a
                 href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'm interested in the Self-Review Checklist — AED 199.")}`}
@@ -138,7 +138,7 @@ export function AudienceBento() {
                   minHeight: "48px",
                 }}
               >
-                Self-Review Checklist - AED 199 →
+                Self-review checklist - AED 199 →
               </a>
             </div>
           </article>

@@ -10,7 +10,7 @@ type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
 const HS_PORTAL_ID = "148818262";
 const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
-const HS_ENDPOINT = `https://api-eu1.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
+const HS_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;

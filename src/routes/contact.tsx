@@ -148,22 +148,26 @@ function ContactPage() {
     try {
       const messageLines = [
         `Enquiry: ${ENQUIRY_LABELS[form.enquiry] ?? form.enquiry}`,
-        form.willingness ? `KB willingness: ${WILLINGNESS_LABELS[form.willingness] ?? form.willingness}` : "",
         kbCardClicked ? `KB card clicked: ${kbCardClicked}` : "",
         "",
         form.message.trim(),
       ].filter(Boolean);
 
+      const fields: { objectTypeId: string; name: string; value: string }[] = [
+        { objectTypeId: "0-1", name: "firstname", value: form.name.trim() },
+        { objectTypeId: "0-1", name: "email", value: form.email.trim() },
+        { objectTypeId: "0-1", name: "phone", value: `${form.countryCode} ${form.phone}`.trim() },
+        { objectTypeId: "0-1", name: "message", value: messageLines.join("\n") },
+      ];
+      if (form.willingness) {
+        fields.push({ objectTypeId: "0-1", name: "would_you_pay", value: WILLINGNESS_LABELS[form.willingness] ?? form.willingness });
+      }
+
       const res = await fetch(HS_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          fields: [
-            { objectTypeId: "0-1", name: "firstname", value: form.name.trim() },
-            { objectTypeId: "0-1", name: "email", value: form.email.trim() },
-            { objectTypeId: "0-1", name: "phone", value: `${form.countryCode} ${form.phone}`.trim() },
-            { objectTypeId: "0-1", name: "message", value: messageLines.join("\n") },
-          ],
+          fields,
           context: {
             pageUri: "https://uaeworkrights.com/contact",
             pageName: "Contact | UAE WorkRights",

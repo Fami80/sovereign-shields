@@ -10,7 +10,7 @@ type Errors = Partial<Record<FieldName, string>>;
 const ERROR_COLOR = "#E57373";
 const HS_PORTAL_ID = "148818262";
 const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
-const HS_ENDPOINT = `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
+const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
@@ -153,26 +153,20 @@ function ContactPage() {
         form.message.trim(),
       ].filter(Boolean);
 
-      const fields: { objectTypeId: string; name: string; value: string }[] = [
-        { objectTypeId: "0-1", name: "firstname", value: form.name.trim() },
-        { objectTypeId: "0-1", name: "email", value: form.email.trim() },
-        { objectTypeId: "0-1", name: "phone", value: `${form.countryCode} ${form.phone}`.trim() },
-        { objectTypeId: "0-1", name: "message", value: messageLines.join("\n") },
-      ];
+      const params = new URLSearchParams({
+        email: form.email.trim(),
+        firstname: form.name.trim(),
+        phone: `${form.countryCode} ${form.phone}`.trim(),
+        message: messageLines.join("\n"),
+      });
       if (form.willingness) {
-        fields.push({ objectTypeId: "0-1", name: "would_you_pay", value: WILLINGNESS_LABELS[form.willingness] ?? form.willingness });
+        params.set("would_you_pay", WILLINGNESS_LABELS[form.willingness] ?? form.willingness);
       }
 
       const res = await fetch(HS_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fields,
-          context: {
-            pageUri: "https://uaeworkrights.com/contact",
-            pageName: "Contact | UAE WorkRights",
-          },
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
 
       if (!res.ok) throw new Error(`HubSpot ${res.status}`);

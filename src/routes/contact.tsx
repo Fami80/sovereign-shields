@@ -153,28 +153,57 @@ function ContactPage() {
         form.message.trim(),
       ].filter(Boolean);
 
-      const params = new URLSearchParams({
-        email: form.email.trim(),
-        firstname: form.name.trim(),
-        phone: `${form.countryCode} ${form.phone}`.trim(),
-        message: messageLines.join("\n"),
-        hs_context: JSON.stringify({
-          pageUri: "https://uaeworkrights.com/contact",
-          pageName: "Contact | UAEworkrights",
-        }),
-      });
-      if (form.willingness) {
-        params.set("would_you_pay", WILLINGNESS_LABELS[form.willingness] ?? form.willingness);
+      const would_you_pay = form.willingness
+        ? (WILLINGNESS_LABELS[form.willingness] ?? form.willingness)
+        : undefined;
+
+      // Try same-origin proxy first — not blocked by ad blockers (Chrome)
+      let proxied = false;
+      try {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 5000);
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: form.email.trim(),
+              firstname: form.name.trim(),
+              phone: `${form.countryCode} ${form.phone}`.trim(),
+              message: messageLines.join("\n"),
+              ...(would_you_pay && { would_you_pay }),
+            }),
+            signal: ctrl.signal,
+          });
+          proxied = res.ok;
+        } finally {
+          clearTimeout(timer);
+        }
+      } catch {
+        // proxy not reachable — fall through to direct no-cors
       }
 
-      // no-cors: request goes through, HubSpot creates contact server-side,
-      // response is opaque (status 0) — that is expected and correct
-      await fetch(HS_ENDPOINT, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
+      if (!proxied) {
+        // Fallback: direct no-cors to HubSpot v2 (works unless ad blocker targets forms.hubspot.com)
+        const params = new URLSearchParams({
+          email: form.email.trim(),
+          firstname: form.name.trim(),
+          phone: `${form.countryCode} ${form.phone}`.trim(),
+          message: messageLines.join("\n"),
+          hs_context: JSON.stringify({
+            pageUri: "https://uaeworkrights.com/contact",
+            pageName: "Contact | UAEworkrights",
+          }),
+        });
+        if (would_you_pay) params.set("would_you_pay", would_you_pay);
+
+        await fetch(HS_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params.toString(),
+        });
+      }
 
       setSubmitted(true);
       setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });

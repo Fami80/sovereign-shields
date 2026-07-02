@@ -158,6 +158,10 @@ function ContactPage() {
         firstname: form.name.trim(),
         phone: `${form.countryCode} ${form.phone}`.trim(),
         message: messageLines.join("\n"),
+        hs_context: JSON.stringify({
+          pageUri: "https://uaeworkrights.com/contact",
+          pageName: "Contact | UAEworkrights",
+        }),
       });
       if (form.willingness) {
         params.set("would_you_pay", WILLINGNESS_LABELS[form.willingness] ?? form.willingness);

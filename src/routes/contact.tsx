@@ -8,7 +8,9 @@ type FieldName = "name" | "email" | "phone" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 
 const ERROR_COLOR = "#E57373";
-const CONTACT_API = "/api/contact";
+const HS_PORTAL_ID = "148818262";
+const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
+const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
@@ -151,21 +153,24 @@ function ContactPage() {
         form.message.trim(),
       ].filter(Boolean);
 
-      const res = await fetch(CONTACT_API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: form.email.trim(),
-          firstname: form.name.trim(),
-          phone: `${form.countryCode} ${form.phone}`.trim(),
-          message: messageLines.join("\n"),
-          would_you_pay: form.willingness
-            ? (WILLINGNESS_LABELS[form.willingness] ?? form.willingness)
-            : undefined,
-        }),
+      const params = new URLSearchParams({
+        email: form.email.trim(),
+        firstname: form.name.trim(),
+        phone: `${form.countryCode} ${form.phone}`.trim(),
+        message: messageLines.join("\n"),
       });
+      if (form.willingness) {
+        params.set("would_you_pay", WILLINGNESS_LABELS[form.willingness] ?? form.willingness);
+      }
 
-      if (!res.ok) throw new Error(`Contact API ${res.status}`);
+      // no-cors: request goes through, HubSpot creates contact server-side,
+      // response is opaque (status 0) — that is expected and correct
+      await fetch(HS_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
 
       setSubmitted(true);
       setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });

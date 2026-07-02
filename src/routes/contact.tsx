@@ -6,12 +6,28 @@ import { CheckCircle } from "lucide-react";
 
 type FieldName = "name" | "email" | "phone" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
+
 const ERROR_COLOR = "#E57373";
-const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycbyYH3NPvWxVylQeWv09x59TrHUiZPNtUgHhUaoHe-8vYMfXlLFnObwhbN1Rb-B2Piip/exec";
+const HS_PORTAL_ID = "148818262";
+const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
+const HS_ENDPOINT = `https://api-eu1.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
+
+const ENQUIRY_LABELS: Record<string, string> = {
+  settlement: "Settlement Review",
+  audit: "Employer Compliance Audit",
+  general: "General Question",
+  "cross-border": "Complex cross-border case",
+  kb: "Knowledge Base interest",
+};
+
+const WILLINGNESS_LABELS: Record<string, string> = {
+  yes: "Yes, ready when it launches",
+  maybe: "Maybe, depends what's inside",
+  browsing: "Just browsing for now",
+};
 
 const COUNTRY_CODES: { code: string; label: string }[] = [
   { code: "+971", label: "UAE +971" },
@@ -81,6 +97,7 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -111,6 +128,13 @@ function ContactPage() {
 
   const handleSubmit = async () => {
     setSubmitError(false);
+
+    // Honeypot: bot filled the hidden field — silently succeed
+    if (honeypot) {
+      setSubmitted(true);
+      return;
+    }
+
     const e = validate();
     setErrors(e);
     if (Object.keys(e).length > 0) {
@@ -119,22 +143,36 @@ function ContactPage() {
       if (first) refs[first].current?.focus();
       return;
     }
+
     setSubmitting(true);
     try {
-      await fetch(WEBHOOK_URL, {
+      const messageLines = [
+        `Enquiry: ${ENQUIRY_LABELS[form.enquiry] ?? form.enquiry}`,
+        form.willingness ? `KB willingness: ${WILLINGNESS_LABELS[form.willingness] ?? form.willingness}` : "",
+        kbCardClicked ? `KB card clicked: ${kbCardClicked}` : "",
+        "",
+        form.message.trim(),
+      ].filter(Boolean);
+
+      const res = await fetch(HS_ENDPOINT, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: `${form.countryCode} ${form.phone}`.trim(),
-          enquiryType: form.enquiry,
-          kbCardClicked,
-          willingnessToPay: form.willingness,
-          message: form.message,
+          fields: [
+            { objectTypeId: "0-1", name: "firstname", value: form.name.trim() },
+            { objectTypeId: "0-1", name: "email", value: form.email.trim() },
+            { objectTypeId: "0-1", name: "phone", value: `${form.countryCode} ${form.phone}`.trim() },
+            { objectTypeId: "0-1", name: "message", value: messageLines.join("\n") },
+          ],
+          context: {
+            pageUri: "https://uaeworkrights.com/contact",
+            pageName: "Contact | UAE WorkRights",
+          },
         }),
       });
+
+      if (!res.ok) throw new Error(`HubSpot ${res.status}`);
+
       setSubmitted(true);
       setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
     } catch {
@@ -209,6 +247,19 @@ function ContactPage() {
             </div>
           ) : (
             <div className="space-y-5">
+              {/* Honeypot — hidden from real users, bots fill it in */}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, overflow: "hidden" }}>
+                <label>
+                  Leave this empty
+                  <input
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </label>
+              </div>
+
               <Field label="Name" error={errors.name}>
                 <input
                   ref={refs.name}
@@ -265,7 +316,6 @@ function ContactPage() {
                   />
                 </div>
               </Field>
-
 
               <Field label="Enquiry type" error={errors.enquiry}>
                 <select
@@ -339,7 +389,6 @@ function ContactPage() {
                   style={fieldStyle(!!errors.message)}
                 />
               </Field>
-
 
               <button
                 type="button"

@@ -90,7 +90,7 @@ function PrivacyPage() {
               How we store and retain your data
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              All documents and personal data are stored on secure, encrypted servers. We retain your documents for the duration of the review and for a limited period thereafter to handle any follow-up questions. [KAOUTAR TO CONFIRM: specific retention period].
+              All documents and personal data are stored on secure, encrypted systems. When your written findings are delivered, we ask you to confirm receipt. Your documents and case materials are deleted 15 days after your confirmation. If we do not receive a confirmation, they are deleted 30 days after the findings were delivered.
             </p>
           </section>
 
@@ -109,8 +109,44 @@ function PrivacyPage() {
               Data sharing
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              Your documents and personal information are never shared with your employer, former employer, or any third party without your explicit written consent. The review is conducted confidentially and independently.
+              Your documents and personal information are never shared with your employer, former employer, or any other party without your explicit written consent. The review is conducted confidentially and independently.
             </p>
+          </section>
+
+          <section>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: "24px",
+                fontWeight: 700,
+                lineHeight: 1.2,
+                letterSpacing: "-0.02em",
+                color: "var(--color-burg-deep)",
+                marginBottom: "16px",
+              }}
+            >
+              Service providers we use
+            </h2>
+            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              To operate the service we rely on a small number of providers, each receiving only what it needs:
+            </p>
+            <ul className="mt-4 space-y-2">
+              {[
+                "HubSpot (CRM): stores only the contact details you submit through the contact form — your name, email, WhatsApp number, and message — so we can manage your enquiry. Your employment documents are never uploaded to HubSpot.",
+                "Zoom: consultations and review discussions take place over Zoom.",
+                "Email: documents, including confidential case materials, are exchanged only by email, directly between you and us.",
+                "Vercel: hosts this website.",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 font-sans"
+                  style={{ fontSize: "16px", lineHeight: 1.6, color: "rgba(30,10,14,0.75)" }}
+                >
+                  <span style={{ color: "var(--color-sand-warm)" }}>·</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section>
@@ -147,7 +183,7 @@ function PrivacyPage() {
               Your rights
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              You have the right to request access to, correction of, or deletion of your personal data at any time. To exercise these rights, or if you have any privacy concerns, please contact us at [KAOUTAR TO CONFIRM: contact email].
+              You have the right to request access to, correction of, or deletion of your personal data at any time. To exercise these rights, or if you have any privacy concerns, please reach us through the contact page or on WhatsApp.
             </p>
           </section>
         </div>

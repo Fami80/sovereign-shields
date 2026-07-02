@@ -11,6 +11,9 @@ function fmt(n: number) {
 }
 
 function computeGratuity(salary: number, years: number) {
+  // Art. 51, Federal Decree-Law 33/2021: gratuity requires at least
+  // one full year of continuous service.
+  if (years < 1) return 0;
   const daily = salary / 30;
   let gratuity: number;
   if (years <= 5) {
@@ -245,7 +248,9 @@ export function ExposureCalculator() {
                 className="text-[13px] font-light leading-relaxed"
                 style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
-                ⚠ If your settlement letter shows a different number, there&apos;s likely an error. Most letters we review have at least one.
+                {years < 1
+                  ? "Gratuity accrues after one full year of continuous service, so under one year no gratuity is due. Leave encashment, notice pay, and other final-settlement amounts may still apply."
+                  : "⚠ If your settlement letter shows a different number, there's likely an error. Most letters we review have at least one."}
               </p>
             </div>
           )}

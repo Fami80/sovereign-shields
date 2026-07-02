@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { CheckCircle } from "lucide-react";
@@ -103,10 +103,25 @@ function ContactPage() {
     email: "",
     countryCode: "+971",
     phone: "",
-    enquiry: initialEnquiry,
+    enquiry: "",
     willingness: "",
-    message: message ?? "",
+    message: "",
   });
+
+  // Apply ?type / ?message prefills on the client only. Prerendering
+  // crawls /contact?type=… variants into the same /contact output file,
+  // so any search-derived initial state leaks into the static HTML for
+  // plain /contact visits and causes a hydration mismatch.
+  useEffect(() => {
+    if (initialEnquiry || message) {
+      setForm((f) => ({
+        ...f,
+        enquiry: initialEnquiry || f.enquiry,
+        message: message ?? f.message,
+      }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [errors, setErrors] = useState<Errors>({});
   const refs = {
     name: useRef<HTMLInputElement>(null),

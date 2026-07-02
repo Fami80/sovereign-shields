@@ -8,9 +8,7 @@ type FieldName = "name" | "email" | "phone" | "enquiry" | "message";
 type Errors = Partial<Record<FieldName, string>>;
 
 const ERROR_COLOR = "#E57373";
-const HS_PORTAL_ID = "148818262";
-const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
-const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
+const CONTACT_API = "/api/contact";
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
   "Hi Kaoutar, I'd like to book a settlement review — AED 999."
 )}`;
@@ -153,23 +151,21 @@ function ContactPage() {
         form.message.trim(),
       ].filter(Boolean);
 
-      const params = new URLSearchParams({
-        email: form.email.trim(),
-        firstname: form.name.trim(),
-        phone: `${form.countryCode} ${form.phone}`.trim(),
-        message: messageLines.join("\n"),
-      });
-      if (form.willingness) {
-        params.set("would_you_pay", WILLINGNESS_LABELS[form.willingness] ?? form.willingness);
-      }
-
-      const res = await fetch(HS_ENDPOINT, {
+      const res = await fetch(CONTACT_API, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: form.email.trim(),
+          firstname: form.name.trim(),
+          phone: `${form.countryCode} ${form.phone}`.trim(),
+          message: messageLines.join("\n"),
+          would_you_pay: form.willingness
+            ? (WILLINGNESS_LABELS[form.willingness] ?? form.willingness)
+            : undefined,
+        }),
       });
 
-      if (!res.ok) throw new Error(`HubSpot ${res.status}`);
+      if (!res.ok) throw new Error(`Contact API ${res.status}`);
 
       setSubmitted(true);
       setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });

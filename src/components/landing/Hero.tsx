@@ -19,7 +19,7 @@ export function Hero() {
             cx="340"
             cy="340"
             r={r}
-            stroke="rgba(139,45,58,0.12)"
+            stroke="rgba(139,45,58,0.30)"
             strokeWidth="1"
             fill="none"
           />

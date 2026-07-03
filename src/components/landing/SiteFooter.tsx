@@ -7,6 +7,7 @@ const FOOTER_COLS = [
       { label: "Settlement reviews", href: "/#features" },
       { label: "Employer compliance", href: "/contact?type=audit" },
       { label: "Knowledge base", href: "/#knowledge" },
+      { label: "Free gratuity guide", href: "/guides/uae-gratuity-calculation" },
     ],
   },
   {

@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GuidesUaeGratuityCalculationRouteImport } from './routes/guides.uae-gratuity-calculation'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -46,6 +47,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesUaeGratuityCalculationRoute =
+  GuidesUaeGratuityCalculationRouteImport.update({
+    id: '/guides/uae-gratuity-calculation',
+    path: '/guides/uae-gratuity-calculation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +80,36 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$' | '/checkout' | '/contact' | '/privacy' | '/terms'
+  fullPaths:
+    | '/'
+    | '/$'
+    | '/checkout'
+    | '/contact'
+    | '/privacy'
+    | '/terms'
+    | '/guides/uae-gratuity-calculation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$' | '/checkout' | '/contact' | '/privacy' | '/terms'
-  id: '__root__' | '/' | '/$' | '/checkout' | '/contact' | '/privacy' | '/terms'
+  to:
+    | '/'
+    | '/$'
+    | '/checkout'
+    | '/contact'
+    | '/privacy'
+    | '/terms'
+    | '/guides/uae-gratuity-calculation'
+  id:
+    | '__root__'
+    | '/'
+    | '/$'
+    | '/checkout'
+    | '/contact'
+    | '/privacy'
+    | '/terms'
+    | '/guides/uae-gratuity-calculation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -87,6 +119,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  GuidesUaeGratuityCalculationRoute: typeof GuidesUaeGratuityCalculationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/uae-gratuity-calculation': {
+      id: '/guides/uae-gratuity-calculation'
+      path: '/guides/uae-gratuity-calculation'
+      fullPath: '/guides/uae-gratuity-calculation'
+      preLoaderRoute: typeof GuidesUaeGratuityCalculationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -143,6 +183,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  GuidesUaeGratuityCalculationRoute: GuidesUaeGratuityCalculationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { CheckCircle } from "lucide-react";
@@ -103,10 +103,25 @@ function ContactPage() {
     email: "",
     countryCode: "+971",
     phone: "",
-    enquiry: initialEnquiry,
+    enquiry: "",
     willingness: "",
-    message: message ?? "",
+    message: "",
   });
+
+  // Apply ?type / ?message prefills on the client only. Prerendering
+  // crawls /contact?type=… variants into the same /contact output file,
+  // so any search-derived initial state leaks into the static HTML for
+  // plain /contact visits and causes a hydration mismatch.
+  useEffect(() => {
+    if (initialEnquiry || message) {
+      setForm((f) => ({
+        ...f,
+        enquiry: initialEnquiry || f.enquiry,
+        message: message ?? f.message,
+      }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [errors, setErrors] = useState<Errors>({});
   const refs = {
     name: useRef<HTMLInputElement>(null),
@@ -157,11 +172,14 @@ function ContactPage() {
         ? (WILLINGNESS_LABELS[form.willingness] ?? form.willingness)
         : undefined;
 
-      // Try same-origin proxy first — not blocked by ad blockers (Chrome)
-      let proxied = false;
+      // The same-origin proxy is the source of truth: if it responds, we
+      // trust its verdict. Only fall back to opaque no-cors when the proxy
+      // itself is unreachable (network failure), never when it rejects.
+      let proxyResponded = false;
+      let delivered = false;
       try {
         const ctrl = new AbortController();
-        const timer = setTimeout(() => ctrl.abort(), 5000);
+        const timer = setTimeout(() => ctrl.abort(), 8000);
         try {
           const res = await fetch("/api/contact", {
             method: "POST",
@@ -172,10 +190,12 @@ function ContactPage() {
               phone: `${form.countryCode} ${form.phone}`.trim(),
               message: messageLines.join("\n"),
               ...(would_you_pay && { would_you_pay }),
+              website: honeypot,
             }),
             signal: ctrl.signal,
           });
-          proxied = res.ok;
+          proxyResponded = true;
+          delivered = res.ok;
         } finally {
           clearTimeout(timer);
         }
@@ -183,8 +203,10 @@ function ContactPage() {
         // proxy not reachable — fall through to direct no-cors
       }
 
-      if (!proxied) {
-        // Fallback: direct no-cors to HubSpot v2 (works unless ad blocker targets forms.hubspot.com)
+      if (!proxyResponded) {
+        // Last resort: direct no-cors to HubSpot v2. The response is opaque,
+        // so delivery can't be verified — the success screen carries a
+        // WhatsApp safety net for exactly this case.
         const params = new URLSearchParams({
           email: form.email.trim(),
           firstname: form.name.trim(),
@@ -203,10 +225,15 @@ function ContactPage() {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: params.toString(),
         });
+        delivered = true;
       }
 
-      setSubmitted(true);
-      setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
+      if (delivered) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
+      } else {
+        setSubmitError(true);
+      }
     } catch {
       setSubmitError(true);
     } finally {
@@ -262,12 +289,11 @@ function ContactPage() {
         >
           {submitted ? (
             <div className="flex flex-col items-center py-10 text-center">
-              <CheckCircle className="h-10 w-10" style={{ color: "#81C784" }} />
+              <CheckCircle className="h-10 w-10" style={{ color: "#81C784" }} aria-hidden />
               <p
-                className="mt-4 flex items-center gap-2 font-sans text-base font-semibold"
+                className="mt-4 font-sans text-base font-semibold"
                 style={{ color: "var(--color-sand-light)" }}
               >
-                <CheckCircle size={20} style={{ color: "#81C784" }} aria-hidden />
                 Received.
               </p>
               <p
@@ -276,9 +302,31 @@ function ContactPage() {
               >
                 You'll hear from us within 1 UAE business day.
               </p>
+              <p
+                className="mt-3 font-sans text-xs"
+                style={{ color: "rgba(237,216,184,0.55)" }}
+              >
+                Nothing after 1 business day?{" "}
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "var(--color-sand-warm)", textDecoration: "underline" }}
+                >
+                  Message us on WhatsApp
+                </a>{" "}
+                so nothing slips through.
+              </p>
             </div>
           ) : (
-            <div className="space-y-5">
+            <form
+              className="space-y-5"
+              noValidate
+              onSubmit={(e) => {
+                e.preventDefault();
+                void handleSubmit();
+              }}
+            >
               {/* Honeypot — hidden from real users, bots fill it in */}
               <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, overflow: "hidden" }}>
                 <label>
@@ -286,15 +334,19 @@ function ContactPage() {
                   <input
                     tabIndex={-1}
                     autoComplete="off"
+                    name="website"
                     value={honeypot}
                     onChange={(e) => setHoneypot(e.target.value)}
                   />
                 </label>
               </div>
 
-              <Field label="Name" error={errors.name}>
+              <Field label="Name" error={errors.name} errorId="name-error">
                 <input
                   ref={refs.name}
+                  autoComplete="name"
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? "name-error" : undefined}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
@@ -303,10 +355,13 @@ function ContactPage() {
                 />
               </Field>
 
-              <Field label="Email" error={errors.email}>
+              <Field label="Email" error={errors.email} errorId="email-error">
                 <input
                   ref={refs.email}
                   type="email"
+                  autoComplete="email"
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="you@company.ae"
@@ -315,7 +370,7 @@ function ContactPage() {
                 />
               </Field>
 
-              <Field label="WhatsApp number" helper="We'll reply on WhatsApp." error={errors.phone}>
+              <Field label="WhatsApp number" helper="We'll reply on WhatsApp." error={errors.phone} errorId="phone-error">
                 <div className="flex gap-2">
                   <select
                     value={form.countryCode}
@@ -340,6 +395,8 @@ function ContactPage() {
                     type="tel"
                     inputMode="tel"
                     autoComplete="tel-national"
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="50 123 4567"
@@ -349,9 +406,11 @@ function ContactPage() {
                 </div>
               </Field>
 
-              <Field label="Enquiry type" error={errors.enquiry}>
+              <Field label="Enquiry type" error={errors.enquiry} errorId="enquiry-error">
                 <select
                   ref={refs.enquiry}
+                  aria-invalid={!!errors.enquiry}
+                  aria-describedby={errors.enquiry ? "enquiry-error" : undefined}
                   value={form.enquiry}
                   onChange={(e) => setForm({ ...form, enquiry: e.target.value })}
                   className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
@@ -391,7 +450,7 @@ function ContactPage() {
                   className="w-full appearance-none rounded-xl px-4 py-3 text-base outline-none transition-colors focus-visible:!border-[var(--color-sand-warm)] focus-visible:shadow-[0_0_0_3px_rgba(212,168,130,0.2)] md:text-sm"
                   style={{
                     ...fieldStyle(false),
-                    color: form.willingness ? "var(--color-sand-light)" : "rgba(237,216,184,0.3)",
+                    color: form.willingness ? "var(--color-sand-light)" : "rgba(237,216,184,0.55)",
                   }}
                 >
                   <option value="" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
@@ -409,9 +468,11 @@ function ContactPage() {
                 </select>
               </Field>
 
-              <Field label="Message" error={errors.message}>
+              <Field label="Message" error={errors.message} errorId="message-error">
                 <textarea
                   ref={refs.message}
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? "message-error" : undefined}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   rows={5}
@@ -423,8 +484,7 @@ function ContactPage() {
               </Field>
 
               <button
-                type="button"
-                onClick={handleSubmit}
+                type="submit"
                 disabled={submitting}
                 className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px] disabled:opacity-60"
                 style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
@@ -449,7 +509,7 @@ function ContactPage() {
                   </a>
                 </p>
               )}
-            </div>
+            </form>
           )}
         </div>
 
@@ -480,11 +540,13 @@ function Field({
   label,
   helper,
   error,
+  errorId,
   children,
 }: {
   label: string;
   helper?: string;
   error?: string;
+  errorId?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -505,7 +567,12 @@ function Field({
       )}
       {children}
       {error && (
-        <span role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>
+        <span
+          id={errorId}
+          role="alert"
+          className="mt-1.5 block font-sans text-xs"
+          style={{ color: ERROR_COLOR }}
+        >
           {error}
         </span>
       )}

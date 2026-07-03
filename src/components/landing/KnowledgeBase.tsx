@@ -145,9 +145,9 @@ export function KnowledgeBase() {
                   </li>
                 ))}
               </ul>
-              {/* Hover overlay */}
+              {/* Hover/focus overlay */}
               <div
-                className="absolute inset-0 z-10 flex items-center justify-center rounded-xl opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                className="absolute inset-0 z-10 flex items-center justify-center rounded-xl opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
                 style={{ background: "rgba(30,10,14,0.7)" }}
               >
                 <span

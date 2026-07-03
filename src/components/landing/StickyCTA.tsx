@@ -27,13 +27,14 @@ export function StickyCTA() {
   return (
     <div
       className={`fixed inset-x-0 bottom-0 z-50 motion-safe:transition-[translate,opacity] motion-safe:duration-300 ${
-        show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+        show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-full opacity-0"
       }`}
       style={{
         backgroundColor: "var(--color-burg-deep)",
         borderTop: "1px solid rgba(212,168,130,0.2)",
       }}
       aria-hidden={!show}
+      inert={!show || undefined}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 md:px-6">
         <div

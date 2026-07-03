@@ -116,7 +116,7 @@ export function Testimonials() {
             fontFamily: "var(--font-sans)",
             fontSize: "12px",
             fontWeight: 300,
-            color: "rgba(30,10,14,0.45)",
+            color: "rgba(30,10,14,0.65)",
           }}
         >
           Scroll to see more →

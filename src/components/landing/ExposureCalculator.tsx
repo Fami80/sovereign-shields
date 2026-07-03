@@ -207,6 +207,9 @@ export function ExposureCalculator() {
 
           {/* Result */}
           <div className="mt-10 text-center">
+            {/* The animated counter would spam screen readers with dozens of
+                intermediate values, so it's hidden from AT and the final
+                figure is announced once via the sr-only live region below. */}
             <div
               ref={displayRef}
               className="text-[56px] font-semibold leading-none tabular-nums transition-opacity duration-500"
@@ -218,10 +221,13 @@ export function ExposureCalculator() {
                   ? "0 1px 3px rgba(0,0,0,0.6), 0 0 40px rgba(212,168,130,0.25)"
                   : "0 1px 3px rgba(0,0,0,0.6)",
               }}
-              aria-live="polite"
+              aria-hidden
             >
               {displayText}
             </div>
+            <span className="sr-only" aria-live="polite">
+              {revealed ? `Estimated gratuity entitlement: ${fmt(gratuity)}` : ""}
+            </span>
             <p
               className="mt-2 text-[13px] font-light"
               style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}

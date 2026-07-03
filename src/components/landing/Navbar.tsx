@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { emitUi, smoothScrollTo } from "@/lib/ui-store";
+import uwrMonogram from "@/assets/uwr-monogram.svg";
 
 type NavItem = { label: string; hash?: string; to?: string };
 
@@ -66,10 +67,18 @@ export function Navbar() {
         <a
           href="#"
           onClick={onBrand}
-          className="font-display text-xl tracking-tight focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)] focus-visible:underline-offset-4"
+          className="flex items-center gap-2.5 font-display text-xl tracking-tight focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)] focus-visible:underline-offset-4"
           style={{ color: "var(--color-sand-light)", fontWeight: 600 }}
         >
-          UAEwork<span style={{ color: "var(--color-sand-warm)", fontStyle: "italic" }}>rights</span>
+          <img
+            src={uwrMonogram}
+            alt=""
+            aria-hidden
+            className="h-7 w-7 md:h-8 md:w-8"
+          />
+          <span>
+            UAEwork<span style={{ color: "var(--color-sand-warm)", fontStyle: "italic" }}>rights</span>
+          </span>
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -100,6 +109,8 @@ export function Navbar() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
             className="rounded-full p-2 focus-visible:[outline:2px_solid_var(--color-sand-warm)] focus-visible:[outline-offset:2px] lg:hidden"
             style={{ border: "1px solid rgba(212,168,130,0.25)", color: "var(--color-sand-light)" }}
           >
@@ -110,6 +121,7 @@ export function Navbar() {
 
       {open && (
         <div
+          id="mobile-nav"
           className="backdrop-blur-md lg:hidden"
           style={{
             backgroundColor: "rgba(30,10,14,0.97)",

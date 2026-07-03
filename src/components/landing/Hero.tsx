@@ -42,7 +42,7 @@ export function Hero() {
             fontSize: "680px",
             fontWeight: 700,
             lineHeight: 0.7,
-            color: "rgba(212,168,130,0.07)",
+            color: "rgba(212,168,130,0.11)",
             userSelect: "none",
           }}
         >
@@ -68,14 +68,14 @@ export function Hero() {
               lineHeight: 1,
             }}
           >
-            <span style={{ fontSize: "150px", color: "rgba(212,168,130,0.18)" }}>33</span>
-            <span style={{ fontSize: "68px", color: "rgba(212,168,130,0.14)" }}>/2021</span>
+            <span style={{ fontSize: "150px", color: "rgba(212,168,130,0.30)" }}>33</span>
+            <span style={{ fontSize: "68px", color: "rgba(212,168,130,0.24)" }}>/2021</span>
           </div>
           <div
             style={{
               width: "120px",
               height: "1px",
-              backgroundColor: "rgba(212,168,130,0.3)",
+              backgroundColor: "rgba(212,168,130,0.5)",
               margin: "16px 0",
             }}
           />
@@ -88,7 +88,7 @@ export function Hero() {
                   fontSize: "15px",
                   letterSpacing: "3px",
                   textTransform: "uppercase",
-                  color: "rgba(237,216,184,0.38)",
+                  color: "rgba(237,216,184,0.55)",
                   lineHeight: 2.8,
                 }}
               >

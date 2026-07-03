@@ -190,13 +190,13 @@ export function KnowledgeBase() {
           >
             The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/guides/uae-gratuity-calculation"
             className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
             style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             Read now →
-          </a>
+          </Link>
         </div>
 
         {/* Bottom CTA bar */}

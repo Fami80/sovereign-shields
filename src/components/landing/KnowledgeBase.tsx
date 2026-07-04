@@ -161,42 +161,58 @@ export function KnowledgeBase() {
           ))}
         </div>
 
-        {/* Free Article Card */}
-        <div
-          className="mx-auto mt-5 max-w-xl rounded-xl p-6"
-          style={{
-            background: "rgba(212,168,130,0.06)",
-            border: "1px solid rgba(212,168,130,0.25)",
-          }}
-        >
-          <div className="flex items-center gap-2">
-            <Unlock className="h-4 w-4" style={{ color: "var(--color-sand-warm)" }} />
-            <span
-              className="text-xs font-medium uppercase tracking-wide"
-              style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        {/* Free Article Cards */}
+        <div className="mx-auto mt-5 grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2">
+          {[
+            {
+              title: "How UAE gratuity is calculated: the complete guide",
+              body: "The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.",
+              to: "/guides/uae-gratuity-calculation",
+            },
+            {
+              title: "Do free zones have their own employment law?",
+              body: "JAFZA, DMCC and most zones follow federal law. Exactly two exceptions change everything — and there's a one-line test.",
+              to: "/guides/free-zone-employment-law",
+            },
+          ].map((card) => (
+            <div
+              key={card.to}
+              className="rounded-xl p-6"
+              style={{
+                background: "rgba(212,168,130,0.06)",
+                border: "1px solid rgba(212,168,130,0.25)",
+              }}
             >
-              FREE
-            </span>
-          </div>
-          <h3
-            className="mt-3 text-lg font-medium"
-            style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-          >
-            How UAE gratuity is calculated: the complete guide
-          </h3>
-          <p
-            className="mt-2 text-sm font-light"
-            style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-          >
-            The MOHRE mainland formula, step by step. Basic salary vs. gross. The 5-year rule. What unpaid leave does to your total.
-          </p>
-          <Link
-            to="/guides/uae-gratuity-calculation"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
-            style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-          >
-            Read now →
-          </Link>
+              <div className="flex items-center gap-2">
+                <Unlock className="h-4 w-4" style={{ color: "var(--color-sand-warm)" }} />
+                <span
+                  className="text-xs font-medium uppercase tracking-wide"
+                  style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                >
+                  FREE
+                </span>
+              </div>
+              <h3
+                className="mt-3 text-lg font-medium"
+                style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
+                {card.title}
+              </h3>
+              <p
+                className="mt-2 text-sm font-light"
+                style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
+                {card.body}
+              </p>
+              <Link
+                to={card.to}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
+                style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              >
+                Read now →
+              </Link>
+            </div>
+          ))}
         </div>
 
         {/* Bottom CTA bar */}

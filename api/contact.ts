@@ -3,6 +3,8 @@ export const config = { runtime: "edge" };
 const HS_PORTAL_ID = "148818262";
 const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
 const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
+const SHEET_WEBHOOK =
+  "https://script.google.com/macros/s/AKfycbyYH3NPvWxVylQeWv09x59TrHUiZPNtUgHhUaoHe-8vYMfXlLFnObwhbN1Rb-B2Piip/exec";
 
 const MAX_BODY_BYTES = 8_192;
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,24}$/;
@@ -63,6 +65,8 @@ export default async function handler(req: Request): Promise<Response> {
     phone?: string;
     message?: string;
     would_you_pay?: string;
+    enquiry?: string;
+    kbCard?: string;
     website?: string; // honeypot — real users never fill this
   };
   try {
@@ -81,6 +85,8 @@ export default async function handler(req: Request): Promise<Response> {
   const phone = (body.phone ?? "").trim();
   const message = (body.message ?? "").trim();
   const would_you_pay = (body.would_you_pay ?? "").trim();
+  const enquiry = (body.enquiry ?? "").trim();
+  const kbCard = (body.kbCard ?? "").trim();
 
   if (
     !EMAIL_RE.test(email) ||
@@ -89,7 +95,9 @@ export default async function handler(req: Request): Promise<Response> {
     phone.length > 32 ||
     message.length === 0 ||
     message.length > 1400 ||
-    would_you_pay.length > 60
+    would_you_pay.length > 60 ||
+    enquiry.length > 40 ||
+    kbCard.length > 40
   ) {
     return new Response("Bad Request", { status: 400 });
   }
@@ -102,6 +110,28 @@ export default async function handler(req: Request): Promise<Response> {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params.toString(),
   });
+
+  // Backup copy to the Google Sheet (Apps Script webhook). Fire-and-forget:
+  // a sheet failure must never cost a lead.
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 4000);
+    await fetch(SHEET_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        name: firstname,
+        email,
+        enquiryType: enquiry,
+        kbCardClicked: kbCard,
+        willingnessToPay: would_you_pay,
+        message: phone ? `Phone: ${phone}\n${message}` : message,
+      }),
+      signal: ctrl.signal,
+    }).finally(() => clearTimeout(timer));
+  } catch {
+    // sheet backup unavailable — HubSpot remains the source of truth
+  }
 
   return new Response(hsRes.ok ? "OK" : "HubSpot error", {
     status: hsRes.ok ? 200 : 502,

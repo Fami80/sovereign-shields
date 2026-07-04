@@ -11,11 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ExecutiveShieldRouteImport } from './routes/executive-shield'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GuidesUaeGratuityCalculationRouteImport } from './routes/guides.uae-gratuity-calculation'
+import { Route as GuidesFreeZoneEmploymentLawRouteImport } from './routes/guides.free-zone-employment-law'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -25,6 +27,11 @@ const TermsRoute = TermsRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveShieldRoute = ExecutiveShieldRouteImport.update({
+  id: '/executive-shield',
+  path: '/executive-shield',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -53,14 +60,22 @@ const GuidesUaeGratuityCalculationRoute =
     path: '/guides/uae-gratuity-calculation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const GuidesFreeZoneEmploymentLawRoute =
+  GuidesFreeZoneEmploymentLawRouteImport.update({
+    id: '/guides/free-zone-employment-law',
+    path: '/guides/free-zone-employment-law',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/executive-shield': typeof ExecutiveShieldRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/free-zone-employment-law': typeof GuidesFreeZoneEmploymentLawRoute
   '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRoutesByTo {
@@ -68,8 +83,10 @@ export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/executive-shield': typeof ExecutiveShieldRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/free-zone-employment-law': typeof GuidesFreeZoneEmploymentLawRoute
   '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRoutesById {
@@ -78,8 +95,10 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/executive-shield': typeof ExecutiveShieldRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/guides/free-zone-employment-law': typeof GuidesFreeZoneEmploymentLawRoute
   '/guides/uae-gratuity-calculation': typeof GuidesUaeGratuityCalculationRoute
 }
 export interface FileRouteTypes {
@@ -89,8 +108,10 @@ export interface FileRouteTypes {
     | '/$'
     | '/checkout'
     | '/contact'
+    | '/executive-shield'
     | '/privacy'
     | '/terms'
+    | '/guides/free-zone-employment-law'
     | '/guides/uae-gratuity-calculation'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -98,8 +119,10 @@ export interface FileRouteTypes {
     | '/$'
     | '/checkout'
     | '/contact'
+    | '/executive-shield'
     | '/privacy'
     | '/terms'
+    | '/guides/free-zone-employment-law'
     | '/guides/uae-gratuity-calculation'
   id:
     | '__root__'
@@ -107,8 +130,10 @@ export interface FileRouteTypes {
     | '/$'
     | '/checkout'
     | '/contact'
+    | '/executive-shield'
     | '/privacy'
     | '/terms'
+    | '/guides/free-zone-employment-law'
     | '/guides/uae-gratuity-calculation'
   fileRoutesById: FileRoutesById
 }
@@ -117,8 +142,10 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
+  ExecutiveShieldRoute: typeof ExecutiveShieldRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  GuidesFreeZoneEmploymentLawRoute: typeof GuidesFreeZoneEmploymentLawRoute
   GuidesUaeGratuityCalculationRoute: typeof GuidesUaeGratuityCalculationRoute
 }
 
@@ -136,6 +163,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/executive-shield': {
+      id: '/executive-shield'
+      path: '/executive-shield'
+      fullPath: '/executive-shield'
+      preLoaderRoute: typeof ExecutiveShieldRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -173,6 +207,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesUaeGratuityCalculationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/free-zone-employment-law': {
+      id: '/guides/free-zone-employment-law'
+      path: '/guides/free-zone-employment-law'
+      fullPath: '/guides/free-zone-employment-law'
+      preLoaderRoute: typeof GuidesFreeZoneEmploymentLawRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -181,8 +222,10 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
+  ExecutiveShieldRoute: ExecutiveShieldRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  GuidesFreeZoneEmploymentLawRoute: GuidesFreeZoneEmploymentLawRoute,
   GuidesUaeGratuityCalculationRoute: GuidesUaeGratuityCalculationRoute,
 }
 export const routeTree = rootRouteImport

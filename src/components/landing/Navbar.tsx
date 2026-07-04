@@ -74,7 +74,7 @@ export function Navbar() {
             src={uwrMonogram}
             alt=""
             aria-hidden
-            className="h-7 w-auto md:h-8"
+            className="h-6 w-auto"
           />
           <span>
             UAEwork<span style={{ color: "var(--color-sand-warm)", fontStyle: "italic" }}>rights</span>

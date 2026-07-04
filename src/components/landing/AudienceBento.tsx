@@ -1,4 +1,5 @@
 import { User, Building2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function AudienceBento() {
   return (
@@ -17,9 +18,106 @@ export function AudienceBento() {
           UAE employment compliance for both sides of the table
         </h2>
 
-        {/* Two service cards */}
+        {/* Service cards: employee journey first (contract → settlement), employer below */}
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {/* CARD 1 — Employee */}
+          {/* CARD 1 — Employee · Contract Review (pre-acceptance) */}
+          <article
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
+            style={{
+              backgroundColor: "var(--color-sand-pale)",
+              border: "1px solid rgba(139,45,58,0.12)",
+            }}
+          >
+            <p
+              className="inline-flex items-center gap-1.5 font-sans"
+              style={{
+                fontSize: "10px",
+                letterSpacing: "2px",
+                color: "var(--color-burg-acc)",
+                fontWeight: 600,
+                textTransform: "uppercase",
+              }}
+            >
+              <User size={12} />
+              FOR EMPLOYEES · PRE-ACCEPTANCE
+            </p>
+
+            <h3
+              className="mt-3 font-display"
+              style={{
+                fontSize: "28px",
+                color: "var(--color-burg-deep)",
+                fontStyle: "italic",
+                fontWeight: 600,
+                lineHeight: 1.2,
+              }}
+            >
+              Contract Review
+            </h3>
+
+            <span
+              className="mt-3 inline-flex items-center self-start rounded-full px-3 py-1 font-sans text-xs"
+              style={{
+                backgroundColor: "rgba(139,45,58,0.08)",
+                color: "var(--color-burg-acc)",
+                fontWeight: 500,
+              }}
+            >
+              AED 2,000 flat fee
+            </span>
+
+            <p
+              className="mt-4 font-sans"
+              style={{
+                fontSize: "14px",
+                fontWeight: 300,
+                lineHeight: 1.6,
+                color: "rgba(30,10,14,0.65)",
+              }}
+            >
+              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review your employment contract clause by clause — salary structure, notice period, non-compete terms, probation length, benefits — against UAE labour law, so nothing surprises you after you've already accepted.
+            </p>
+
+            <ul className="mt-6 space-y-2.5">
+              {[
+                "Full contract review before you sign",
+                "Salary structure & benefits checked",
+                "Notice period & non-compete clauses explained in plain language",
+                "Written findings within 48 hours",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="font-sans"
+                  style={{
+                    fontSize: "13px",
+                    color: "var(--color-burg-acc)",
+                    fontWeight: 400,
+                  }}
+                >
+                  → {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-auto pt-8">
+              <a
+                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a contract review — AED 2,000.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-center rounded-full px-6 py-[14px] font-sans text-[15px] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
+                style={{
+                  backgroundColor: "var(--color-burg-acc)",
+                  color: "var(--color-sand-pale)",
+                  fontWeight: 500,
+                  minHeight: "48px",
+                }}
+              >
+                Review my contract - AED 2,000 →
+              </a>
+            </div>
+          </article>
+
+          {/* CARD 2 — Employee · Settlement Review (exit) */}
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
@@ -143,9 +241,9 @@ export function AudienceBento() {
             </div>
           </article>
 
-          {/* CARD 2 — Employer */}
+          {/* CARD 3 — Employer (full width below the employee journey) */}
           <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:col-span-2 md:p-9"
             style={{
               backgroundColor: "var(--color-burg-deep)",
               border: "1px solid rgba(212,168,130,0.15)",
@@ -246,6 +344,20 @@ export function AudienceBento() {
             >
               Book a compliance audit
             </a>
+
+            <p
+              className="mt-5 font-sans"
+              style={{ fontSize: "13px", fontWeight: 300, color: "rgba(237,216,184,0.6)" }}
+            >
+              Not ready for a full audit?{" "}
+              <Link
+                to="/executive-shield"
+                className="font-medium underline decoration-[var(--color-sand-warm)] decoration-1 underline-offset-2 hover:opacity-80"
+                style={{ color: "var(--color-sand-warm)" }}
+              >
+                Get the free Executive Shield guide first →
+              </Link>
+            </p>
           </article>
         </div>
 

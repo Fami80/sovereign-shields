@@ -190,6 +190,8 @@ function ContactPage() {
               phone: `${form.countryCode} ${form.phone}`.trim(),
               message: messageLines.join("\n"),
               ...(would_you_pay && { would_you_pay }),
+              enquiry: form.enquiry,
+              kbCard: kbCardClicked,
               website: honeypot,
             }),
             signal: ctrl.signal,

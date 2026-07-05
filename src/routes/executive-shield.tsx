@@ -144,7 +144,7 @@ function ExecutiveShieldPage() {
 
           <div className="mt-8 border-t pt-8" style={{ borderColor: "rgba(212,168,130,0.12)" }}>
             {submitted ? (
-              <div className="flex flex-col items-center py-4 text-center">
+              <div className="flex flex-col items-center py-4 text-center motion-safe:animate-fade-rise">
                 <CheckCircle className="h-9 w-9" style={{ color: "#81C784" }} aria-hidden />
                 <p className="mt-3 font-sans text-base font-semibold" style={{ color: "var(--color-sand-light)" }}>
                   On its way.
@@ -216,7 +216,7 @@ function ExecutiveShieldPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] disabled:opacity-60"
+                  className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] disabled:opacity-60"
                   style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
                 >
                   {submitting ? "Sending…" : "Send me the guide →"}
@@ -243,7 +243,7 @@ function ExecutiveShieldPage() {
           Ready to go further? A full compliance audit starts from AED 5,000.{" "}
           <a
             href="/contact?type=audit"
-            className="font-medium underline decoration-1 underline-offset-2 hover:opacity-80"
+            className="font-medium underline decoration-1 underline-offset-2 transition-opacity duration-150 hover:opacity-80"
             style={{ color: "var(--color-sand-warm)" }}
           >
             Book a compliance audit →

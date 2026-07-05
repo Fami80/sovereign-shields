@@ -353,7 +353,7 @@ export function AudienceBento() {
               Not ready for a full audit?{" "}
               <Link
                 to="/executive-shield"
-                className="font-medium underline decoration-[var(--color-sand-warm)] decoration-1 underline-offset-2 hover:opacity-80"
+                className="font-medium underline decoration-[var(--color-sand-warm)] decoration-1 underline-offset-2 transition-opacity duration-150 hover:opacity-80"
                 style={{ color: "var(--color-sand-warm)" }}
               >
                 Get the free Executive Shield guide first →

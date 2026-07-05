@@ -12,9 +12,9 @@ export const Route = createFileRoute("/executive-shield")({
   head: () => ({
     meta: [
       { title: "Executive Shield: The UAE Compliance Guide (Free) | UAEworkrights" },
-      { name: "description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
+      { name: "description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do." },
       { property: "og:title", content: "Executive Shield: The UAE Compliance Guide" },
-      { property: "og:description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
+      { property: "og:description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do." },
       { property: "og:url", content: CANONICAL },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
@@ -113,7 +113,7 @@ function ExecutiveShieldPage() {
         >
           Most UAE companies haven't updated their compliance processes since Federal Decree-Law No. 33
           of 2021. This guide walks through the compliance gaps that most commonly turn into MOHRE
-          disputes — before they do.
+          disputes, before they do.
         </p>
 
         <div
@@ -229,7 +229,7 @@ function ExecutiveShieldPage() {
                 )}
 
                 <p className="text-center font-sans text-xs" style={{ color: "rgba(237,216,184,0.55)" }}>
-                  You'll get the guide by email. No spam — occasional compliance updates only.
+                  You'll get the guide by email. No spam: occasional compliance updates only.
                 </p>
               </form>
             )}

@@ -171,7 +171,7 @@ export function KnowledgeBase() {
             },
             {
               title: "Do free zones have their own employment law?",
-              body: "JAFZA, DMCC and most zones follow federal law. Exactly two exceptions change everything — and there's a one-line test.",
+              body: "JAFZA, DMCC and most zones follow federal law. Exactly two exceptions change everything, and there's a one-line test.",
               to: "/guides/free-zone-employment-law",
             },
           ].map((card) => (

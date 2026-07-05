@@ -78,8 +78,7 @@ function ExecutiveShieldPage() {
 
   const fieldStyle = (hasError: boolean): React.CSSProperties => ({
     backgroundColor: "rgba(212,168,130,0.06)",
-    border: "1px solid rgba(212,168,130,0.2)",
-    borderLeft: hasError ? `2px solid ${ERROR_COLOR}` : "1px solid rgba(212,168,130,0.2)",
+    border: hasError ? `1px solid ${ERROR_COLOR}` : "1px solid rgba(212,168,130,0.2)",
     color: "var(--color-sand-light)",
   });
 

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { animate, useMotionValue, useReducedMotion } from "framer-motion";
+import { animate, motion, useMotionValue, useReducedMotion } from "framer-motion";
 import cardBg from "@/assets/calculator-settlement-form.jpg";
 
 function fmt(n: number) {
@@ -66,9 +66,13 @@ export function ExposureCalculator() {
       return;
     }
     count.set(0);
+    // Spring with zero bounce: physical deceleration into the final figure
+    // without ever overshooting it (a briefly-wrong AED number would read
+    // as an error on a page about catching errors).
     animate(count, gratuity, {
-      duration: 1.8,
-      ease: [0.16, 1, 0.3, 1],
+      type: "spring",
+      duration: 1.1,
+      bounce: 0,
     });
   };
 
@@ -210,9 +214,14 @@ export function ExposureCalculator() {
             {/* The animated counter would spam screen readers with dozens of
                 intermediate values, so it's hidden from AT and the final
                 figure is announced once via the sr-only live region below. */}
-            <div
+            <motion.div
               ref={displayRef}
               className="text-[56px] font-semibold leading-none tabular-nums transition-opacity duration-500"
+              // Subtle spring settle: the number rests at 98% and pops to
+              // full size as the result lands. Decorative, so it stays off
+              // for reduced-motion users.
+              animate={{ scale: prefersReducedMotion || revealed ? 1 : 0.98 }}
+              transition={{ type: "spring", duration: 0.6, bounce: 0.25 }}
               style={{
                 color: "var(--color-sand-warm)",
                 fontFamily: "'Playfair Display', serif",
@@ -224,7 +233,7 @@ export function ExposureCalculator() {
               aria-hidden
             >
               {displayText}
-            </div>
+            </motion.div>
             <span className="sr-only" aria-live="polite">
               {revealed ? `Estimated gratuity entitlement: ${fmt(gratuity)}` : ""}
             </span>

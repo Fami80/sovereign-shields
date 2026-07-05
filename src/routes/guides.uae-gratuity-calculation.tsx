@@ -365,7 +365,7 @@ function GratuityGuidePage() {
             </a>
           </section>
 
-          <p className="font-sans" style={{ fontSize: "13px", lineHeight: 1.6, color: "rgba(30,10,14,0.55)" }}>
+          <p className="font-sans" style={{ fontSize: "13px", lineHeight: 1.6, color: "rgba(30,10,14,0.7)" }}>
             This guide is general information about mainland UAE employment, not legal advice.
             Last reviewed July 2026 against Federal Decree-Law No. 33 of 2021.
           </p>

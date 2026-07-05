@@ -11,10 +11,10 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const Route = createFileRoute("/executive-shield")({
   head: () => ({
     meta: [
-      { title: "Executive Shield: The UAE Exit Compliance Guide (Free) | UAEworkrights" },
-      { name: "description", content: "Free guide for UAE employers: the exit-process compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
-      { property: "og:title", content: "Executive Shield: The UAE Exit Compliance Guide" },
-      { property: "og:description", content: "Free guide for UAE employers: the exit-process compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
+      { title: "Executive Shield: The UAE Compliance Guide (Free) | UAEworkrights" },
+      { name: "description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
+      { property: "og:title", content: "Executive Shield: The UAE Compliance Guide" },
+      { property: "og:description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021 — and how to close them before they do." },
       { property: "og:url", content: CANONICAL },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
@@ -24,9 +24,9 @@ export const Route = createFileRoute("/executive-shield")({
 
 const BULLETS = [
   "What actually changed under Federal Decree-Law 33/2021",
-  "The exit-process mistakes that most often trigger disputes",
+  "The compliance mistakes that most often trigger disputes",
   "How the 2026 WPS deadline changes your payroll cycle",
-  "A pre-exit compliance checklist you can use today",
+  "A compliance checklist you can use today",
 ];
 
 function ExecutiveShieldPage() {
@@ -59,7 +59,7 @@ function ExecutiveShieldPage() {
           email: email.trim(),
           firstname: name.trim(),
           phone: "",
-          message: "Requested: Executive Shield — The UAE Exit Compliance Guide (employer lead magnet)",
+          message: "Requested: Executive Shield — The UAE Compliance Guide (employer lead magnet)",
           enquiry: "executive-shield",
           website: honeypot,
         }),
@@ -105,14 +105,14 @@ function ExecutiveShieldPage() {
             letterSpacing: "-0.02em",
           }}
         >
-          Executive Shield: The UAE Exit Compliance Guide
+          Executive Shield: The UAE Compliance Guide
         </h1>
 
         <p
           className="mx-auto mt-5 max-w-xl text-center font-sans"
           style={{ fontSize: "17px", fontWeight: 300, lineHeight: 1.7, color: "rgba(237,216,184,0.6)" }}
         >
-          Most UAE companies haven't updated their exit processes since Federal Decree-Law No. 33
+          Most UAE companies haven't updated their compliance processes since Federal Decree-Law No. 33
           of 2021. This guide walks through the compliance gaps that most commonly turn into MOHRE
           disputes — before they do.
         </p>
@@ -241,7 +241,7 @@ function ExecutiveShieldPage() {
           className="mx-auto mt-8 max-w-xl text-center font-sans text-sm"
           style={{ color: "rgba(237,216,184,0.55)" }}
         >
-          Ready to go further? A full exit-process compliance audit starts from AED 5,000.{" "}
+          Ready to go further? A full compliance audit starts from AED 5,000.{" "}
           <a
             href="/contact?type=audit"
             className="font-medium underline decoration-1 underline-offset-2 hover:opacity-80"

@@ -75,7 +75,7 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review your employment contract clause by clause — salary structure, notice period, non-compete terms, probation length, benefits — against UAE labour law, so nothing surprises you after you've already accepted.
+              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review your employment contract clause by clause (salary structure, notice period, non-compete terms, probation length, benefits) against UAE labour law, so nothing surprises you after you've already accepted.
             </p>
 
             <ul className="mt-6 space-y-2.5">

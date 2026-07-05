@@ -7,7 +7,7 @@ const CANONICAL = "https://uaeworkrights.com/guides/uae-gratuity-calculation";
 const FAQ = [
   {
     q: "Is gratuity calculated on basic or gross salary?",
-    a: "Basic salary only. Housing, transport, and other allowances are excluded. This is the single most common place settlement letters go wrong — a calculation quietly run on a lower figure, or an inflated \"basic\" that was never updated after a raise.",
+    a: "Basic salary only. Housing, transport, and other allowances are excluded. This is the single most common place settlement letters go wrong: a calculation quietly run on a lower figure, or an inflated \"basic\" that was never updated after a raise.",
   },
   {
     q: "Do I still get full gratuity if I resign?",
@@ -26,7 +26,7 @@ const FAQ = [
     a: "No. Days of unpaid leave are excluded when calculating your period of continuous service, which can slightly lower the total.",
   },
   {
-    q: "I work in DIFC — does this guide apply to me?",
+    q: "I work in DIFC. Does this guide apply to me?",
     a: "No. Since February 2020, DIFC employers pay monthly contributions into the DEWS scheme instead of end-of-service gratuity. You can check your balance through the Zurich portal. ADGM and some free zones also have their own frameworks.",
   },
 ];
@@ -158,7 +158,7 @@ function GratuityGuidePage() {
         <p className="mt-5 font-sans" style={{ fontSize: "17px", lineHeight: 1.75, color: INK }}>
           If you've just received a settlement or end-of-service letter, the gratuity line is
           where most errors hide. This guide walks through the mainland (MOHRE) formula under
-          Federal Decree-Law No. 33 of 2021 — in plain language, with a worked example — so you
+          Federal Decree-Law No. 33 of 2021, in plain language, with a worked example, so you
           can check the number yourself before you sign anything.
         </p>
 
@@ -198,14 +198,14 @@ function GratuityGuidePage() {
             <H2>First: are you eligible?</H2>
             <P>
               Gratuity is due after <strong>one full year of continuous service</strong> (Article
-              51, FDL 33/2021). Below one year, no gratuity is owed — but don't stop reading your
+              51, FDL 33/2021). Below one year, no gratuity is owed, but don't stop reading your
               letter there: unpaid salary, leave encashment, and notice pay are owed regardless of
               how long you worked.
             </P>
           </section>
 
           <section>
-            <H2>Basic salary, not gross — where most letters go wrong</H2>
+            <H2>Basic salary, not gross: where most letters go wrong</H2>
             <P>
               Gratuity is calculated on your <strong>basic salary only</strong>: housing,
               transport, and other allowances are excluded. Two errors to watch for. First, some
@@ -267,7 +267,7 @@ function GratuityGuidePage() {
           <section>
             <H2>Resigning? You still get the full amount</H2>
             <P>
-              This is the change most people — and some employers — haven't caught up with. Under
+              This is the change most people, and some employers, haven't caught up with. Under
               the old law, resigning before 5 years reduced your gratuity to a fraction. Federal
               Decree-Law 33/2021 <strong>removed that reduction</strong>: since February 2022, you
               receive the full calculation whether you resigned or were terminated. If your
@@ -287,7 +287,7 @@ function GratuityGuidePage() {
             />
             <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: INK }}>
               What <em>cannot</em> lower it: visa costs, recruitment fees, or training costs your
-              employer chose to invest in you — these are generally the employer's to bear.
+              employer chose to invest in you. These are generally the employer's to bear.
             </p>
           </section>
 
@@ -295,7 +295,7 @@ function GratuityGuidePage() {
             <H2>DIFC, ADGM, and free zones are different</H2>
             <P>
               Everything above applies to mainland UAE (MOHRE) employment. In <strong>DIFC</strong>,
-              gratuity was replaced in 2020 by the DEWS scheme — your employer pays monthly
+              gratuity was replaced in 2020 by the DEWS scheme: your employer pays monthly
               contributions into a savings plan instead, and you can check the balance in the
               Zurich portal. <strong>ADGM</strong> and several free zones have their own
               employment frameworks. If your contract is in one of these jurisdictions, the
@@ -311,7 +311,7 @@ function GratuityGuidePage() {
                 "Does the service period match your start date (minus any unpaid leave)?",
                 "Are the 21-day and 30-day bands applied correctly?",
                 "If you resigned: is there an outdated 'resignation reduction'?",
-                "Are leave encashment and notice pay shown as separate lines — not silently netted off?",
+                "Are leave encashment and notice pay shown as separate lines, not silently netted off?",
                 "Are any deductions itemised and actually lawful?",
               ]}
             />
@@ -351,8 +351,8 @@ function GratuityGuidePage() {
               className="mx-auto mt-3 max-w-md font-sans"
               style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.7, color: "rgba(237,216,184,0.7)" }}
             >
-              Kaoutar personally checks your settlement letter against UAE Labour Law — every
-              line, your jurisdiction — with written findings in 48 hours. AED 999 flat.
+              Kaoutar personally checks your settlement letter against UAE Labour Law: every
+              line, your jurisdiction, with written findings in 48 hours. AED 999 flat.
             </p>
             <a
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}

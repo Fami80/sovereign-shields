@@ -132,7 +132,7 @@ function PrivacyPage() {
             </p>
             <ul className="mt-4 space-y-2">
               {[
-                "HubSpot (CRM): stores only the contact details you submit through the contact form — your name, email, WhatsApp number, and message — so we can manage your enquiry. Your employment documents are never uploaded to HubSpot.",
+                "HubSpot (CRM): stores only the contact details you submit through the contact form (your name, email, WhatsApp number, and message) so we can manage your enquiry. Your employment documents are never uploaded to HubSpot.",
                 "Zoom: consultations and review discussions take place over Zoom.",
                 "Email: documents, including confidential case materials, are exchanged only by email, directly between you and us.",
                 "Vercel: hosts this website.",

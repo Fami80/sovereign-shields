@@ -9,9 +9,9 @@ export const Route = createFileRoute("/guides/free-zone-employment-law")({
   head: () => ({
     meta: [
       { title: "Do Free Zones Have Their Own Employment Law? The Actual Answer | UAEworkrights" },
-      { name: "description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions — DIFC and ADGM — change your gratuity, courts, and non-compete rules. Here's the one-line test." },
+      { name: "description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions, DIFC and ADGM, change your gratuity, courts, and non-compete rules. Here's the one-line test." },
       { property: "og:title", content: "Do Free Zones Have Their Own Employment Law? Here's the Actual Answer" },
-      { property: "og:description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions — DIFC and ADGM — change your gratuity, courts, and non-compete rules." },
+      { property: "og:description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions, DIFC and ADGM, change your gratuity, courts, and non-compete rules." },
       { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "article" },
     ],
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/guides/free-zone-employment-law")({
               "@id": `${CANONICAL}#article`,
               headline: "Do free zones have their own employment law? Here's the actual answer",
               description:
-                "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions — DIFC and ADGM — change your gratuity, courts, and non-compete rules.",
+                "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions, DIFC and ADGM, change your gratuity, courts, and non-compete rules.",
               author: {
                 "@type": "Person",
                 name: "Kaoutar Makrache",
@@ -76,14 +76,14 @@ function FreeZoneGuidePage() {
           Do free zones have their own employment law? Here's the actual answer
         </h1>
         <p className="mt-5 font-sans" style={{ fontSize: "17px", lineHeight: 1.75, color: INK }}>
-          Most guidance on this stops at "it depends" — here's the specific answer.
+          Most guidance on this stops at "it depends". Here's the specific answer.
         </p>
 
         <div className="mt-10 space-y-10">
           <section>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: INK }}>
-              The vast majority of UAE free zones — <strong>JAFZA, DMCC, DAFZA</strong>, and most
-              others — follow the same federal law as mainland UAE:{" "}
+              The vast majority of UAE free zones (<strong>JAFZA, DMCC, DAFZA</strong>, and most
+              others) follow the same federal law as mainland UAE:{" "}
               <strong>Federal Decree-Law No. 33 of 2021</strong>. If you work for a company
               registered in one of these zones, your gratuity, notice period, and termination
               rights are calculated exactly the same way as a mainland employee's.
@@ -111,9 +111,9 @@ function FreeZoneGuidePage() {
             </p>
             <ul className="mt-4 space-y-2.5">
               {[
-                <>Your end-of-service benefit likely isn't calculated as traditional gratuity at all — DIFC uses <strong>DEWS</strong> (a funded savings scheme with employer contributions), and ADGM has adopted a similar model.</>,
+                <>Your end-of-service benefit likely isn't calculated as traditional gratuity at all: DIFC uses <strong>DEWS</strong> (a funded savings scheme with employer contributions), and ADGM has adopted a similar model.</>,
                 <>Disputes go to the <strong>DIFC Courts or ADGM Courts</strong>, not MOHRE or the mainland labour courts.</>,
-                <>Non-compete clauses are assessed differently — common law courts tend to enforce them more readily than UAE Labour Law does.</>,
+                <>Non-compete clauses are assessed differently: common law courts tend to enforce them more readily than UAE Labour Law does.</>,
               ].map((item, i) => (
                 <li
                   key={i}
@@ -139,15 +139,15 @@ function FreeZoneGuidePage() {
             </p>
             <p className="mt-3 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: INK }}>
               If your offer letter or contract doesn't specifically mention DIFC or ADGM, you're
-              almost certainly under the same federal law as everyone else — regardless of which
+              almost certainly under the same federal law as everyone else, regardless of which
               free zone your employer is registered in.
             </p>
           </section>
 
           <section>
             <p className="font-sans" style={{ fontSize: "14px", lineHeight: 1.7, color: "rgba(30,10,14,0.6)", fontStyle: "italic" }}>
-              This is general guidance, not a substitute for a review of your specific contract —
-              if you're not sure which framework applies to you, that's exactly what a contract or
+              This is general guidance, not a substitute for a review of your specific contract.
+              If you're not sure which framework applies to you, that's exactly what a contract or
               settlement review checks.
             </p>
             <p className="mt-4 font-sans" style={{ fontSize: "15px", lineHeight: 1.7, color: INK }}>
@@ -176,7 +176,7 @@ function FreeZoneGuidePage() {
               style={{ fontSize: "14px", fontWeight: 300, lineHeight: 1.7, color: "rgba(237,216,184,0.7)" }}
             >
               Kaoutar reviews your contract clause by clause against the framework that actually
-              governs it — DIFC, ADGM, free zone, or mainland. Written findings in 48 hours.
+              governs it: DIFC, ADGM, free zone, or mainland. Written findings in 48 hours.
             </p>
             <a
               href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a contract review — AED 2,000.")}`}

@@ -1,19 +1,22 @@
 const TESTIMONIALS = [
   {
     bg: "bg-burg-deep",
-    quote: "I signed my settlement without questioning it. A quick review showed I had been underpaid by AED 4,200.",
+    quote:
+      "I signed my settlement without questioning it. A quick review showed I had been underpaid by AED 4,200.",
     attribution: "Yasser, 3 years in Dubai",
     tag: "UNUSED LEAVE & SETTLEMENT",
   },
   {
     bg: "bg-burg-mid",
-    quote: "I didn't know I had the right to refuse until someone showed me exactly where it said so.",
+    quote:
+      "I didn't know I had the right to refuse until someone showed me exactly where it said so.",
     attribution: "Sarah, 5 years in Dubai",
     tag: "VISA AND WORK PERMIT",
   },
   {
     bg: "bg-burg-deep",
-    quote: "I expected this to take months. I was guided step by step. I knew exactly what to do and where to go.",
+    quote:
+      "I expected this to take months. I was guided step by step. I knew exactly what to do and where to go.",
     attribution: "Randa, 2.5 years in Dubai",
     tag: "END OF SERVICE",
   },
@@ -51,9 +54,7 @@ export function Testimonials() {
               className={`${t.bg} relative flex w-[85%] flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border p-6 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out md:w-auto md:p-8 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg`}
               style={{
                 borderColor:
-                  t.bg === "bg-burg-mid"
-                    ? "rgba(212,168,130,0.15)"
-                    : "rgba(212,168,130,0.12)",
+                  t.bg === "bg-burg-mid" ? "rgba(212,168,130,0.15)" : "rgba(212,168,130,0.12)",
               }}
             >
               <div className="flex min-w-0 flex-1 flex-col">

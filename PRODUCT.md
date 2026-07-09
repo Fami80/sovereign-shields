@@ -6,7 +6,7 @@ product
 
 ## Users
 
-UAE-based employees who have just received a settlement, end-of-service, or final-pay letter from their employer and suspect — or fear — it may be wrong. They are often stressed, time-pressed (settlement windows are short), and unsure of their rights under UAE Labour Law. They span every jurisdiction: MOHRE (mainland), DIFC, ADGM, Free Zones, and cross-border cases. Their job to be done: *"Tell me, quickly and in plain language, whether this letter is fair — and if not, what I'm actually owed — without hiring an expensive law firm."*
+UAE-based employees who have just received a settlement, end-of-service, or final-pay letter from their employer and suspect — or fear — it may be wrong. They are often stressed, time-pressed (settlement windows are short), and unsure of their rights under UAE Labour Law. They span every jurisdiction: MOHRE (mainland), DIFC, ADGM, Free Zones, and cross-border cases. Their job to be done: _"Tell me, quickly and in plain language, whether this letter is fair — and if not, what I'm actually owed — without hiring an expensive law firm."_
 
 ## Product Purpose
 
@@ -14,7 +14,7 @@ UAE WorkRights is a confidential, flat-fee (AED 999, 48-hour turnaround) settlem
 
 ## Brand Personality
 
-**Warm, human, and personal.** This is one trusted expert helping one anxious person — not a faceless firm and not software. The voice is calm, plain-spoken, and reassuring: it explains rights without jargon, never talks down, and always foregrounds that a named person (Kaoutar) is doing the work. Confident without being aggressive; premium without being cold. The emotional goal is *relief* — the feeling of "someone who knows this stuff is on my side."
+**Warm, human, and personal.** This is one trusted expert helping one anxious person — not a faceless firm and not software. The voice is calm, plain-spoken, and reassuring: it explains rights without jargon, never talks down, and always foregrounds that a named person (Kaoutar) is doing the work. Confident without being aggressive; premium without being cold. The emotional goal is _relief_ — the feeling of "someone who knows this stuff is on my side."
 
 ## Anti-references
 

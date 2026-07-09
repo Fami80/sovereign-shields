@@ -9,12 +9,14 @@ A warm, premium "legal vault" aesthetic: deep burgundy darkness lit by warm sand
 Defined as CSS variables in `src/styles.css` (`@theme inline` + `:root` / `.dark`).
 
 **Burgundy (dark surfaces / brand depth)**
+
 - `--color-burg-deep` `#1E0A0E` — primary dark background, ink, hero
 - `--color-burg-mid` `#2D1018` — dark cards / raised dark surfaces
 - `--color-burg-surf` `#3D1820` — elevated dark surface
 - `--color-burg-acc` `#8B2D3A` — burgundy accent (used at low opacity for atmosphere)
 
 **Sand / gold (warmth, text on dark, accents)**
+
 - `--color-sand-warm` / `--color-accent` / `--color-action-accent` `#D4A882` — primary accent & CTA fill; gold
 - `--color-sand-light` `#EDD8B8` — primary text on dark; soft highlight
 - `--color-sand-pale` / `--color-bg-light` `#FAF3E8` — primary light background (warm cream)
@@ -22,6 +24,7 @@ Defined as CSS variables in `src/styles.css` (`@theme inline` + `:root` / `.dark
 - `--color-rose-dust` `#C4867A` — soft rose accent
 
 **Semantic (light mode `:root`)**
+
 - `--background` `#FAF3E8` · `--foreground` `#1E0A0E`
 - `--primary` `#1E0A0E` (on `--primary-foreground` `#FAF3E8`)
 - `--secondary` / `--muted` `#EDD8B8` · `--muted-foreground` `#6B4550`
@@ -30,6 +33,7 @@ Defined as CSS variables in `src/styles.css` (`@theme inline` + `:root` / `.dark
 - `--border` / `--input` `rgba(30,10,14,0.12)` · `--ring` `#D4A882`
 
 **Dark mode (`.dark`)**
+
 - `--background` `#1E0A0E` · `--foreground` `#EDD8B8` · `--card` `#2D1018` · `--border` `rgba(212,168,130,0.15)`
 
 **Contrast note:** gold/sand text is frequently used at reduced opacity on burgundy (e.g. `rgba(237,216,184,0.6)`). Verify these clear WCAG AA 4.5:1 at their rendered size; bump opacity or weight on small text if not.

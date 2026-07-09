@@ -54,7 +54,6 @@ export function Navbar() {
     }
   };
 
-
   return (
     <header
       className="sticky top-0 z-50 backdrop-blur-md"
@@ -70,14 +69,10 @@ export function Navbar() {
           className="flex items-center gap-2.5 font-display text-xl tracking-tight focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)] focus-visible:underline-offset-4"
           style={{ color: "var(--color-sand-light)", fontWeight: 600 }}
         >
-          <img
-            src={uwrMonogram}
-            alt=""
-            aria-hidden
-            className="h-6 w-auto"
-          />
+          <img src={uwrMonogram} alt="" aria-hidden className="h-6 w-auto" />
           <span>
-            UAEwork<span style={{ color: "var(--color-sand-warm)", fontStyle: "italic" }}>rights</span>
+            UAEwork
+            <span style={{ color: "var(--color-sand-warm)", fontStyle: "italic" }}>rights</span>
           </span>
         </a>
 
@@ -102,7 +97,11 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-full px-5 py-2 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:inline-flex"
-            style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
+            style={{
+              backgroundColor: "var(--color-sand-warm)",
+              color: "var(--color-burg-deep)",
+              fontWeight: 500,
+            }}
           >
             Review my settlement
           </a>
@@ -148,7 +147,11 @@ export function Navbar() {
               rel="noreferrer"
               onClick={closeMenu}
               className="mt-2 inline-flex items-center justify-center rounded-full px-4 py-3 font-sans text-sm focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:hidden"
-              style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
+              style={{
+                backgroundColor: "var(--color-sand-warm)",
+                color: "var(--color-burg-deep)",
+                fontWeight: 500,
+              }}
             >
               Review my settlement
             </a>

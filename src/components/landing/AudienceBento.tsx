@@ -75,7 +75,10 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review your employment contract clause by clause (salary structure, notice period, non-compete terms, probation length, benefits) against UAE labour law, so nothing surprises you after you've already accepted.
+              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review
+              your employment contract clause by clause (salary structure, notice period,
+              non-compete terms, probation length, benefits) against UAE labour law, so nothing
+              surprises you after you've already accepted.
             </p>
 
             <ul className="mt-6 space-y-2.5">
@@ -173,7 +176,9 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Got a settlement letter? Before you sign, we check it. Gratuity, leave encashment, deductions, notice period. Every line reviewed against UAE Labour Law. Written findings within 48 hours.
+              Got a settlement letter? Before you sign, we check it. Gratuity, leave encashment,
+              deductions, notice period. Every line reviewed against UAE Labour Law. Written
+              findings within 48 hours.
             </p>
 
             <ul className="mt-6 space-y-2.5">
@@ -206,7 +211,8 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Prefer to check it yourself? We send you the settlement self-audit checklist and you review your own letter, step by step, in your own time.
+              Prefer to check it yourself? We send you the settlement self-audit checklist and you
+              review your own letter, step by step, in your own time.
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
@@ -297,7 +303,11 @@ export function AudienceBento() {
                 color: "rgba(237,216,184,0.6)",
               }}
             >
-              Most UAE companies haven't updated their exit processes since Federal Decree-Law No. 33 of 2021, the complete overhaul of UAE private sector employment law. One MOHRE dispute costs AED 75,000+ in penalties and legal fees. An audit costs AED 5,000. We review your settlement templates, gratuity calculations, and policy documents. You receive a written compliance report you can act on.
+              Most UAE companies haven't updated their exit processes since Federal Decree-Law No.
+              33 of 2021, the complete overhaul of UAE private sector employment law. One MOHRE
+              dispute costs AED 75,000+ in penalties and legal fees. An audit costs AED 5,000. We
+              review your settlement templates, gratuity calculations, and policy documents. You
+              receive a written compliance report you can act on.
             </p>
 
             <ul className="mt-6 space-y-2.5">

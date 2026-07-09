@@ -4,12 +4,14 @@ import { useLocation } from "@tanstack/react-router";
 export function StickyCTA() {
   const [show, setShow] = useState(false);
   const location = useLocation();
-  const isContactPage = location.pathname === "/contact" || location.pathname === "/privacy" || location.pathname === "/terms";
+  const isContactPage =
+    location.pathname === "/contact" ||
+    location.pathname === "/privacy" ||
+    location.pathname === "/terms";
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const depth = scrollable > 0 ? window.scrollY / scrollable : 0;
       setShow(depth >= 0.15);
     };

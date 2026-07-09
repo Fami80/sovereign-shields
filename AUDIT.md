@@ -9,26 +9,29 @@
 
 The site is in good shape overall: modern stack (React 19, TanStack Start SSG, Tailwind 4), pages are prerendered for SEO, security headers are in place, a same-origin API proxy protects form delivery from ad blockers, and a previous WCAG pass fixed most contrast issues. No secrets are committed and the attack surface is small.
 
-However, there are **3 launch-blocking issues** — the custom domain every canonical/OG URL points to is a *parked Namecheap page*, the privacy policy contains a literal `[KAOUTAR TO CONFIRM…]` placeholder in production, and brand fonts never load on any page except the homepage. Below is everything found, ordered by severity.
+However, there are **3 launch-blocking issues** — the custom domain every canonical/OG URL points to is a _parked Namecheap page_, the privacy policy contains a literal `[KAOUTAR TO CONFIRM…]` placeholder in production, and brand fonts never load on any page except the homepage. Below is everything found, ordered by severity.
 
 ---
 
 ## 🔴 Critical (fix before promoting the site)
 
 ### C1. `uaeworkrights.com` is not connected — all SEO signals point to a parked domain
+
 - Every page's `rel=canonical`, `og:url`, `og:image`, the sitemap URLs, and `robots.txt`'s `Sitemap:` line point to `https://uaeworkrights.com/…`.
 - That domain currently resolves to **198.54.117.242 (Namecheap parking)** — it is not attached to the Vercel project (project domains are only `*.vercel.app`).
 - Consequences right now:
   - Search engines are told "the real page lives on a domain that serves a parking page" → the deployed site effectively refuses to be indexed under its own URL.
   - **Social/WhatsApp link previews are broken**: `og:image` = `https://uaeworkrights.com/assets/og-hero-….jpg` → 404/parking. For a business acquiring clients through WhatsApp/Instagram, this is a real revenue leak.
-- **Fix:** add `uaeworkrights.com` to the Vercel project and point DNS at Vercel *or*, until then, generate canonical/OG/sitemap URLs from the actual deployment origin (e.g. a `SITE_URL` constant set to the vercel.app URL).
+- **Fix:** add `uaeworkrights.com` to the Vercel project and point DNS at Vercel _or_, until then, generate canonical/OG/sitemap URLs from the actual deployment origin (e.g. a `SITE_URL` constant set to the vercel.app URL).
 
 ### C2. Privacy policy ships an unfinished placeholder
+
 - `src/routes/privacy.tsx:93` renders literally, in production:
   > "…for a limited period thereafter to handle any follow-up questions. **[KAOUTAR TO CONFIRM: specific retention period]**."
 - For a brand whose entire pitch is compliance rigor and trust, a visibly unfinished legal page is the single most damaging copy bug on the site. Decide the retention period and state it.
 
 ### C3. Privacy policy contradicts the actual data flow (PDPL exposure)
+
 - The policy claims data is "never shared with … any third party without your explicit written consent" and asserts UAE PDPL compliance (`privacy.tsx:112, 131`).
 - In reality every form submission (name, email, WhatsApp number, description of an employment dispute) is forwarded to **HubSpot** (`api/contact.ts` → `forms.hubspot.com`), a third-party processor, with an `hs_context` fallback direct from the browser.
 - This isn't a reason to stop using HubSpot — it's a disclosure gap. **Fix:** add a "Processors we use" section (HubSpot CRM, Vercel hosting, Google Fonts) and reconcile the "never shared" sentence ("never shared with your employer…; we use vetted processors under contract…").
@@ -38,16 +41,19 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 ## 🟠 High
 
 ### H1. Brand fonts only load on the homepage
+
 - The Google Fonts `<link>` (Playfair Display + Plus Jakarta Sans) lives in `src/routes/index.tsx` head only. Verified in deployed HTML: `/contact`, `/privacy`, `/terms`, `/checkout`, and the 404 page have **no font stylesheet**.
 - Anyone landing directly on those pages (e.g. the contact link you share on WhatsApp/Instagram) sees Georgia/system fallbacks — the "quiet premium" look collapses exactly where conversions happen.
 - **Fix:** move the three font `links` (preconnect ×2 + stylesheet) from `index.tsx` to `__root.tsx` head. Longer term: self-host the two fonts (`@fontsource`) — faster, no third-party request, and removes a CSP/privacy dependency.
 
 ### H2. Prerendered `/contact` ships the wrong initial state (hydration mismatch)
+
 - The deployed static `/contact` HTML has **"Knowledge Base interest" pre-selected** in the Enquiry dropdown (`<option value="kb" … selected>`), because `prerender.crawlLinks` crawled a `?type=kb` variant and its output won the `/contact` path collision.
 - Plain visitors briefly see (and screen readers/SEO snapshots permanently see) a pre-filled enquiry they didn't choose, then React hydration flips it — a guaranteed hydration mismatch warning.
 - **Fix:** derive nothing from search params during prerender (read them in an effect / `useSearch` on client), or exclude `/contact` from crawling and prerender it explicitly without params.
 
 ### H3. `/api/contact` is an open, unthrottled relay
+
 - `api/contact.ts` accepts any POST from anywhere: no rate limiting, no origin check, no payload size caps, and the honeypot is **client-side only** — a bot POSTing the endpoint directly bypasses it entirely. Your HubSpot portal ID + form GUID are also visible client-side (unavoidable, but it widens the same hole).
 - Impact: CRM spam/poisoning, HubSpot form-submission quota burn, and email spam to whatever notifications you wired.
 - **Fix (cheap, layered):**
@@ -57,10 +63,12 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
   4. Enable Vercel WAF rate limiting on `/api/*` (Hobby tier includes basic rules).
 
 ### H4. "Something went wrong" can never appear / false success is possible
+
 - Client submit logic (`contact.tsx:160-208`): if the proxy fails it falls back to `fetch(…, mode: "no-cors")`. Opaque responses **always resolve**, so `setSubmitted(true)` runs even when HubSpot rejected the submission (e.g. blocked, malformed, 4xx). The user sees "Received." and waits for a reply that never comes — worst-case outcome for an anxious user on a deadline.
 - **Fix:** treat the proxy as the source of truth: on `!res.ok`, show the error + WhatsApp fallback instead of silently firing no-cors. Keep no-cors only for network-level proxy failure, and consider adding a note "If you don't hear from us within 1 business day, WhatsApp us" to the success screen as a safety net.
 
 ### H5. No favicon / touch icons at all
+
 - `/favicon.ico` → 404; no `<link rel="icon">` anywhere; nothing in `public/`. The browser tab, bookmarks, WhatsApp link rows, and Google result favicons all show a generic globe. Cheap fix, disproportionate polish gain.
 - **Fix:** add `favicon.ico` + `icon.svg` + `apple-touch-icon.png` in `public/` and reference them in `__root.tsx` head.
 
@@ -69,6 +77,7 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 ## 🟡 Medium
 
 ### M1. Accessibility issues (spot-check found these; not exhaustive)
+
 1. **StickyCTA is focusable while hidden** (`StickyCTA.tsx:29-36`): when `show` is false it uses `opacity-0 translate-y-full` + `aria-hidden`, but the WhatsApp link stays in the tab order — keyboard users tab into an invisible, `aria-hidden` control (WCAG 4.1.2 violation). Add `inert` (or `visibility: hidden`) when hidden.
 2. **No `<form>` element on the contact page** — the submit button is `type="button"` with onClick. Enter-to-submit doesn't work, browsers don't offer autofill grouping, and AT doesn't announce a form landmark. Wrap in `<form onSubmit={…}>` and make the button `type="submit"`.
 3. **Missing autocomplete on name/email** (`contact.tsx`): phone got `tel-national`/`tel-country-code`, but name/email lack `autoComplete="name"` / `autoComplete="email"`.
@@ -82,21 +91,26 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 8. **Errors not programmatically linked to inputs**: error text uses `role="alert"` but inputs lack `aria-invalid` and `aria-describedby`.
 
 ### M2. Gratuity calculator can overstate legal entitlement
+
 - `computeGratuity()` (`ExposureCalculator.tsx:13-22`) pro-rates from day one, but under Art. 51 FDL 33/2021 gratuity requires **≥ 1 year of continuous service**. Enter 0.5 years and the site—whose product is catching exactly these errors—shows a legally wrong number.
 - **Fix:** `if (years < 1) return 0;` plus a one-line explanation ("Gratuity accrues after 1 full year of service"). The ≤5yr/`>5yr` split and the 2-year (24× salary) cap are correct.
 
 ### M3. Security-header gaps (headers exist, which is already better than most)
+
 - **No `Content-Security-Policy`.** With inline styles everywhere you'd need `style-src 'unsafe-inline'`, but even a lenient CSP (`default-src 'self'; script-src 'self'; connect-src 'self' https://forms.hubspot.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'self'`) meaningfully cuts XSS blast radius. Self-hosting fonts (H1) simplifies this a lot.
 - **HSTS lacks `includeSubDomains`** (`vercel.json`). Add it once the custom domain is live (and consider `preload`).
 - `Access-Control-Allow-Origin: *` is emitted on HTML/static responses. Harmless for public static content, but it's not in `vercel.json` — worth knowing it comes from the platform/build config, and it should never be copied onto `/api/*`.
 
 ### M4. Pricing inconsistency — AED 199 vs AED 299
+
 - The Knowledge Base is AED **299** everywhere (KB section, contact form helper, terms, checkout meta) **except** the Self-Review Checklist CTA which offers "Self-review checklist - AED 199" (`AudienceBento.tsx:141`) — if that's a distinct product, fine, but the KB cards' "Unlock for AED 299" vs. the checklist's 199 within one viewport invites "wait, which is it?" If they are different products, label the checklist more distinctly (it currently reads like the same locked content at a different price).
 
 ### M5. Full page reloads on internal links
+
 - `Hero.tsx:159`, `About.tsx:144`, `AudienceBento.tsx:228`, `KnowledgeBase.tsx:194` use raw `<a href="/contact…">` instead of router `<Link>` — each click does a full document load (visible flash of unstyled fonts given H1). Use `<Link to="/contact" search={{type:"audit"}}>` consistently (the codebase already does this elsewhere).
 
 ### M6. "Read now →" goes to a contact form, not an article
+
 - The FREE article card promises "How UAE gratuity is calculated: the complete guide — Read now →" but links to `/contact` (`KnowledgeBase.tsx:193-199`). For a trust-first brand this is a bait-and-switch moment. Either publish the free article as a real page (also a big SEO win — it's the highest-intent search query in this niche) or change the CTA to "Request the free guide →".
 
 ---
@@ -134,14 +148,14 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 
 ## Suggested order of attack
 
-| # | Item | Effort |
-|---|------|--------|
-| 1 | Point `uaeworkrights.com` at Vercel (or switch URLs to the live origin) — C1 | DNS + 5 min |
-| 2 | Fix privacy placeholder + HubSpot disclosure — C2/C3 | copy, 30 min |
-| 3 | Move fonts to `__root.tsx` — H1 | 5 min |
-| 4 | Favicon set — H5 | 30 min |
-| 5 | Contact submit truthfulness + server-side validation/honeypot/rate-limit — H3/H4 | 2–3 h |
-| 6 | Prerender state leak on /contact — H2 | 1 h |
-| 7 | Calculator 1-year rule — M2 | 15 min |
-| 8 | A11y batch (form element, autocomplete, aria-expanded, StickyCTA inert, contrast ×2) — M1 | 2 h |
-| 9 | Publish the free gratuity guide as a real page — M6 | content task, big SEO upside |
+| #   | Item                                                                                      | Effort                       |
+| --- | ----------------------------------------------------------------------------------------- | ---------------------------- |
+| 1   | Point `uaeworkrights.com` at Vercel (or switch URLs to the live origin) — C1              | DNS + 5 min                  |
+| 2   | Fix privacy placeholder + HubSpot disclosure — C2/C3                                      | copy, 30 min                 |
+| 3   | Move fonts to `__root.tsx` — H1                                                           | 5 min                        |
+| 4   | Favicon set — H5                                                                          | 30 min                       |
+| 5   | Contact submit truthfulness + server-side validation/honeypot/rate-limit — H3/H4          | 2–3 h                        |
+| 6   | Prerender state leak on /contact — H2                                                     | 1 h                          |
+| 7   | Calculator 1-year rule — M2                                                               | 15 min                       |
+| 8   | A11y batch (form element, autocomplete, aria-expanded, StickyCTA inert, contrast ×2) — M1 | 2 h                          |
+| 9   | Publish the free gratuity guide as a real page — M6                                       | content task, big SEO upside |

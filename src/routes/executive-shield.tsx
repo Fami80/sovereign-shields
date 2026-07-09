@@ -12,9 +12,17 @@ export const Route = createFileRoute("/executive-shield")({
   head: () => ({
     meta: [
       { title: "Executive Shield: The UAE Compliance Guide (Free) | UAEworkrights" },
-      { name: "description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do." },
+      {
+        name: "description",
+        content:
+          "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do.",
+      },
       { property: "og:title", content: "Executive Shield: The UAE Compliance Guide" },
-      { property: "og:description", content: "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do." },
+      {
+        property: "og:description",
+        content:
+          "Free guide for UAE employers: the compliance gaps that most commonly turn into MOHRE disputes under FDL 33/2021, and how to close them before they do.",
+      },
       { property: "og:url", content: CANONICAL },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
@@ -109,11 +117,16 @@ function ExecutiveShieldPage() {
 
         <p
           className="mx-auto mt-5 max-w-xl text-center font-sans"
-          style={{ fontSize: "17px", fontWeight: 300, lineHeight: 1.7, color: "rgba(237,216,184,0.6)" }}
+          style={{
+            fontSize: "17px",
+            fontWeight: 300,
+            lineHeight: 1.7,
+            color: "rgba(237,216,184,0.6)",
+          }}
         >
-          Most UAE companies haven't updated their compliance processes since Federal Decree-Law No. 33
-          of 2021. This guide walks through the compliance gaps that most commonly turn into MOHRE
-          disputes, before they do.
+          Most UAE companies haven't updated their compliance processes since Federal Decree-Law No.
+          33 of 2021. This guide walks through the compliance gaps that most commonly turn into
+          MOHRE disputes, before they do.
         </p>
 
         <div
@@ -136,7 +149,9 @@ function ExecutiveShieldPage() {
                 className="flex gap-3 font-sans"
                 style={{ fontSize: "14px", lineHeight: 1.6, color: "rgba(237,216,184,0.75)" }}
               >
-                <span aria-hidden style={{ color: "var(--color-sand-warm)" }}>→</span>
+                <span aria-hidden style={{ color: "var(--color-sand-warm)" }}>
+                  →
+                </span>
                 <span>{b}</span>
               </li>
             ))}
@@ -146,7 +161,10 @@ function ExecutiveShieldPage() {
             {submitted ? (
               <div className="flex flex-col items-center py-4 text-center motion-safe:animate-fade-rise">
                 <CheckCircle className="h-9 w-9" style={{ color: "#81C784" }} aria-hidden />
-                <p className="mt-3 font-sans text-base font-semibold" style={{ color: "var(--color-sand-light)" }}>
+                <p
+                  className="mt-3 font-sans text-base font-semibold"
+                  style={{ color: "var(--color-sand-light)" }}
+                >
                   On its way.
                 </p>
                 <p className="mt-2 font-sans text-sm" style={{ color: "rgba(237,216,184,0.55)" }}>
@@ -163,15 +181,33 @@ function ExecutiveShieldPage() {
                 }}
               >
                 {/* Honeypot — hidden from real users */}
-                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, overflow: "hidden" }}>
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-9999px",
+                    width: 0,
+                    height: 0,
+                    overflow: "hidden",
+                  }}
+                >
                   <label>
                     Leave this empty
-                    <input tabIndex={-1} autoComplete="off" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                    <input
+                      tabIndex={-1}
+                      autoComplete="off"
+                      name="website"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
                   </label>
                 </div>
 
                 <label className="block">
-                  <span className="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.16em]" style={{ color: "rgba(237,216,184,0.55)" }}>
+                  <span
+                    className="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.16em]"
+                    style={{ color: "rgba(237,216,184,0.55)" }}
+                  >
                     Name
                   </span>
                   <input
@@ -185,14 +221,22 @@ function ExecutiveShieldPage() {
                     style={fieldStyle(!!errors.name)}
                   />
                   {errors.name && (
-                    <span id="es-name-error" role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>
+                    <span
+                      id="es-name-error"
+                      role="alert"
+                      className="mt-1.5 block font-sans text-xs"
+                      style={{ color: ERROR_COLOR }}
+                    >
                       {errors.name}
                     </span>
                   )}
                 </label>
 
                 <label className="block">
-                  <span className="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.16em]" style={{ color: "rgba(237,216,184,0.55)" }}>
+                  <span
+                    className="mb-2 block font-sans text-xs font-medium uppercase tracking-[0.16em]"
+                    style={{ color: "rgba(237,216,184,0.55)" }}
+                  >
                     Work email
                   </span>
                   <input
@@ -207,7 +251,12 @@ function ExecutiveShieldPage() {
                     style={fieldStyle(!!errors.email)}
                   />
                   {errors.email && (
-                    <span id="es-email-error" role="alert" className="mt-1.5 block font-sans text-xs" style={{ color: ERROR_COLOR }}>
+                    <span
+                      id="es-email-error"
+                      role="alert"
+                      className="mt-1.5 block font-sans text-xs"
+                      style={{ color: ERROR_COLOR }}
+                    >
                       {errors.email}
                     </span>
                   )}
@@ -217,18 +266,28 @@ function ExecutiveShieldPage() {
                   type="submit"
                   disabled={submitting}
                   className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] disabled:opacity-60"
-                  style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
+                  style={{
+                    backgroundColor: "var(--color-sand-warm)",
+                    color: "var(--color-burg-deep)",
+                  }}
                 >
                   {submitting ? "Sending…" : "Send me the guide →"}
                 </button>
 
                 {submitError && (
-                  <p role="alert" className="text-center font-sans text-sm" style={{ color: ERROR_COLOR }}>
+                  <p
+                    role="alert"
+                    className="text-center font-sans text-sm"
+                    style={{ color: ERROR_COLOR }}
+                  >
                     Something went wrong. Please try again, or email us instead.
                   </p>
                 )}
 
-                <p className="text-center font-sans text-xs" style={{ color: "rgba(237,216,184,0.55)" }}>
+                <p
+                  className="text-center font-sans text-xs"
+                  style={{ color: "rgba(237,216,184,0.55)" }}
+                >
                   You'll get the guide by email. No spam: occasional compliance updates only.
                 </p>
               </form>

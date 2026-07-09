@@ -12,7 +12,7 @@ const HS_PORTAL_ID = "148818262";
 const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
 const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
-  "Hi Kaoutar, I'd like to book a settlement review — AED 999."
+  "Hi Kaoutar, I'd like to book a settlement review — AED 999.",
 )}`;
 
 const ENQUIRY_LABELS: Record<string, string> = {
@@ -62,14 +62,20 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Book a UAE Settlement Review | UAEworkrights" },
-      { name: "description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      {
+        name: "description",
+        content:
+          "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day.",
+      },
       { property: "og:title", content: "Book a UAE Settlement Review | UAEworkrights" },
-      { property: "og:description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      {
+        property: "og:description",
+        content:
+          "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day.",
+      },
       { property: "og:url", content: "https://uaeworkrights.com/contact" },
     ],
-    links: [
-      { rel: "canonical", href: "https://uaeworkrights.com/contact" },
-    ],
+    links: [{ rel: "canonical", href: "https://uaeworkrights.com/contact" }],
   }),
   validateSearch: (
     s: Record<string, unknown>,
@@ -87,12 +93,12 @@ function ContactPage() {
     type === "audit"
       ? "audit"
       : type === "settlement"
-      ? "settlement"
-      : type === "cross-border"
-      ? "cross-border"
-      : type === "kb"
-      ? "kb"
-      : "";
+        ? "settlement"
+        : type === "cross-border"
+          ? "cross-border"
+          : type === "kb"
+            ? "kb"
+            : "";
   const kbCardClicked = card ?? "";
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -135,9 +141,11 @@ function ContactPage() {
     const e: Errors = {};
     if (!form.name.trim() || form.name.length > 80) e.name = "Please enter your full name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email address.";
-    if (!/^[0-9]{6,15}$/.test(form.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid WhatsApp number.";
+    if (!/^[0-9]{6,15}$/.test(form.phone.replace(/[\s-]/g, "")))
+      e.phone = "Enter a valid WhatsApp number.";
     if (!form.enquiry) e.enquiry = "Select an enquiry type.";
-    if (!form.message.trim() || form.message.length > 1000) e.message = "Message is required (max 1000 chars).";
+    if (!form.message.trim() || form.message.length > 1000)
+      e.message = "Message is required (max 1000 chars).";
     return e;
   };
 
@@ -232,7 +240,15 @@ function ContactPage() {
 
       if (delivered) {
         setSubmitted(true);
-        setForm({ name: "", email: "", countryCode: "+971", phone: "", enquiry: "", willingness: "", message: "" });
+        setForm({
+          name: "",
+          email: "",
+          countryCode: "+971",
+          phone: "",
+          enquiry: "",
+          willingness: "",
+          message: "",
+        });
       } else {
         setSubmitError(true);
       }
@@ -297,16 +313,10 @@ function ContactPage() {
               >
                 Received.
               </p>
-              <p
-                className="mt-2 font-sans text-sm"
-                style={{ color: "rgba(237,216,184,0.55)" }}
-              >
+              <p className="mt-2 font-sans text-sm" style={{ color: "rgba(237,216,184,0.55)" }}>
                 You'll hear from us within 1 UAE business day.
               </p>
-              <p
-                className="mt-3 font-sans text-xs"
-                style={{ color: "rgba(237,216,184,0.55)" }}
-              >
+              <p className="mt-3 font-sans text-xs" style={{ color: "rgba(237,216,184,0.55)" }}>
                 Nothing after 1 business day?{" "}
                 <a
                   href={WHATSAPP_HREF}
@@ -329,7 +339,16 @@ function ContactPage() {
               }}
             >
               {/* Honeypot — hidden from real users, bots fill it in */}
-              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, overflow: "hidden" }}>
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  width: 0,
+                  height: 0,
+                  overflow: "hidden",
+                }}
+              >
                 <label>
                   Leave this empty
                   <input
@@ -371,7 +390,12 @@ function ContactPage() {
                 />
               </Field>
 
-              <Field label="WhatsApp number" helper="We'll reply on WhatsApp." error={errors.phone} errorId="phone-error">
+              <Field
+                label="WhatsApp number"
+                helper="We'll reply on WhatsApp."
+                error={errors.phone}
+                errorId="phone-error"
+              >
                 <div className="flex gap-2">
                   <select
                     value={form.countryCode}
@@ -385,7 +409,10 @@ function ContactPage() {
                       <option
                         key={c.code}
                         value={c.code}
-                        style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}
+                        style={{
+                          backgroundColor: "var(--color-burg-deep)",
+                          color: "var(--color-sand-light)",
+                        }}
                       >
                         {c.label}
                       </option>
@@ -420,22 +447,58 @@ function ContactPage() {
                     color: form.enquiry ? "var(--color-sand-light)" : "rgba(237,216,184,0.55)",
                   }}
                 >
-                  <option value="" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value=""
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Select…
                   </option>
-                  <option value="settlement" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="settlement"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Settlement Review
                   </option>
-                  <option value="audit" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="audit"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Employer Compliance Audit
                   </option>
-                  <option value="general" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="general"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     General Question
                   </option>
-                  <option value="cross-border" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="cross-border"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Complex cross-border case
                   </option>
-                  <option value="kb" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="kb"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Knowledge Base interest
                   </option>
                 </select>
@@ -454,16 +517,40 @@ function ContactPage() {
                     color: form.willingness ? "var(--color-sand-light)" : "rgba(237,216,184,0.55)",
                   }}
                 >
-                  <option value="" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value=""
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Select… (optional)
                   </option>
-                  <option value="yes" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="yes"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Yes, ready when it launches
                   </option>
-                  <option value="maybe" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="maybe"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Maybe, depends what's inside
                   </option>
-                  <option value="browsing" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
+                  <option
+                    value="browsing"
+                    style={{
+                      backgroundColor: "var(--color-burg-deep)",
+                      color: "var(--color-sand-light)",
+                    }}
+                  >
                     Just browsing for now
                   </option>
                 </select>
@@ -488,7 +575,10 @@ function ContactPage() {
                 type="submit"
                 disabled={submitting}
                 className="mt-2 w-full rounded-full py-3.5 font-sans text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px] disabled:opacity-60"
-                style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)" }}
+                style={{
+                  backgroundColor: "var(--color-sand-warm)",
+                  color: "var(--color-burg-deep)",
+                }}
               >
                 {submitting ? "Sending…" : "Send →"}
               </button>
@@ -612,10 +702,7 @@ function ContactCard({
           {title}
         </span>
       </div>
-      <p
-        className="mt-3 font-sans text-sm"
-        style={{ color: "rgba(237,216,184,0.55)" }}
-      >
+      <p className="mt-3 font-sans text-sm" style={{ color: "rgba(237,216,184,0.55)" }}>
         {body}
       </p>
       <a
@@ -633,7 +720,16 @@ function ContactCard({
 
 function WhatsAppIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
     </svg>
   );
@@ -641,7 +737,16 @@ function WhatsAppIcon() {
 
 function InstagramIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />

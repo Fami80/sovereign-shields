@@ -13,7 +13,11 @@ const JURISDICTION_CARDS = [
       "Visa cancellation: what you must sign and when",
     ],
     locked: true,
-    search: { type: "kb", card: "Mainland UAE", message: "I'm interested in the Mainland UAE Knowledge Base" },
+    search: {
+      type: "kb",
+      card: "Mainland UAE",
+      message: "I'm interested in the Mainland UAE Knowledge Base",
+    },
   },
   {
     title: "DIFC end of service gratuity",
@@ -27,10 +31,7 @@ const JURISDICTION_CARDS = [
   },
   {
     title: "ADGM",
-    items: [
-      "Employment framework and key rights",
-      "How ADGM differs from DIFC and mainland",
-    ],
+    items: ["Employment framework and key rights", "How ADGM differs from DIFC and mainland"],
     locked: true,
     search: { type: "kb", card: "ADGM", message: "I'm interested in the ADGM Knowledge Base" },
   },
@@ -41,16 +42,21 @@ const JURISDICTION_CARDS = [
       "Where mainland UAE labour law applies instead",
     ],
     locked: true,
-    search: { type: "kb", card: "Free Zones", message: "I'm interested in the Free Zones Knowledge Base" },
+    search: {
+      type: "kb",
+      card: "Free Zones",
+      message: "I'm interested in the Free Zones Knowledge Base",
+    },
   },
   {
     title: "Cross-border cases",
-    items: [
-      "Belgian law and UAE: what applies when",
-      "UK subsidiaries operating in UAE",
-    ],
+    items: ["Belgian law and UAE: what applies when", "UK subsidiaries operating in UAE"],
     locked: true,
-    search: { type: "kb", card: "Cross-border", message: "I'm interested in cross-border Knowledge Base cases" },
+    search: {
+      type: "kb",
+      card: "Cross-border",
+      message: "I'm interested in cross-border Knowledge Base cases",
+    },
   },
   {
     title: "Practical tools",
@@ -60,7 +66,11 @@ const JURISDICTION_CARDS = [
       "Illegal deductions: what employers cannot charge you",
     ],
     locked: true,
-    search: { type: "kb", card: "Practical Tools", message: "I'm interested in the Practical Tools Knowledge Base" },
+    search: {
+      type: "kb",
+      card: "Practical Tools",
+      message: "I'm interested in the Practical Tools Knowledge Base",
+    },
   },
 ];
 
@@ -81,7 +91,8 @@ export function KnowledgeBase() {
           className="mx-auto mt-5 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access from AED 299.
+          The complete reference for UAE final settlements, by jurisdiction. One free article
+          included. Full access from AED 299.
         </p>
 
         {/* Preview label */}
@@ -121,7 +132,10 @@ export function KnowledgeBase() {
               <div className="relative z-[1] mb-4 flex items-start justify-between gap-3">
                 <h3
                   className="text-base font-medium"
-                  style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  style={{
+                    color: "var(--color-sand-light)",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
                 >
                   {card.title}
                 </h3>
@@ -135,7 +149,10 @@ export function KnowledgeBase() {
                   <li
                     key={item}
                     className="flex items-start gap-2.5 text-[13px] font-light"
-                    style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                    style={{
+                      color: "rgba(237,216,184,0.55)",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}
                   >
                     <span
                       className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
@@ -152,7 +169,10 @@ export function KnowledgeBase() {
               >
                 <span
                   className="text-[13px] font-medium"
-                  style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  style={{
+                    color: "var(--color-sand-warm)",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
                 >
                   Unlock for AED 299 →
                 </span>
@@ -187,27 +207,39 @@ export function KnowledgeBase() {
                 <Unlock className="h-4 w-4" style={{ color: "var(--color-sand-warm)" }} />
                 <span
                   className="text-xs font-medium uppercase tracking-wide"
-                  style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                  style={{
+                    color: "var(--color-sand-warm)",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
                 >
                   FREE
                 </span>
               </div>
               <h3
                 className="mt-3 text-lg font-medium"
-                style={{ color: "var(--color-sand-light)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                style={{
+                  color: "var(--color-sand-light)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
               >
                 {card.title}
               </h3>
               <p
                 className="mt-2 text-sm font-light"
-                style={{ color: "rgba(237,216,184,0.55)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                style={{
+                  color: "rgba(237,216,184,0.55)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
               >
                 {card.body}
               </p>
               <Link
                 to={card.to}
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium focus-visible:underline focus-visible:decoration-[2px] focus-visible:decoration-[var(--color-sand-warm)]"
-                style={{ color: "var(--color-sand-warm)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+                style={{
+                  color: "var(--color-sand-warm)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                }}
               >
                 Read now →
               </Link>
@@ -225,7 +257,10 @@ export function KnowledgeBase() {
         >
           <span
             className="text-sm font-medium"
-            style={{ color: "rgba(237,216,184,0.7)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            style={{
+              color: "rgba(237,216,184,0.7)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+            }}
           >
             Unlock the full knowledge base · AED 299 for 30-day access
           </span>

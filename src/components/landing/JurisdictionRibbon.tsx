@@ -15,10 +15,7 @@ export function JurisdictionRibbon() {
         >
           JURISDICTION STATUS
         </div>
-        <div
-          className="mt-3 flex flex-wrap items-center justify-center"
-          style={{ gap: "8px" }}
-        >
+        <div className="mt-3 flex flex-wrap items-center justify-center" style={{ gap: "8px" }}>
           {JURISDICTIONS.map((name) => (
             <span
               key={name}

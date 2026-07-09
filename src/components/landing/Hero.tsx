@@ -100,7 +100,6 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
-
         <div className="flex flex-col items-start" style={{ maxWidth: "720px" }}>
           <span
             className="inline-flex items-center font-sans"
@@ -123,7 +122,9 @@ export function Hero() {
           >
             <span style={{ color: "var(--color-sand-light)" }}>Your settlement letter is</span>
             <br />
-            <span style={{ color: "var(--color-sand-warm)", fontStyle: "italic", fontWeight: 400 }}>probably wrong.</span>
+            <span style={{ color: "var(--color-sand-warm)", fontStyle: "italic", fontWeight: 400 }}>
+              probably wrong.
+            </span>
           </h1>
 
           <p
@@ -136,7 +137,8 @@ export function Hero() {
               color: "rgba(237,216,184,0.6)",
             }}
           >
-            Most settlement letters we review contain an error. The average underpayment is AED 4,200. Know exactly what you're owed.
+            Most settlement letters we review contain an error. The average underpayment is AED
+            4,200. Know exactly what you're owed.
           </p>
 
           <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:w-auto">

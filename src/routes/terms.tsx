@@ -6,21 +6,28 @@ export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
       { title: "Terms of Service | UAEworkrights" },
-      { name: "description", content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability." },
+      {
+        name: "description",
+        content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability.",
+      },
       { property: "og:title", content: "Terms of Service | UAEworkrights" },
-      { property: "og:description", content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability." },
+      {
+        property: "og:description",
+        content: "UAEworkrights terms of service: scope, pricing, turnaround, and liability.",
+      },
       { property: "og:url", content: "https://uaeworkrights.com/terms" },
     ],
-    links: [
-      { rel: "canonical", href: "https://uaeworkrights.com/terms" },
-    ],
+    links: [{ rel: "canonical", href: "https://uaeworkrights.com/terms" }],
   }),
   component: TermsPage,
 });
 
 function TermsPage() {
   return (
-    <div className="min-h-dvh" style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}>
+    <div
+      className="min-h-dvh"
+      style={{ backgroundColor: "var(--color-sand-pale)", color: "var(--color-burg-deep)" }}
+    >
       <Navbar />
       <main className="mx-auto max-w-[720px] px-6 pb-24 pt-24">
         <h1
@@ -51,8 +58,13 @@ function TermsPage() {
             >
               Scope of service
             </h2>
-            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              UAEworkrights provides a compliance review service. We review settlement letters and employment documents against applicable UAE labour law to identify errors and underpayments. This service is not legal advice, and we do not:
+            <p
+              className="font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              UAEworkrights provides a compliance review service. We review settlement letters and
+              employment documents against applicable UAE labour law to identify errors and
+              underpayments. This service is not legal advice, and we do not:
             </p>
             <ul className="mt-4 space-y-2">
               {[
@@ -70,8 +82,12 @@ function TermsPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              If you require legal representation or formal legal advice, we recommend engaging a licensed UAE lawyer.
+            <p
+              className="mt-4 font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              If you require legal representation or formal legal advice, we recommend engaging a
+              licensed UAE lawyer.
             </p>
           </section>
 
@@ -107,12 +123,19 @@ function TermsPage() {
                   }}
                 >
                   <span>{item.service}</span>
-                  <span style={{ fontWeight: 600, color: "var(--color-burg-deep)" }}>{item.price}</span>
+                  <span style={{ fontWeight: 600, color: "var(--color-burg-deep)" }}>
+                    {item.price}
+                  </span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              All fees are payable in advance unless otherwise agreed in writing. Prices are quoted in UAE Dirhams and are subject to change without notice; however, once a fee is quoted and accepted for a specific engagement, that fee is locked.
+            <p
+              className="mt-4 font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              All fees are payable in advance unless otherwise agreed in writing. Prices are quoted
+              in UAE Dirhams and are subject to change without notice; however, once a fee is quoted
+              and accepted for a specific engagement, that fee is locked.
             </p>
           </section>
 
@@ -130,8 +153,14 @@ function TermsPage() {
             >
               Turnaround commitment
             </h2>
-            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              We commit to delivering written settlement review findings within 48 hours of receiving all required documents and payment confirmation. This commitment applies during standard UAE business days (Sunday–Thursday). Submissions received on Thursday afternoon or Friday may be delivered by the following Sunday.
+            <p
+              className="font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              We commit to delivering written settlement review findings within 48 hours of
+              receiving all required documents and payment confirmation. This commitment applies
+              during standard UAE business days (Sunday–Thursday). Submissions received on Thursday
+              afternoon or Friday may be delivered by the following Sunday.
             </p>
           </section>
 
@@ -149,8 +178,13 @@ function TermsPage() {
             >
               Refund terms
             </h2>
-            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              [KAOUTAR TO CONFIRM: refund policy details, e.g. whether refunds are available if the review has not yet started, partial refunds, or no refunds after delivery of findings.]
+            <p
+              className="font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              [KAOUTAR TO CONFIRM: refund policy details, e.g. whether refunds are available if the
+              review has not yet started, partial refunds, or no refunds after delivery of
+              findings.]
             </p>
           </section>
 
@@ -168,8 +202,15 @@ function TermsPage() {
             >
               Limitation of liability
             </h2>
-            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              UAEworkrights' liability is limited to the amount paid for the specific service in question. We are not liable for any indirect, consequential, or punitive damages arising from the use of our findings, nor for any outcomes in negotiations, tribunals, or legal proceedings that may follow. Our review is advisory in nature; the decision to act on it rests with you.
+            <p
+              className="font-sans"
+              style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}
+            >
+              UAEworkrights' liability is limited to the amount paid for the specific service in
+              question. We are not liable for any indirect, consequential, or punitive damages
+              arising from the use of our findings, nor for any outcomes in negotiations, tribunals,
+              or legal proceedings that may follow. Our review is advisory in nature; the decision
+              to act on it rests with you.
             </p>
           </section>
         </div>

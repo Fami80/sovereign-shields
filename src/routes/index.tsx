@@ -17,17 +17,23 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "UAE Settlement Letter Review in 48 Hours | UAEworkrights" },
-      { name: "description", content: "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999." },
+      {
+        name: "description",
+        content:
+          "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999.",
+      },
       { property: "og:title", content: "UAE Settlement Letter Review in 48 Hours | UAEworkrights" },
-      { property: "og:description", content: "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999." },
+      {
+        property: "og:description",
+        content:
+          "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999.",
+      },
       { property: "og:url", content: "https://uaeworkrights.com/" },
       { property: "og:image", content: `https://uaeworkrights.com${ogImage}` },
       { property: "og:image:alt", content: "UAE settlement letter review by UAEworkrights" },
       { name: "twitter:image", content: `https://uaeworkrights.com${ogImage}` },
     ],
-    links: [
-      { rel: "canonical", href: "https://uaeworkrights.com/" },
-    ],
+    links: [{ rel: "canonical", href: "https://uaeworkrights.com/" }],
   }),
   component: Index,
 });
@@ -46,7 +52,6 @@ function Index() {
 
   return (
     <main className="min-h-dvh bg-bg-light text-text-light-primary">
-
       <Navbar />
       <Hero />
       <JurisdictionRibbon />

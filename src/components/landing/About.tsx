@@ -53,7 +53,7 @@ export function About() {
                 style={{ border: "1px solid rgba(212,168,130,0.07)" }}
               />
               <img
-                src="/images/about-seal.png"
+                src="/images/about-seal.webp"
                 alt="UAEworkrights certification seal"
                 loading="lazy"
                 className="relative block h-full w-full"

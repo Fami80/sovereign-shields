@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { animate, motion, useMotionValue, useReducedMotion } from "framer-motion";
-import cardBg from "@/assets/calculator-settlement-form.jpg";
+import cardBg from "@/assets/calculator-settlement-form.webp";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("en-AE", {

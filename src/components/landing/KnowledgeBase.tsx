@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Lock, Unlock } from "lucide-react";
-import kbWatermark from "@/assets/knowledge-base-watermark.jpg";
+import kbWatermark from "@/assets/knowledge-base-watermark.webp";
 
 const JURISDICTION_CARDS = [
   {

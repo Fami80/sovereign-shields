@@ -144,4 +144,36 @@
   @media (min-width: 768px) {
     .text-lead, .text-lead-light { font-size: 20px; }
   }
+
+  /* SSR-safe reveals: the resting state is visible, so static/no-JS/JS-failed
+     renders always show content. The hidden-then-in animation only exists
+     inside the motion-safe media query and runs off the main thread in CSS. */
+  .reveal-load,
+  .reveal-in > * {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes uwr-rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Load entrance (above the fold): plays once on first paint. */
+    .reveal-load {
+      animation: uwr-rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: var(--reveal-delay, 0ms);
+    }
+
+    /* Scroll entrance (below the fold): plays as the element enters view,
+       purely in CSS. Browsers without scroll-driven animations fall back to
+       the visible resting state above — never blank. */
+    @supports (animation-timeline: view()) {
+      .reveal-in > * {
+        animation: uwr-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 32%;
+      }
+    }
+  }
 }

@@ -1,6 +1,5 @@
-import kaoutarPhoto from "@/assets/kaoutar-photo.png";
-
 const CREDENTIALS = [
+  "Head of Payroll & Compliance · CHRM · CHRP · CIRS",
   "ADP Payroll Partner of the Year (2017)",
   "14 years MENA payroll & compliance · 16,000+ employees · 400+ multinational clients",
   "Belgian · UK · UAE · DIFC · ADGM · Free Zones · KSA · Egypt",
@@ -34,45 +33,17 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* LEFT — Credentials */}
           <div className="reveal-in">
-            <div className="relative mx-auto mb-8 h-[180px] w-[180px] md:mx-0 md:h-[280px] md:w-[280px]">
-              {/* Bronze ambient ring */}
-              <div
-                aria-hidden
-                className="absolute inset-[-10px] rounded-full"
-                style={{
-                  border: "1px solid rgba(212,168,130,0.18)",
-                  boxShadow: "0 0 60px rgba(212,168,130,0.08)",
-                }}
-              />
-              <img
-                src={kaoutarPhoto}
-                alt="Kaoutar Makrache"
-                width={280}
-                height={280}
-                loading="lazy"
-                className="relative block h-full w-full"
-                style={{
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                  border: "2px solid rgba(212,168,130,0.3)",
-                  boxShadow: "0 16px 40px rgba(30,10,14,0.4)",
-                }}
-              />
-            </div>
-
-            <h3
-              className="text-[28px] font-normal leading-tight"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-sand-warm)" }}
-            >
-              Kaoutar Makrache
-            </h3>
-            <div
-              className="mt-1 text-[14px] font-light"
-              style={{ fontFamily: "var(--font-sans)", color: "rgba(237,216,184,0.55)" }}
-            >
-              Head of Payroll & Compliance · CHRM · CHRP · CIRS
-            </div>
+            <img
+              src="/images/about-seal.jpg"
+              alt="UAEworkrights certification seal"
+              loading="lazy"
+              className="mx-auto mb-8 block h-[140px] w-[140px] md:mx-0 md:h-[200px] md:w-[200px]"
+              style={{
+                objectFit: "contain",
+                border: "none",
+                boxShadow: "0 16px 40px rgba(30,10,14,0.35)",
+              }}
+            />
 
             <ul className="mt-6 space-y-3">
               {CREDENTIALS.map((credential) => (

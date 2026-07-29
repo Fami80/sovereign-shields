@@ -33,17 +33,36 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* LEFT — Credentials */}
           <div className="reveal-in">
-            <img
-              src="/images/about-seal.jpg"
-              alt="UAEworkrights certification seal"
-              loading="lazy"
-              className="mx-auto mb-8 block h-[140px] w-[140px] md:mx-0 md:h-[200px] md:w-[200px]"
-              style={{
-                objectFit: "contain",
-                border: "none",
-                boxShadow: "0 16px 40px rgba(30,10,14,0.35)",
-              }}
-            />
+            {/* Seal mounted like an authenticated wax emblem: warm aura,
+                embossed hairline rings (echoing the hero's concentric motif),
+                and a shadow that follows the seal's circular shape. */}
+            <div className="seal-press relative mx-auto mb-8 h-[140px] w-[140px] md:mx-0 md:h-[200px] md:w-[200px]">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-[-28%] rounded-full"
+                style={{ background: "radial-gradient(circle, rgba(212,168,130,0.13), transparent 68%)" }}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-[-13px] rounded-full"
+                style={{ border: "1px solid rgba(212,168,130,0.16)" }}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-[-24px] rounded-full"
+                style={{ border: "1px solid rgba(212,168,130,0.07)" }}
+              />
+              <img
+                src="/images/about-seal.png"
+                alt="UAEworkrights certification seal"
+                loading="lazy"
+                className="relative block h-full w-full"
+                style={{
+                  objectFit: "contain",
+                  filter: "drop-shadow(0 2px 5px rgba(0,0,0,0.5)) drop-shadow(0 16px 34px rgba(30,10,14,0.55))",
+                }}
+              />
+            </div>
 
             <ul className="mt-6 space-y-3">
               {CREDENTIALS.map((credential) => (

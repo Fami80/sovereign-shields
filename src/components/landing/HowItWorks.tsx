@@ -1,6 +1,6 @@
-import step1Image from "@/assets/step1-send-documents.jpg";
-import step2Image from "@/assets/step2-pencil-review.jpg";
-import step3Image from "@/assets/step3-written-findings.jpg";
+import step1Image from "@/assets/step1-send-documents.webp";
+import step2Image from "@/assets/step2-pencil-review.webp";
+import step3Image from "@/assets/step3-written-findings.webp";
 
 type Step = {
   id: string;

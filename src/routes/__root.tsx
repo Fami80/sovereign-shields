@@ -12,6 +12,13 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+// Google Fonts stylesheet URL. Preserved exactly (families, weights, styles,
+// display=swap) — only its delivery is changed from render-blocking to
+// non-blocking below. Single-sourced so the preload, the runtime loader, and
+// the no-JS fallback can never drift apart.
+const FONT_CSS_HREF =
+  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-dvh items-center justify-center bg-background px-4">
@@ -93,10 +100,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap",
-      },
+      // Non-blocking: fetch the font CSS early at high priority without holding
+      // first paint. It is promoted to an applied stylesheet by the inline
+      // loader in the shell (and by <noscript> when JS is unavailable).
+      { rel: "preload", as: "style", href: FONT_CSS_HREF },
       { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
       { rel: "icon", href: "/icon.svg", type: "image/svg+xml" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -155,6 +162,22 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Promote the preloaded font CSS to an applied stylesheet without
+            blocking first paint. Runs once during head parse; with display=swap
+            the branding paints in its declared fallback immediately, then swaps.
+            React SSR cannot serialize an onload attribute, so a minimal inline
+            loader is the framework-correct equivalent of the media-toggle. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href=${JSON.stringify(
+              FONT_CSS_HREF,
+            )};document.head.appendChild(l);})();`,
+          }}
+        />
+        {/* No-JavaScript fallback: applies the same stylesheet directly. */}
+        <noscript>
+          <link rel="stylesheet" href={FONT_CSS_HREF} />
+        </noscript>
       </head>
       <body>
         {children}

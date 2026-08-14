@@ -4,13 +4,29 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { ConsentBanner } from "@/components/ConsentBanner";
+import { CONSENT_CHANGE_EVENT, sanitizePath, trackPageView } from "@/lib/consent";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+// Consent Mode v2 defaults, declared before any tag exists. Everything is
+// denied until the visitor explicitly accepts, so "undecided" behaves exactly
+// like "declined". gtag.js itself is not loaded here at all: it is injected
+// only after an accept (see src/lib/consent.ts).
+const CONSENT_DEFAULTS = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=window.gtag||gtag;gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});`;
 
 // Google Fonts stylesheet URL. Preserved exactly (families, weights, styles,
 // display=swap) — only its delivery is changed from render-blocking to
@@ -109,6 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [
+      { children: CONSENT_DEFAULTS },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -190,10 +207,32 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  // Client-side routing means a tag's own page_view would fire only on the
+  // first document load, missing every in-app navigation. trackPageView is a
+  // no-op without consent, so nothing is sent until the visitor accepts.
+  const path = useRouterState({
+    select: (s) => sanitizePath(s.location.pathname, s.location.searchStr, s.location.hash),
+  });
+
+  // Accepting does not change the path, so without this the landing page a
+  // visitor consented on would never be counted. Bumping on consent change
+  // re-runs the effect so that first page_view is emitted on accept.
+  const [consentTick, setConsentTick] = useState(0);
+  useEffect(() => {
+    const onChange = () => setConsentTick((n) => n + 1);
+    window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+  }, []);
+
+  useEffect(() => {
+    trackPageView(path);
+  }, [path, consentTick]);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <ConsentBanner />
     </QueryClientProvider>
   );
 }

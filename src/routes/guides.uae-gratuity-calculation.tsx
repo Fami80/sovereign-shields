@@ -35,7 +35,7 @@ export const Route = createFileRoute("/guides/uae-gratuity-calculation")({
   head: () => ({
     meta: [
       { title: "How UAE Gratuity Is Calculated: The Complete Guide | UAEworkrights" },
-      { name: "description", content: "The MOHRE mainland gratuity formula step by step: 21 and 30 day rules, basic vs gross salary, the 1-year and 2-year rules, resignation under FDL 33/2021, and a worked example." },
+      { name: "description", content: "The MOHRE mainland gratuity formula step by step: the 21 and 30 day rules, basic vs gross salary, resignation under FDL 33/2021, and a worked example." },
       { property: "og:title", content: "How UAE Gratuity Is Calculated: The Complete Guide" },
       { property: "og:description", content: "The MOHRE mainland gratuity formula step by step: 21 and 30 day rules, basic vs gross salary, the 1-year and 2-year rules, resignation under FDL 33/2021, and a worked example." },
       { property: "og:url", content: CANONICAL },

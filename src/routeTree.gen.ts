@@ -9,39 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ExecutiveShieldRouteImport } from './routes/executive-shield'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CheckoutRouteImport } from './routes/checkout'
-import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as GuidesUaeGratuityCalculationRouteImport } from './routes/guides.uae-gratuity-calculation'
+import { Route as SplatRouteImport } from './routes/$'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExecutiveShieldRouteImport } from './routes/executive-shield'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as GuidesFreeZoneEmploymentLawRouteImport } from './routes/guides.free-zone-employment-law'
+import { Route as GuidesUaeGratuityCalculationRouteImport } from './routes/guides.uae-gratuity-calculation'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExecutiveShieldRoute = ExecutiveShieldRouteImport.update({
-  id: '/executive-shield',
-  path: '/executive-shield',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CheckoutRoute = CheckoutRouteImport.update({
-  id: '/checkout',
-  path: '/checkout',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SplatRoute = SplatRouteImport.update({
@@ -49,21 +29,41 @@ const SplatRoute = SplatRouteImport.update({
   path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GuidesUaeGratuityCalculationRoute =
-  GuidesUaeGratuityCalculationRouteImport.update({
-    id: '/guides/uae-gratuity-calculation',
-    path: '/guides/uae-gratuity-calculation',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveShieldRoute = ExecutiveShieldRouteImport.update({
+  id: '/executive-shield',
+  path: '/executive-shield',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GuidesFreeZoneEmploymentLawRoute =
   GuidesFreeZoneEmploymentLawRouteImport.update({
     id: '/guides/free-zone-employment-law',
     path: '/guides/free-zone-employment-law',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesUaeGratuityCalculationRoute =
+  GuidesUaeGratuityCalculationRouteImport.update({
+    id: '/guides/uae-gratuity-calculation',
+    path: '/guides/uae-gratuity-calculation',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -151,39 +151,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/executive-shield': {
-      id: '/executive-shield'
-      path: '/executive-shield'
-      fullPath: '/executive-shield'
-      preLoaderRoute: typeof ExecutiveShieldRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/checkout': {
-      id: '/checkout'
-      path: '/checkout'
-      fullPath: '/checkout'
-      preLoaderRoute: typeof CheckoutRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$': {
@@ -193,18 +165,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guides/uae-gratuity-calculation': {
-      id: '/guides/uae-gratuity-calculation'
-      path: '/guides/uae-gratuity-calculation'
-      fullPath: '/guides/uae-gratuity-calculation'
-      preLoaderRoute: typeof GuidesUaeGratuityCalculationRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/executive-shield': {
+      id: '/executive-shield'
+      path: '/executive-shield'
+      fullPath: '/executive-shield'
+      preLoaderRoute: typeof ExecutiveShieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/free-zone-employment-law': {
@@ -212,6 +205,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/free-zone-employment-law'
       fullPath: '/guides/free-zone-employment-law'
       preLoaderRoute: typeof GuidesFreeZoneEmploymentLawRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/uae-gratuity-calculation': {
+      id: '/guides/uae-gratuity-calculation'
+      path: '/guides/uae-gratuity-calculation'
+      fullPath: '/guides/uae-gratuity-calculation'
+      preLoaderRoute: typeof GuidesUaeGratuityCalculationRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -18,6 +19,15 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 // the no-JS fallback can never drift apart.
 const FONT_CSS_HREF =
   "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
+const GA_MEASUREMENT_ID = "G-HGFBT3JNT4";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 function NotFoundComponent() {
   return (
@@ -109,6 +119,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [
+      // GA4. Loaded async so it never blocks first paint. send_page_view is off
+      // because this is a client-routed app: RootComponent emits every page_view
+      // (including the first) so in-app navigations are not silently dropped.
+      { src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`, async: true },
+      {
+        children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false,anonymize_ip:true});`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -237,6 +254,22 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  // Client-side routing means gtag's own page_view would only ever fire on the
+  // first document load, undercounting every in-app navigation. send_page_view
+  // is disabled in the config, so this is the single source of page_view events.
+  const href = useRouterState({
+    select: (s) => s.location.pathname + s.location.searchStr + s.location.hash,
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    window.gtag("event", "page_view", {
+      page_path: href,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [href]);
 
   return (
     <QueryClientProvider client={queryClient}>

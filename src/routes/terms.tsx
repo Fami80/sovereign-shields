@@ -147,10 +147,28 @@ function TermsPage() {
                 marginBottom: "16px",
               }}
             >
-              Refund terms
+              Refund and cancellation policy
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              [KAOUTAR TO CONFIRM: refund policy details, e.g. whether refunds are available if the review has not yet started, partial refunds, or no refunds after delivery of findings.]
+              Payment is requested only after we accept your case and before the review begins. You may
+              cancel and receive a full refund at any time before we begin reviewing your documents.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              Once the review has started, the fee is non-refundable because professional analysis and
+              case-specific work have commenced. This does not limit any rights you may have under
+              applicable UAE law.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              If we cannot provide the agreed service, or if the service delivered is materially
+              defective, please contact us through the details provided on our{" "}
+              <a
+                href="/contact"
+                className="font-medium underline decoration-1 underline-offset-2 transition-opacity duration-150 hover:opacity-80"
+                style={{ color: "var(--color-burg-acc)" }}
+              >
+                Contact page
+              </a>
+              . Any approved refund will be returned using the original payment method.
             </p>
           </section>
 

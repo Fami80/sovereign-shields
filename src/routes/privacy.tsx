@@ -136,6 +136,7 @@ function PrivacyPage() {
                 "Zoom: consultations and review discussions take place over Zoom.",
                 "Email: documents, including confidential case materials, are exchanged only by email, directly between you and us.",
                 "Vercel: hosts this website.",
+                "Google Analytics: measures anonymous, aggregated website usage (such as which pages are visited) so we can improve the site. It is not used to identify you, and your case details are never sent to it.",
               ].map((item) => (
                 <li
                   key={item}
@@ -147,6 +148,38 @@ function PrivacyPage() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: "24px",
+                fontWeight: 700,
+                lineHeight: 1.2,
+                letterSpacing: "-0.02em",
+                color: "var(--color-burg-deep)",
+                marginBottom: "16px",
+              }}
+            >
+              Analytics and cookies
+            </h2>
+            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              We use Google Analytics to understand how the site is used in aggregate: which pages are
+              visited, roughly where visitors arrive from, and which devices they use. This tells us
+              which guides are useful and where the site is confusing.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              Google Analytics sets cookies in your browser to recognise return visits. We have enabled
+              IP anonymisation, we do not use the data for advertising, and we never send your name,
+              email, WhatsApp number, or any case documents to it. Your enquiry and your documents are
+              handled separately, as described above.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              You can block these cookies at any time through your browser settings, or by using
+              Google&apos;s opt-out browser add-on. Blocking them does not affect your ability to use
+              this site or our services.
+            </p>
           </section>
 
           <section>

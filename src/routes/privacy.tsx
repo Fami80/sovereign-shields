@@ -136,6 +136,7 @@ function PrivacyPage() {
                 "Zoom: consultations and review discussions take place over Zoom.",
                 "Email: documents, including confidential case materials, are exchanged only by email, directly between you and us.",
                 "Vercel: hosts this website.",
+                "Google Analytics: measures aggregated website usage, and only if you accept analytics. If you decline, or have not yet chosen, it is never loaded and receives nothing.",
               ].map((item) => (
                 <li
                   key={item}
@@ -147,6 +148,40 @@ function PrivacyPage() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: "24px",
+                fontWeight: 700,
+                lineHeight: 1.2,
+                letterSpacing: "-0.02em",
+                color: "var(--color-burg-deep)",
+                marginBottom: "16px",
+              }}
+            >
+              Analytics and cookies
+            </h2>
+            <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              We ask before we measure anything. When you first visit, you are offered a clear
+              choice between accepting and declining analytics. Until you accept, Google Analytics
+              is not loaded, sets no cookies, and receives no data about your visit. Declining, or
+              simply not choosing, are treated identically.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              If you do accept, we record which pages are viewed so we can tell which guides are
+              useful and where the site is confusing. Advertising, ad personalisation, and
+              ad-related data sharing remain switched off in all cases. We never send your name,
+              email address, WhatsApp number, enquiry text, or any case document to analytics, and
+              message content is removed from page addresses before they are recorded.
+            </p>
+            <p className="mt-4 font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
+              You can change your decision at any time using the &quot;Analytics preferences&quot;
+              control in the footer of every page, or by clearing cookies and site data in your
+              browser. Your choice does not affect your access to this site or to our services.
+            </p>
           </section>
 
           <section>

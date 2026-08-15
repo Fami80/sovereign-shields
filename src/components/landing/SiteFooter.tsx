@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ConsentPreferencesButton } from "@/components/ConsentBanner";
 
 const FOOTER_COLS = [
   {
@@ -123,16 +124,19 @@ export function SiteFooter() {
           className="mt-14 pt-6"
           style={{ borderTop: "1px solid rgba(212,168,130,0.08)" }}
         >
-          <p
-            className="font-sans"
-            style={{
-              fontSize: 11,
-              fontWeight: 300,
-              color: "rgba(237,216,184,0.55)",
-            }}
-          >
-            © 2026 UAEworkrights. UAE employment compliance.
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p
+              className="font-sans"
+              style={{
+                fontSize: 11,
+                fontWeight: 300,
+                color: "rgba(237,216,184,0.55)",
+              }}
+            >
+              © 2026 UAEworkrights. UAE employment compliance.
+            </p>
+            <ConsentPreferencesButton />
+          </div>
         </div>
       </div>
     </footer>

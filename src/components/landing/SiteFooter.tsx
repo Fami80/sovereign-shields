@@ -5,9 +5,9 @@ const FOOTER_COLS = [
   {
     title: "SERVICES",
     links: [
-      { label: "Settlement reviews", href: "/#features" },
+      { label: "Contract & settlement reviews", href: "/#features" },
       { label: "Employer compliance", href: "/contact?type=audit" },
-      { label: "Knowledge base", href: "/#knowledge" },
+      { label: "Self-review knowledge base", href: "/#knowledge" },
       { label: "Free gratuity guide", href: "/guides/uae-gratuity-calculation" },
       { label: "Free zones explained", href: "/guides/free-zone-employment-law" },
       { label: "Executive Shield guide", href: "/executive-shield" },
@@ -57,7 +57,7 @@ export function SiteFooter() {
                 lineHeight: 1.6,
               }}
             >
-              UAE employment compliance. Settlement reviews, rights guidance, and cross-border expertise for employees and employers.
+              UAE employment compliance. Contract and settlement reviews, rights guidance, and cross-border expertise for employees and employers.
             </p>
             <div
               className="mt-5 inline-flex items-center rounded-full px-3 py-1.5 font-sans text-xs font-medium"

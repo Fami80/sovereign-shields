@@ -77,7 +77,7 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
    - Optional-select placeholder `rgba(237,216,184,0.3)` on burg-mid = **2.25:1** (`contact.tsx:394`).
    - Mobile "Scroll to see more →" hint = **3.02:1** at 12px (`Testimonials.tsx:113-123`).
    - (Everything else checked sits at 4.6–8.8:1 — the earlier AA pass held.)
-6. **KB card "Unlock" affordance is hover-only** (`KnowledgeBase.tsx:150`): the overlay uses `group-hover` — keyboard focus and touch users never see the "Unlock for AED 299 →" hint. Add `group-focus-within:opacity-100` and consider showing the price statically on mobile.
+6. **KB card "Unlock" affordance is hover-only** (`KnowledgeBase.tsx:150`): the overlay uses `group-hover` — keyboard focus and touch users never see the "Unlock for AED 199 →" hint. Add `group-focus-within:opacity-100` and consider showing the price statically on mobile.
 7. **Calculator `aria-live="polite"` on an animated counter** (`ExposureCalculator.tsx:218`): the 1.8s count-up mutates the live region dozens of times → screen-reader spam. Announce only the final value (set live region text once after animation, or put `aria-live` on a visually-hidden element updated once).
 8. **Errors not programmatically linked to inputs**: error text uses `role="alert"` but inputs lack `aria-invalid` and `aria-describedby`.
 
@@ -90,8 +90,8 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 - **HSTS lacks `includeSubDomains`** (`vercel.json`). Add it once the custom domain is live (and consider `preload`).
 - `Access-Control-Allow-Origin: *` is emitted on HTML/static responses. Harmless for public static content, but it's not in `vercel.json` — worth knowing it comes from the platform/build config, and it should never be copied onto `/api/*`.
 
-### M4. Pricing inconsistency — AED 199 vs AED 299
-- The Knowledge Base is AED **299** everywhere (KB section, contact form helper, terms, checkout meta) **except** the Self-Review Checklist CTA which offers "Self-review checklist - AED 199" (`AudienceBento.tsx:141`) — if that's a distinct product, fine, but the KB cards' "Unlock for AED 299" vs. the checklist's 199 within one viewport invites "wait, which is it?" If they are different products, label the checklist more distinctly (it currently reads like the same locked content at a different price).
+### M4. Pricing inconsistency — resolved
+- The Self-Review Knowledge Base price is now consistently AED **199** across the service section, contact form, terms, checkout metadata, and structured data. It is explicitly distinguished from the AED 999 personalized review.
 
 ### M5. Full page reloads on internal links
 - `Hero.tsx:159`, `About.tsx:144`, `AudienceBento.tsx:228`, `KnowledgeBase.tsx:194` use raw `<a href="/contact…">` instead of router `<Link>` — each click does a full document load (visible flash of unstyled fonts given H1). Use `<Link to="/contact" search={{type:"audit"}}>` consistently (the codebase already does this elsewhere).

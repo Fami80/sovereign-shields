@@ -3,10 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Knowledge Base Access, AED 299 | UAEworkrights" },
-      { name: "description", content: "Unlock 30-day access to the UAEworkrights knowledge base. UAE settlement guides by jurisdiction: mainland, DIFC, ADGM, free zones. AED 299." },
-      { property: "og:title", content: "Knowledge Base Access, AED 299 | UAEworkrights" },
-      { property: "og:description", content: "Unlock 30-day access to the UAEworkrights knowledge base. UAE settlement guides by jurisdiction: mainland, DIFC, ADGM, free zones. AED 299." },
+      { title: "Self-Review Knowledge Base Access, AED 199 | UAEworkrights" },
+      { name: "description", content: "Get 30-day access to UAE employment guidance and practical tools, then review your own documents. No personalized review included. AED 199." },
+      { property: "og:title", content: "Self-Review Knowledge Base Access, AED 199 | UAEworkrights" },
+      { property: "og:description", content: "Get 30-day access to UAE employment guidance and practical tools, then review your own documents. No personalized review included. AED 199." },
       { property: "og:url", content: "https://uaeworkrights.com/checkout" },
     ],
     links: [
@@ -49,7 +49,7 @@ function CheckoutPlaceholder() {
         </p>
         <Link
           to="/contact"
-          search={{ type: "kb", message: "I'm interested in Knowledge Base access" }}
+          search={{ type: "kb", message: "I'm interested in Self-Review Knowledge Base access" }}
           className="mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-deep)] focus-visible:[outline-offset:2px]"
           style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500 }}
         >

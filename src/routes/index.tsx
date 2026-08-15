@@ -16,13 +16,13 @@ import ogImage from "@/assets/og-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UAE Settlement Letter Review in 48 Hours | UAEworkrights" },
-      { name: "description", content: "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999." },
-      { property: "og:title", content: "UAE Settlement Letter Review in 48 Hours | UAEworkrights" },
-      { property: "og:description", content: "Got a UAE settlement letter? Most contain errors. We check it against UAE Labour Law across MOHRE, DIFC and ADGM, with written findings in 48 hours. AED 999." },
+      { title: "UAE Employment Contract & Settlement Review | UAEworkrights" },
+      { name: "description", content: "Employment contract review before you start or settlement letter review before you leave. Written findings across all UAE jurisdictions within 48 hours. AED 999." },
+      { property: "og:title", content: "UAE Employment Contract & Settlement Review | UAEworkrights" },
+      { property: "og:description", content: "Employment contract review before you start or settlement letter review before you leave. Written findings across all UAE jurisdictions within 48 hours. AED 999." },
       { property: "og:url", content: "https://uaeworkrights.com/" },
       { property: "og:image", content: `https://uaeworkrights.com${ogImage}` },
-      { property: "og:image:alt", content: "UAE settlement letter review by UAEworkrights" },
+      { property: "og:image:alt", content: "UAE employment contract and settlement review by UAEworkrights" },
       { name: "twitter:image", content: `https://uaeworkrights.com${ogImage}` },
     ],
     links: [

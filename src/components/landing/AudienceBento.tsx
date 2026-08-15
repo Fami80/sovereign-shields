@@ -18,107 +18,9 @@ export function AudienceBento() {
           UAE employment compliance for both sides of the table
         </h2>
 
-        {/* Service cards: employee journey first (contract → settlement), employer below */}
+        {/* Service cards: full review, self-review, and employer audit */}
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {/* CARD 1 — Employee · Contract Review (pre-acceptance) */}
-          <article
-            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
-            style={{
-              backgroundColor: "var(--color-sand-pale)",
-              border: "1px solid rgba(139,45,58,0.12)",
-            }}
-          >
-            <p
-              className="inline-flex items-center gap-1.5 font-sans"
-              style={{
-                fontSize: "10px",
-                letterSpacing: "2px",
-                color: "var(--color-burg-acc)",
-                fontWeight: 600,
-                textTransform: "uppercase",
-              }}
-            >
-              <User size={12} />
-              FOR EMPLOYEES · PRE-ACCEPTANCE
-            </p>
-
-            <h3
-              className="mt-3 font-display"
-              style={{
-                fontSize: "28px",
-                color: "var(--color-burg-deep)",
-                fontStyle: "italic",
-                fontWeight: 600,
-                lineHeight: 1.2,
-              }}
-            >
-              Contract Review
-            </h3>
-
-            <span
-              className="mt-3 inline-flex items-center self-start rounded-full px-3 py-1 font-sans text-xs"
-              style={{
-                backgroundColor: "rgba(139,45,58,0.08)",
-                color: "var(--color-burg-acc)",
-                fontWeight: 500,
-              }}
-            >
-              AED 2,000 flat fee
-            </span>
-
-            <p
-              className="mt-4 font-sans"
-              style={{
-                fontSize: "14px",
-                fontWeight: 300,
-                lineHeight: 1.6,
-                color: "rgba(30,10,14,0.65)",
-              }}
-            >
-              Got a UAE job offer? Before you sign, know exactly what you're agreeing to. We review your employment contract clause by clause (salary structure, notice period, non-compete terms, probation length, benefits) against UAE labour law, so nothing surprises you after you've already accepted.
-            </p>
-
-            <ul className="mt-6 space-y-2.5">
-              {[
-                "Full contract review before you sign",
-                "Salary structure & benefits checked",
-                "Notice period & non-compete clauses explained in plain language",
-                "Written findings within 48 hours",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="font-sans"
-                  style={{
-                    fontSize: "13px",
-                    color: "var(--color-burg-acc)",
-                    fontWeight: 400,
-                  }}
-                >
-                  → {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-auto pt-8">
-              <a
-                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a contract review — AED 2,000.")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full px-6 py-[14px] font-sans text-[15px] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
-                style={{
-                  backgroundColor: "var(--color-burg-acc)",
-                  color: "var(--color-sand-pale)",
-                  fontWeight: 500,
-                  minHeight: "48px",
-                }}
-              >
-                <span className="sm:hidden">Review my contract →</span>
-                <span className="hidden sm:inline">Review my contract - AED 2,000 →</span>
-              </a>
-            </div>
-          </article>
-
-          {/* CARD 2 — Employee · Settlement Review (exit) */}
+          {/* CARD 1 — Employee · Contract and settlement review */}
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
             style={{
@@ -150,7 +52,7 @@ export function AudienceBento() {
                 lineHeight: 1.2,
               }}
             >
-              Settlement Review
+              Employment Contract &amp; Settlement Review
             </h3>
 
             <span
@@ -173,15 +75,15 @@ export function AudienceBento() {
                 color: "rgba(30,10,14,0.65)",
               }}
             >
-              Got a settlement letter? Before you sign, we check it. Gratuity, leave encashment, deductions, notice period. Every line reviewed against UAE Labour Law. Written findings within 48 hours.
+              Before you start or leave a UAE job, know exactly what you are signing. We review your employment contract before you accept and your settlement letter before you leave, then provide clear written findings against the rules that apply to your case.
             </p>
 
             <ul className="mt-6 space-y-2.5">
               {[
-                "Mainland UAE · DIFC · ADGM · Free Zones",
-                "Belgian and UK cross-border cases",
-                "Written findings included",
-                "48-hour turnaround",
+                "Employment contract review before you sign and start",
+                "Settlement letter review before you leave the company",
+                "Written findings within 48 hours",
+                "Mainland UAE · DIFC · ADGM · Free Zones · cross-border cases",
               ].map((item) => (
                 <li
                   key={item}
@@ -197,21 +99,9 @@ export function AudienceBento() {
               ))}
             </ul>
 
-            <p
-              className="mt-8 font-sans italic"
-              style={{
-                fontSize: "14px",
-                fontWeight: 300,
-                lineHeight: 1.6,
-                color: "rgba(30,10,14,0.65)",
-              }}
-            >
-              Prefer to check it yourself? We send you the settlement self-audit checklist and you review your own letter, step by step, in your own time.
-            </p>
-
-            <div className="mt-6 flex flex-col gap-3">
+            <div className="mt-auto pt-8">
               <a
-                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book an Employment Contract & Settlement Review — AED 999.")}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full px-6 py-[14px] font-sans text-[15px] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
@@ -222,13 +112,98 @@ export function AudienceBento() {
                   minHeight: "48px",
                 }}
               >
-                Full review - AED 999 →
+                Book my review - AED 999 →
               </a>
-              <a
-                href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'm interested in the Self-Review Checklist — AED 199.")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full px-6 py-[14px] font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-acc)] focus-visible:[outline-offset:2px]"
+            </div>
+          </article>
+
+          {/* CARD 2 — Employee · Self-review */}
+          <article
+            className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:p-9"
+            style={{
+              backgroundColor: "var(--color-sand-pale)",
+              border: "1px solid rgba(139,45,58,0.12)",
+            }}
+          >
+            <p
+              className="inline-flex items-center gap-1.5 font-sans"
+              style={{
+                fontSize: "10px",
+                letterSpacing: "2px",
+                color: "var(--color-burg-acc)",
+                fontWeight: 600,
+                textTransform: "uppercase",
+              }}
+            >
+              <User size={12} />
+              FOR EMPLOYEES · SELF-REVIEW
+            </p>
+
+            <h3
+              className="mt-3 font-display"
+              style={{
+                fontSize: "28px",
+                color: "var(--color-burg-deep)",
+                fontStyle: "italic",
+                fontWeight: 600,
+                lineHeight: 1.2,
+              }}
+            >
+              Self-Review Knowledge Base
+            </h3>
+
+            <span
+              className="mt-3 inline-flex items-center self-start rounded-full px-3 py-1 font-sans text-xs"
+              style={{
+                backgroundColor: "rgba(139,45,58,0.08)",
+                color: "var(--color-burg-acc)",
+                fontWeight: 500,
+              }}
+            >
+              AED 199 · 30-day access
+            </span>
+
+            <p
+              className="mt-4 font-sans"
+              style={{
+                fontSize: "14px",
+                fontWeight: 300,
+                lineHeight: 1.6,
+                color: "rgba(30,10,14,0.65)",
+              }}
+            >
+              You perform the review yourself. We provide the information, jurisdiction guidance, and practical tools you need to check your own employment contract or settlement letter. This option does not include a personalized UAEworkrights review.
+            </p>
+
+            <ul className="mt-6 space-y-2.5">
+              {[
+                "Step-by-step self-review guidance",
+                "Mainland UAE · DIFC · ADGM · Free Zones · cross-border information",
+                "Practical checklists and reference material",
+                "You review your own documents",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="font-sans"
+                  style={{
+                    fontSize: "13px",
+                    color: "var(--color-burg-acc)",
+                    fontWeight: 400,
+                  }}
+                >
+                  → {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-auto pt-8">
+              <Link
+                to="/contact"
+                search={{
+                  type: "kb",
+                  message: "I'm interested in Self-Review Knowledge Base access — AED 199.",
+                }}
+                className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full px-6 py-[14px] font-sans text-[15px] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-burg-acc)] focus-visible:[outline-offset:2px]"
                 style={{
                   border: "1px solid var(--color-burg-acc)",
                   color: "var(--color-burg-acc)",
@@ -237,12 +212,12 @@ export function AudienceBento() {
                   minHeight: "48px",
                 }}
               >
-                Self-review checklist - AED 199 →
-              </a>
+                Review it myself - AED 199 →
+              </Link>
             </div>
           </article>
 
-          {/* CARD 3 — Employer (full width below the employee journey) */}
+          {/* CARD 3 — Employer */}
           <article
             className="relative flex flex-col overflow-hidden rounded-2xl p-7 motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lg md:col-span-2 md:p-9"
             style={{

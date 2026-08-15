@@ -71,7 +71,7 @@ function PrivacyPage() {
               Why we collect it
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              This data is collected solely to deliver the settlement review service you have requested. Your name and email allow us to communicate findings; your documents are the basis for the review itself.
+              This data is collected solely to deliver the employment contract or settlement review service you have requested. Your name and email allow us to communicate findings; your documents are the basis for the review itself.
             </p>
           </section>
 

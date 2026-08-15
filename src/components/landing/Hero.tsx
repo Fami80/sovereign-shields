@@ -132,13 +132,13 @@ export function Hero() {
             style={{ "--reveal-delay": "240ms" } as React.CSSProperties}
           >
             <a
-              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a settlement review — AED 999.")}`}
+              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book an Employment Contract & Settlement Review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px] sm:w-auto"
               style={{ backgroundColor: "var(--color-sand-warm)", color: "var(--color-burg-deep)", fontWeight: 500, fontSize: "14px" }}
             >
-              Review my settlement
+              Review my documents
               <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5" />
             </a>
             <a

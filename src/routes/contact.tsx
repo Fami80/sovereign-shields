@@ -12,11 +12,11 @@ const HS_PORTAL_ID = "148818262";
 const HS_FORM_GUID = "29d7ab26-fc00-4b66-9b1e-55c2a5eef56c";
 const HS_ENDPOINT = `https://forms.hubspot.com/uploads/form/v2/${HS_PORTAL_ID}/${HS_FORM_GUID}`;
 const WHATSAPP_HREF = `https://wa.me/971547736565?text=${encodeURIComponent(
-  "Hi Kaoutar, I'd like to book a settlement review — AED 999."
+  "Hi Kaoutar, I'd like to book an Employment Contract & Settlement Review — AED 999."
 )}`;
 
 const ENQUIRY_LABELS: Record<string, string> = {
-  settlement: "Settlement Review",
+  settlement: "Employment Contract & Settlement Review",
   audit: "Employer Compliance Audit",
   general: "General Question",
   "cross-border": "Complex cross-border case",
@@ -61,10 +61,10 @@ const COUNTRY_CODES: { code: string; label: string }[] = [
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a UAE Settlement Review | UAEworkrights" },
-      { name: "description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
-      { property: "og:title", content: "Book a UAE Settlement Review | UAEworkrights" },
-      { property: "og:description", content: "Book a UAE settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      { title: "Book an Employment Contract & Settlement Review | UAEworkrights" },
+      { name: "description", content: "Book an employment contract and settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
+      { property: "og:title", content: "Book an Employment Contract & Settlement Review | UAEworkrights" },
+      { property: "og:description", content: "Book an employment contract and settlement review or employer compliance audit. WhatsApp or contact form. Response within 1 UAE business day." },
       { property: "og:url", content: "https://uaeworkrights.com/contact" },
     ],
     links: [
@@ -275,7 +275,7 @@ function ContactPage() {
               color: "rgba(237,216,184,0.55)",
             }}
           >
-            For a settlement review, a compliance question, or to discuss a complex case.
+            For an employment contract or settlement review, a compliance question, or to discuss a complex case.
           </p>
         </div>
 
@@ -424,7 +424,7 @@ function ContactPage() {
                     Select…
                   </option>
                   <option value="settlement" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
-                    Settlement Review
+                    Employment Contract &amp; Settlement Review
                   </option>
                   <option value="audit" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
                     Employer Compliance Audit
@@ -443,7 +443,7 @@ function ContactPage() {
 
               <Field
                 label="Would you pay for Knowledge Base access?"
-                helper="The Knowledge Base will be AED 299 for 30-day access."
+                helper="The Knowledge Base is AED 199 for 30-day access."
               >
                 <select
                   value={form.willingness}

@@ -179,7 +179,7 @@ function FreeZoneGuidePage() {
               governs it: DIFC, ADGM, free zone, or mainland. Written findings in 48 hours.
             </p>
             <a
-              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book a contract review — AED 2,000.")}`}
+              href={`https://wa.me/971547736565?text=${encodeURIComponent("Hi Kaoutar, I'd like to book an Employment Contract & Settlement Review — AED 999.")}`}
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-flex items-center justify-center rounded-full px-7 py-3.5 font-sans text-sm motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"

@@ -91,8 +91,8 @@ function TermsPage() {
             </h2>
             <ul className="space-y-3">
               {[
-                { service: "Settlement review", price: "AED 999" },
-                { service: "Knowledge base, 30-day access", price: "AED 299" },
+                { service: "Employment Contract & Settlement Review", price: "AED 999" },
+                { service: "Knowledge Base, 30-day access", price: "AED 199" },
                 { service: "Employer compliance audit", price: "From AED 5,000" },
               ].map((item) => (
                 <li
@@ -131,7 +131,7 @@ function TermsPage() {
               Turnaround commitment
             </h2>
             <p className="font-sans" style={{ fontSize: "16px", lineHeight: 1.75, color: "rgba(30,10,14,0.75)" }}>
-              We commit to delivering written settlement review findings within 48 hours of receiving all required documents and payment confirmation. This commitment applies during standard UAE business days (Sunday–Thursday). Submissions received on Thursday afternoon or Friday may be delivered by the following Sunday.
+              We commit to delivering written employment contract or settlement review findings within 48 hours of receiving all required documents and payment confirmation. This commitment applies during standard UAE business days (Sunday–Thursday). Submissions received on Thursday afternoon or Friday may be delivered by the following Sunday.
             </p>
           </section>
 

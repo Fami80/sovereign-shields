@@ -20,7 +20,7 @@ const ENQUIRY_LABELS: Record<string, string> = {
   audit: "Employer Compliance Audit",
   general: "General Question",
   "cross-border": "Complex cross-border case",
-  kb: "Knowledge Base interest",
+  kb: "Self-Review Knowledge Base",
 };
 
 const WILLINGNESS_LABELS: Record<string, string> = {
@@ -436,14 +436,14 @@ function ContactPage() {
                     Complex cross-border case
                   </option>
                   <option value="kb" style={{ backgroundColor: "var(--color-burg-deep)", color: "var(--color-sand-light)" }}>
-                    Knowledge Base interest
+                    Self-Review Knowledge Base
                   </option>
                 </select>
               </Field>
 
               <Field
-                label="Would you pay for Knowledge Base access?"
-                helper="The Knowledge Base is AED 199 for 30-day access."
+                label="Would you pay for Self-Review Knowledge Base access?"
+                helper="AED 199 provides 30-day access to guidance and tools for reviewing your own documents. It does not include a personalized review."
               >
                 <select
                   value={form.willingness}

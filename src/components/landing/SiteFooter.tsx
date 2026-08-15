@@ -7,7 +7,7 @@ const FOOTER_COLS = [
     links: [
       { label: "Contract & settlement reviews", href: "/#features" },
       { label: "Employer compliance", href: "/contact?type=audit" },
-      { label: "Knowledge base", href: "/#knowledge" },
+      { label: "Self-review knowledge base", href: "/#knowledge" },
       { label: "Free gratuity guide", href: "/guides/uae-gratuity-calculation" },
       { label: "Free zones explained", href: "/guides/free-zone-employment-law" },
       { label: "Executive Shield guide", href: "/executive-shield" },

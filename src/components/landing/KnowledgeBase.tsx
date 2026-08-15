@@ -13,7 +13,7 @@ const JURISDICTION_CARDS = [
       "Visa cancellation: what you must sign and when",
     ],
     locked: true,
-    search: { type: "kb", card: "Mainland UAE", message: "I'm interested in the Mainland UAE Knowledge Base" },
+    search: { type: "kb", card: "Mainland UAE", message: "I'm interested in the Mainland UAE Self-Review Knowledge Base" },
   },
   {
     title: "DIFC end of service gratuity",
@@ -23,7 +23,7 @@ const JURISDICTION_CARDS = [
       "Zurich portal: checking your DEWS balance",
     ],
     locked: true,
-    search: { type: "kb", card: "DIFC", message: "I'm interested in the DIFC Knowledge Base" },
+    search: { type: "kb", card: "DIFC", message: "I'm interested in the DIFC Self-Review Knowledge Base" },
   },
   {
     title: "ADGM",
@@ -32,7 +32,7 @@ const JURISDICTION_CARDS = [
       "How ADGM differs from DIFC and mainland",
     ],
     locked: true,
-    search: { type: "kb", card: "ADGM", message: "I'm interested in the ADGM Knowledge Base" },
+    search: { type: "kb", card: "ADGM", message: "I'm interested in the ADGM Self-Review Knowledge Base" },
   },
   {
     title: "Free Zones",
@@ -41,7 +41,7 @@ const JURISDICTION_CARDS = [
       "Where mainland UAE labour law applies instead",
     ],
     locked: true,
-    search: { type: "kb", card: "Free Zones", message: "I'm interested in the Free Zones Knowledge Base" },
+    search: { type: "kb", card: "Free Zones", message: "I'm interested in the Free Zones Self-Review Knowledge Base" },
   },
   {
     title: "Cross-border cases",
@@ -50,7 +50,7 @@ const JURISDICTION_CARDS = [
       "UK subsidiaries operating in UAE",
     ],
     locked: true,
-    search: { type: "kb", card: "Cross-border", message: "I'm interested in cross-border Knowledge Base cases" },
+    search: { type: "kb", card: "Cross-border", message: "I'm interested in cross-border Self-Review Knowledge Base cases" },
   },
   {
     title: "Practical tools",
@@ -60,7 +60,7 @@ const JURISDICTION_CARDS = [
       "Illegal deductions: what employers cannot charge you",
     ],
     locked: true,
-    search: { type: "kb", card: "Practical Tools", message: "I'm interested in the Practical Tools Knowledge Base" },
+    search: { type: "kb", card: "Practical Tools", message: "I'm interested in the Practical Tools Self-Review Knowledge Base" },
   },
 ];
 
@@ -73,7 +73,7 @@ export function KnowledgeBase() {
           className="mt-5 text-center text-[40px] font-semibold leading-tight"
           style={{ color: "var(--color-sand-light)", fontFamily: "'Playfair Display', serif" }}
         >
-          UAE Employment Rights: Knowledge Base
+          UAE Employment Rights: Self-Review Knowledge Base
         </h2>
 
         {/* Subheading */}
@@ -81,7 +81,7 @@ export function KnowledgeBase() {
           className="mx-auto mt-5 max-w-2xl text-center text-base font-light"
           style={{ color: "rgba(237,216,184,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          The complete reference for UAE final settlements, by jurisdiction. One free article included. Full access for AED 199.
+          We provide the information, jurisdiction guidance, and practical tools. You use them to review your own documents. No personalized UAEworkrights review is included. Full access is AED 199 for 30 days.
         </p>
 
         {/* Preview label */}
@@ -231,7 +231,7 @@ export function KnowledgeBase() {
           </span>
           <Link
             to="/contact"
-            search={{ type: "kb", message: "I'm interested in full Knowledge Base access" }}
+            search={{ type: "kb", message: "I'm interested in full Self-Review Knowledge Base access" }}
             className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.97] focus-visible:[outline:2px_solid_var(--color-sand-light)] focus-visible:[outline-offset:2px]"
             style={{
               background: "var(--color-sand-warm)",

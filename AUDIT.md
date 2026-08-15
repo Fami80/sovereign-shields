@@ -91,7 +91,7 @@ However, there are **3 launch-blocking issues** — the custom domain every cano
 - `Access-Control-Allow-Origin: *` is emitted on HTML/static responses. Harmless for public static content, but it's not in `vercel.json` — worth knowing it comes from the platform/build config, and it should never be copied onto `/api/*`.
 
 ### M4. Pricing inconsistency — resolved
-- The Knowledge Base price is now consistently AED **199** across the service section, contact form, terms, checkout metadata, and structured data.
+- The Self-Review Knowledge Base price is now consistently AED **199** across the service section, contact form, terms, checkout metadata, and structured data. It is explicitly distinguished from the AED 999 personalized review.
 
 ### M5. Full page reloads on internal links
 - `Hero.tsx:159`, `About.tsx:144`, `AudienceBento.tsx:228`, `KnowledgeBase.tsx:194` use raw `<a href="/contact…">` instead of router `<Link>` — each click does a full document load (visible flash of unstyled fonts given H1). Use `<Link to="/contact" search={{type:"audit"}}>` consistently (the codebase already does this elsewhere).

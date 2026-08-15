@@ -92,7 +92,7 @@ function TermsPage() {
             <ul className="space-y-3">
               {[
                 { service: "Employment Contract & Settlement Review", price: "AED 999" },
-                { service: "Knowledge Base, 30-day access", price: "AED 199" },
+                { service: "Self-Review Knowledge Base, 30-day access", price: "AED 199" },
                 { service: "Employer compliance audit", price: "From AED 5,000" },
               ].map((item) => (
                 <li

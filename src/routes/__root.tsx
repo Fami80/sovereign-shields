@@ -178,11 +178,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             {
               "@type": "Service",
               "@id": "https://uaeworkrights.com/#knowledge-base",
-              "name": "UAE Employment Rights Knowledge Base",
-              "serviceType": "Employment rights knowledge base access",
+              "name": "UAE Employment Rights Self-Review Knowledge Base",
+              "serviceType": "Employment document self-review guidance",
               "provider": { "@id": "https://uaeworkrights.com/#organization" },
               "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
-              "description": "Thirty-day access to UAE employment rights guidance covering Mainland UAE, DIFC, ADGM, free zones, and cross-border cases.",
+              "description": "Thirty-day access to information, jurisdiction guidance, and practical tools for customers to review their own employment documents. No personalized UAEworkrights review is included.",
               "offers": {
                 "@type": "Offer",
                 "price": "199",

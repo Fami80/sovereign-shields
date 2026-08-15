@@ -8,7 +8,7 @@ type NavItem = { label: string; hash?: string; to?: string };
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Services", hash: "#features" },
-  { label: "Knowledge Base", hash: "#knowledge" },
+  { label: "Self-Review Knowledge Base", hash: "#knowledge" },
   { label: "About", hash: "#about" },
   { label: "Contact", to: "/contact" },
 ];

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/guides/free-zone-employment-law")({
   head: () => ({
     meta: [
       { title: "Do Free Zones Have Their Own Employment Law? The Actual Answer | UAEworkrights" },
-      { name: "description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions, DIFC and ADGM, change your gratuity, courts, and non-compete rules. Here's the one-line test." },
+      { name: "description", content: "JAFZA, DMCC and most UAE free zones follow federal law (FDL 33/2021). Only DIFC and ADGM differ, changing your gratuity, courts and non-compete rules." },
       { property: "og:title", content: "Do Free Zones Have Their Own Employment Law? Here's the Actual Answer" },
       { property: "og:description", content: "JAFZA, DMCC, DAFZA and most UAE free zones follow federal law (FDL 33/2021). Exactly two exceptions, DIFC and ADGM, change your gratuity, courts, and non-compete rules." },
       { property: "og:url", content: CANONICAL },

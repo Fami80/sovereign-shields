@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Hero } from "@/components/landing/Hero";
 import { JurisdictionRibbon } from "@/components/landing/JurisdictionRibbon";
 import { AudienceBento } from "@/components/landing/AudienceBento";
-import { ExposureCalculator } from "@/components/landing/ExposureCalculator";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { About } from "@/components/landing/About";
@@ -12,6 +11,13 @@ import { StickyCTA } from "@/components/landing/StickyCTA";
 import { Navbar } from "@/components/landing/Navbar";
 import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
 import ogImage from "@/assets/og-hero.jpg";
+
+// Lazy: framer-motion + motion-dom (~130KB) is only needed for this one
+// below-the-fold widget's count-up animation. Splitting it out of the main
+// homepage bundle keeps that weight off the critical parse/execute path.
+const ExposureCalculator = lazy(() =>
+  import("@/components/landing/ExposureCalculator").then((m) => ({ default: m.ExposureCalculator })),
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,7 +56,9 @@ function Index() {
       <Navbar />
       <Hero />
       <JurisdictionRibbon />
-      <ExposureCalculator />
+      <Suspense fallback={null}>
+        <ExposureCalculator />
+      </Suspense>
       <HowItWorks />
       <AudienceBento />
       <KnowledgeBase />
